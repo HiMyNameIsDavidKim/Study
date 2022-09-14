@@ -13,7 +13,7 @@
 
 <br>
 
-### [🅙Java](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
+### [➕Java](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
 
 <br>
 
