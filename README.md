@@ -1,6 +1,6 @@
 # 📚Study📚
 
-### [💪Basic]
+### [💪Basic](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic)
   - [`알고리즘`]
 
   - [`자료구조`]
@@ -17,7 +17,7 @@
 
 <br>
 
-### [📊Data Analyst]
+### [📊Data Analyst](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst)
   - [`SQL`]
 
   - [`R`]
