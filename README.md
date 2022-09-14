@@ -11,6 +11,21 @@
 
 ### [🤖Python]
 
+<br>
+
+### [Java]
+
+<br>
+
+### [Data Analyst]
+  - [`SQL`]
+
+  - [`R`]
+  
+  - [`Hadoop`]
+
+  - [`Analystical Skills`]
+<br>
 
 
 
