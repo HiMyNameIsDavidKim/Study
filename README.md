@@ -10,7 +10,9 @@
 <br>
 
 ### [🤖Python](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python)
+  - [`나도코딩(기본)`]
 
+  - [`나도코딩(활용1)`]
 <br>
 
 ### [➕Java](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
