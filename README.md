@@ -10,9 +10,9 @@
 <br>
 
 ### [🤖Python](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python)
-  - [`나도코딩(기본)`]
+  - [`나도코딩(기본)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9(%EA%B8%B0%EB%B3%B8))
 
-  - [`나도코딩(활용1)`]
+  - [`나도코딩(활용1)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9(%ED%99%9C%EC%9A%A91))
 <br>
 
 ### [➕Java](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
