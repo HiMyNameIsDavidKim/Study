@@ -34,7 +34,7 @@ def withdraw_night(balance, money) :
 account3 = 2000
 account3 = withdraw_night(account3, 1000)
 
-
+#함수 공부3(기본값)
 
 
 
