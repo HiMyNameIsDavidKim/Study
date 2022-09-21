@@ -7,6 +7,10 @@
   
   - [`CS`]
 
+  - [`대수학`]
+
+  - [`통계학`]
+
 <br>
 
 ### [🦾Python](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python)
@@ -31,7 +35,7 @@
 
 <br>
 
-### [🤖ML]
+### [🤖ML](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML)
   - [`Data Science`]
 
   - [`Vision`]
@@ -40,10 +44,16 @@
 
   - [`Voice`]
 
+  - [`Prediction`]
+
 <br>
 
-### [☁️Cloud]
+### [☁️Cloud](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud)
   
 <br>
+
+
+
+
 
 
