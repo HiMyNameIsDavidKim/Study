@@ -86,6 +86,7 @@ firebat1.damaged(25)
 #클래스 공부5(상속)
 #Unit클래스랑 AttackUnit클래스를 보면 name이랑 hp가 동일함.
 #이런 경우에 상속을 사용할 수 있음. 말그대로 물려받는 것을 의미함.
+#이런경우에 Unit같은 애들을 부모클래스, AttackUnit같은 애들을 자식클래스라고 부름.
 class Unit :
     def __init__(self, name, hp) :
         self.hp = hp
@@ -116,6 +117,14 @@ firebat1.damaged(25)
 
 
 #클래스 공부6(다중 상속)
+class Flyable : 
+    def __init__(self, flying_speed) : 
+        self.flying_speed = flying_speed
+
+    def fly(self, name, location) :
+        print("{0} : fly to {1} direction. [speed {2}]".format(name, location, self.flying_speed))
+
+class FlyableAttackUnit(AttackUnit, Flyable) : #콤마로 넣으면 됨.
 
 
 
