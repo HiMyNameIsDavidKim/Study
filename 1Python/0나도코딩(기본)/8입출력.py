@@ -85,14 +85,43 @@ score_file.close()
 
 
 #입출력 공부3(피클)
-#wb는 w뒤에 b(바이너리)를 적어준 것. 피클은 항상 바이너리 정의를 해줘야함.
 import pickle
 #피클이라는 입출력 모듈이 있는데 이걸 써볼거야.
-profile_file = open("profile.pickle", "wb")
-profile = {"name" : "Park", "age" : 30, "hobby" : ["football", "golf", "coding"]}
+#피클은 txt처럼 일종의 파일 형태고, 모듈을 이용하면 사용 가능함.
+#wb는 w뒤에 b(바이너리)를 적어준 것. 피클은 항상 바이너리 정의를 해줘야함. 인코딩은 안해도 됨.
+# profile_file = open("profile.pickle", "wb")
+# profile = {"name" : "Park", "age" : 30, "hobby" : ["football", "golf", "coding"]}
+# print(profile)
+# pickle.dump(profile, profile_file) #profile 변수에 있는 정보를 피클파일에 저장하는 것.
+# profile_file.close()
+#피클 파일 읽어보기.
+profile_file = open("profile.pickle", "rb")
+profile = pickle.load(profile_file) #피클파일에 있는 정보를 profile 변수에 불러옴.
 print(profile)
-pickle.dump(profile, profile_file)
 profile_file.close()
+
+
+#입출력 공부4(with)
+#상대적으로 간결하게 파일을 열어서 입출력할 수 있음.
+with open("profile.pickle", "rb") as profile_file : 
+    print(pickle.load(profile_file)) #파일을 따로 close 해줄 필요 없이 간결하게 끝남.
+
+# with open("study.txt", "w", encoding="utf8") as study_file :
+#     study_file.write("I study hard to Python.")
+
+with open("study.txt", "r", encoding="utf8") as study_file :
+    print(study_file.read())
+
+
+#Quiz 풀이
+for i in range(1,51) :
+    with open("{0}Week.txt".format(i), "w", encoding="utf8") as new_file :
+        new_file.write(" - {0}Week weekly Report - \n Team : \n Name : \n Work : ".format(i))
+
+
+
+
+
 
 
 

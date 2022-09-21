@@ -105,7 +105,7 @@ gun = checkpoint_ret(gun, 2) #함수 사용시 함수 내에서 전역변수
 print("left gun : {0}".format(gun)) #함수 쓰고 나서 저장까지 됐음
 
 
-#퀴즈 풀이
+#Quiz 풀이
 def std_weight(height, gender) : 
     if gender == "M" :
         weight = round(height/100 * height/100 * 22, 2)
