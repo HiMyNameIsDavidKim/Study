@@ -36,15 +36,15 @@
 <br>
 
 ### [🤖ML](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML)
-  - [`Data Science`]
+  - [🧪`Data Science`]
 
-  - [`Vision`]
+  - [👀`Vision`]
   
-  - [`NLP`]
+  - [💬`NLP`]
 
-  - [`Voice`]
+  - [👄`Voice`]
 
-  - [`Prediction`]
+  - [🔮`Prediction`]
 
 <br>
 
