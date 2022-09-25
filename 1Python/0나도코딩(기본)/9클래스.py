@@ -1,5 +1,7 @@
 #클래스 공부1(기본)
 #스타크래프트 예시
+from pickle import FALSE
+
 name = "Marin"
 hp = 40
 damage = 5
@@ -103,6 +105,13 @@ class Unit :
         print("[normal unit move]")
         print("{0} : is move to {1} direction. [speed {2}]".format(self.name, location, self.speed))
 
+    def damaged(self, damage) : 
+        print("{0} : have damaged. [damaged {1}]".format(self.name, damage))
+        self.hp -= damage
+        print("{0} : now hp is {1}.".format(self.name, self.hp))
+        if self.hp <= 0 :
+            print("{0} : is destroyed.".format(self.name))
+
 class AttackUnit(Unit) : #괄호에 상속해줄 클래스 넣기. 
     def __init__(self, name, hp, speed, damage) :
         Unit.__init__(self, name, speed, hp) #정의하는 과정에서 상속 받겠다는 것을 표현함.
@@ -154,11 +163,172 @@ battlecruiser1 = FlyableAttackUnit("Battlecruiser", 500, 25, 3)
 vulture1.move("11 o'clock")
 battlecruiser1.fly(battlecruiser1.name, "9 o'clock")
 #지상 유닛은 무브, 공중 유닛은 플라이, 오버라이딩하면 하나로 통합시킬 수 있음.
-#142~144번째 줄 새로 작성함. 함수 안에서 무브로 재정의 해주는 것. 스킬네임 느낌.
+#142~144번째 줄 새로 작성함. 함수 안에서 무브로 재정의 해주는 것.
+#서로 관련없는 클래스 이지만, 유사한 함수를 이름을 같게 해줄 수 있는 거임.
 battlecruiser1.move("9 o'clock")
 
 
-#클래스 공부8(패스)
+#클래스 공부8(pass)
+#아무것도 안하고 일단 넘어간다는 의미의 코드
+class BuildingUnit(Unit) : 
+    def __init__(self, name, hp, location) : 
+        pass
+
+supply_depot1 = BuildingUnit("Supply_depot", 500, "7 o'clock")
+
+def game_start() : 
+    print("[Alarm] New game is started now.")
+
+def game_over() : 
+    pass
+
+game_start()
+game_over() #진짜 레알 아무것도 없는데 코드 에러는 없음.
+
+
+#클래스 공부9(super)
+#부모클래스에서 상속받을때 사용함. 클래스 이름 몰라도 걍 가져옴.
+#문제는 다중상속에서가 문제인데, 처음 상속받은 클래스 한테만 받음.
+#예를 들어 FlyableUnit(Unit, Flyable)이면 Unit 한테만 받음.
+class BuildingUnit(Unit) : 
+    def __init__(self, name, hp, location) : 
+            Unit.__init__(self, name, hp, 0)
+            self.location = location
+
+class BuildingUnit(Unit) : 
+    def __init__(self, name, hp, location) : 
+            super().__init__(name, hp, 0) #꼭 괄호쓰고 점 찍어야함. 셀프 안써도 됨.
+            self.location = location
+
+
+#클래스 공부10(예제1 스타크래프트 전반전)
+class Marine(AttackUnit) : 
+    def __init__(self) : 
+        AttackUnit.__init__(self, "Marine", 40, 1, 5)
+    
+    def stimpack(self) : 
+        if self.hp > 10 : 
+            self.hp -= 10
+            print("{0} : use stimpack. (HP decrease 10.".format(self.name))
+        else :
+            print("{0} : HP is not enough. Can not use stimpack".format(self.name))
+
+class Tank(AttackUnit) :
+    seize_developed = False 
+    def __init__(self) : 
+        AttackUnit.__init__(self, "Tank", 150, 1, 35)
+        self.seize_mode = False
+
+    def set_sieze_mode(self) : 
+        if Tank.seize_developed == False :
+            return
+        if self.seize_mode == False :
+            print("{0} : change to seize mode ON.".format(self.name))
+            self.damage *= 2
+            self.seize_mode = True
+        else :
+            print("{0} : change to seize mode OFF.".format(self.name))
+            self.damage /= 2
+            self.seize_mode = False
+
+class Wraith(FlyableAttackUnit) :
+    def __init__(self):
+        FlyableAttackUnit.__init__(self, "Wraith", 80, 20, 5)
+        self.clocked = False
+    
+    def clocking(self) :
+        if self.clocked == True :
+            print("{0} : change to clocking mode OFF.".format(self.name))
+            self.clocked = False
+        else : 
+            print("{0} : change to clocking mode ON.".format(self.name))
+            self.clocked = True
+            
+
+#클래스 공부11(예제2 스타크래프트 후반전)
+from random import *
+
+def game_start(): 
+    print("[Inform] New game is started.")
+
+def game_over():
+    print("Player : gg")
+    print("[Player] get out the game.")
+
+#실제 게임 시뮬레이션
+game_start()
+
+m1 = Marine()
+m2 = Marine()
+m3 = Marine()
+t1 = Tank()
+t2 = Tank()
+w1 = Wraith()
+
+#유닛들을 일괄 관리하기 위해 리스트에 추가하기.
+attack_units = []
+attack_units.append(m1)
+attack_units.append(m2)
+attack_units.append(m3)
+attack_units.append(t1)
+attack_units.append(t2)
+attack_units.append(w1)
+
+#유닛들을 특정 방향으로 이동시키기.
+for unit in attack_units :
+    unit.move("1 o'clock")
+
+#탱크 시즈모드를 개발하기.
+Tank.seize_developed = True
+print("[Inform] Tank seize mode develop is completed.")
+
+#공격 준비.
+for unit in attack_units :
+    if isinstance(unit, Marine) : #특정 클래스의 인스턴스인지 확인함.
+        unit.stimpack()
+    elif isinstance(unit, Tank) :
+        unit.set_sieze_mode()
+    elif isinstance(unit, Wraith) :
+        unit.clocking()
+
+#공격 명령하기.
+for unit in attack_units : 
+    unit.attack("1 o'clock")
+
+#피해 입은 상황 표현하기.
+for unit in attack_units : 
+    unit.damaged(randint(5, 21))
+
+#게임 종료
+game_over()
+
+
+#Quiz 풀이
+class House :
+    def __init__(self, location, house_type, deal_type, price, completion_year) : 
+        self.location = location
+        self.house_type = house_type
+        self.deal_type = deal_type
+        self.price = price
+        self.completion_year = completion_year
+
+    def show_detail(self) : 
+        print("{0} {1} {2} {3} {4}".format(self.location, self.house_type, self.deal_type, self.price, self.completion_year))
+
+houses = []
+h1 = House("GangNam", "Appartment", "Sell", "1B", 2010)
+h2 = House("Mapo", "Officetell", "Borrow", "0.5B", 2007)
+h3 = House("Songpa", "Billa", "Monthly", "500/50", 2000)
+houses.append(h1)
+houses.append(h2)
+houses.append(h3)
+
+print("There are {0} item now.".format(len(houses)))
+for house in houses :
+    house.show_detail()
+
+
+
 
 
 
