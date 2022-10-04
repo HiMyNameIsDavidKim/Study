@@ -23,7 +23,7 @@ attack(name, "1 o'clock", damage)
 attack(tank_name, "1 o'clock", tank_damage) #유닛이 수십 수백개 라면 계속 이렇게 쓸텐가?
 #클래스는 붕어빵틀처럼 형식이 있고, 재료를 넣으면 계속 찍어내줌.
 class Unit : #유닛이라는 클래스를 만들었음.
-    def __init__(self, name, hp, speed) : #기본적으로 이닛이라는 함수를 정의해야함. 이걸로 필요한 값들을 정의함.
+    def __init__(self, name, hp, speed) : #기본적으로 이닛이라는 함수(=메서드)를 정의해야함. 이걸로 필요한 값들을 정의함.
         self.hp = hp
         self.name = name #위에서 전달받은 값을 self.name에 저장하는 과정.
         self.speed = speed
