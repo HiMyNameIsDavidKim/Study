@@ -1,6 +1,6 @@
 class Solution :
     def solution(self, Kor, Math, Eng) :
-        title = "Grade Table"
+        title = "[Grade Table]"
         total = Kor + Math + Eng
         avg = round(total/3)
         grade = ""
