@@ -3,9 +3,9 @@
 ### [💪Basic](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic)
   - [`알고리즘`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
 
-  - [`자료구조`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data Structure)
+  - [`자료구조`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
   
-  - [`CS`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer Science)
+  - [`CS`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
 
   - [`대수학`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
 
