@@ -1,15 +1,15 @@
 # 📚Study📚
 
 ### [💪Basic](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic)
-  - [`알고리즘`]
+  - [`알고리즘`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
 
-  - [`자료구조`]
+  - [`자료구조`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data Structure)
   
-  - [`CS`]
+  - [`CS`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer Science)
 
-  - [`대수학`]
+  - [`대수학`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
 
-  - [`통계학`]
+  - [`통계학`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
 
 <br>
 
