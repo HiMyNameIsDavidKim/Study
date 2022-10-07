@@ -16,6 +16,7 @@
          10원 : 2개
       ********************************************************
 """
+
 # #Greedy 개념을 반영하지 않은 코드
 # class Solution :
 #     def solution(self, money) :
@@ -71,21 +72,55 @@
 #     print(solution.solution(money))
 
 
-#더 간결한 버전
+# #더 간결한 버전
+# class Solution :
+#     def solution(self, money) :
+#         title = " ### Money Changer ### "
+#         aster = "*"*30
+#         answer = f"요청금액 : {money:,} 원"
+#         unit = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+#         count = 0
+#         result = (
+#             f"{title}\n{aster}\n{answer}\n"
+#         )
+#         for i in unit :
+#             count = money // i
+#             money %= i
+#             result += f"{i}원 : {count}\n"
+#         result += aster
+#         return result
+
+# if __name__ == "__main__" :
+#     solution = Solution()
+#     money = int(input("Please input money : "))
+#     print(solution.solution(money))
+
+
+#딕셔너리를 활용한 버전
 class Solution :
     def solution(self, money) :
         title = " ### Money Changer ### "
         aster = "*"*30
         answer = f"요청금액 : {money:,} 원"
         unit = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
-        count = 0
+        dc = {}
         result = (
             f"{title}\n{aster}\n{answer}\n"
         )
         for i in unit :
-            count = money // i
+            cnt = money // i
+            dc[i] = cnt
             money %= i
-            result += f"{i}원 : {count}\n"
+
+        #딕셔너리의 키와 벨류를 다 뽑고 싶은 경우 사용.
+        #딕셔너리를 바로 사용할 수 없음. items 써서 사용해야함.
+        #딕셔너리는 아이템만 불러내고, 아이템은 키랑 벨류만 불러냄.
+        for k,v in dc.items() :
+            if k >= 1000 :
+                result += f"{k}원 : {v}매\n"
+            elif k < 1000 :
+                result += f"{k}원 : {v}개\n"
+
         result += aster
         return result
 
@@ -93,6 +128,7 @@ if __name__ == "__main__" :
     solution = Solution()
     money = int(input("Please input money : "))
     print(solution.solution(money))
+
 
 
 
