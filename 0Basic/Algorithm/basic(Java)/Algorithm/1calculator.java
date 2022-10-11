@@ -9,19 +9,24 @@ class Solution{
     public static void main(String[] args) {
         Solution solution = new Solution();
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner2 = new Scanner(System.in);
-        Scanner scanner3 = new Scanner(System.in);
-        System.out.println(solution.solution(scanner, scanner2, scanner3));
-    }
-    String solution(Scanner scanner, Scanner scanner2, Scanner scanner3){
-        String title = " ### Calculator ### ";
         System.out.println("First number : ");
         int a = scanner.nextInt();
         System.out.println("+, -, *, /, % : ");
-        String b = scanner2.next();
+        String b = scanner.next();
         System.out.println("Second number : ");
         int c = scanner.nextInt();
-        return title;
+        System.out.println(solution.solution(a, b, c));
+    }
+    String solution(int a,String b,int c){
+        String title = " ### Calculator ### ";
+        int answer = 0;
+        if(b.equals("+")){answer = a + c;} //==는 숫자 비교만 되고, 스트링 비교는 이렇게 해야함..ㅎㅎ
+        else if(b.equals("-")){answer = a - c;}
+        else if(b.equals("*")){answer = a * c;}
+        else if(b.equals("/")){answer = a / c;}
+        else if(b.equals("%")){answer = a % c;}
+        else{System.out.println("Wrong input.");}
+        return String.format("%s\n%d %s %d = %d", title, a, b, c, answer);
     }
 }
 

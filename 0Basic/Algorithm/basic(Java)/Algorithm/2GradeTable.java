@@ -1,0 +1,9 @@
+package Algorithm;
+
+class Solution{
+    
+}
+
+
+
+
