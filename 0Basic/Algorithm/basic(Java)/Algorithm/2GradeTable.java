@@ -35,7 +35,8 @@ class SolutionGT{
         +"Kor Math Eng Total Avg Grade\n"
         +"*******************************\n"
         +"%d %d %d %d %.1f %s\n"
-        +"*******************************\n", title, Kor, Math, Eng, total, avg, grade);
+        +"*******************************"
+        , title, Kor, Math, Eng, total, avg, grade);
     }
 }
 

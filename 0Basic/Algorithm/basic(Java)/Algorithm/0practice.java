@@ -1,26 +1,15 @@
+//자바의 솔루션 클래스 기본형
+
 package Algorithm;
 import java.util.*;
 
-class Solution2{
+class Solution0{
     public static void main(String[] args) {
-        Solution2 solution2 = new Solution2();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("First number : ");
-        int a = scanner.nextInt();
-        System.out.println("+, -, *, /, % : ");
-        String b = scanner.next();
-        System.out.println("Second number : ");
-        int c = scanner.nextInt();
-        System.out.println(solution2.solution2(a, b, c));
+        Solution0 solution = new Solution0();
+        System.out.println(solution.solution());
     }
-    String solution2(int a, String b, int c){
-        String title = "### Calculator ###";
-        int answer = 0;
-        if(b.equals("+")){answer = a + c;}
-        else if(b.equals("-")){answer = a - c;}
-        else if(b.equals("*")){answer = a * c;}
-        else if(b.equals("/")){answer = a / c;}
-        else if(b.equals("%")){answer = a % c;}
+    String solution(){
+        String title = "Hello World!";
         return title;
     }
 }
