@@ -62,9 +62,9 @@ class LastDay {
 
     int checkLeapYear(int year){
         int day = 28;
-        if(year%4 == 0){day = 29;}
-        if(year%100 == 0){day = 28;}
         if(year%400 == 0){day = 29;}
+        else if(year%100 == 0){day = 28;}
+        else if(year%4 == 0){day = 29;}
         return day;
     }
 }
