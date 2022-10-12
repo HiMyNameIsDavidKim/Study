@@ -1,7 +1,7 @@
 package Algorithm;
 import java.util.*;
 
-class SolutionBMI {
+class SolutionBMI{
     public static void main(String[] args) {
         SolutionBMI solution = new SolutionBMI();
         Scanner scanner = new Scanner(System.in);
