@@ -62,7 +62,7 @@ class LastDay {
 
     int checkLeapYear(int year){
         int day = 28;
-        if(year%400 == 0){day = 29;}
+        if(year%400 == 0){day = 29;} //필터조건은 항상 큰것에서 작은것으로 가야한다.
         else if(year%100 == 0){day = 28;}
         else if(year%4 == 0){day = 29;}
         return day;
