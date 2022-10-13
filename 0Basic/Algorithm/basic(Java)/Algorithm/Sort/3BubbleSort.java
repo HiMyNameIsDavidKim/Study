@@ -44,6 +44,16 @@ class BubbleSort{
 //     }
 // }
 
+// //버블소트의 기본 개념
+// for(int i = 0; i < arr.length; i++){ //가장 작은 수가 올 자리
+//     for (int j = arr.length - 1; j > i; j--){ //뒤에서부터 스캔
+//         if (arr[j] < arr[j-1]){ //뒤에 수가 작으면 앞으로 계속 옮겨줌
+//             int t = arr[j]; 
+//             arr[j] = arr[j-1];
+//             arr[j-1] = t;
+//         }
+//     }
+// }
 
 
 package Algorithm.Sort;
@@ -56,20 +66,20 @@ class BubbleSort{
 
     void solution(){
         int[] arr = createArray();
-        int[] arr2 = sortArray(arr);
-        printArray(arr2);
-    }
-    int createRandomNumber(){   
-        return (int)((Math.random()*10)+1); //1~10까지 랜덤
+        arr = sortArray(arr);
+        printArray(arr);
     }
     int[] createArray(){
         int[] arr = new int[10];
         for(int i = 0; i < arr.length; i++){
-            arr[i] = createRandomNumber();
+            arr[i] = (int)((Math.random()*10)+1); //1~10까지 랜덤
         }
         return arr;
     }
     int[] sortArray(int[] arr){
+        int t = arr[0];
+        arr[0] = arr[0+1];
+        arr[0+1] = t;
         return arr;
     }
     void printArray(int[] arr){
