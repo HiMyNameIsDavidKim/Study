@@ -5,12 +5,27 @@ import java.util.*;
 
 class Solution0{
     public static void main(String[] args) {
-        Solution0 solution = new Solution0();
-        System.out.println(solution.solution());
+        new Solution0().solution();
     }
-    String solution(){
-        String title = "Hello World!";
-        return title;
+
+    void solution(){
+        int[] arr = createArray();
+        arr = sortArray(arr);
+        printArray(arr);
+    }
+    int createRandomNumber(){
+        return (int)((Math.random()*10)+1);
+    }
+    int[] createArray(){
+        int[] arr = new int[10];
+        for(int i=0;i>arr.length;i++){arr[i]=createRandomNumber();}
+        return arr;
+    }
+    int[] sortArray(int[] arr){
+        return arr;
+    }
+    void printArray(int[] arr){
+        System.out.println(Arrays.toString(arr));
     }
 }
 
