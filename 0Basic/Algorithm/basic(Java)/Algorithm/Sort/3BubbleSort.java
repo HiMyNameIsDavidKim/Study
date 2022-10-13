@@ -77,9 +77,6 @@ class BubbleSort{
         return arr;
     }
     int[] sortArray(int[] arr){
-        int t = arr[0];
-        arr[0] = arr[0+1];
-        arr[0+1] = t;
         return arr;
     }
     void printArray(int[] arr){
