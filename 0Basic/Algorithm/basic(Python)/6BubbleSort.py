@@ -7,7 +7,7 @@ class Solution :
         for i in keys : 
             dc[i] = random.randint(1,100)
 
-        print(f" ### Bubble Sort ### ")
+        print(f" ### Create 5 Random Numbers ### ")
         print(f"*"*30)
 
         for k,v in dc.items() : 
