@@ -73,10 +73,22 @@ class BubbleSort{
         int[] arr = new int[10];
         for(int i = 0; i < arr.length; i++){
             arr[i] = (int)((Math.random()*10)+1); //1~10까지 랜덤
+            for(int j = 0; j < i; j++){ //중복제거 하는 방법.
+                if(arr[j]==arr[i]){i--;}
+            }
         }
         return arr;
     }
-    int[] sortArray(int[] arr){
+    int[] sortArray(int[] arr){ //1~10으로 정렬하자.
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr.length-1;j++){
+                if(arr[j] > arr[j+1]){
+                    int t = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = t;
+                }
+            }
+        }
         return arr;
     }
     void printArray(int[] arr){
