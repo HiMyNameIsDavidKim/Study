@@ -1,6 +1,19 @@
 package Algorithm;
 import java.util.*;
 
+// Java에서 가장 기본적인 형태의 구조
+// class Solution1{
+//     public static void main(String[] args) {
+//         Solution1 solution1 = new Solution1();
+//         System.out.println(solution1.solution());
+//     }
+
+//     String solution(){
+//             String title = "Hello World!";
+//             return title;
+//     }
+// }
+
 class Solution0{
     public static void main(String[] args) {
         new Solution0().solution();
