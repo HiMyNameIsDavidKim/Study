@@ -1,4 +1,4 @@
-# Computer Science(컴퓨터과학)
+# Computer Science
 
 
 

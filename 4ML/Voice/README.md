@@ -1,4 +1,4 @@
-# Voice(음성)
+# Voice
 
 
 

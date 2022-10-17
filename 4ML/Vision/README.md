@@ -1,4 +1,4 @@
-# Vision(비전)
+# Vision
 
 
 
