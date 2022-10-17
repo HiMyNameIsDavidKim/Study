@@ -7,14 +7,3 @@ def price_morning(people):
 def price_soldier(people):
     print(f"{people}ea soldier ticket price is {people * 4000}Won.")
 
-
-
-
-
-
-
-
-
-
-
-    
