@@ -1,21 +1,39 @@
 class Bmi(object):
-    def __init__(self, name, m, kg):
+    def __init__(self, name, m, kg): #입력
         self.name = name
         self.m = m
         self.kg = kg
+        self.index = ""
 
-    def printIndex(self):
+    def execute(self):
+        self.index = self.getIndex()
+        self.printBmi()
+
+    def getBmi(self): #비즈니스 로직1
+        kg = self.kg
+        m = self.m
+        return (kg) / (m ** 2)
+
+    def getIndex(self): #비즈니스 로직2
+        index = ""
+        bmi = self.getBmi()
+        if bmi >= 35: index = "고도 비만"
+        elif bmi >= 30: index = "중도 비만"
+        elif bmi >= 25: index = "경도 비만"
+        elif bmi >= 23: index = "과체중"
+        elif bmi >= 18.5: index = "정상"
+        elif bmi < 18.5: index = "저체중"
+        return index
+
+    def printBmi(self): #출력
+        name = self.name
+        m = self.m
+        kg = self.kg
+        index = self.index
         title = "### Body Mass Index ###"
         aster = "*"*30
         schema = "이름 키(cm) 몸무게(kg) 비만도"
-        bmi = (self.kg) / (self.m * self.m)
-        if bmi >= 35 : self.index = "고도 비만"
-        elif bmi >= 30 : self.index = "중도 비만"
-        elif bmi >= 25 : self.index = "경도 비만"
-        elif bmi >= 23 : self.index = "과체중"
-        elif bmi >= 18.5 : self.index = "정상"
-        elif bmi < 18.5 : self.index = "저체중"
-        result = f"{self.name} {self.m*100} {self.kg} {self.index}"
+        result = f"{name} {m*100} {kg} {index}"
         print(f"{title}\n{aster}\n{schema}\n{aster}\n{result}\n{aster}")
 
 if __name__ == "__main__":
@@ -23,4 +41,4 @@ if __name__ == "__main__":
     m = float(input("Please input your height(m) : "))
     kg = int(input("Please input your weight(kg) : "))
     bmi = Bmi(name, m, kg)
-    bmi.printIndex()
+    bmi.execute()
