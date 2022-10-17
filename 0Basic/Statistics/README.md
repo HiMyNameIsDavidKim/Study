@@ -1,4 +1,4 @@
-# Statistics(통계학)
+# Statistics
 
 
 

@@ -1,4 +1,4 @@
-# Algebra(대수학)
+# Algebra
 
 
 
