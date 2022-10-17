@@ -3,4 +3,5 @@ class Calculator: #클래스
         pass
 
 if __name__ == "__main__":
-    pass
+    calculator = Calculator()
+    print(calculator.set_data())
