@@ -5,11 +5,16 @@ class Calculator(object): #클래스, (object)를 써줌으로써 클래스 객�
         self.num2 = num2
 
     def calc(self): #메서드
-        if self.op == "+": print(f"{self.num1} {self.op} {self.num2} = {self.num1+self.num2}") #클래스 안에서는 언제나 셀프로 해줘야함.
-        elif self.op == "-": print(f"{self.num1} {self.op} {self.num2} = {self.num1-self.num2}")
-        elif self.op == "*": print(f"{self.num1} {self.op} {self.num2} = {self.num1*self.num2}")
-        elif self.op == "/": print(f"{self.num1} {self.op} {self.num2} = {self.num1/self.num2}")
-        elif self.op == "%": print(f"{self.num1} {self.op} {self.num2} = {self.num1%self.num2}")
+        num1 = self.num1
+        op = self.op
+        num2 = self.num2
+        if op == "+": result = num1 + num2 #클래스 안에서는 언제나 셀프로 해줘야함.
+        elif op == "-": result = num1 - num2
+        elif op == "*": result = num1 * num2
+        elif op == "/": result = num1 / num2
+        elif op == "%": result = num1 % num2
+        else: result = "Input Error."
+        print(f"{num1} {op} {num2} = {result}")
 
 if __name__ == "__main__":
     num1 = int(input("First Number : "))
