@@ -1,4 +1,4 @@
-# Data Structure(자료 구조)
+# Data Structure
 
 ## `[자료구조]`
 * 자료구조는 말그대로 자료(data)를 담는 구조이다. (=Data Structure)
