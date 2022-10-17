@@ -5,9 +5,9 @@ class Bmi(object):
         self.kg = kg
         self.index = ""
 
-    def execute(self):
+    def execute(self): #로직의 순서
         self.getIndex()
-        self.printBmi()
+        self.printIndex()
 
     def getBmi(self): #비즈니스 로직1
         kg = self.kg
@@ -25,7 +25,7 @@ class Bmi(object):
         elif bmi < 18.5: index = "저체중"
         self.index = index
 
-    def printBmi(self): #출력
+    def printIndex(self): #출력
         name = self.name
         m = self.m
         kg = self.kg
