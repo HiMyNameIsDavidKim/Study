@@ -16,10 +16,12 @@ class Calculator(object): #클래스, (object)를 써줌으로써 클래스 객�
         else: result = "Input Error."
         print(f"{num1} {op} {num2} = {result}")
 
-if __name__ == "__main__":
-    num1 = int(input("First Number : "))
-    op = input("Please choose Operator(+,-,*,/,%) : ")
-    num2 = int(input("Second Number : "))
-    calculator = Calculator(num1, op, num2)
-    calculator.calc()
-    
+    @staticmethod #데코레이터(@)를 붙여서 if main에 써야할걸 여기다 쓸 수 있음. 
+    def main():
+        num1 = int(input("First Number : "))
+        op = input("Please choose Operator(+,-,*,/,%) : ")
+        num2 = int(input("Second Number : "))
+        calculator = Calculator(num1, op, num2)
+        calculator.calc()
+        
+Calculator.main() #main을 실행하는 방법

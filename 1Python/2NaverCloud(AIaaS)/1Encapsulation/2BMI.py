@@ -6,6 +6,7 @@ class Bmi(object):
         self.index = ""
 
     def execute(self): #로직의 순서
+        self.index = self.getIndex()
         self.getIndex()
         self.printIndex()
 
@@ -36,9 +37,12 @@ class Bmi(object):
         result = f"{name} {m*100} {kg} {index}"
         print(f"{title}\n{aster}\n{schema}\n{aster}\n{result}\n{aster}")
 
-if __name__ == "__main__":
-    name = input("Please input your name : ")
-    m = float(input("Please input your height(m) : "))
-    kg = int(input("Please input your weight(kg) : "))
-    bmi = Bmi(name, m, kg)
-    bmi.execute()
+    @staticmethod
+    def main():
+        name = input("Please input your name : ")
+        m = float(input("Please input your height(m) : "))
+        kg = int(input("Please input your weight(kg) : "))
+        bmi = Bmi(name, m, kg)
+        bmi.execute()
+
+Bmi.main()
