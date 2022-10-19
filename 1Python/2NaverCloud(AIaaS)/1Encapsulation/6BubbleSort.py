@@ -5,18 +5,18 @@ import random
 class Bubble(object):
     def __init__(self):
         pass
-    def process(self):
-        self.print_()
-        pass
+
     def ext_rand(self):
-        return random.sample(range(1,11),1)[0]
-    def print_(self):
-        print(self.ext_rand())
-        pass
+        return random.sample(range(1,101),10)
+
+    def print(self):
+        for i in self.ext_rand():
+            if i % 2 == 0 : print(i)
+            elif i % 2 != 0 : 
 
     @staticmethod
     def main():
         bubble = Bubble()
-        bubble.process()
+        bubble.print()
 
 Bubble.main()
