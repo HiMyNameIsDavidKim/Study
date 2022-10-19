@@ -15,13 +15,14 @@ class Search_num(object):
     def print(self):
         r1 = RandomList()
         my_list = r1.get_rand(10,100,10)
+        print(my_list)
         for i in my_list:
-            if i % int(self.input_num) == 0: print(i)
+            if i % self.input_num == 0: print(i)
             else: pass
 
     @staticmethod
     def main():
-        input_num = input("Please input number : ")
+        input_num = int(input("Please input number : "))
         searchnum = Search_num(input_num)
         searchnum.print()
 
