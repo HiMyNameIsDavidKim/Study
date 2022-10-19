@@ -10,12 +10,10 @@ class RandomList(object):
         return random.sample(range(start,end),count)
 
     def print(self):
-        self.get_rand(10, 100, 10)
-
+        print(self.get_rand(10, 100, 10))
 
     @staticmethod
     def main():
         randlist = RandomList()
-        randlist.print()
 
 RandomList.main()

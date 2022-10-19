@@ -9,22 +9,20 @@ ex) [12, 23, 48,...,]
 from random_list import RandomList
 
 class Search_num(object):
-    def __init__(self,req):
-        self.req = req
-        pass
+    def __init__(self,input_num):
+        self.input_num = input_num
 
     def print(self):
         r1 = RandomList()
         my_list = r1.get_rand(10,100,10)
         for i in my_list:
-            if i % int(self.req) == 0: print(i)
+            if i % int(self.input_num) == 0: print(i)
             else: pass
-        pass
 
     @staticmethod
     def main():
-        req = input("Please input number : ")
-        searchnum = Search_num(req)
+        input_num = input("Please input number : ")
+        searchnum = Search_num(input_num)
         searchnum.print()
 
 Search_num.main()
