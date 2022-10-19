@@ -12,10 +12,8 @@ class Bubble(object):
     def print(self):
         cnt = 0
         for i in self.get_rand(10, 100, 10):
-            if i % 2 == 0:
-                print(i)
-                cnt += 1
-            if cnt != 10: pass
+            if i % 2 == 0: print(i)
+            if i % 2 == 0: print(i)
 
     @staticmethod
     def main():
