@@ -10,7 +10,6 @@ Fruits No.3 : mango
 class Fruits():
     def __init__(self):
         self.menu = ["banana", "apple", "mango"]
-        pass
     
     def print_menu(self):
         title = f"### Fruits number tag ###"

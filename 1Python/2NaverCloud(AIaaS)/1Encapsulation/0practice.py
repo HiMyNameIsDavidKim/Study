@@ -1,12 +1,19 @@
 #파이썬 작성에 가장 기본적인 형태.
 
-class Solution:
-    def solution(self):
-        print(f"Hello world!")
+class Practice():
+    def __init__(self) -> None:
+        pass
+    def process(self):
+        pass
+    def print_(slef):
+        pass
 
-if __name__ == "__main__":
-    solution = Solution()
-    solution.solution()
+    @staticmethod
+    def main():
+        practice = Practice()
+        practice.process()
+
+Practice.main()
 
 
 
