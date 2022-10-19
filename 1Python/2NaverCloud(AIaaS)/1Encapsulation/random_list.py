@@ -2,7 +2,7 @@ import random
 # 중복 없는 랜덤 : random.sample(range(1,11),5)
 # 중복 있는 랜덤 : random.choices(range(1,11),k=5)
 
-class Bubble(object):
+class RandomList(object):
     def __init__(self):
         pass
 
@@ -19,7 +19,7 @@ class Bubble(object):
 
     @staticmethod
     def main():
-        bubble = Bubble()
-        bubble.print()
+        randlist = RandomList()
+        randlist.print()
 
-Bubble.main()
+RandomList.main()
