@@ -17,7 +17,7 @@ class Fruits():
         title = f"### Fruits number tag ###"
         aster = f"*"*30
         result = f""
-        menu = self.menu
+        menu = self.menuㅇ
         for i in range(0,len(menu)):
             result += f"Fruits No.{i+1} : {menu[i]}\n"
         print(f"{title}\n{aster}\n{result}{aster}")
