@@ -21,12 +21,15 @@ class Contact(object):
 
     @staticmethod
     def get_contact(ls):
-        for i in ls:
-            i.print_info()
+        [i.print_info() for i in ls]
 
     @staticmethod
-    def delete_contact(self):
-        pass
+    def delete_contact(ls, name):
+        # for i, j in enumerate(ls):
+        #     if j.name == name:
+        #         del ls[i]
+
+        [ls.pop(i) for i, j in enumerate(ls) if j.name == name]
 
     @staticmethod
     def print_menu():
@@ -50,9 +53,10 @@ class Contact(object):
                 Contact.get_contact(ls)
             elif menu == 3:
                 print(" ### 삭제 ### ")
-                Contact.delete_contact()
+                name = input("Delete who? : ")
+                Contact.delete_contact(ls, name)
             elif menu == 4:
-                print(" ### 종료 ### ")
+                print(" ### End ### ")
                 break
             else:
                 print("없는 메뉴입니다. 다시 선택하세요")
