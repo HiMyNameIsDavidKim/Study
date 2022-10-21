@@ -26,11 +26,17 @@ class Calculator(object):
         while True:
             menu = print_menu()
             if menu == 0: break
-            elif menu == 1: pass
-        num1 = int(input("First Number : "))
-        op = input("Please choose Operator(+,-,*,/,%) : ")
-        num2 = int(input("Second Number : "))
-        calculator = Calculator(num1, op, num2)
-        calculator.calc()
+            elif menu == 1:
+                print("등록")
+            elif menu == 2:
+                print("목록")
+            elif menu == 3:
+                print("검색")
+            elif menu == 4:
+                print("수정")
+            elif menu == 5:
+                print("삭제")
+            else: print("There is no menu. Please type again.")
+
         
 Calculator.main()
