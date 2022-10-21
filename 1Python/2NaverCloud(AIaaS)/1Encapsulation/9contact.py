@@ -28,8 +28,7 @@ class Contact(object):
         # for i, j in enumerate(ls):
         #     if j.name == name:
         #         del ls[i]
-
-        [ls.pop(i) for i, j in enumerate(ls) if j.name == name]
+        del ls[[i for i, j in enumerate(ls) if j.name == name][0]]
 
     @staticmethod
     def print_menu():
