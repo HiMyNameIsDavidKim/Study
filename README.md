@@ -31,7 +31,7 @@
 <br>
 
 ## 📊Data Analyst
-  - [`SQL`]
+  - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
   - [`R`]
   
