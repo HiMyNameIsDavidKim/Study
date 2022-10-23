@@ -26,10 +26,10 @@
 
 ### [데이터 모델링의 특징]
 * 3요소 : Things(어떤 것), Attributes(성격), Relationships(관계)
-* 현실세계 -> 추상화, 단순화, 정확화 -> 데이터 모델<br><br>
+* 현실세계 -> 추상화, 단순화, 정확화 -> 데이터 모델
 * ERD 작업순서
-* <img width="296" alt="스크린샷 2022-10-23 오후 4 30 34" src="https://user-images.githubusercontent.com/112922638/197379889-0867dd82-cd06-49ed-a50e-91374577f4c8.png">
     * 1.엔터티 그림 2.엔터티 배치 3.엔터티 관계 설정 4.관계명 기술 5.관계의 참여도 기술 6.관계 필수여부 기술
+* <img width="296" alt="스크린샷 2022-10-23 오후 4 30 34" src="https://user-images.githubusercontent.com/112922638/197379889-0867dd82-cd06-49ed-a50e-91374577f4c8.png"> <br><br>
 
 
 
