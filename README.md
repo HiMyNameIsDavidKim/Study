@@ -27,7 +27,7 @@
 <br>
 
 ## ☕️Java
-  - [`기초문법`]
+  - [`기초문법`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
 
   - [`인공지능 활용`]
 
