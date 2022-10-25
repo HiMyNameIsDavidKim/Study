@@ -1,6 +1,6 @@
 # NaverCloud(AIaaS)
 
-## `[AI PC Set-up]`
+## `[Set-up]`
 * JDK 11 설치, JDK 11 환경변수 설정
     * 한국의 인공지능은 JDK 11이 표준이다.
 * 아나콘다 설치, 아나콘다 환경변수 설정
