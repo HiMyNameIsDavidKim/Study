@@ -51,7 +51,7 @@
 
 
 
-## `[AI Architect]`
+## `[AI Architecture]`
 
 ### [CRUD]
 * 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능.
