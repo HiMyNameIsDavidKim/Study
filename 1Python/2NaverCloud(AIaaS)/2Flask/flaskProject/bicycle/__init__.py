@@ -1,8 +1,7 @@
-from titanic.template import Plot
-from titanic.views import TitanicController
+from bicycle.views import BicycleController
 from util.common import Common
 
-api = TitanicController()
+api = BicycleController
 while True:
     menu = Common.menu(["종료", "시각화", "모델링", "머신러닝", "배포"])
     if menu == "0":
@@ -10,8 +9,6 @@ while True:
         break
     elif menu == "1":
         print(" ### 시각화 ### ")
-        plot = Plot("train.csv")
-        plot.draw_survived()
     elif menu == "2":
         print(" ### 모델링 ### ")
     elif menu == "3":

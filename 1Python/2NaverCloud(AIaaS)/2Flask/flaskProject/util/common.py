@@ -14,6 +14,6 @@ class Common(object):
                 if j.name == name][0]]
 
     @staticmethod
-    def print_menu(ls):
+    def menu(ls):
         [print(f"{i}.{j}") for i,j in enumerate(ls)]
-        return int(input("메뉴선택 : "))
+        return input("메뉴선택 : ")
