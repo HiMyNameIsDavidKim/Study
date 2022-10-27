@@ -134,8 +134,9 @@
 
 ### [SQL 언어 종류]
 * DML(Data Manipulation) : 데이터 조작. 검색 등록 수정 삭제
-    * SELECT(검색)
-    * INSERT(등록)
+    * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
+        * SELECT DISTINCT : 테이블에서 교유한 값을 불러옴.
+    * INSERT(등록) : 
     * UPDATE(수정)
     * DELETE(삭제)
 * DDL(Data Definition) : 데이터 정의. 생성 삭제 변경 데이터만제거
