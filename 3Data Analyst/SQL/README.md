@@ -143,7 +143,6 @@
     * DROP(삭제)
     * ALTER(변경)
     * TRUNCATE(데이터만제거)
-    * 데이터 유형
 * DCL(Data Control) : 데이터 제어 및 권한 관리. 부여 박탈
     * GRANT(부여)
     * REVOKE(박탈)

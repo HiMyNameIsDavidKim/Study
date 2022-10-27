@@ -35,7 +35,15 @@ class TitanicModel(object):
 
     @staticmethod
     def create_train(this) -> object:
-        pass
+        return this.train.drop('Survived', axis=1)
 
-    def create_label(self):
-        pass
+    @staticmethod
+    def create_label(this) -> object:
+        return this.train['Survived']
+
+    @staticmethod
+    def drop_features(this, *feature) -> object: # 자료구조 객체를 '*'으로 표시한다.
+        for i in feature:
+            this.train = this.train.drop(i, axis=1)
+            this.test = this.test.drop(i, axis=1)
+        return this
