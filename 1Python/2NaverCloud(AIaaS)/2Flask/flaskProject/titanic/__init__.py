@@ -1,4 +1,3 @@
-from titanic.models import TitanicModel
 from titanic.template import Plot
 from titanic.views import TitanicController
 from util.common import Common
@@ -12,18 +11,19 @@ if __name__ == "__main__":
             break
         elif menu == "1":
             print(" ### 시각화 ### ")
-            model = TitanicModel()
-            print_ = model.new_model("train.csv")
-            print(f"Type : {type(print_)}")
-            print(f"Columns : {print_.columns}")
-            print(f"Head : {print_.head}")
-            print(f"Null수 : {print_.isnull().sum()}")
-            #plot = Plot("train.csv")
-            #plot.draw_sex()
-            #Null Memo : Age 177ea, Cabin 687ea, Embarked 2ea
+            plot = Plot("train.csv")
+            plot.draw_survived()
+            plot.draw_pclass()
+            plot.draw_sex()
+            plot.draw_embarked()
         elif menu == "2":
             print(" ### 모델링 ### ")
+            df = api.modeling('train.csv', 'test.csv')
         elif menu == "3":
             print(" ### 머신러닝 ### ")
+            df = api.learning('train.csv', 'test.csv')
+        elif menu == "4":
+            print(" ### 배포 ### ")
+            df = api.submit('train.csv', 'test.csv')
         else:
             print(" ### 해당 메뉴 없음 ### ")

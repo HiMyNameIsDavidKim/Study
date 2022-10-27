@@ -11,14 +11,25 @@ class TitanicController(object):
     def __str__(self):
         return f""
 
-    def preprocess(self) -> object: #전처리
+    def preprocess(self, train, test) -> object: # 전처리
+        model = self.model
+        this = self.dataset
+        this.train = model.new_model(train)
+        this.test = model.new_model(test)
+        this.id = this.test['PassengerId']
+        # columns 편집과정
+
+        return this
+
+    def modeling(self, train, test) -> object: # 모델 생성
+        model = self.model
+        this = self.preprocess(train, test)
+        this.label = model.create_label(this)
+        this.train = model.create_train(this)
+        return this
+
+    def learning(self, train, test): # 머신러닝
         pass
 
-    def modeling(self) -> object: #모델 생성
-        self.preprocess
-
-    def learning(self): #머신러닝
-        pass
-
-    def submit(self): #제출
+    def submit(self, train, test): # 제출
         pass
