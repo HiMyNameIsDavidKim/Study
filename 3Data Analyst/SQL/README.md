@@ -133,19 +133,19 @@
 * 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.<br><br>
 
 ### [SQL 언어 종류]
-* DML(Data Manipulation) : 데이터 조작. 검색 등록 수정 삭제
+* DML(Data Manipulation) : 데이터 조작. (검색 등록 수정 삭제)
     * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
         * SELECT DISTINCT : 테이블에서 특정 컬럼을 중복제거 후 가져옴.
     * INSERT(등록) : 테이블에 새로운 데이터를 삽입함.
     * UPDATE(수정) : 테이블에 특정 컬럼의 값을 수정함. (VALUES랑 같이 써야함.)
     * DELETE(삭제) : 테이블에 데이터 행 전체를 삭제함.
-* DDL(Data Definition) : 데이터 정의. 생성 삭제 변경 데이터만제거
+* DDL(Data Definition) : 데이터 정의. (생성 삭제 변경 데이터만제거)
     * CREATE(정의) : 새로운 테이블 생성.
     * ALTER(변경) : 
     * DROP(삭제)
     * RENAME(이름 변경)
     * TRUNCATE(테이블 초기화)
-* DCL(Data Control) : 데이터 제어 및 권한 관리. 부여 박탈
+* DCL(Data Control) : 데이터 제어 및 권한 관리. (부여 박탈)
     * GRANT(부여)
     * REVOKE(박탈)
     * COMMIT(트랜잭션 작업 결과 반영)
@@ -155,9 +155,10 @@
     * ROLLBACK(트랜잭션 작업 취소)
 * 그 외
     * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행. (여기서 in이 나오면 or 조건이다.)
-    * is null : 빈값. (반대. is not null)
-    * LIKE : 특정 글자가 포함된 값을 보고 싶을 때.
+    * IS NULL : 빈값. NULL에 연산 시 NULL 리턴함. (반대. IS NOT NULL)
+    * LIKE : 특정 글자가 포함된 값을 보고 싶을 때 사용.
     * ORDER BY : 정렬 순서 지정. (ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
+    * count(컬럼명) : null 제외한 행 수 카운트. (count(*)은 전체 행 카운트)
     <br><br>
 
 ### [DDL의 특징]
@@ -166,7 +167,7 @@
     * date : 날짜형
     * varchar2 : 가변길이 문자열
     * char : 고정된 길이 문자열
-* 제약조건(CONSTRAINT) : 
+* 제약조건(CONSTRAINT) : 컬럼 크리에이트 시 뒤에 적어서 제약을 걸어줌.
     * default : 기본값 지정 가능
     * not null : null 입력 시 에러
     * primary key : 기본키 지정 / forigner key : 외래키 지정
