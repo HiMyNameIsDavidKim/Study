@@ -37,10 +37,6 @@
 * 객체지향에서 값은 크게 property(포멧), information(처리 완료), data(처리 전) 3가지로 존재한다.
     * constructor = property, information processing = information, static = data<br><br>
 
-### [Refactoring]
-* 결과의 변경 없이 코드의 구조를 재조정하는 것.
-* 마틴 파일러의 '리팩터링 패턴'<br><br>
-
 
 
 ## `[Architecture]`
@@ -96,4 +92,5 @@
 * component(컴포넌트) : 재사용이 가능한 각각의 독립된 모듈
 * server(서버) : 서비스를 제공하는 프로그램
 * service(서비스) : 서버가 제공하는 기능, 유저들 입장에서의 메서드 or 모듈
-* client(클라이언트) : 서버와 반대되는 말, 고객<br><br>
+* client(클라이언트) : 서버와 반대되는 말, 고객
+* Refactoring : 결과의 변경 없이 코드의 구조를 재조정하는 것.<br><br>

@@ -136,7 +136,8 @@
         * INSERT(등록)
         * UPDATE(수정)
         * DELETE(삭제)
-    * DDL(Data Definition) : 데이터 정의, 
+    * DDL(Data Definition) : 데이터 정의, 생성, 삭제, 변경, 관계제거
+        * 
     * DCL()
     * TCL()
 
