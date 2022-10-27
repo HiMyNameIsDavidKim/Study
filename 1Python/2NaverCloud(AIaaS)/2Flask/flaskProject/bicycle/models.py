@@ -1,3 +1,5 @@
+import pandas as pd
+
 from util.dataset import Dataset
 
 class BicycleModel(object):
@@ -12,8 +14,11 @@ class BicycleModel(object):
     def preprocess(self):
         pass
 
-    def new_model(self):
-        pass
+    def new_model(self, fname):
+        this = self.dataset
+        this.context = './data/'
+        this.fname = fname
+        return pd.read_csv(this.context + this.fname)
 
     def create_train(self):
         pass

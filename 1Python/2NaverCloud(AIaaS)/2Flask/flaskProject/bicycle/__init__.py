@@ -1,3 +1,4 @@
+from bicycle.models import BicycleModel
 from bicycle.views import BicycleController
 from util.common import Common
 
@@ -9,6 +10,12 @@ while True:
         break
     elif menu == "1":
         print(" ### 시각화 ### ")
+        model = BicycleModel()
+        print_ = model.new_model("train.csv")
+        print(f"Type : {type(print_)}")
+        print(f"Columns : {print_.columns}")
+        print(f"[Head]\n{print_.head}")
+        print(f"[Null수]\n{print_.isnull().sum()}")
     elif menu == "2":
         print(" ### 모델링 ### ")
     elif menu == "3":

@@ -1,7 +1,9 @@
 from bicycle.models import BicycleModel
+from util.dataset import Dataset
 
 class BicycleController(object):
 
+    dataset = Dataset()
     model = BicycleModel()
 
     def __init__(self):
@@ -9,5 +11,14 @@ class BicycleController(object):
     def __str__(self):
         return f""
 
-    def use_model(self):
+    def preprocess(self) -> object:
+        pass
+
+    def modeling(self) -> object:
+        self.preprocess()
+
+    def learning(self):
+        pass
+
+    def submit(self):
         pass

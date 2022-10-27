@@ -3,8 +3,8 @@ from dataclasses import dataclass
 @dataclass
 class Dataset(object):
 
-    context: str #파일이 저장된 경로
-    fname: str #파일이름
+    context: str #파일 저장 경로
+    fname: str #파일 이름
     train: object #train.csv 가 데이터프레임으로 전환된 객체
     test: object #test.csv 가 데이터프레임으로 전환된 객체
     id: str #승객ID, 문제
