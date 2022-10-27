@@ -136,10 +136,9 @@
 * DML(Data Manipulation) : 데이터 조작. 검색 등록 수정 삭제
     * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
         * SELECT DISTINCT : 테이블에서 특정 컬럼을 중복제거 후 가져옴.
-        * 
-    * INSERT(등록)
-    * UPDATE(수정)
-    * DELETE(삭제)
+    * INSERT(등록) : 테이블에 새로운 데이터를 삽입함.
+    * UPDATE(수정) : 테이블에 특정 컬럼의 값을 수정함. (VALUES랑 같이 써야함.)
+    * DELETE(삭제) : 테이블에 데이터 행 전체를 삭제함.
 * DDL(Data Definition) : 데이터 정의. 생성 삭제 변경 데이터만제거
     * CREATE(정의)
     * DROP(삭제)
@@ -152,14 +151,23 @@
     * ROLLBACK(트랜잭션 작업 취소)
 * TCL(Transaction Control) : 데이터 트랜잭션 제어.
     * COMMIT(트랜잭션 작업 결과 반영)
-    * ROLLBACK(트랜잭션 작업 취소)<br><br>
-* 그외
+    * ROLLBACK(트랜잭션 작업 취소)
+* 그 외
     * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행. (여기서 in이 나오면 or 조건이다.)
     * is null : 빈값. (반대. is not null)
+    * LIKE : 특정 글자가 포함된 값을 보고 싶을 때.
+    * ORDER BY : 정렬 순서 지정. (ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
+    <br><br>
 
 ### [DDL의 특징]
 * 데이터 유형 : 
 
+
+
+
+## `[DB Program]`
+* 오라클 : 오라클에서 개발한 프로그램. 안정성이 높다. 비싸다.
+* MySQL : 경량 DB 프로그램. 가볍고 종류가 다양하다. 표준 SQL이다.
 
 
 
