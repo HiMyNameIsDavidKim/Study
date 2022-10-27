@@ -135,8 +135,9 @@
 ### [SQL 언어 종류]
 * DML(Data Manipulation) : 데이터 조작. 검색 등록 수정 삭제
     * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
-        * SELECT DISTINCT : 테이블에서 교유한 값을 불러옴.
-    * INSERT(등록) : 
+        * SELECT DISTINCT : 테이블에서 특정 컬럼을 중복제거 후 가져옴.
+        * 
+    * INSERT(등록)
     * UPDATE(수정)
     * DELETE(삭제)
 * DDL(Data Definition) : 데이터 정의. 생성 삭제 변경 데이터만제거
@@ -152,6 +153,9 @@
 * TCL(Transaction Control) : 데이터 트랜잭션 제어.
     * COMMIT(트랜잭션 작업 결과 반영)
     * ROLLBACK(트랜잭션 작업 취소)<br><br>
+* 그외
+    * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행. (여기서 in이 나오면 or 조건이다.)
+    * is null : 빈값. (반대. is not null)
 
 ### [DDL의 특징]
 * 데이터 유형 : 
