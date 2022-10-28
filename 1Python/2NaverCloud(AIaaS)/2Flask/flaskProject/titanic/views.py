@@ -37,3 +37,10 @@ class TitanicController(object):
 
     def submit(self, train, test): # 제출
         pass
+
+if __name__ == '__main__':
+    this = TitanicController()
+    this = this.modeling('Train.csv', 'Test.csv')
+    print(this.train.columns)
+    print(f"null 갯수: {this.train['Embarked'].isnull().sum()}")
+    print(this.train.head(3))
