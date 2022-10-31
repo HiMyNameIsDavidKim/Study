@@ -94,5 +94,21 @@ class TitanicModel(object):
             i['Embarked'] = i['Embarked'].map({"S": 1, "C": 2, "Q": 3})
         return this
 
+    @staticmethod
+    def title_norminal(this) -> object:
+        combine = [this.train, this.test]
+        for i in combine:
+            i['Title'] = i.Name.str.extract('([A-Za-z]+)\.', expand=False)
+        for i in combine:
+            i['Title'] = i['Title'].replace(['Countess', 'Lady', 'Sir'], 'Royal')
+            i['Title'] = i['Title'].replace(['Capt', 'Col', 'Don', 'Dr', 'Major', 'Rev', 'Jonkheer', 'Dona', 'Mme'], 'Rare')
+            i['Title'] = i['Title'].replace(['Mlle'], 'Mr')
+            i['Title'] = i['Title'].replace(['Ms'], 'Miss')
+            i['Title'] = i['Title'].fillna(0)
+            i['Title'] = i['Title'].map({
+                'Mr': 1, 'Miss': 2, 'Mrs': 3, 'Master': 4, 'Royal': 5, 'Rare': 6
+            })
+        return this
+
 if __name__ == '__main__': # 테스트용
     pass

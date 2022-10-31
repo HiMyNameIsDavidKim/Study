@@ -18,11 +18,15 @@ class TitanicController(object):
         this.train = model.new_model(train)
         this.test = model.new_model(test)
         this.id = this.test['PassengerId']
-        # columns 편집과정
         this = model.sex_nominal(this)
         this = model.age_ordinal(this)
         this = model.fare_ordinal(this)
         this = model.embarked_nominal(this)
+        this = model.title_norminal(this)
+        this = model.drop_features(this,
+                                   'PassengerId', 'Name', 'Sex', 'Age',
+                                   'SibSp', 'Parch', 'Ticket',
+                                   'Fare', 'Cabin')
         return this
 
     def modeling(self, train, test) -> object: # 모델 생성
@@ -42,5 +46,5 @@ if __name__ == '__main__':
     this = TitanicController()
     this = this.modeling('Train.csv', 'Test.csv')
     print(this.train.columns)
-    print(f"null 갯수: {this.train['Embarked'].isnull().sum()}")
-    print(this.train.head(3))
+    print(f"[null 갯수]\n{this.train.isnull().sum()}")
+    print(this.train.head(5))
