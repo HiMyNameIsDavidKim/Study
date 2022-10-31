@@ -64,7 +64,7 @@
     * 스탠다드 클래스와는 다른 데이터 클래스 구조이며, 데코레이터를 달아줘야 한다.
     * context : 파일이 저장된 경로
     * label : 답안지
-* [`작업 순서 메모`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS)/2Flask)<br><br>
+ - [`작업 순서 메모`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS)/2Flask)<br><br>
 
 
 
