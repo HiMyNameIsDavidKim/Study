@@ -58,12 +58,6 @@ class TitanicModel(object):
         return this
 
     @staticmethod
-    def pclass_ordinal(this) -> object: # 등급 1, 2, 3
-        train = this.train
-        test = this.test
-        return this
-
-    @staticmethod
     def sex_nominal(this) -> object: # female, male
         for i in [this.train, this.test]:
             i['Gender'] = i['Sex'].map({"male": 0, "female": 1})
