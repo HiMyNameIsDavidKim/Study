@@ -5,6 +5,7 @@ class Dataset(object):
 
     context: str # 파일 저장 경로
     fname: str # 파일 이름
+    url : str # url
     train: object # train.csv 가 데이터프레임으로 전환된 객체
     test: object # test.csv 가 데이터프레임으로 전환된 객체
     id: str # 승객ID, 문제
@@ -21,6 +22,11 @@ class Dataset(object):
     def fname(self) -> str: return self._fname
     @fname.setter
     def fname(self, fname): self._fname = fname
+
+    @property
+    def url(self) -> str: return self._url
+    @url.setter
+    def url(self, url): self._url = url
 
     @property
     def train(self) -> object: return self._train

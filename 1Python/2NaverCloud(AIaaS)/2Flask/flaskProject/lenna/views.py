@@ -23,3 +23,15 @@ class LennaController(object):
     def modeling(self, img) -> object:
         this = self.preprocess(img)
         return this
+
+    def grayscale(self, url) -> object:
+        model = self.model
+        this = self.dataset
+        model.grayscale(url)
+        return this
+
+    def edgedetect(self, url) -> object:
+        model = self.model
+        this = self.dataset
+        model.messi_show(url)
+        return this

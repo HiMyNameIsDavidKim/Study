@@ -24,7 +24,7 @@ from util.common import Common
 if __name__ == "__main__":
     api = LennaController()
     while True:
-        menu = Common.menu(["종료", "원본 보기", "모델링", "머신러닝", "배포"])
+        menu = Common.menu(["종료", "원본 보기", "그레이스케일", "엣지검출", "배포"])
         if menu == "0":
             print(" ### 종료 ### ")
             break
@@ -36,9 +36,13 @@ if __name__ == "__main__":
             cv2.waitKey(0)
             cv2.destroyAllWindows()
         elif menu == "2":
-            print(" ### 모델링 ### ")
+            img = input("URL을 입력하세요 : ")
+            print(" ### 그레이스케일 ### ")
+            api.grayscale(img)
         elif menu == "3":
-            print(" ### 머신러닝 ### ")
+            img = input("URL을 입력하세요 : ")
+            print(" ### 엣지검출 ### ")
+            api.edgedetect(img)
         elif menu == "4":
             print(" ### 배포 ### ")
         else:
