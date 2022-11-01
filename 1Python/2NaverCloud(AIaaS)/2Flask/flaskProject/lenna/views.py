@@ -1,13 +1,13 @@
 import cv2
 
-from lena.models import LenaModel
+from lenna.models import LennaModel
 from util.dataset import Dataset
 
 
-class LenaController(object):
+class LennaController(object):
 
     dataset = Dataset()
-    model = LenaModel()
+    model = LennaModel()
 
     def __init__(self):
         pass
