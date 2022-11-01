@@ -83,7 +83,7 @@
 * 파이썬 스럽게 코딩하는 것. 파이써닉.
 * 파이썬은 아름다운 하나의 답이 존재한다는 철학이 있다.
 * 1.comprehesion 2.f-string 3.swap 4.generator 5.extended slice 6.slots 7.kwards
-    * comprehesion : 축약하기. 숏코딩.
+    * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
         * if문의 Comp. (this['Survived'][this['Sex']=='male'])(if 적지 않으며 []로만 막아서 뒤에 이어서 적어주면 된다.)
     * 컴프리헨션된 자료는 반드시 자료구조 안에 담아야한다.
@@ -136,8 +136,9 @@
     * (T0 = 스칼라, T1 = 벡터, T2 = 매트릭스, T3 = 큐브, T4 = T4)
     * 튜플, 딕셔너리, 리스트는 T1이다.
     * T2 입장에서는 T1이 스칼라이다. (상대적인 개념)(특히나 커서는 고차원을 이해할 수 없다.)
-* reduction : 차원축소, 고차원 -> 저차원 변환, (ex.cb[ ][ ][ ] : 큐브에서 스칼라로 내려감)
-* expansion : 차원확장, 저차원 -> 고차원 변환, (ex. cb mtx : T2에서 T4로 올라감)<br><br>
+* 캐스팅 : 차원의 이동이 일어나는 경우.
+    * reduction : 차원축소, 고차원 -> 저차원 변환, (ex.cb[ ][ ][ ] : 큐브에서 스칼라로 내려감)
+    * expansion : 차원확장, 저차원 -> 고차원 변환, (ex. cb mtx : T2에서 T4로 올라감)<br><br>
 
 
 
