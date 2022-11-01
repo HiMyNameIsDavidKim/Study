@@ -141,16 +141,15 @@
         * SELECT DISTINCT : 테이블에서 특정 컬럼을 중복제거 후 가져옴.
     * UPDATE(수정) : 테이블에 특정 컬럼의 값을 수정함. (VALUES랑 같이 써야함.)
     * DELETE(삭제) : 테이블에 특정 (데이터만) 삭제함.
-* DDL(Data Definition) : 데이터 정의. (생성 삭제 변경 데이터만제거)
+* DDL(Data Definition) : 데이터 정의. (생성 삭제 변경 초기화)
     * CREATE(정의) : 새로운 테이블 생성.
     * ALTER(변경) : 테이블 or 컬럼의 이름 및 속성 변경/추가/삭제.
         * RENAME : 이름 변경.
         * MODIFY : 속성 변경, 제약조건 추가.
         * ADD : 추가.
-        * DROP : (스키마&데이터&구조) 모두 완전 삭제.
-    * DROP(삭제) : 테이블 or 컬럼의 데이터와 구조 모두 삭제.
+    * DROP(삭제) : (스키마&데이터&구조) 모두 완전 삭제.
     * RENAME(이름 변경)
-    * TRUNCATE(데이터만 초기화) : (데이터&구조) 삭제.
+    * TRUNCATE(초기화) : (데이터&구조) 삭제.
 * DCL(Data Control) : 데이터 제어 및 권한 관리. (부여 박탈)
     * GRANT(부여)
     * REVOKE(박탈)
