@@ -18,7 +18,7 @@
 
   - [`나도코딩(활용1)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9(%ED%99%9C%EC%9A%A91))
 
-  - [`Naver Cloud`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS))
+  - [`Naver Cloud(AIaaS)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS))
 
   - [`Baekjoon`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Baekjoon)
 
