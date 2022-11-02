@@ -236,6 +236,9 @@ def imshow(img):
     plt.imshow(img)
     plt.show()
 
+def gray_scale(img):
+    dst = img[:, :, 0] * 0.114 + img[:, :, 1] * 0.587 + img[:, :, 2] * 0.229  # GRAYSCALE 변환 공식
+    return dst
 
 if __name__ == '__main__':
     # LennaModel().messi_show(LennaModel().messi())
@@ -245,4 +248,7 @@ if __name__ == '__main__':
     img = GaussianBlur(img, 1, 1).get()
     img = Canny(img, 50, 150).get()
     imshow(img)
+    '''
+    '''
+    https://docs.opencv.org/4.x/roi.jpg
     '''
