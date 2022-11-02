@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 from PIL import Image
-from canny_funtional.services import ImageToNumberArray, GaussianBlur, Canny, image_read
+from canny_funtional.services import ImageToNumberArray, image_read, Hough_Line, GaussianBlur, Canny
 import cv2
 import numpy as np
 
@@ -17,6 +17,7 @@ class MenuController(object):
         cv2.imshow('Gray', img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+        cv2.waitKey(1)
 
     @staticmethod
     def menu_2(*params):
@@ -36,5 +37,16 @@ class MenuController(object):
         plt.subplot(121), plt.imshow(img, cmap='gray')
         plt.title('Original Image'), plt.xticks([]), plt.yticks([])
         plt.subplot(122), plt.imshow(edges, cmap='gray')
+        plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+        plt.show()
+
+    @staticmethod
+    def menu_4(*params):
+        print(params[0])
+        img = ImageToNumberArray(params[1])
+        edges, dst = Hough_Line(img)
+        plt.subplot(121), plt.imshow(edges, cmap='gray')
+        plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+        plt.subplot(122), plt.imshow(dst, cmap='gray')
         plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
         plt.show()

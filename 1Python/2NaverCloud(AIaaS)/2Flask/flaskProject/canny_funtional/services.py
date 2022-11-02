@@ -119,26 +119,32 @@ def filter2D(src, kernel, delta=0):
             dst[x, y] = (kernel * cornerPixel[x: x + kernel.shape[0], y: y + kernel.shape[1]]).sum() + delta
     return dst
 
+def Hough_Line(src):
+    edges = cv2.Canny(src, 100, 200)
+    lines = cv2.HoughLinesP(edges, 1, np.pi / 180., 120, minLineLength=50, maxLineGap=5)
+    dst = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
+    if lines is not None:
+        for i in range(lines.shape[0]):
+            pt1 = (lines[i][0][0], lines[i][0][1])
+            pt2 = (lines[i][0][2], lines[i][0][3])
+            cv2.line(dst, pt1, pt2, (255, 0, 0), 2, cv2.LINE_AA)
+    return edges, dst
+
 def image_read(fname):
     return (lambda x: cv2.imread('./data/' + x, cv2.IMREAD_COLOR))(fname)
-
 '''
 프로토 타입 일때의 image_read. 이걸 람다함수로 고쳤다.
 def new_model(fname):
     return cv2.imread('./data/' + fname, cv2.IMREAD_COLOR)
 '''
 
-
-
-
 if __name__ == '__main__':
     URL = "https://docs.opencv.org/4.x/roi.jpg"
     arr = ImageToNumberArray(URL)
     img = (lambda x: x[:, :, 0] * 0.114 + x[:, :, 1] * 0.587 + x[:, :, 2] * 0.229)(arr)
-    img = Canny(GaussianBlur(img, 1, 1).get())
+    img = Canny(GaussianBlur(img, 1, 1))
     plt.imshow((lambda x: (Image.fromarray(x)))(img))
     plt.show()
-
 '''
 이 메서드 2개도 람다 함수로 고쳐서 한줄로 작성한다.
 def imshow(img):
