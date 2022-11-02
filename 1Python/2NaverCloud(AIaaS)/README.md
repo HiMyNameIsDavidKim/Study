@@ -5,7 +5,13 @@
     * 한국의 인공지능은 JDK 11이 표준이다.
 * 아나콘다 설치, 아나콘다 환경변수 설정
     * 아나콘다는 데이터 사이언스 기술과 머신러닝의 방법들을 제공한다.
-* 파이참 설치, 스튜던트 라이센스 발급<br><br>
+* 파이참 설치, 스튜던트 라이센스 발급
+* 환경변수 참고
+    * JAVA_HOME : C:\Program Files\jdk-11\bin
+    * ANACONDA_HOME1 : C:\ProgramData\Anaconda3
+    * ANACONDA_HOME2 : C:\ProgramData\Anaconda3\Scripts
+    * ANACONDA_HOME3 : C:\ProgramData\Anaconda3\Library\bin
+    * ANACONDA_HOME4 : C:\ProgramData\Anaconda3\Library\mingw-w64\bin<br><br>
 
 
 
