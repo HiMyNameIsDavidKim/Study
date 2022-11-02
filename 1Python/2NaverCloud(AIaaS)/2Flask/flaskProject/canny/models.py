@@ -7,6 +7,11 @@ import matplotlib.pyplot as plt
 
 from util.dataset import Dataset
 
+def CannyModel(img):
+    headers = {'User-Agent': 'My User Agent 1.0'}
+    res = requests.get(img, headers=headers)
+    return np.array(Image.open(BytesIO(res.content)))
+
 
 class LennaModel(object):
 
@@ -59,7 +64,7 @@ class LennaModel(object):
     def non_maximum_suppression(self):
         pass
 
-    def edge_tracking(self, src, adaptiveMethod, thresholdType, blocksize, c):
+    def edge_tracking(self, src, adaptiveMethod, thresholdType, blocksize, C):
         mask = np.zeros((blocksize, blocksize))
         if adaptiveMethod == self.ADAPTIVE_THRESH_MEAN_C:
             pass
@@ -241,7 +246,6 @@ def gray_scale(img):
     return dst
 
 if __name__ == '__main__':
-    # LennaModel().messi_show(LennaModel().messi())
     '''
     lm = LennaModel()
     img = grayscale(lm.get())
@@ -249,6 +253,5 @@ if __name__ == '__main__':
     img = Canny(img, 50, 150).get()
     imshow(img)
     '''
-    '''
-    https://docs.opencv.org/4.x/roi.jpg
-    '''
+    # LennaModel().messi_show(LennaModel().messi())
+    # https://docs.opencv.org/4.x/roi.jpg
