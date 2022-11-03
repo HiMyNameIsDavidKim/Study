@@ -5,6 +5,11 @@ import requests
 from PIL import Image
 import matplotlib.pyplot as plt
 
+from util.dataset import Dataset
+
+ds = Dataset()
+ds.context = './data/'
+
 def ImageToNumberArray(url):
     headers = {'User-Agent': 'My User Agent 1.0'}
     res = requests.get(url, headers=headers)
@@ -120,8 +125,8 @@ def filter2D(src, kernel, delta=0):
     return dst
 
 def Hough_Line(src):
-    edges = cv2.Canny(src, 100, 200)
-    lines = cv2.HoughLinesP(edges, 1, np.pi / 180., 120, minLineLength=50, maxLineGap=5)
+    edges = cv2.Canny(src, 50, 40)
+    lines = cv2.HoughLinesP(edges, 1, np.pi / 180., 120, minLineLength=50, maxLineGap=500)
     dst = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
     if lines is not None:
         for i in range(lines.shape[0]):
@@ -129,6 +134,17 @@ def Hough_Line(src):
             pt2 = (lines[i][0][2], lines[i][0][3])
             cv2.line(dst, pt1, pt2, (255, 0, 0), 2, cv2.LINE_AA)
     return edges, dst
+
+def Haar_Line(src):
+    haar = cv2.CascadeClassifier(ds.context+'haarcascade_frontalface_alt.xml')
+    dst = cv2.imread(ds.context+'girl.jpg')
+    dst = cv2.cvtColor(dst, cv2.COLOR_BGR2RGB)
+    face = haar.detectMultiScale(dst, minSize=(150, 150))
+    for (x, y, w, h) in face:
+        print(f'얼굴의 좌표 : {x},{y},{w},{h}')
+        red = (255, 0, 0)
+        cv2.rectangle(dst, (x, y), (x + w, y + h), red, thickness=20)
+    return dst
 
 def image_read(fname):
     return (lambda x: cv2.imread('./data/' + x, cv2.IMREAD_COLOR))(fname)
