@@ -88,14 +88,14 @@
 ### [Pythonic]
 * 파이썬 스럽게 코딩하는 것. 파이써닉.
 * 파이썬은 아름다운 하나의 답이 존재한다는 철학이 있다.
-* 1.comprehesion 2.f-string 3.swap 4.generator 5.extended slice 6.slots 7.kwards
+* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5.generator 6.extended slice 7.slots 8.kwards
     * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
         * if문의 Comp. (this['Survived'][this['Sex']=='male'])(if 적지 않으며 []로만 막아서 뒤에 이어서 적어주면 된다.)
     * 컴프리헨션된 자료는 반드시 자료구조 안에 담아야한다.
     * f-string : 직관적인 문자열. (ex. f”이게 f 스트링{print_fstring}이다.”)
     * swap : 스왑하는 논리. (ex. t = a, a = b, b = t)
-* 프린트 대신 str 메서드를 사용한다. (가독성을 높이기 위함)<br><br>
+    * 프린트 대신 str 메서드를 사용한다. (가독성을 높이기 위함)<br><br>
 
 ### [Getter & Setter]
 * 메서드를 선언할 때 데코레이터로 역할을 구분하는 것이 좋다.

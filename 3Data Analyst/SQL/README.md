@@ -132,7 +132,9 @@
 
 
 ## `[SQL 기본]`
-* 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.<br><br>
+* 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.
+* 실행 순서 : FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY
+* 연산 순서 : NOT - AND - OR<br><br>
 
 ### [SQL 언어 종류]
 * DML(Data Manipulation) : 데이터 조작. (등록 검색 수정 삭제)
