@@ -133,6 +133,7 @@
 
 ## `[SQL 기본]`
 * 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.
+* 작성 순서 : SELECT - FROM - WHERE - ORDER BY
 * 실행 순서 : FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY
 * 연산 순서 : NOT - AND - OR<br><br>
 
@@ -163,6 +164,10 @@
 * 그 외
     * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행. (여기서 in이 나오면 or 조건이다.)
     * IS NULL : 빈값. NULL에 연산 시 NULL 리턴함. (반대. IS NOT NULL)
+    * NVL(x,y) : NULL이면 y, NULL이 아니면 x
+    * NVL2(x,y,z) : x가 NULL이면 z, x가 NULL이 아니면 y
+    * NULLIF(x,y) : x=y이면 NULL, 다르면 x
+    * COALESCE(x,y,...) : NULL이 아닌 첫번째 값.
     * LIKE : 특정 글자가 포함된 값을 보고 싶을 때 사용.
     * ORDER BY : 정렬 순서 지정. (ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
     * count(컬럼명) : null 제외한 행 수 카운트. (count(*)은 전체 행 카운트)
