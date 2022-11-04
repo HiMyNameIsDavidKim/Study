@@ -1,4 +1,4 @@
-from canny_funtional.views import MenuController
+from CVbasic_funtional.views import MenuController
 from util.common import Common
 LENNA = 'Lenna.png'
 SOCCER = 'https://docs.opencv.org/4.x/roi.jpg'
@@ -15,7 +15,8 @@ FACE_OBJECT = ''
 if __name__ == '__main__':
     api = MenuController()
     while True:
-        menus = ['종료', '원본 보기', '그레이 스케일', '엣지 검출', '직선 검출', '얼굴 검출', '모자이크']
+        menus = ['종료',
+                 '원본 보기', '그레이 스케일', '엣지 검출', '직선 검출', '얼굴 검출', '소녀 모자이크', '모녀 모자이크']
         menu = Common.menu(menus)
         if menu == '0':
             api.menu_0(menus[0])
@@ -25,6 +26,7 @@ if __name__ == '__main__':
         elif menu == '3': api.menu_3(menus[3], SOCCER)
         elif menu == '4': api.menu_4(menus[4], BUILDING)
         elif menu == '5': api.menu_5(menus[5], HAAR, GIRL)
-        elif menu == '5': api.menu_5(menus[6], HAAR, CAT)
+        elif menu == '6': api.menu_6(menus[6], HAAR, GIRL)
+        elif menu == '7': api.menu_6(menus[7], HAAR, GIRL_WITH_MOM)
         else:
             print(' ### 해당 메뉴 없음 ### ')

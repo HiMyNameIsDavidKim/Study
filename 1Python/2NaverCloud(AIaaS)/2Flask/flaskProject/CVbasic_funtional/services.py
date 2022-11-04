@@ -137,12 +137,25 @@ def Hough_Line(src):
 
 def Haar_Line(src):
     haar = cv2.CascadeClassifier(ds.context+'haarcascade_frontalface_alt.xml')
-    dst = cv2.cvtColor(src, cv2.COLOR_BGR2RGB)
-    face = haar.detectMultiScale(src, minSize=(150, 150))
+    dst = src.copy()
+    face = haar.detectMultiScale(dst, minSize=(150, 150))
     for (x, y, w, h) in face:
         print(f'얼굴의 좌표 : {x},{y},{w},{h}')
         red = (255, 0, 0)
         cv2.rectangle(dst, (x, y), (x + w, y + h), red, thickness=20)
+    return dst, (x, y, w, h)
+
+def Mosaic_img(img, size):
+    haar = cv2.CascadeClassifier(ds.context+'haarcascade_frontalface_alt.xml')
+    dst = img.copy()
+    face = haar.detectMultiScale(dst, minSize=(150, 150))
+    for (x, y, w, h) in face:
+        print(f'얼굴의 좌표 : {x},{y},{w},{h}')
+        (x1, y1, x2, y2) = (x, y, (x+w), (y+h))
+        i_rect = img[y1:y2, x1:x2]
+        i_small = cv2.resize(i_rect, (size, size))
+        i_mos = cv2.resize(i_small, (w, h), interpolation=cv2.INTER_AREA)
+        dst[y1:y2, x1:x2] = i_mos
     return dst
 
 def image_read(fname):
@@ -152,18 +165,6 @@ def image_read(fname):
 def new_model(fname):
     return cv2.imread('./data/' + fname, cv2.IMREAD_COLOR)
 '''
-
-def ExecuteLambda(*params):
-    cmd = params[0]
-    target = params[1]
-    if cmd == 'IMAGE_READ':
-        return (lambda x: cv2.imread('./data/' + x, cv2.IMREAD_COLOR))(target)
-    elif cmd == 'GRAY_SCALE':
-        return (lambda x: x[:, :, 0] * 0.114 + x[:, :, 1] * 0.587 + x[:, :, 2] * 0.229)(target)
-    elif cmd == 'ARRAY_TO_IMAGE':
-        return (lambda x: (Image.fromarray(x)))(target)
-    elif cmd == '':
-        pass
 
 if __name__ == '__main__':
     URL = "https://docs.opencv.org/4.x/roi.jpg"
