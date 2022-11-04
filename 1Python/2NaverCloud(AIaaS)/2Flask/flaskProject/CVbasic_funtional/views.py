@@ -66,7 +66,7 @@ class MenuController(object):
         gray = cv2.cvtColor(girl, cv2.COLOR_BGR2GRAY)
         edges = cv2.Canny(np.array(girl), 50, 40)
         edgess, dst = Hough_Line(girl)
-        dst2, (x, y, w, h) = Haar_Line(girl)
+        dst2, rect = Haar_Line(girl)
         plt.subplot(321), plt.imshow(girl, cmap='gray')
         plt.title('Original'), plt.xticks([]), plt.yticks([])
         plt.subplot(322), plt.imshow(gray, cmap='gray')
