@@ -133,7 +133,7 @@
 
 ## `[SQL 기본]`
 * 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.
-* 작성 순서 : SELECT - FROM - WHERE - ORDER BY
+* 작성 순서 : SELECT - FROM - WHERE - GROUP BY - HAVING - ORDER BY
 * 실행 순서 : FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY
 * 연산 순서 : NOT - AND - OR<br><br>
 
@@ -160,7 +160,7 @@
     * ROLLBACK(트랜잭션 작업 취소)
 * TCL(Transaction Control) : 데이터 트랜잭션 제어.
     * COMMIT(트랜잭션 작업 결과 반영)
-    * ROLLBACK(트랜잭션 작업 취소)
+    * ROLLBACK(트랜잭션 작업 취소)(지울 경우 DELETE만 복구 가능)
 * 그 외
     * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행. (여기서 in이 나오면 or 조건이다.)
     * IS NULL : 빈값. NULL에 연산 시 NULL 리턴함. (반대. IS NOT NULL)
@@ -169,9 +169,11 @@
     * NULLIF(x,y) : x=y이면 NULL, 다르면 x
     * COALESCE(x,y,...) : NULL이 아닌 첫번째 값.
     * LIKE : 특정 글자가 포함된 값을 보고 싶을 때 사용.
-    * ORDER BY : 정렬 순서 지정. (ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
+    * ORDER BY : 정렬 순서 지정. 항상 마지막에 실행된다.(ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
     * count(컬럼명) : null 제외한 행 수 카운트. (count(*)은 전체 행 카운트)
-    * ON : 조인 시에 조건을 지정.(ex.기준 컬럼)<br><br>
+    * ON : 조인 시에 조건을 지정.(ex.기준 컬럼)
+    * ROUND : 반올림
+    * 집계함수(SUM, AVG)는 NULL 무시하고 실행 가능.<br><br>
 
 ### [DDL의 특징]
 * 데이터 유형
@@ -182,7 +184,8 @@
 * 제약조건(CONSTRAINT) : 컬럼 크리에이트 시 뒤에 적어서 제약을 걸어줌.
     * default : 기본값 지정 가능
     * not null : null 입력 시 에러
-    * primary key : 기본키 지정 / forigner key : 외래키 지정<br><br>
+    * primary key : 기본키 지정 (유니크 + not null)
+    * forigner key : 외래키 지정<br><br>
 
 ### [트랜잭션]
 * 거래라는 뜻으로, DB 처리 작업이 모두 완료 or 모두 취소 되게 하는 작업.
@@ -192,6 +195,14 @@
     * Consistency : 일관성, 작업 처리 결과가 항상 일관성 있다.
     * Isolation : 독립성, 서로 다른 트랜잭션에 끼어들 수 없다.
     * Durability : 지속성, 완료 후에는 영구적으로 반영된다.<br><br>
+
+### [그룹 함수]
+* ROLL UP : 1행 추가해서 특정 값을 연산한 값 출력. 정렬도 진행.
+    * SUB TOTAL만 추가하는 것.
+    * (ex. 001, NULL, 40000)
+* CUBE : 연산이 가능한 모든 경우 다 추가함.
+    * SUB TOTAL, GRAND TOTAL 모두 추가하는 것.
+* GROUPING SETS : CUBE에서 인자를 다 지우고 SUB TOTAL, GRAND TOTAL만 유지.<br><br>
 
 
 
