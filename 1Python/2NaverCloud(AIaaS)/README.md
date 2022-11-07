@@ -88,7 +88,7 @@
 ### [Pythonic]
 * 파이썬 스럽게 코딩하는 것. 파이써닉.
 * 파이썬은 아름다운 하나의 답이 존재한다는 철학이 있다.
-* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5.generator 6.extended slice 7.slots 8.kwards
+* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5.generator 6.extended slice 7.slots 8.keywards
     * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
         * if문의 Comp. (this['Survived'][this['Sex']=='male'])(if 적지 않으며 []로만 막아서 뒤에 이어서 적어주면 된다.)
@@ -147,6 +147,11 @@
 * 캐스팅 : 차원의 이동이 일어나는 경우.
     * reduction : 차원축소, 고차원 -> 저차원 변환, (ex.cb[ ][ ][ ] : 큐브에서 스칼라로 내려감)
     * expansion : 차원확장, 저차원 -> 고차원 변환, (ex. cb mtx : T2에서 T4로 올라감)<br><br>
+
+### [차원축소]
+* 차원의 저주 : 데이터 수가 너무 많고, 노이즈가 많으면 ‘오버피팅’된다. 인지오류.
+* 상관관계가 너무 높으면 알고리즘의 복잡성이 너무 높아져 오히려 안좋다.
+* 차원 축소에는 feature 선택, feature 추출 2가지 방법이 있다.<br><br>
 
 ### [Convolution]
 * 합성곱. 행렬 분해, 변환, 필터링 할 수 있다. (함수 f를 필터 g로 필터링)
