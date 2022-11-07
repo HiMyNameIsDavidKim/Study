@@ -152,7 +152,7 @@
 * 합성곱. 행렬 분해, 변환, 필터링 할 수 있다. (함수 f를 필터 g로 필터링)
 * 수학에서는 f * g(t) = 적분f(T)g(t-T)dT로 나타낸다.
 * 행렬 계산 예시는 아래와 같다.
-* <img width="285" alt=https://user-images.githubusercontent.com/112922638/200221190-fcd8f783-9138-400c-95e6-e11e189fe5ea.jpg><br><br>
+* ![이미지 2022  11  7  오후 12 33](https://user-images.githubusercontent.com/112922638/200221427-807701c2-42bd-4149-aa2d-8e17d19f3193.jpg)<br><br>
 
 ## `[ML]`
 * 알고리즘을 사용하여 데이터에서 패턴을 찾는 인공지능 알고리즘.
