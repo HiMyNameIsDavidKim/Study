@@ -1,17 +1,18 @@
-from scrapper.services import BugsMusic
+from scrapper.services import MusicChart
 
 
 class ScrapperController(object):
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        pass
 
     @staticmethod
-    def menu_0(*params):
-        pass
+    def menu_0(*args):
+        print(args[0])
 
     @staticmethod
-    def menu_1(arg):
-        bugs = BugsMusic(arg)
+    def menu_1(*args):
+        print(args[0])
+        MusicChart(args[1])
+
+    @staticmethod
+    def menu_2(*args):
+        print(args[0])
+        MusicChart(args[1])
