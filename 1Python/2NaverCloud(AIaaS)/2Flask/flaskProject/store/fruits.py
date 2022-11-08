@@ -11,7 +11,8 @@ def new_fruits_df():
     ls3 = [24, 38, 13]
     dc = {sc[i]: j for i, j in enumerate([ls1, ls2, ls3])}
     df = pd.DataFrame(dc)
-    return f'{df["가격"].mean()}\n{df["판매량"].mean()}'
+    return f'가격 평균 : {df["가격"].mean()}\n' \
+           f'판매량 평균 : {df["판매량"].mean()}'
 
 if __name__ == '__main__':
     print(new_fruits_df())
