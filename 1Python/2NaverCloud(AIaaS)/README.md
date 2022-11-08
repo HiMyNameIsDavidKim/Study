@@ -88,7 +88,7 @@
 ### [Pythonic]
 * 파이썬 스럽게 코딩하는 것. 파이써닉.
 * 파이썬은 아름다운 하나의 답이 존재한다는 철학이 있다.
-* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5.generator 6.extended slice 7.slots 8.keywards
+* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5.generator 6.extended slice 7.slots 8.kwargs
     * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
         * if문의 Comp. (this['Survived'][this['Sex']=='male'])(if 적지 않으며 []로만 막아서 뒤에 이어서 적어주면 된다.)
