@@ -17,8 +17,8 @@ cv2.waitKey(0) : keyboard입력을 대기하는 함수.
 cv2.destroyAllWindows() : 화면 종료
 '''
 
-from CVbasic.template import LennaTemplate
-from CVbasic.views import LennaController
+from CVbasic_OOP.template import LennaTemplate
+from CVbasic_OOP.views import LennaController
 from util.common import Common
 
 if __name__ == "__main__":
@@ -30,7 +30,7 @@ if __name__ == "__main__":
             break
         elif menu == "1":
             print(" ### 원본 보기 ### ")
-            img = api.modeling('CVbasic.png')
+            img = api.modeling('CVbasic_OOP.png')
             print(f'Shape is {img.shape}')
             cv2.imshow('This', img)
             cv2.waitKey(0)

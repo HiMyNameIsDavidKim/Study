@@ -1,6 +1,6 @@
 import cv2
 
-from CVbasic.models import LennaModel
+from CVbasic_OOP.models import LennaModel
 from util.dataset import Dataset
 
 

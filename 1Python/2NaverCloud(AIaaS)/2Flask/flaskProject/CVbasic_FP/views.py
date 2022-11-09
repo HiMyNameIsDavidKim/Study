@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 from PIL import Image
-from CVbasic_funtional.services import ImageToNumberArray, image_read, Hough_Line, Haar_Line, GaussianBlur, Canny, \
+from CVbasic_FP.services import ImageToNumberArray, image_read, Hough_Line, Haar_Line, GaussianBlur, Canny, \
     Mosaic_img
 import cv2
 import numpy as np

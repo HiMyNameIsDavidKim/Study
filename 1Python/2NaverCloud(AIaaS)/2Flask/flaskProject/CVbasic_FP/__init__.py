@@ -1,4 +1,4 @@
-from CVbasic_funtional.views import MenuController
+from CVbasic_FP.views import MenuController
 from util.common import Common
 LENNA = 'Lenna.png'
 SOCCER = 'https://docs.opencv.org/4.x/roi.jpg'
