@@ -11,13 +11,23 @@ MENUS = ['종료',
          "아우디와 토요타 중 도시연비(cty) 평균이 높은 회사 검색",
          "쉐보레, 포드, 혼다 데이터 출력과 hwy 전체 평균",
          # mpg 150페이지 문제
-         # 메타데이터가 category, cty 데이터는 해당 raw 데이터인 객체생성
-         # 후 다음 문제 풀이
          "suv / 컴팩 자동차 중 어떤 자동차의 도시연비 평균이 더 높은가?",
          # mpg 153페이지 문제
          "아우디차에서 고속도로 연비 1~5위 출력하시오",
          # mpg 158페이지 문제
          "평균연비가 가장 높은 자동차 1~3위 출력하시오"]
+
+
+def cal_test(mpg):
+    mpg['total'] = (mpg['cty'] + mpg['hwy']) / 2
+    mpg['test'] = np.where(mpg['total'] >= 20, 'pass', 'fail')
+    return mpg
+
+
+def cal_avg(*args):
+    avg = args[0].query(args[1])[args[2]].mean()
+    return avg
+
 
 class Mpg(object):
 
@@ -81,34 +91,34 @@ class Mpg(object):
     def menu_9(*args):
         print(args[0])
         mpg = args[1]
-        avg1 = mpg.query('displ<=4')['hwy'].mean()
-        avg2 = mpg.query('displ>=5')['hwy'].mean()
+        avg1 = cal_avg(mpg, 'displ<=4', 'hwy')
+        avg2 = cal_avg(mpg, 'displ>=5', 'hwy')
         return print(f'under 4 average : {avg1}\nover 5 average : {avg2}')
 
     @staticmethod
     def menu_10(*args):
         print(args[0])
         mpg = args[1]
-        avg1 = mpg.query('manufacturer=="audi"')['cty'].mean()
-        avg2 = mpg.query('manufacturer=="toyota"')['cty'].mean()
+        avg1 = cal_avg(mpg, 'manufacturer=="audi"', 'cty')
+        avg2 = cal_avg(mpg, 'manufacturer=="toyota"', 'cty')
         return print(f'audi average : {avg1}\ntoyota average : {avg2}')
 
     @staticmethod
     def menu_11(*args):
         print(args[0])
         mpg = args[1]
-        my_mpg1 = mpg.query('manufacturer=="chevrolet"')['cty'].mean()
-        my_mpg2 = mpg.query('manufacturer=="ford"')['cty'].mean()
-        my_mpg3 = mpg.query('manufacturer=="honda"')['cty'].mean()
-        return print(f'chevrolet average : {my_mpg1}\nford average : {my_mpg2}\nhonda average : {my_mpg3}')
+        avg1 = cal_avg(mpg, 'manufacturer=="chevrolet"', 'cty')
+        avg2 = cal_avg(mpg, 'manufacturer=="ford"', 'cty')
+        avg3 = cal_avg(mpg, 'manufacturer=="honda"', 'cty')
+        return print(f'chevrolet average : {avg1}\nford average : {avg2}\nhonda average : {avg3}')
 
     @staticmethod
     def menu_12(*args):
         print(args[0])
         mpg = args[1]
         mpg = mpg.rename(columns={'class': 'category'})
-        avg1 = mpg.query('category=="suv"')['cty'].mean()
-        avg2 = mpg.query('category=="compact"')['cty'].mean()
+        avg1 = cal_avg(mpg, 'category=="suv"', 'cty')
+        avg2 = cal_avg(mpg, 'category=="compact"', 'cty')
         return print(f'suv average : {avg1}\ncompact average : {avg2}')
 
     @staticmethod
@@ -123,13 +133,8 @@ class Mpg(object):
         print(args[0])
         mpg = args[1]
         cal_test(mpg)
-        model_avg = mpg[['model','total']].groupby(['model'], as_index=False).mean()
-        return print(model_avg.nlargest(3, 'total' ,keep='first'))
-
-def cal_test(mpg):
-    mpg['total'] = (mpg['cty'] + mpg['hwy']) / 2
-    mpg['test'] = np.where(mpg['total'] >= 20, 'pass', 'fail')
-    return mpg
+        model_total_avg = mpg[['model','total']].groupby(['model'], as_index=False).mean()
+        return print(model_total_avg.nlargest(3, 'total', keep='first'))
 
 
 if __name__ == '__main__':

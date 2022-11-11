@@ -1,6 +1,12 @@
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+
 from util.dataset import Dataset
+from sklearn.model_selection import KFold
+from sklearn.model_selection import  cross_val_score
+from sklearn.ensemble import RandomForestClassifier
 
 """
 ['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
@@ -103,6 +109,41 @@ class TitanicModel(object):
                 'Mr': 1, 'Miss': 2, 'Mrs': 3, 'Master': 4, 'Royal': 5, 'Rare': 6
             })
         return this
+
+    @staticmethod
+    def creat_k_fold() -> object:
+        return KFold(n_splits=10, shuffle=True, random_state=0)
+
+    @staticmethod
+    def get_accuracy(this, *algo) -> object:
+        score_rf = cross_val_score(RandomForestClassifier(),
+                                this.train,
+                                this.label,
+                                cv=TitanicModel.creat_k_fold(),
+                                n_jobs=1,
+                                scoring='accuracy')
+        score_dt = cross_val_score(DecisionTreeClassifier(random_state=11),
+                                this.train,
+                                this.label,
+                                cv=TitanicModel.creat_k_fold(),
+                                n_jobs=1,
+                                scoring='accuracy')
+        score_lr = cross_val_score(LogisticRegression(),
+                                this.train,
+                                this.label,
+                                cv=TitanicModel.creat_k_fold(),
+                                n_jobs=1,
+                                scoring='accuracy')
+        score_svm = cross_val_score(RandomForestClassifier(),
+                                this.train,
+                                this.label,
+                                cv=TitanicModel.creat_k_fold(),
+                                n_jobs=1,
+                                scoring='accuracy')
+
+
+        return round(np.mean(score_rf)*100, 2)
+
 
 if __name__ == '__main__': # 테스트용
     pass
