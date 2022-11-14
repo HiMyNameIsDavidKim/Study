@@ -21,10 +21,19 @@
 * (ref. flaskProject의 CVbasic 참고)<br><br>
 
 ## `[Hough Line Detector]`
-* n단계를 진행하여 선을 찾는다.(xy평면, ab평면 변환, 쓰레숄드와 비교)
+* 3단계를 진행하여 선을 찾는다.(xy평면, ab평면 변환, 쓰레숄드와 비교)
     * 한점을 지나는 '모든' 직선은 y=ax+b 이다.
     * 이를 (a,b)평면으로 이동할 수 있다. 이때 직선 b=-ax+y 로 표현된다.
     * (x,y)평면에서 두 점을 지나는 직선은 (a,b)평면에서 두 직선의 교점이다.
         * 한점 = (a,b) 평면의 직선 1개, 두점 = (a,b) 평면의 직선 2개.
     * (a,b) 평면의 교점들을 하나하나 검사해서 쓰레숄드 이상일 경우 그 직선을 검출할 수 있다.
 * (ref. flaskProject의 CVbasic 참고)<br><br>
+
+## `[Haar Casecard Classifier]`
+* 4단계를 진행하여 얼굴을 인식한다. 하르 피쳐 셀렉션이 사용된다.
+    * Haar feature selection
+    * 적분 이미지
+    * adaboost training
+    * casecade classifier
+* 특징을 추출하고 얼굴 영역을 판단하는 윈도우(24x24)와 효율적인 비교 알고리즘을 활용.
+
