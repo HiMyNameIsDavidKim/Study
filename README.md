@@ -45,15 +45,15 @@
 <br>
 
 ## 🤖ML
-  - [🧪`Data Science`]
+  - [`🧪Data Science`]
 
-  - [📷`CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
+  - [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
   
-  - [💬`NLP`]
+  - [`💬NLP`]
 
-  - [🎙️`Voice`]
+  - [`🎙️Voice`]
 
-  - [🔮`예측 모델`]
+  - [`🔮예측 모델`]
 
 <br>
 
