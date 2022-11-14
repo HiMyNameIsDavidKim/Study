@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from sklearn import svm
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
@@ -115,14 +116,14 @@ class TitanicModel(object):
         return KFold(n_splits=10, shuffle=True, random_state=0)
 
     @staticmethod
-    def get_accuracy(this, *algo) -> object:
+    def get_accuracy(this) -> object:
         score_rf = cross_val_score(RandomForestClassifier(),
                                 this.train,
                                 this.label,
                                 cv=TitanicModel.creat_k_fold(),
                                 n_jobs=1,
                                 scoring='accuracy')
-        score_dt = cross_val_score(DecisionTreeClassifier(random_state=11),
+        score_dt = cross_val_score(DecisionTreeClassifier(),
                                 this.train,
                                 this.label,
                                 cv=TitanicModel.creat_k_fold(),
@@ -134,15 +135,17 @@ class TitanicModel(object):
                                 cv=TitanicModel.creat_k_fold(),
                                 n_jobs=1,
                                 scoring='accuracy')
-        score_svm = cross_val_score(RandomForestClassifier(),
+        score_svm = cross_val_score(svm.SVC(),
                                 this.train,
                                 this.label,
                                 cv=TitanicModel.creat_k_fold(),
                                 n_jobs=1,
                                 scoring='accuracy')
 
-
-        return round(np.mean(score_rf)*100, 2)
+        return [round(np.mean(score_rf)*100, 2),
+                round(np.mean(score_dt) * 100, 2),
+                round(np.mean(score_lr) * 100, 2),
+                round(np.mean(score_svm) * 100, 2)]
 
 
 if __name__ == '__main__': # 테스트용

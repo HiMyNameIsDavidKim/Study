@@ -36,11 +36,13 @@ class TitanicController(object):
         this.train = model.create_train(this)
         return this
 
-    def learning(self, train, test, *algo): # 머신러닝
+    def learning(self, train, test): # 머신러닝
         this = self.modeling(train, test)
-        for i in algo:
-            accuracy = self.model.get_accuracy(this, i)
-            print(f'{i} algorithm accuracy : {accuracy} %')
+        accuracy = self.model.get_accuracy(this)
+        print(f'RandomForest algorithm accuracy : {accuracy[0]} %')
+        print(f'DecisionTree algorithm accuracy : {accuracy[1]} %')
+        print(f'LogisticRegression algorithm accuracy : {accuracy[2]} %')
+        print(f'Support Vector Machine algorithm accuracy : {accuracy[3]} %')
 
     def submit(self, train, test): # 제출
         pass

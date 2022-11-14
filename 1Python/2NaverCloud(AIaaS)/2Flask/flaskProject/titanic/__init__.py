@@ -21,11 +21,11 @@ if __name__ == "__main__":
             df = api.modeling('train.csv', 'test.csv')
         elif menu == "3":
             print(" ### 머신러닝 ### ")
-            df = api.learning('train.csv', 'test.csv', '랜덤 포레스트')
-            # 랜덤 포레스트 : 83.17
-            # 의사결정 나무 :
-            # 로지스틱 회귀 :
-            # 서포트 벡터 머신 :
+            df = api.learning('train.csv', 'test.csv')
+            # 랜덤 포레스트 : 82.38%
+            # 의사결정 나무 :81.94%
+            # 로지스틱 회귀 :77.89%
+            # 서포트 벡터 머신 :80.70%
         elif menu == "4":
             print(" ### 배포 ### ")
             df = api.submit('train.csv', 'test.csv')
