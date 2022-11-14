@@ -58,6 +58,7 @@ class StrokeService:
     def __init__(self):
         self.stroke = pd.read_csv('./data/healthcare-dataset-stroke-data.csv')
         self.my_stroke = None
+        self.target = None
     '''
     1.스펙보기
     '''
@@ -83,3 +84,41 @@ class StrokeService:
         self.my_stroke = self.stroke.rename(columns=stroke_meta)
         print(" --- 2.Features ---")
         print(self.my_stroke.columns)
+    '''
+    3.타깃변수(=종속변수, dependent, Y값) 설정
+    입력변수(=설명변수, 확률변수, X값)
+    타깃변수명 : stroke(=뇌졸중), 1번이라도 발병했으면 1, 아니면 0
+    '''
+    def interval_variables(self):
+        t = self.my_stroke
+        interval = ['나이','평균혈당','체질량지수']
+        print(f'--- 구간변수 타입 --- \n {t[interval].dtypes}')
+        print(f'--- 결측값 있는 변수 --- \n {t[interval].isna().any()[lambda x: x]}')
+        print(f'체질량 결측비율: {t["체질량지수"].isnull().mean():.2f}')
+        # 체질량 결측비율: 0.03 는 무시한다
+        pd.options.display.float_format = '{:.2f}'.format
+        print(f'--- 구간변수 기초 통계량 --- \n{t[interval].describe()}')
+        criterion = t['나이'] > 18
+        self.adult_stoke = t[criterion]
+        print(f'--- 성인객체스펙 --- \n{self.adult_stoke.shape}')
+        # 평균혈당 232.64이하와 체질량지수 60.3이하를 이상치로 규정하고 제거함
+        t = self.adult_stoke
+        c1 = t['평균혈당'] <= 232.64
+        c2 = t['체질량지수'] <= 60.3
+        self.adult_stoke = self.adult_stoke[c1 & c2]
+        print(f'--- 이상치 제거한 성인객체스펙 ---\n{self.adult_stoke.shape}')
+
+    '''
+    4.범주형 = ['성별', '심장병', '기혼여부', '직종', '거주형태',
+                '흡연여부', '뇌졸중']
+    '''
+    def categorical_variables(self):
+        t = self.adult_stoke
+        category = ['성별', '심장병', '기혼여부', '직종', '거주형태', '흡연여부', '뇌졸중']
+        print(f'변주형변수 데이터타입\n {t[category].dtypes}')
+        print(f'변주형변수 결측값\n {t[category].isnull().sum()}')
+        print(f'결측값 있는 변수\n {t[category].isna().any()[lambda x: x]}')
+        # 결측값이 없음
+        self.stroke = t
+        self.spec()
+        print(" ### 프리프로세스 종료 ### ")
