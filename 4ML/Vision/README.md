@@ -10,7 +10,9 @@
 * 가우시안 노이즈, 솔트앤페퍼 노이즈
 * 적중 비적중 변환(이진 이미지 감지 연산), 세션화, 글로벌 쓰레숄드, 어댑티브 쓰레숄드
 * 모폴로지 연산 : 침식, 팽창, 그라디언트, 탑햇, 블랙햇, 열림, 닫힘
-* 영상처리 : HOG(Histogram of Oriented Gradiant), blob(영상 이진화 객체), LoG(Laplacian of Gaussian), DoG(Diffrence of Gaussian), SIFT(Scale-Invariant Feature Transform), 동차좌표, k-d 트리, RANSAC(RANdom SAmple Consensus), Feature Matching<br><br>
+* 영상처리 : HOG(Histogram of Oriented Gradiant), blob(영상 이진화 객체), LoG(Laplacian of Gaussian), DoG(Diffrence of Gaussian), SIFT(Scale-Invariant Feature Transform), 동차좌표, k-d 트리, RANSAC(RANdom SAmple Consensus), Feature Matching
+* 정형 데이터 : 자료구조 내부에 있는 데이터. 구조화 되어 있다.
+* 비정형 데이터 : 자료구조에 구조화되어 있지 않은 데이터.<br><br>
 
 ## `[Canny Edge Detector]`
 * 4단계를 진행하여 경계를 찾는다.(스무딩, 그라디언트, 억제, 트래킹)
