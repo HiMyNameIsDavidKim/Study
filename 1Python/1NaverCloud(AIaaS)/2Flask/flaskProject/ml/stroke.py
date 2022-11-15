@@ -1,13 +1,16 @@
 import pandas as pd
-
-STROKE_MENUS = ["종료", #0
-                "데이터구하기",#1
-                "타깃변수설정",#2
-                "데이터처리",#3
-                "시각화",#4
-                "모델링",#5
-                "학습",#6
-                "예측"]#7
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OrdinalEncoder
+from imblearn.under_sampling import RandomUnderSampler
+STROKE_MENUS = ["Exit", #0
+                "Spec",#1
+                "Rename",#2
+                "Inteval",#3 18세이상만 사용함
+                "Norminal",#4
+                "Target",#5
+                "Partition",#6
+                "미완성: Fit",#7
+                "미완성: Predicate"]#8
 stroke_meta = {
     'id':'아이디', 'gender':'성별', 'age':'나이',
     'hypertension':'고혈압',
@@ -16,20 +19,21 @@ stroke_meta = {
     'work_type':'직종',
     'Residence_type':'거주형태',
     'avg_glucose_level':'평균혈당',
-    'bmi':'비만도',
+    'bmi':'체질량지수',
     'smoking_status':'흡연여부',
     'stroke':'뇌졸중'
 }
 stroke_menu = {
     "1" : lambda t: t.spec(),
     "2" : lambda t: t.rename_meta(),
-    "3" : lambda t: t.visualize(),
-    "4" : lambda t: t.compare_displ(),
-    "5" : lambda t: t.find_high_cty(),
-    "6" : lambda t: t.find_highest_hwy(),
-    "7" : lambda t: t.which_cty_in_suv_compact(),
-    "8" : lambda t: t.find_top5_hwy_in_audi(),
-    "9" : lambda t: t.find_top3_avg(),
+    "3" : lambda t: t.interval_variables(),
+    "4" : lambda t: t.categorical_variables(),
+    "5" : lambda t: t.target(),
+    "6" : lambda t: t.partition(),
+    "7" : lambda t: print(" ** No Function ** "),
+    "8" : lambda t: print(" ** No Function ** "),
+    "9" : lambda t: print(" ** No Function ** "),
+
 }
 '''
 <class 'pandas.core.frame.DataFrame'>
@@ -58,7 +62,9 @@ class StrokeService:
     def __init__(self):
         self.stroke = pd.read_csv('./data/healthcare-dataset-stroke-data.csv')
         self.my_stroke = None
+        self.adult_stoke = None
         self.target = None
+        self.data = None
     '''
     1.스펙보기
     '''
@@ -84,12 +90,15 @@ class StrokeService:
         self.my_stroke = self.stroke.rename(columns=stroke_meta)
         print(" --- 2.Features ---")
         print(self.my_stroke.columns)
+
     '''
-    3.타깃변수(=종속변수, dependent, Y값) 설정
+    3.타깃변수(=종속변수 dependent, Y값) 설정
     입력변수(=설명변수, 확률변수, X값)
-    타깃변수명 : stroke(=뇌졸중), 1번이라도 발병했으면 1, 아니면 0
+    타깃변수명: stroke (=뇌졸중)
+    타깃변수값: 과거에 한 번이라도 뇌졸중이 발병했으면 1, 아니면 0
+    인터벌 = ['나이','평균혈당','체질량지수']
     '''
-    def interval_variables(self):
+    def interval(self):
         t = self.my_stroke
         interval = ['나이','평균혈당','체질량지수']
         print(f'--- 구간변수 타입 --- \n {t[interval].dtypes}')
@@ -109,16 +118,51 @@ class StrokeService:
         print(f'--- 이상치 제거한 성인객체스펙 ---\n{self.adult_stoke.shape}')
 
     '''
-    4.범주형 = ['성별', '심장병', '기혼여부', '직종', '거주형태',
-                '흡연여부', '뇌졸중']
+    4.범주형 = ['성별', '심장병', '기혼여부', '직종', '거주형태','흡연여부', '고혈압']
     '''
-    def categorical_variables(self):
+
+    def ratio(self): # 해당 컬럼이 없음
+        pass
+    def norminal(self):
         t = self.adult_stoke
-        category = ['성별', '심장병', '기혼여부', '직종', '거주형태', '흡연여부', '뇌졸중']
-        print(f'변주형변수 데이터타입\n {t[category].dtypes}')
-        print(f'변주형변수 결측값\n {t[category].isnull().sum()}')
-        print(f'결측값 있는 변수\n {t[category].isna().any()[lambda x: x]}')
-        # 결측값이 없음
+        category = ['성별', '심장병', '기혼여부', '직종', '거주형태', '흡연여부', '고혈압']
+        print(f'범주형변수 데이터타입\n {t[category].dtypes}')
+        print(f'범주형변수 결측값\n {t[category].isnull().sum()}')
+        print(f'결측값 있는 변수\n {t[category].isna().any()[lambda x: x]}')# 결측값이 없음
+        t['성별'] = OrdinalEncoder().fit_transform(t['성별'].values.reshape(-1,1))
+        t['기혼여부'] = OrdinalEncoder().fit_transform(t['기혼여부'].values.reshape(-1, 1))
+        t['직종'] = OrdinalEncoder().fit_transform(t['직종'].values.reshape(-1, 1))
+        t['거주형태'] = OrdinalEncoder().fit_transform(t['거주형태'].values.reshape(-1, 1))
+        t['흡연여부'] = OrdinalEncoder().fit_transform(t['흡연여부'].values.reshape(-1, 1))
+
         self.stroke = t
         self.spec()
         print(" ### 프리프로세스 종료 ### ")
+        self.stroke.to_csv("./save/stroke.csv")
+
+    def ordinal(self): # 해당 컬럼이 없음
+        pass
+
+    '''
+    데이터프레임을 데이터 파티션하기 전에 타깃변수와 입력변수를 
+    target 과 data 에 분리하여 저장한다.
+    '''
+    def target(self):
+        df = pd.read_csv('./save/stroke.csv')
+        self.data = df.drop(['뇌졸중'], axis=1)
+        self.target = df['뇌졸중']
+        print(f'--- data shape --- \n {self.data}')
+        print(f'--- target shape --- \n {self.target}')
+
+    def partition(self):
+        data = self.data
+        target = self.target
+        undersample = RandomUnderSampler(sampling_strategy=0.333, random_state=2)
+        data_under, target_under = undersample.fit_resample(data, target)
+        print(target_under.value_counts(dropna=True))
+        X_train, X_test, y_train, y_test = train_test_split(data_under, target_under,
+                                                            test_size=0.5, random_state=42, stratify=target_under)
+        print("X_train shape:", X_train.shape)
+        print("X_test shape:", X_test.shape)
+        print("y_train shape:", y_train.shape)
+        print("y_test shape:", y_test.shape)
