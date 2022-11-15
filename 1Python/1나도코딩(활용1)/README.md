@@ -1,7 +1,0 @@
-# Nado(Advance1)
-
-
-
-
-
-
