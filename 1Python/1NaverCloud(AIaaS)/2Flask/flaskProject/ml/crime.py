@@ -26,7 +26,7 @@ crime_menu = {
     "2" : lambda t: t.save_police_pos(),
     "3" : lambda t: t.interval_variables(),
     "4" : lambda t: t.norminal_variables(),
-    "5" : lambda t: print(" ** No Function ** "),
+    "5" : lambda t: t.modify_excel(),
     "6" : lambda t: print(" ** No Function ** "),
     "7" : lambda t: print(" ** No Function ** "),
     "8" : lambda t: print(" ** No Function ** ")
@@ -55,10 +55,13 @@ class CrimeService:
     def __init__(self):
         self.crime = pd.read_csv('./data/crime_data/crime_in_seoul.csv')
         self.cctv = pd.read_csv('./data/crime_data/cctv_in_seoul.csv')
+        self.pop = pd.read_excel('./data/crime_data/pop_in_seoul.xls', sheet_name='YainSoft_Excel1', skiprows = [0,2,3])
         self.my_crime = None
         self.my_cctv = None
+        self.my_pop = None
         self.target = None
         self.data = None
+        self.ls = [self.crime, self.cctv, self.pop]
     '''
     1.스펙보기
     '''
@@ -71,7 +74,7 @@ class CrimeService:
                           f'--- 5)Case Bottom1 ---\n{x.tail(3)}\n'
                           f'--- 6)Describe ---\n{x.describe()}\n'
                           f'--- 7)Describe All ---\n{x.describe(include="all")}'))(i)
-        for i in [self.crime, self.cctv]]
+        for i in self.ls]
     '''
     2.주소 추출
     '''
@@ -86,7 +89,7 @@ class CrimeService:
         [print(i) for i in station_names]
         print(f'--- API에서 주소추출 시작 ---')
 
-        gmaps = (lambda x: googlemaps.Client(key=x))("")
+        gmaps = (lambda x: googlemaps.Client(key=x))("KeepSecretYourKey")
         print(gmaps.geocode('서울중부경찰서', language='ko'))
         print('--- API에서 주소추출 시작 ---')
         station_addrs = []
@@ -106,6 +109,14 @@ class CrimeService:
             gu_names.append(gu_name)
         crime['구별'] = gu_names
         crime.to_csv('./save/police_pos.csv',index=False)
+    '''
+    (option) 엑셀편집
+    '''
+    def modify_excel(self):
+        my_pop = self.pop
+        my_pop = my_pop[['자치구', '합계.1', '한국인.1', '등록외국인.1', '65세이상고령자']]
+        self.my_pop = my_pop
+        print(self.my_pop.head(10))
 
     '''
     (option) 메타데이터 해석
