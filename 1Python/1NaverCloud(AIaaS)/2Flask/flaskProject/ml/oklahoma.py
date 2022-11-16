@@ -5,7 +5,7 @@ from sklearn.preprocessing import OrdinalEncoder
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-OKLAHOMA_MENUS = ["Exmit", #0
+OKLAHOMA_MENUS = ["Exit", #0
                 "Spec",#1
                 "Rename",#2
                 "Interval",#3
@@ -15,10 +15,38 @@ OKLAHOMA_MENUS = ["Exmit", #0
                 "Fit",#7
                 "Predicate"]#8
 oklahoma_meta = {
-    'ACCESS', 'ACR', 'AGEP', 'BATH', 'BDSP', 'BLD', 'CONP', 'COW', 'ELEP',
-       'FESRP', 'FKITP', 'FPARC', 'FSCHP', 'FTAXP', 'GASP', 'HHL', 'HHT',
-       'HINCP', 'LANX', 'MAR', 'MV', 'NRC', 'R18', 'R65', 'RAC1P', 'RMSP',
-       'RWAT', 'SCH', 'SCHL', 'SEX', 'VALP', 'VALP_B1'
+    'ACCESS' : 'ACCESS',
+    'ACR' : 'ACR',
+    'AGEP' : '나이',
+    'BATH' : 'BATH',
+    'BDSP' : '침실수',
+    'BLD' : 'BLD',
+    'CONP' : 'CONP',
+    'COW' : 'COW',
+    'ELEP' : '월전기료',
+    'FESRP' : 'FESRP',
+    'FKITP' : 'FKITP',
+    'FPARC' : 'FPARC',
+    'FSCHP' : 'FSCHP',
+    'FTAXP' : 'FTAXP',
+    'GASP' : '월가스비',
+    'HHL' : 'HHL',
+    'HHT' : 'HHT',
+    'HINCP' : '가계소득',
+    'ANX' : 'ANX',
+    'MAR' : 'MAR',
+    'MV' : 'MV',
+    'NRC' : '자녀수',
+    'R18' : 'R18',
+    'R65' : 'R65',
+    'RAC1P' : 'RAC1P',
+    'RMSP' : '방수',
+    'RWAT' : 'RWAT',
+    'SCH' : 'SCH',
+    'SCHL' : 'SCHL',
+    'SEX' : 'SEX',
+    'VALP' : '주택가격',
+    'VALP_B1' : '지하주택가격'
 }
 oklahoma_menu = {
     "1" : lambda t: t.spec(),
