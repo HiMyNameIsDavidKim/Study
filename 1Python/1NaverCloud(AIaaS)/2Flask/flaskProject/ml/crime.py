@@ -9,9 +9,9 @@ from sklearn.metrics import accuracy_score
 
 CRIME_MENUS = ["Exit", #0
                 "Spec",#1
-                "Merge",#2
-                "Interval",#3
-                "Norminal",#4
+                "Save police position",#2
+                "Save cctv pop",#3
+                "Save police norm",#4
                 "Target",#5
                 "partition",#6
                 "Fit",#7
@@ -24,9 +24,9 @@ crime_meta = {'관서명', '살인 발생', '살인 검거', '강도 발생',
 crime_menu = {
     "1" : lambda t: t.spec(),
     "2" : lambda t: t.save_police_pos(),
-    "3" : lambda t: t.interval_variables(),
-    "4" : lambda t: t.norminal_variables(),
-    "5" : lambda t: t.modify_excel(),
+    "3" : lambda t: t.save_cctv_pop(),
+    "4" : lambda t: t.save_police_norm(),
+    "5" : lambda t: print(" ** No Function ** "),
     "6" : lambda t: print(" ** No Function ** "),
     "7" : lambda t: print(" ** No Function ** "),
     "8" : lambda t: print(" ** No Function ** ")
@@ -55,7 +55,8 @@ class CrimeService:
     def __init__(self):
         self.crime = pd.read_csv('./data/crime_data/crime_in_seoul.csv')
         self.cctv = pd.read_csv('./data/crime_data/cctv_in_seoul.csv')
-        self.pop = pd.read_excel('./data/crime_data/pop_in_seoul.xls', sheet_name='YainSoft_Excel1', skiprows = [0,2,3])
+        self.pop = pd.read_excel('./data/crime_data/pop_in_seoul.xls', sheet_name='YainSoft_Excel1',
+                                 usecols=['자치구', '합계', '한국인', '등록외국인', '65세이상고령자'], skiprows = [0,2,3])
         self.my_crime = None
         self.my_cctv = None
         self.my_pop = None
@@ -79,7 +80,8 @@ class CrimeService:
     2.주소 추출
     '''
     def save_police_pos(self):
-        crime = self.crime
+        cols = ['절도 발생', '절도 검거', '폭력 발생', '폭력 검거']
+        crime = self.crime[cols] = self.crime[cols].replace(',','',regex=True).astype(int)
         station_names = []
         for name in crime['관서명']:
             print(f'관서명,지역명 : {name},{name[:-1]}')
@@ -89,7 +91,7 @@ class CrimeService:
         [print(i) for i in station_names]
         print(f'--- API에서 주소추출 시작 ---')
 
-        gmaps = (lambda x: googlemaps.Client(key=x))("KeepSecretYourKey")
+        gmaps = (lambda x: googlemaps.Client(key=x))("KeepSecurityYourKey")
         print(gmaps.geocode('서울중부경찰서', language='ko'))
         print('--- API에서 주소추출 시작 ---')
         station_addrs = []
@@ -108,15 +110,54 @@ class CrimeService:
             gu_name = [gu for gu in _ if gu[-1] == '구'][0]
             gu_names.append(gu_name)
         crime['구별'] = gu_names
-        crime.to_csv('./save/police_pos.csv',index=False)
+        # crime.to_csv('./save/police_pos.csv',index=False)
+        crime.to_pickle('./save/police_pos.pkl')
     '''
-    (option) 엑셀편집
+    cctv 상관관계 확인
     '''
-    def modify_excel(self):
-        my_pop = self.pop
-        my_pop = my_pop[['자치구', '합계.1', '한국인.1', '등록외국인.1', '65세이상고령자']]
-        self.my_pop = my_pop
-        print(self.my_pop.head(10))
+    def save_cctv_pop(self):
+        cctv = self.cctv
+        pop = self.pop
+        cctv.rename(columns={cctv.columns[0]: '구별'}, inplace=True)
+        pop.rename(columns=
+                   {pop.columns[0]: '구별',
+                    pop.columns[1]: '인구수',
+                    pop.columns[2]: '한국인',
+                    pop.columns[3]: '외국인',
+                    pop.columns[4]: '고령자',
+                    }, inplace=True)
+        print('*'*100)
+        pop.drop(index=25, inplace=True)
+        pop['외국인비율'] = pop['외국인'].astype(int)/pop['인구수'].astype(int)*100
+        pop['고령자비율'] = pop['고령자'].astype(int)/pop['인구수'].astype(int)*100
+        cctv.drop(['2013년도 이전','2014년','2015년','2016년'], axis=1, inplace=True)
+        cctv_pop = pd.merge(cctv, pop, on='구별')
+        cor1 = np.corrcoef(cctv_pop['고령자비율'], cctv_pop['소계'])
+        cor2 = np.corrcoef(cctv_pop['외국인비율'], cctv_pop['소계'])
+        print(f'고령자비율과 CCTV의 상관계수 {str(cor1)} \n'
+              f'외국인비율과 CCTV의 상관계수 {str(cor2)} ')
+        '''
+        r이 -1.0과 -0.7 사이이면, 강한 음적 선형관계,
+        r이 -0.7과 -0.3 사이이면, 뚜렷한 음적 선형관계,
+        r이 -0.3과 -0.1 사이이면, 약한 음적 선형관계,
+        r이 -0.1과 +0.1 사이이면, 거의 무시될 수 있는 선형관계,
+        r이 +0.1과 +0.3 사이이면, 약한 양적 선형관계,
+        r이 +0.3과 +0.7 사이이면, 뚜렷한 양적 선형관계,
+        r이 +0.7과 +1.0 사이이면, 강한 양적 선형관계            
+        '''
+
+    def save_police_norm(self):
+        police_pos = pd.read_pickle('./save/police_pos.pkl')
+        police = pd.pivot_table(police_pos,index='구별',aggfunc=np.sum)
+        police['살인검거율'] = (police['살인 검거'].astype(int) / police['살인 발생'].astype(int)) * 100
+        police['강도검거율'] = (police['강도 검거'].astype(int) / police['강도 발생'].astype(int)) * 100
+        police['강간검거율'] = (police['강간 검거'].astype(int) / police['강간 발생'].astype(int)) * 100
+        police['절도검거율'] = (police['절도 검거'].astype(int) / police['절도 발생'].astype(int)) * 100
+        police['폭력검거율'] = (police['폭력 검거'].astype(int) / police['폭력 발생'].astype(int)) * 100
+        police.drop(columns={'살인 검거','강도 검거','강간 검거','절도 검거','폭력 검거'}, axis=1, inplace=True)
+        print(police)
+        for i in []:
+            police.loc[0] # 데이터값의 기간 오류로 100을 넘으면 100으로 계산
 
     '''
     (option) 메타데이터 해석
