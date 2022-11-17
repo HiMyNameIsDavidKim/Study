@@ -1,6 +1,9 @@
 import googlemaps
+import folium
 import pandas as pd
 import numpy as np
+import json
+from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder
 from imblearn.under_sampling import RandomUnderSampler
@@ -12,7 +15,7 @@ CRIME_MENUS = ["Exit", #0
                 "Save police position",#2
                 "Save cctv pop",#3
                 "Save police norm",#4
-                "Target",#5
+                "Folium example",#5
                 "partition",#6
                 "Fit",#7
                 "Predicate"#8
@@ -26,7 +29,7 @@ crime_menu = {
     "2" : lambda t: t.save_police_pos(),
     "3" : lambda t: t.save_cctv_pop(),
     "4" : lambda t: t.save_police_norm(),
-    "5" : lambda t: print(" ** No Function ** "),
+    "5" : lambda t: t.folium_example(),
     "6" : lambda t: print(" ** No Function ** "),
     "7" : lambda t: print(" ** No Function ** "),
     "8" : lambda t: print(" ** No Function ** ")
@@ -57,12 +60,16 @@ class CrimeService:
         self.cctv = pd.read_csv('./data/crime_data/cctv_in_seoul.csv')
         self.pop = pd.read_excel('./data/crime_data/pop_in_seoul.xls', sheet_name='YainSoft_Excel1',
                                  usecols=['자치구', '합계', '한국인', '등록외국인', '65세이상고령자'], skiprows = [0,2,3])
+        self.crime_rate_columns = ['살인검거율', '강도검거율', '강간검거율', '절도검거율', '폭력검거율']
+        self.crime_columns = ['살인', '강도', '강간', '절도', '폭력']
+        self.arrest_columns = ['살인 검거', '강도 검거', '강간 검거', '절도 검거', '폭력 검거']
         self.my_crime = None
         self.my_cctv = None
         self.my_pop = None
         self.target = None
         self.data = None
         self.ls = [self.crime, self.cctv, self.pop]
+        self.us_states = pd.read_json('./data/crime_data/us-states.json')
     '''
     1.스펙보기
     '''
@@ -89,7 +96,6 @@ class CrimeService:
         print(f'서울 시내 경찰서는 총 {len(station_names)}개 있어요.')
         print(f'--- 서울시내 경찰서 목록 ---')
         [print(i) for i in station_names]
-        print(f'--- API에서 주소추출 시작 ---')
 
         gmaps = (lambda x: googlemaps.Client(key=x))("KeepSecurityYourKey")
         print(gmaps.geocode('서울중부경찰서', language='ko'))
@@ -113,7 +119,7 @@ class CrimeService:
         # crime.to_csv('./save/police_pos.csv',index=False)
         crime.to_pickle('./save/police_pos.pkl')
     '''
-    cctv 상관관계 확인
+    3.cctv 상관관계 확인
     '''
     def save_cctv_pop(self):
         cctv = self.cctv
@@ -145,7 +151,9 @@ class CrimeService:
         r이 +0.3과 +0.7 사이이면, 뚜렷한 양적 선형관계,
         r이 +0.7과 +1.0 사이이면, 강한 양적 선형관계            
         '''
-
+    '''
+    4.노멀라이제이션
+    '''
     def save_police_norm(self):
         police_pos = pd.read_pickle('./save/police_pos.pkl')
         police = pd.pivot_table(police_pos,index='구별',aggfunc=np.sum)
@@ -155,10 +163,48 @@ class CrimeService:
         police['절도검거율'] = (police['절도 검거'].astype(int) / police['절도 발생'].astype(int)) * 100
         police['폭력검거율'] = (police['폭력 검거'].astype(int) / police['폭력 발생'].astype(int)) * 100
         police.drop(columns={'살인 검거','강도 검거','강간 검거','절도 검거','폭력 검거'}, axis=1, inplace=True)
-        print(police)
-        for i in []:
-            police.loc[0] # 데이터값의 기간 오류로 100을 넘으면 100으로 계산
+        for i in self.crime_rate_columns:
+            police.loc[police[i] > 100, 1] = 100 # 데이터값의 기간 오류로 100을 넘으면 100으로 계산
+        police.rename(columns={
+            '살인 발생': '살인',
+            '강도 발생': '강도',
+            '강간 발생': '강간',
+            '절도 발생': '절도',
+            '폭력 발생': '폭력'
+        }, inplace=True)
+        x = police[self.crime_rate_columns].values
+        min_max_scalar = preprocessing.MinMaxScaler()
+        x_scaled = min_max_scalar.fit_transform(x.astype(float))
+        police_norm = pd.DataFrame(x_scaled,columns=self.crime_columns,index=police.index)
+        police_norm[self.crime_rate_columns] = police[self.crime_rate_columns]
+        police_norm['범죄'] = np.sum(police_norm[self.crime_rate_columns], axis=1)
+        police_norm['검거'] = np.sum(police_norm[self.crime_columns], axis=1)
+        police_norm.to_pickle('./save/police_norm.pkl')
+        print(pd.read_pickle('./save/police_norm.pkl'))
+    '''
+    5.폴리움 지도 그리기
+    '''
+    def folium_example(self):
+        m = folium.Map(location=[45.5236, -122.6750], tiles="Stamen Toner", zoom_start=13)
 
+        folium.Circle(
+            radius=100,
+            location=[45.5244, -122.6699],
+            popup="The Waterfront",
+            color="crimson",
+            fill=False,
+        ).add_to(m)
+
+        folium.CircleMarker(
+            location=[45.5215, -122.6261],
+            radius=50,
+            popup="Laurelhurst Park",
+            color="#3186cc",
+            fill=True,
+            fill_color="#3186cc",
+        ).add_to(m)
+
+        m
     '''
     (option) 메타데이터 해석
     '''
