@@ -65,8 +65,8 @@
 * 엔진구조 : 소프트웨어에서 계속 반복해서 돌리다가 원할때 멈추는 구조를 엔진구조라고 한다.
 * 스태틱 메인 메서드는 CRUD로 구성된 엔진구조로 설계한다.<br><br>
 
-### [MTV 패턴]
-* 전체 프레임워크를 Model, Template, View로 나누는 디자인 패턴.
+### [MTV 패턴 설계]
+* 전체 프레임워크를 Model, Template, View로 나누는 설계.
 * 진행 순서는 init파일 -> 데이터셋 -> 모델 -> 뷰 -> 템플릿
 * Model : 모델 수립, (전처리 - 프로세스 - 테스트) 순서로 모델을 완성.
     * DB에 저장되는 데이터, 내부속성값, 클래스
@@ -82,9 +82,13 @@
     * label : 답안지
  - [`작업 순서 메모`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS)/2Flask)<br><br>
 
-### [DDD 패턴]
-* 전체 프레임워크를 Domain Driven Design로 나누는 도메인 중심 디자인 패턴.
-* 데이터 중심 접근이 아니라, 모델과 로직에 집중하는 것이 특징.<br><br>
+### [DDD 설계]
+* 전체 프레임워크를 Domain Driven Design로 나누는 도메인 주도 설계.
+* 데이터 중심 접근이 아니라, 도메인(모델과 로직)에 집중한다.
+    * 도메인 자체의 복잡성을 줄이는 것이 특징.
+* Domain : 
+* Service : 
+* View : <br><br>
 
 
 
@@ -198,7 +202,7 @@
 * 람다식과 함께 사용된다. (ex. return lambda x: a*x + b)
 * 스코프 : 변수에 접근할 수 있는 범위. 리전같은 의미. (ex. 글로벌 스코프, 로컬 스코프)
 * global, local, nonlocal 개념과 클로저의 nonlocal 활용
-    * nonlocal은 가장 가까운 바깥 지역 변수를 찾는다.
+    * nonlocal은 가장 가까운 바깥 지역 변수를 찾는다.<br><br>
 
 
 

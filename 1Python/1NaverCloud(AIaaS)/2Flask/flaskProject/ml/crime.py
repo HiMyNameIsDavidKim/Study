@@ -16,7 +16,7 @@ CRIME_MENUS = ["Exit", #0
                 "Save cctv pop",#3
                 "Save police norm",#4
                 "Folium example",#5
-                "partition",#6
+                "Save seoul folium",#6
                 "Fit",#7
                 "Predicate"#8
 ]
@@ -30,7 +30,7 @@ crime_menu = {
     "3" : lambda t: t.save_cctv_pop(),
     "4" : lambda t: t.save_police_norm(),
     "5" : lambda t: t.folium_example(),
-    "6" : lambda t: print(" ** No Function ** "),
+    "6" : lambda t: t.save_seoul_folium(),
     "7" : lambda t: print(" ** No Function ** "),
     "8" : lambda t: print(" ** No Function ** ")
 }
@@ -69,7 +69,10 @@ class CrimeService:
         self.target = None
         self.data = None
         self.ls = [self.crime, self.cctv, self.pop]
-        self.us_states = pd.read_json('./data/crime_data/us-states.json')
+        self.us_states = './data/us-states.json'
+        self.us_unemployment = pd.read_csv('./data/us_unemployment.csv')
+        self.kr_states = './data/kr-state.json'
+        print(self.kr_states)
     '''
     1.스펙보기
     '''
@@ -88,7 +91,8 @@ class CrimeService:
     '''
     def save_police_pos(self):
         cols = ['절도 발생', '절도 검거', '폭력 발생', '폭력 검거']
-        crime = self.crime[cols] = self.crime[cols].replace(',','',regex=True).astype(int)
+        self.crime[cols] = self.crime[cols].replace(',','',regex=True).astype(int)
+        crime = self.crime
         station_names = []
         for name in crime['관서명']:
             print(f'관서명,지역명 : {name},{name[:-1]}')
@@ -97,7 +101,7 @@ class CrimeService:
         print(f'--- 서울시내 경찰서 목록 ---')
         [print(i) for i in station_names]
 
-        gmaps = (lambda x: googlemaps.Client(key=x))("KeepSecurityYourKey")
+        gmaps = (lambda x: googlemaps.Client(key=x))("AIzaSyBRTgavFkgMT33WCn1x5r81D7_-DV38wVc")
         print(gmaps.geocode('서울중부경찰서', language='ko'))
         print('--- API에서 주소추출 시작 ---')
         station_addrs = []
@@ -116,6 +120,7 @@ class CrimeService:
             gu_name = [gu for gu in _ if gu[-1] == '구'][0]
             gu_names.append(gu_name)
         crime['구별'] = gu_names
+        crime.loc[19,'구별'] = '강서구'
         # crime.to_csv('./save/police_pos.csv',index=False)
         crime.to_pickle('./save/police_pos.pkl')
     '''
@@ -179,32 +184,56 @@ class CrimeService:
         police_norm[self.crime_rate_columns] = police[self.crime_rate_columns]
         police_norm['범죄'] = np.sum(police_norm[self.crime_rate_columns], axis=1)
         police_norm['검거'] = np.sum(police_norm[self.crime_columns], axis=1)
+        # police_norm.reset_index(drop=False,inplace=True)
         police_norm.to_pickle('./save/police_norm.pkl')
-        print(pd.read_pickle('./save/police_norm.pkl'))
     '''
     5.폴리움 지도 그리기
     '''
     def folium_example(self):
-        m = folium.Map(location=[45.5236, -122.6750], tiles="Stamen Toner", zoom_start=13)
+        us_unemployment = self.us_unemployment
+        url = ("https://raw.githubusercontent.com/python-visualization/folium/master/examples/data")
+        geo_data = f"{url}/us-states.json"
+        state_unemployment = f"{url}/US_Unemployment_Oct2012.csv"
+        data = pd.read_csv(state_unemployment)
+        bins = list(us_unemployment["Unemployment"].quantile([0, 0.25, 0.5, 0.75, 1]))
+        map = folium.Map(location=[48, -102], zoom_start=5)
+        folium.Choropleth(
+            geo_data=geo_data, # us_states,
+            data=data, #us_unemployment,
+            name="choropleth",
+            columns=["State","Unemployment"],
+            key_on="feature.id",
+            fill_color="YlGn",
+            fill_opacity=0.7,
+            line_opacity=0.5,
+            legend_name='Unemployment Rate (%)',
+            bins=bins
+        ).add_to(map)
+        map.save("./save/unemployment.html")
 
-        folium.Circle(
-            radius=100,
-            location=[45.5244, -122.6699],
-            popup="The Waterfront",
-            color="crimson",
-            fill=False,
-        ).add_to(m)
+    def save_seoul_folium(self):
+        geo_data = self.kr_states
+        data = self.create_folium_data()
+        map = folium.Map(location=[37.5502, 126.982], zoom_start=12)
+        folium.Choropleth(
+            geo_data=geo_data,  # us_states,
+            data=data,  # us_unemployment,
+            name="choropleth",
+            columns=["State", "Crime Rate"],
+            key_on="feature.id",
+            fill_color="PuRd",
+            fill_opacity=0.7,
+            line_opacity=0.2,
+            legend_name='Crime Rate (%)'
+        ).add_to(map)
+        map.save("./save/crime_rate.html")
 
-        folium.CircleMarker(
-            location=[45.5215, -122.6261],
-            radius=50,
-            popup="Laurelhurst Park",
-            color="#3186cc",
-            fill=True,
-            fill_color="#3186cc",
-        ).add_to(m)
-
-        m
+    def create_folium_data(self):
+        police_pos = pd.read_pickle('./save/police_pos.pkl')
+        police_norm = pd.read_pickle('./save/police_norm.pkl')
+        temp = police_pos[self.arrest_columns] / police_pos[self.arrest_columns].max()
+        police_pos['검거'] = np.sum(temp, axis=1)
+        return tuple(zip(police_norm['구별'], police_norm['범죄']))
     '''
     (option) 메타데이터 해석
     '''
