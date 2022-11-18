@@ -64,7 +64,7 @@ def Canny(src, lowThreshold, highThreshold):
                     q = img[i - 1, j - 1]
                     r = img[i + 1, j + 1]
 
-                if (img[i, j] >= q) and (img[i, j] >= r):  # 주변 픽셀(q, r)보다 크면 img 행렬의 값을 그대로 사용
+                if (img[i, j] >= q) and (img[i, j] >= r):  # 주변 픽셀(q, r)보다 크면 static 행렬의 값을 그대로 사용
                     Z[i, j] = img[i, j]
                 else:  # 그렇지 않을 경우 0을 사용
                     Z[i, j] = 0
@@ -175,11 +175,11 @@ if __name__ == '__main__':
     plt.show()
 '''
 이 메서드 2개도 람다 함수로 고쳐서 한줄로 작성한다.
-def imshow(img):
-    img = Image.fromarray(img)
-    plt.imshow(img)
+def imshow(static):
+    static = Image.fromarray(static)
+    plt.imshow(static)
     plt.show()
     
-def gray_scale(img):
-    return img[:, :, 0] * 0.114 + img[:, :, 1] * 0.587 + img[:, :, 2] * 0.229
+def gray_scale(static):
+    return static[:, :, 0] * 0.114 + static[:, :, 1] * 0.587 + static[:, :, 2] * 0.229
 '''

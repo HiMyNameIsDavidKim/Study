@@ -176,7 +176,7 @@ class Canny(object):
                         q = img[i - 1, j - 1]
                         r = img[i + 1, j + 1]
 
-                    if (img[i, j] >= q) and (img[i, j] >= r):  # 주변 픽셀(q, r)보다 크면 img 행렬의 값을 그대로 사용
+                    if (img[i, j] >= q) and (img[i, j] >= r):  # 주변 픽셀(q, r)보다 크면 static 행렬의 값을 그대로 사용
                         Z[i, j] = img[i, j]
                     else:  # 그렇지 않을 경우 0을 사용
                         Z[i, j] = 0
@@ -248,10 +248,10 @@ def gray_scale(img):
 if __name__ == '__main__':
     '''
     lm = LennaModel()
-    img = grayscale(lm.get())
-    img = GaussianBlur(img, 1, 1).get()
-    img = Canny(img, 50, 150).get()
-    imshow(img)
+    static = grayscale(lm.get())
+    static = GaussianBlur(static, 1, 1).get()
+    static = Canny(static, 50, 150).get()
+    imshow(static)
     '''
     # LennaModel().messi_show(LennaModel().messi())
     # https://docs.opencv.org/4.x/roi.jpg

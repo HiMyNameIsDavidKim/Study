@@ -1,10 +1,30 @@
-from flask import Flask
+from flask import Flask, request, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route("/")
 def hello_world():
-    return "Hello Flask!!"
+    return render_template('Hello, HTML')
+
+@app.route("/users/<username>")
+def get_user(username):
+    return username
+
+@app.route("/posts/<int:post_id>")
+def get_post(post_id):
+    return str(post_id)
+
+@app.route("/uuid/<uuid:uuid>")
+def get_uuid(uuid):
+    return str(uuid)
+
+@app.route('/login', methods=['get','post'])
+def login_page():
+    if request.method == 'POST':
+        return '로그인 성공'
+    else:
+        return '로그인 화면'
+
 
 if __name__ == "__main__":
     app.run()

@@ -14,9 +14,9 @@ if __name__ == '__main__':
             break
         else:
             crime_menu[menu](t)
-            '''
-            try:
-                stroke_menu[menu](t)
-            except KeyError:
-                print(" ### Error ### ")
-            '''
+        '''
+        try:
+            stroke_menu[menu](t)
+        except KeyError:
+            print(" ### Error ### ")
+        '''
