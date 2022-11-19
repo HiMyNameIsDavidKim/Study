@@ -5,7 +5,7 @@
 
   - [`자료구조`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
   
-  - [`CS`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
+  - [`Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
 
   - [`대수학`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
 
