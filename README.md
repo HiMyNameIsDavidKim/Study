@@ -55,7 +55,7 @@
 
 <br>
 
-## ☁️Cloud(AWS, NAVER)
+## ☁️Cloud(AWS, GCP, NCP)
   
 <br>
 
