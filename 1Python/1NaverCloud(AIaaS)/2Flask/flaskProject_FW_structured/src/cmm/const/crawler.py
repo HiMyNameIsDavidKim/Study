@@ -1,0 +1,1 @@
+HEADERS = {'User-Agent': 'My User Agent 1.0'}

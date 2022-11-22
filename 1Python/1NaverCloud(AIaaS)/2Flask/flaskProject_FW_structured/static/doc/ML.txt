@@ -1,0 +1,8 @@
+지도 Learning (레이블)
+출력값(=타깃)
+ - int = 불연속 = 카테고리컬 = 분류 classification
+ - float = 연속 = 시퀀셜 = 회귀 regression
+
+확률변수
+기댓값
+모델
