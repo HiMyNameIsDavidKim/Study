@@ -1,3 +1,4 @@
+import pandas as pd
 from flask import Flask, request, render_template
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -27,4 +28,7 @@ def login_page():
 
 
 if __name__=="__main__":
-    app.run()
+    # app.run()
+    df = pd.read_csv("./static/save/cop/scp/bugs_ranking.csv")
+    print(" ### ")
+    print(df)

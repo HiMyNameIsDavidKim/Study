@@ -5,23 +5,9 @@ import numpy as np
 import pandas as pd
 from sklearn import preprocessing
 import folium
-CRIME_MENUS = ["Exit", #0
-                "Show Spec",#1
-                "Save Police Position",#2.
-                "Save CCTV Population",#3
-                "Save Police Normalization",#4
-                "Save US Unemployment Map",#5
-                "Save Seoul Crime Map",#6
-                ]
 
-crime_menu = {
-    "1" : lambda t: t.show_spec(),
-    "2" : lambda t: t.save_police_pos(),
-    "3" : lambda t: t.save_cctv_pop(),
-    "4" : lambda t: t.save_police_norm(),
-    "5" : lambda t: t.save_us_unemployment_map(),
-    "6" : lambda t: t.save_seoul_crime_map(),
-}
+from src.cmm.const.path import static
+
 '''
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 5110 entries, 0 to 5109
@@ -78,20 +64,23 @@ def MyChoroplethService(vo):
 
 class Crime:
 
+    data = f"{static}/data/dam/crime"
+    save = f"{static}/save/dam/crime"
+
     def __init__(self):
-        self.crime = pd.read_csv('../../ml/data/crime_in_seoul.csv')
+        data = self.data
+        self.crime = pd.read_csv(f'{data}/crime_in_seoul.csv')
         cols = ['절도 발생','절도 검거','폭력 발생', '폭력 검거']
         self.crime[cols] = self.crime[cols].replace(',', '', regex=True).astype(int)  # regex=True
-        self.cctv = pd.read_csv('../../ml/data/cctv_in_seoul.csv')
-        self.pop = pd.read_excel('./data/pop_in_seoul.xls',usecols=["자치구","합계","한국인","등록외국인","65세이상고령자"], skiprows=[0,2])
+        self.cctv = pd.read_csv(f'{data}/cctv_in_seoul.csv')
+        self.pop = pd.read_excel(f'{data}/pop_in_seoul.xls',usecols=["자치구","합계","한국인","등록외국인","65세이상고령자"], skiprows=[0,2])
         self.ls = [self.crime, self.cctv, self.pop]
         self.crime_rate_columns = ['살인검거율', '강도검거율', '강간검거율', '절도검거율', '폭력검거율']
         self.crime_columns = ['살인', '강도', '강간', '절도', '폭력']
         self.arrest_columns = ['살인 검거', '강도 검거', '강간 검거', '절도 검거', '폭력 검거']
-        self.us_states = './data/us-states.json'
-        self.us_unemployment = pd.read_csv('../../ml/data/us_unemployment.csv')
-        self.kr_states = './data/kr-state.json'
-        print(self.kr_states)
+        self.us_states = f'{data}/us-states.json'
+        self.us_unemployment = pd.read_csv(f'{data}/us_unemployment.csv')
+        self.kr_states = f'{data}/kr-state.json'
     '''
     1.스펙보기 
     id = SERIALNO  
@@ -151,6 +140,8 @@ class Crime:
     def save_cctv_pop(self): # 3
         cctv = self.cctv
         pop = self.pop
+        data = self.data
+        save = self.save
         cctv.rename(columns={cctv.columns[0]: '구별'}, inplace=True)
         pop.rename(columns={
             pop.columns[0]: '구별',
@@ -185,11 +176,12 @@ class Crime:
         외국인비율 과 CCTV 상관계수 [[ 1.         -0.13607433] 거의 무시될 수 있는
                                     [-0.13607433  1.        ]]                        
         """
-        cctv_pop.to_pickle('./save/cctv_pop.pkl')
-        print(pd.read_pickle('../../ml/save/cctv_pop.pkl'))
+        cctv_pop.to_pickle(f'{data}/cctv_pop.pkl')
+        print(pd.read_pickle(f'{save}/cctv_pop.pkl'))
 
     def save_police_norm(self): # 4
-        police_pos = pd.read_pickle('../../ml/save/police_pos.pkl')
+        save = self.save
+        police_pos = pd.read_pickle(f'{save}/police_pos.pkl')
         police = pd.pivot_table(police_pos,index="구별",aggfunc=np.sum)
         police['살인검거율'] = (police['살인 검거'].astype(int) / police['살인 발생'].astype(int)) * 100
         police['강도검거율'] = (police['강도 검거'].astype(int) / police['강도 발생'].astype(int)) * 100
@@ -223,8 +215,8 @@ class Crime:
         police_norm['범죄'] = np.sum(police_norm[self.crime_rate_columns], axis=1)
         police_norm['검거'] = np.sum(police_norm[self.crime_columns], axis=1)
         # police_norm.reset_index(drop=False, inplace=True) # pickle 저장직전 인덱스 해제
-        police_norm.to_pickle('./save/police_norm.pkl')
-        print(pd.read_pickle('../../ml/save/police_norm.pkl'))
+        police_norm.to_pickle(f'{save}/police_norm.pkl')
+        print(pd.read_pickle(f'{save}/police_norm.pkl'))
 
     def save_us_unemployment_map(self): # 5
         mc = MyChoroplethVO()
@@ -240,8 +232,7 @@ class Crime:
         mc.bins = list(mc.data["Unemployment"].quantile([0, 0.25, 0.5, 0.75, 1]))
         mc.location = [48, -102]
         mc.zoom_start = 5
-        mc.save_path = "../../ml/save/unemployment.html"
-        MyChoroplethService(mc)
+        MyChoroplethService(f"{self.save}/unemployment.html")
 
     def save_seoul_crime_map(self): # 6
         mc = MyChoroplethVO()
@@ -256,11 +247,11 @@ class Crime:
         mc.legend_name = "Crime Rate (%)"
         mc.location = [37.5502, 126.982]
         mc.zoom_start = 12
-        mc.save_path = "../../ml/save/seoul_crime_rate.html"
+        mc.save_path = f"{self.save}/seoul_crime_rate.html"
         MyChoroplethService(mc)
 
     def get_seoul_crime_data(self):
-        police_norm = pd.read_pickle('../../ml/save/police_norm.pkl')
+        police_norm = pd.read_pickle(f'{self.save}/police_norm.pkl')
         return tuple(zip(police_norm.index, police_norm['범죄']))
         # police_norm.index 는 '구별'
 '''
@@ -271,27 +262,39 @@ class Crime:
 def set_json_from_df(fname):
     df = pd.read_json(fname)
     df.drop(df.index[[8,51]], inplace=True)
-    df.to_json("./save/us-states.json", orient='index')
+    df.to_json(f"{static}/data/dam/crime/us-states.json", orient='index')
 
-def my_menu(ls):
-    for i, j in enumerate(ls):
-        print(f"{i}. {j}")
-    return input('메뉴선택: ')
-
+crime_menus = ["Exit", #0
+                "Show Spec",#1
+                "Save Police Position",#2.
+                "Save CCTV Population",#3
+                "Save Police Normalization",#4
+                "Save US Unemployment Map",#5
+                "Save Seoul Crime Map",#6
+                ]
+crime_menu = {
+    "1" : lambda x: x.show_spec(),
+    "2" : lambda x: x.save_police_pos(),
+    "3" : lambda x: x.save_cctv_pop(),
+    "4" : lambda x: x.save_police_norm(),
+    "5" : lambda x: x.save_us_unemployment_map(),
+    "6" : lambda x: x.save_seoul_crime_map(),
+}
 if __name__ == '__main__':
-    t = Crime()
+    crime = Crime()
     while True:
-        menu = my_menu(CRIME_MENUS)
+        [print(f"{i}. {j}") for i, j in enumerate(crime_menus)]
+        menu = input('메뉴선택: ')
         if menu == '0':
             print("종료")
             break
         else:
-            crime_menu[menu](t)
-            '''
             try:
-                stroke_menu[menu](t)
-            except KeyError:
-                print(" ### Error ### ")
-            '''
+                crime_menu[menu](crime)
+            except KeyError as e:
+                if 'some error message' in str(e):
+                    print('Caught error message')
+                else:
+                    print("Didn't catch error message")
 
 
