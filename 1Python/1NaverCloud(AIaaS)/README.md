@@ -100,7 +100,7 @@
 * 1.comprehesion 2.f-string 3.swap 4.str 메서드 5. asterisk(*) 6.람다함수와 맵함수 7.kwargs(**) p.generator p.extended slice
     * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
-        * if문의 Comp. (i if i%2 == 0)(this['Survived'][this['Sex']=='male'])
+        * if문의 Comp. (ex. [i if i%2 == 0 else None])
     * 컴프리헨션된 자료는 반드시 자료구조 안에 담아야한다.
     * f-string : 직관적인 문자열. (ex. f”이게 f 스트링{print_fstring}이다.”)
     * swap : 스왑하는 논리. (ex. t = a, a = b, b = t)
