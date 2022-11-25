@@ -31,17 +31,6 @@
 
 <br>
 
-## 📊Data Analyst
-  - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
-
-  - [`R`]
-  
-  - [`Hadoop`]
-
-  - [`Analystical Skills`]
-
-<br>
-
 ## 🤖ML
   - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
@@ -52,6 +41,17 @@
   - [`🎙️Voice`]
 
   - [`🔮Prediction`]
+
+<br>
+
+## 📊Data Analyst
+  - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
+
+  - [`R`]
+  
+  - [`Hadoop`]
+
+  - [`Analystical Skills`]
 
 <br>
 
