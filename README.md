@@ -24,13 +24,6 @@
 
 <br>
 
-## ☕️Java
-  - [`기초문법`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
-
-  - [`인공지능 활용`]
-
-<br>
-
 ## 🤖ML
   - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
@@ -58,6 +51,13 @@
 ## ☁️Cloud(AWS, GCP, NCP)
   - [`📂DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
   - [`🐳Docker`]
+
+<br>
+
+## ☕️Java
+  - [`기초문법`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
+
+  - [`인공지능 활용`]
 
 <br>
 
