@@ -105,3 +105,28 @@ from `SCHEDULE` as s
 	join stadium as st using(stadium_id)
 where s.sche_date like '201205%'
 ;
+
+-- 서브쿼리 문제 1
+-- 수원을 연고지로 하는팀의 골키퍼는
+-- 누구인가 ?
+
+select player_name
+from player
+where position like 'GK'
+	and team_id like (select team_id
+						from team
+						where region_name like '수원')
+;
+
+-- 문제 6
+-- 수원 연고팀에서 키가 170 이상 선수
+-- 이면서 성이 고씨인 선수는 누구인가
+
+select player_name
+from player
+where player_name like '고%'
+	and height >= 170
+	and team_id like (select team_id
+						from team
+						where region_name like '수원')
+;
