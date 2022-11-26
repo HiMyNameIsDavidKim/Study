@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ac7e3d2-e76b-4ba9-b6d8-d1173fc40212" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/README.md" beforePathEscaped="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/README.md" afterPathEscaped="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" beforePathEscaped="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" afterPathEscaped="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/1AIaaS(NaverCloud)/2Flask/README.md" beforePathEscaped="$PROJECT_DIR$/1Python/1AIaaS(NaverCloud)/2Flask/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/1AIaaS(NaverCloud)/2Flask/README.md" afterPathEscaped="$PROJECT_DIR$/1Python/1AIaaS(NaverCloud)/2Flask/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/1AIaaS(NaverCloud)/README.md" beforePathEscaped="$PROJECT_DIR$/1Python/1AIaaS(NaverCloud)/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/1AIaaS(NaverCloud)/README.md" afterPathEscaped="$PROJECT_DIR$/1Python/1AIaaS(NaverCloud)/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +40,7 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/davidkim/Desktop/📚/🧑‍💻/github/study/5Cloud/Docker",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -55,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668650410184</updated>
-      <workItem from="1669441836575" duration="1246000" />
+      <workItem from="1669441836575" duration="1986000" />
     </task>
     <servers />
   </component>

@@ -231,6 +231,26 @@
 
 
 
+## `[Flask]`
+* 마이크로 웹 프레임워크. 단순하고 가볍다. 서버 유지비가 싸다.
+
+### [Path parameter]
+* path, string, int, float, uuid 5가지가 있다.
+* path : ‘/<>’가 없는 디폴트값
+* uuid : 세계 표준 고유 식별자
+* ‘/A/<B>’를 DB에서 보면 A는 메타데이터 B는 로우데이터<br><br>
+
+### [RESTful API]
+* 안전한 정보 교환을 위한 표준 인터페이스 API.
+* Flask에서 methods = [‘’]안에 해당 메서드명을 적는다.
+* 메서드 종류 : DELETE, GET, POST, PATCH, PUT
+  * CRUD 기준 : GET(=READ), POST(=CREATE), PATCH(=부분 UPDATE), PUT(=전체 UPDATE)
+* 해당 프로세스에 맞는 SQL 쿼리를 던져야한다.
+  * SQL 기준 : GET(=SELECT), POST(=INSERT)
+
+
+
+
 ## `[인사이트]`
 * 데미스 허사비스 : 알파고의 아버지. 구글 딥마인드의 CEO이다.
 * MSA : Micro Service Architecture, 작고 독립적으로 배포가능한 서비스로 구성된 프레임워크이다.
