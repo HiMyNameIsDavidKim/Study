@@ -16,7 +16,7 @@
 ## 🐍Python
   - [`나도코딩`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9(%EA%B8%B0%EB%B3%B8))
 
-  - [`AIaaS(Naver Cloud)⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS))
+  - [`AIaaS(Naver Cloud)⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2AIaaS(NaverCloud))
 
   - [`Baekjoon`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Baekjoon)
 
