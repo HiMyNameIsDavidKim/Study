@@ -50,7 +50,9 @@
 * 프로토타입 : 생성할 클래스들의 타입이 프로토타입인 인스턴스로 부터 결정되는 패턴.
     * 객체를 만들기 위해 자기 자신을 복제한다.
     * 모델링 과정에서는 (전처리 - 프로세스 - 테스트)를 계속 반복되는데, 이과정도 프로토타입 패턴이다.
-    * 팩토리 패턴과 반대되는 개념. (모델링 = 프로토타입, 완성 후 배포 = 팩토리)<br><br>
+    * 팩토리 패턴과 반대되는 개념. (모델링 = 프로토타입, 완성 후 배포 = 팩토리)
+* 상태 : 객체 내부에 또 다른 객체를 만들고, 이를 상태 객체로 정의한다.
+  * (ex. 파이썬의 클로저, SQL의 서브쿼리)<br><br>
 
 ### [객체지향의 기본 구조]
 * constructor -> static -> information processing -> print
@@ -236,9 +238,9 @@
 
 ### [Path parameter]
 * path, string, int, float, uuid 5가지가 있다.
-* path : ‘/<>’가 없는 디폴트값
+* path : ‘/< >’가 없는 디폴트값
 * uuid : 세계 표준 고유 식별자
-* ‘/A/<B>’를 DB에서 보면 A는 메타데이터 B는 로우데이터<br><br>
+* ‘/A/< ~ >’를 DB에서 보면 A는 메타데이터 ~는 로우데이터<br><br>
 
 ### [RESTful API]
 * 안전한 정보 교환을 위한 표준 인터페이스 API.
@@ -246,8 +248,7 @@
 * 메서드 종류 : DELETE, GET, POST, PATCH, PUT
   * CRUD 기준 : GET(=READ), POST(=CREATE), PATCH(=부분 UPDATE), PUT(=전체 UPDATE)
 * 해당 프로세스에 맞는 SQL 쿼리를 던져야한다.
-  * SQL 기준 : GET(=SELECT), POST(=INSERT)
-
+  * SQL 기준 : GET(=SELECT), POST(=INSERT)<br><br>
 
 
 
