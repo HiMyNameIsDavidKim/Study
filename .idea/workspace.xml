@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2ac7e3d2-e76b-4ba9-b6d8-d1173fc40212" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" beforePathEscaped="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" afterPathEscaped="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/Dojang/3Programing/unit36_클래스응용.py" beforePathEscaped="$PROJECT_DIR$/1Python/Dojang/3Programing/unit36_클래스응용.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/0Basic/Data Structure/README.md" beforePathEscaped="$PROJECT_DIR$/0Basic/Data Structure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/0Basic/Data Structure/README.md" afterPathEscaped="$PROJECT_DIR$/0Basic/Data Structure/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/Dojang/3Programing/unit37_두점사이거리.py" beforePathEscaped="$PROJECT_DIR$/1Python/Dojang/3Programing/unit37_두점사이거리.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/Dojang/3Programing/unit37_두점사이거리.py" afterPathEscaped="$PROJECT_DIR$/1Python/Dojang/3Programing/unit37_두점사이거리.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/davidkim/Desktop/📚/🧑‍💻/github/study/5Cloud/Docker",
+    "last_opened_file_path": "/Users/davidkim/Desktop/📚/🧑‍💻/github/study",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
@@ -56,7 +57,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668650410184</updated>
-      <workItem from="1669441836575" duration="6363000" />
+      <workItem from="1669441836575" duration="6419000" />
+      <workItem from="1669463782311" duration="2153000" />
     </task>
     <servers />
   </component>
