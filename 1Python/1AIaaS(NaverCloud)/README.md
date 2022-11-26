@@ -1,4 +1,4 @@
-# NaverCloud(AIaaS)
+# AIaaS(Naver Cloud)
 
 ## `[Set-up]`
 * JDK 11 설치, JDK 11 환경변수 설정
