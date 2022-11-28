@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ac7e3d2-e76b-4ba9-b6d8-d1173fc40212" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" beforePathEscaped="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" afterPathEscaped="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/5Cloud/Django(REST)/README.md" beforePathEscaped="$PROJECT_DIR$/5Cloud/Django(REST)/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/5Cloud/Django(REST)/README.md" afterPathEscaped="$PROJECT_DIR$/5Cloud/Django(REST)/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/README.md" beforePathEscaped="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/README.md" afterPathEscaped="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +58,7 @@
       <updated>1668650410184</updated>
       <workItem from="1669441836575" duration="6419000" />
       <workItem from="1669463782311" duration="2750000" />
-      <workItem from="1669595093929" duration="8112000" />
+      <workItem from="1669595093929" duration="8140000" />
     </task>
     <servers />
   </component>
