@@ -204,6 +204,11 @@ from team as t
 	join stadium as s on (t.team_id = s.hometeam_id)
 ;
 
+select concat(region_name, ' ', team_name) as '팀 명',
+		(select s.stadium_name from stadium as s where t.team_id = s.hometeam_id) as '홈구장'
+from team as t
+;
+
 -- 문제 12
 -- 수원팀(K02) 과 대전팀(K10) 선수들 중
 -- 키가 180 이상 183 이하인 선수들
@@ -275,6 +280,19 @@ select sche_date,
 from `SCHEDULE` as sc
 where (home_score - away_score) >= 3
 ;
+
+-- 문제 17
+-- STADIUM 에 등록된 운동장 중에서
+-- 홈팀이 없는 경기장까지 전부 나오도록
+-- 홈팀과 스타디움이름 출력
+-- 카운트 값은 19
+-- 힌트 : LEFT JOIN 사용해야함
+
+select st.stadium_name, t.team_name
+from stadium as st
+	left join team as t on (st.hometeam_id = t.team_id)
+;
+
 -- 문제 18 (추가 문제)
 -- 다음 조건을 만족하는 선수명단을 출력하시오
 -- 소속팀이 삼성블루윙즈이거나
@@ -282,12 +300,46 @@ where (home_score - away_score) >= 3
 -- 포지션이 미드필더(MF:Midfielder)이어야 한다.
 -- 키는 170 센티미터 이상이고 180 이하여야 한다.
 
+select p.player_name
+from player as p
+where p.`POSITION` like 'MF'
+	and p.height between 170 and 180
+	and (team_id like (select team_id
+						from team
+						where team_name like '삼성블루윙즈')
+		or
+		team_id like (select team_id
+						from team
+						where team_name like '드래곤즈'))
+;
+
+select p.player_name
+from player as p
+where p.`POSITION` like 'MF'
+	and p.height between 170 and 180
+	and (team_id in (select team_id
+						from team
+						where team_name like '삼성블루윙즈'
+							or team_name like '드래곤즈'))
+;
+
 -- 문제 19 (그룹바이: 집계함수 - 딱 5개 min, max, count, sum, avg)
 -- 평균키가 인천 유나이티스팀('K04')의 평균키  보다 작은 팀의
 -- 팀ID, 팀명, 평균키 추출
 -- 인천 유나이티스팀의 평균키 -- 176.59  
 -- 키와 몸무게가 없는 칸은 0 값으로 처리한 후 평균값에 
 -- 포함되지 않도록 하세요.
+
+select t.team_id, t.team_name,
+	(select round(avg(height),2) 
+		from player as p 
+		where p.team_id = t.team_id
+			and p.height not like '') as average
+from team as t
+having average < (select round(avg(height),2) 
+					from player 
+					where team_id = 'K04')
+;
 
 -- 문제 20
 -- 포지션이 MF 인 선수들의 소속팀명 및  선수명, 백넘버 출력

@@ -12,5 +12,3 @@ if __name__ == '__main__':
     print(type(g))
     for i in g:
         print(i, end= ' ')
-
-# 1 ~ 5 -> 5-1 = 4 1+(0+1)
