@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2ac7e3d2-e76b-4ba9-b6d8-d1173fc40212" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" beforePathEscaped="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/.idea/workspace.xml" afterPathEscaped="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/1AIaaS(NaverCloud)/README.md" beforePathEscaped="$PROJECT_DIR$/1Python/1AIaaS(NaverCloud)/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/1AIaaS(NaverCloud)/README.md" afterPathEscaped="$PROJECT_DIR$/1Python/1AIaaS(NaverCloud)/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/Dojang/3Programing/unit40_제너레이터.py" beforePathEscaped="$PROJECT_DIR$/1Python/Dojang/3Programing/unit40_제너레이터.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/1Python/Dojang/3Programing/unit40_제너레이터.py" afterPathEscaped="$PROJECT_DIR$/1Python/Dojang/3Programing/unit40_제너레이터.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/3Data Analyst/SQL/query example/football_exam.sql" beforePathEscaped="$PROJECT_DIR$/3Data Analyst/SQL/query example/football_exam.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/3Data Analyst/SQL/query example/football_exam.sql" afterPathEscaped="$PROJECT_DIR$/3Data Analyst/SQL/query example/football_exam.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/5Cloud/DB Server/README.md" beforePathEscaped="$PROJECT_DIR$/5Cloud/DB Server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/5Cloud/DB Server/README.md" afterPathEscaped="$PROJECT_DIR$/5Cloud/DB Server/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/5Cloud/Docker/README.md" beforePathEscaped="$PROJECT_DIR$/5Cloud/Docker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/5Cloud/Docker/README.md" afterPathEscaped="$PROJECT_DIR$/5Cloud/Docker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../..//‍/github/study/README.md" beforePathEscaped="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../..//‍/github/study/README.md" afterPathEscaped="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +35,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/davidkim/Desktop/📚/🧑‍💻/github/study&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/davidkim/Desktop/📚/🧑‍💻/github/study/5Cloud/Django",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/5Cloud/Django" />
       <recent name="$PROJECT_DIR$/5Cloud/Docker" />
       <recent name="$PROJECT_DIR$/1Python/1NaverCloud(AIaaS)/2Flask" />
     </key>
@@ -60,7 +62,7 @@
       <updated>1668650410184</updated>
       <workItem from="1669441836575" duration="6419000" />
       <workItem from="1669463782311" duration="2750000" />
-      <workItem from="1669595093929" duration="3934000" />
+      <workItem from="1669595093929" duration="7937000" />
     </task>
     <servers />
   </component>

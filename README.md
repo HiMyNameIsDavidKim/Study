@@ -49,7 +49,8 @@
 <br>
 
 ## ☁️Cloud(AWS, GCP, NCP)
-  - [`📂DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
+  - [`🥫DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
+  - [`🤠Django(REST)`]
   - [`🐳Docker`]
 
 <br>

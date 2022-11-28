@@ -334,11 +334,11 @@ select t.team_id, t.team_name,
 	(select round(avg(height),2) 
 		from player as p 
 		where p.team_id = t.team_id
-			and p.height not like '') as average
+			and p.height not like '') as team_avg
 from team as t
-having average < (select round(avg(height),2) 
-					from player 
-					where team_id = 'K04')
+having team_avg < (select round(avg(p.height),2) 
+					from player as p
+					where p.team_id = 'K04')
 ;
 
 -- 문제 20
@@ -367,6 +367,17 @@ limit 5
 
 -- 문제 22
 -- 선수 자신이 속한 팀의 평균키보다 작은  선수 정보 출력
+
+select p.player_name, p.height
+from player as p
+where p.height < 
+		(select avg(p2.height)
+			from player p2
+			where p2.height not like ''
+				and p2.team_id like p.team_id
+			group by p2.team_id)
+	and p.height not like ''
+;
 
 -- 문제 23
 -- 2012년 5월 한달간 경기가 있는 경기장  조회

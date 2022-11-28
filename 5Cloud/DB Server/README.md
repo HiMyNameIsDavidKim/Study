@@ -27,13 +27,13 @@
     * 데이터 입력(기본 SQL문)
 
 ## [DBMS]
-* DataBase Management System, DB에 대한 CRUD 기능 복합체. 
+* DataBase Management System, DB에 대한 CRUD 기능 복합체.
   * (서버 + 툴), (명령어 + 스토리지 + 환경변수)
 * DB : 테이블의 집합, 3DTensor
 * 테이블 : 데이터의 집합, 데이터 프레임, 2DTensor
-* DB 서버 : DB 저장공간 및 질의한 정보를 제공해주는 머신
+* DB 서버 : DB 저장공간 및 질의한 정보를 제공 해주는 머신.
   * (스토리지 + 환경변수)
-* DB 툴 : DB에 CRUD 기능을 가진 모듈 (ex. MariaDB, Oracle)
+* DB 툴 : DB에 CRUD 기능을 가진 모듈. (ex. MariaDB, Oracle)
   * (명령어)
 
 ## [DB 객체의 종류]

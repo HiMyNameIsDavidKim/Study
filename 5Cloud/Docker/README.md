@@ -1,7 +1,9 @@
 # Docker
 
-## [AWS Docker]
+## `[AWS Docker]`
 * 리눅스의 응용 프로그램들을 컨테이너로 타 OS에서 관리할 수 있게 해주는 프로그램.
+
+### [DB Server]
 * 컨테이너 : 격리된 공간에서 프로그램을 동작시키는 가상화 기술.
 * 도커에서 컨테이너 생성
   * docker pull —platform linux/amd64 mysql
