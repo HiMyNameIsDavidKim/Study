@@ -12,7 +12,7 @@
   * docker ps
   * docker exec -it (컨테이너ID) bash
 * 도커 자체의 한글 깨짐
-  * vim ~/.bashrc에서 환경변수 설정
+  * vim ~/.bashrc 에서 환경변수 설정
   * export LANGUAGE=ko_KR.UTF-8 
   * export LANG=ko_KR.UTF-8
   * export LC_ALL=C.UTF-8
@@ -24,7 +24,7 @@
   * apt-get install -y vim
   * ls -> cd etc
   * ls -> cd mysql
-  * ls -> vim my.cnf
+  * ls -> vim my.cnf 에서 환경변수 설정
   * [mysqld] 밑에 적기
     * lower_case_table_names=1
     * skip-host-cache
