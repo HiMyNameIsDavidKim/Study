@@ -7,8 +7,8 @@
 * 컨테이너 : 격리된 공간에서 프로그램을 동작시키는 가상화 기술.
 * 도커에서 컨테이너 생성
   * docker pull —platform linux/amd64 mysql
-  * docker pull mysql:5.6
-  * docker run —platform linux/amd64 -d -p 8080:8080 -e MYSQL_ROOT_PASSWORD=root —name mysql_container mysql:5.6
+  * docker pull mysql:5.7
+  * docker run —platform linux/amd64 -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root —name mysql_container mysql:5.7
   * docker ps
   * docker exec -it (컨테이너ID) bash
 * 도커 자체의 한글 깨짐
@@ -20,7 +20,7 @@
   * mysql -u root -p
   * show variables like 'lower_case_table_names';
   * exit;
-  * apt-get update 
+  * apt-get update
   * apt-get install -y vim
   * ls -> cd etc
   * ls -> cd mysql
