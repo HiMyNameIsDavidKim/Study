@@ -52,7 +52,8 @@
     * 모델링 과정에서는 (전처리 - 프로세스 - 테스트)를 계속 반복되는데, 이과정도 프로토타입 패턴이다.
     * 팩토리 패턴과 반대되는 개념. (모델링 = 프로토타입, 완성 후 배포 = 팩토리)
 * 상태 : 객체 내부에 또 다른 객체를 만들고, 이를 상태 객체로 정의한다.
-  * (ex. 파이썬의 클로저, SQL의 서브쿼리)<br><br>
+    * 메인 객체 = field, 서브 객체 = state
+    * (ex. 파이썬의 클로저, SQL의 서브쿼리)<br><br>
 
 ### [객체지향의 기본 구조]
 * constructor -> static -> information processing -> print
@@ -100,7 +101,7 @@
 ### [Pythonic]
 * 파이썬 스럽게 코딩하는 것. 파이써닉.
 * 파이썬은 아름다운 하나의 답이 존재한다는 철학이 있다.
-* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5. asterisk(*) 6.람다함수와 맵함수 7.kwargs(**) p.generator p.extended slice
+* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5. args(*) 6.람다함수와 맵함수 7.kwargs(**) p.generator p.extended slice
     * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
         * if문의 Comp. (ex. [i if i%2 == 0 else None])
@@ -108,8 +109,8 @@
     * f-string : 직관적인 문자열. (ex. f”이게 f 스트링{print_fstring}이다.”)
     * swap : 스왑하는 논리. (ex. t = a, a = b, b = t)
     * 프린트 대신 str 메서드를 사용한다. (가독성을 높이기 위함)
-    * asterisk(*) : 리스트형 컨테이너 타입의 데이터, 가변 파라미터에 사용.
-        * 가변 파라미터 : 들어오는 파라미터의 갯수를 몰라도 된다. (ex. *feature)
+    * args(*) : 리스트형 컨테이너 타입의 데이터, 가변 파라미터에 사용.
+        * 가변 파라미터 : 들어오는 파라미터의 갯수를 몰라도 된다.
     * 람다 함수 : 파이써닉하게 연산하기 위해 사용하는 익명 함수.
         * 코드의 불필요한 부분을 제거할 수 있다.
         * 무거운 데이터를 순간적으로 사용하고 바로 폐기할 수 있다. (메모리 사용 안함)

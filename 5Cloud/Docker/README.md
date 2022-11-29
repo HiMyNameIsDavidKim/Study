@@ -1,19 +1,19 @@
 # Docker
 
-## `[AWS Docker]`
-* 리눅스의 응용 프로그램들을 컨테이너로 타 OS에서 관리할 수 있게 해주는 프로그램.
+## `[Docker]`
+* 리눅스의 응용 프로그램들을 컨테이너를 이용해 다른 OS에서 관리할 수 있게 해주는 프로그램.
+* 컨테이너 : 격리된 공간에서 프로그램을 동작시키는 가상화 기술. OS 가상화.
 
 ### [DB Server]
-* 컨테이너 : 격리된 공간에서 프로그램을 동작시키는 가상화 기술.
 * 도커에서 컨테이너 생성
-  * docker pull —platform linux/amd64 mysql
-  * docker pull mysql:5.7
-  * docker run —platform linux/amd64 -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root —name mysql_container mysql:5.7
+  * docker pull --platform linux/amd64 mysql
+  * docker pull cytopia/mysql:5.7
+  * docker run --platform linux/amd64 -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root --name mysql_container cytopia/mysql:5.7
   * docker ps
   * docker exec -it (컨테이너ID) bash
 * 도커 자체의 한글 깨짐
-  * vim ~/.bashrc 에서 환경변수 설정
-  * export LANGUAGE=ko_KR.UTF-8 
+  * vim ~/.bashrc 에서 환경변수 설정(a 눌러서 아랫줄 추가)
+  * export LANGUAGE=ko_KR.UTF-8
   * export LANG=ko_KR.UTF-8
   * export LC_ALL=C.UTF-8
 * mysql 대소문자, 한글깨짐 문제(구글링)
@@ -24,7 +24,7 @@
   * apt-get install -y vim
   * ls -> cd etc
   * ls -> cd mysql
-  * ls -> vim my.cnf 에서 환경변수 설정
+  * ls -> vim my.cnf 에서 환경변수 설정(a 눌러서 아랫줄 추가)
   * [mysqld] 밑에 적기
     * lower_case_table_names=1
     * skip-host-cache
