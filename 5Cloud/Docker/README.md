@@ -20,7 +20,7 @@
   * mysql -u root -p
   * show variables like 'lower_case_table_names';
   * exit;
-  * apt-get update
+  * apt-get update 
   * apt-get install -y vim
   * ls -> cd etc
   * ls -> cd mysql
