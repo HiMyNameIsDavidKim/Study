@@ -101,7 +101,7 @@
 ### [Pythonic]
 * 파이썬 스럽게 코딩하는 것. 파이써닉.
 * 파이썬은 아름다운 하나의 답이 존재한다는 철학이 있다.
-* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5. args(*) 6.람다함수와 맵함수 7.kwargs(**) p.generator p.extended slice
+* 1.comprehesion 2.f-string 3.swap 4.str 메서드 5. args(*) 6.람다함수와 맵함수 7.kwargs(**) 8.generator p.extended slice
     * comprehesion : 축약하기. 한줄 코딩.
         * for문의 Comp. (ex. [i for i in ls])
         * if문의 Comp. (ex. [i if i%2 == 0 else None])
@@ -117,7 +117,8 @@
         * 고차함수 : 함수의 인자로 전달되거나, 함수의 리턴값으로 사용된다.
     * 맵 함수 : 리스트의 요소를 하나씩 뽑아서 새로운 리스트에 저장하기 위해 사용.
         * map(함수, 리스트)로 인자를 받으며, 리스트에서 엘리먼트를 1개씩 꺼내 함수에 대입하고, 결과값으로 구성된 새로운 리스트를 생성.
-    * kwargs(**) : 딕셔너리형 컨테이너 타입의 데이터, 가변 파라미터에 사용.<br><br>
+    * kwargs(**) : 딕셔너리형 컨테이너 타입의 데이터, 가변 파라미터에 사용.
+    * generator : yield만 사용하여 간단하게 이터레이터를 생성하는 함수. (iter 메서드와 next 메서드를 내장)<br><br>
 
 ### [Getter & Setter]
 * 메서드를 선언할 때 데코레이터로 역할을 구분하는 것이 좋다.
