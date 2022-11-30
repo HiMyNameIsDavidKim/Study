@@ -38,7 +38,8 @@
     * default-character-set = utf8mb4 
   * [mysql] 밑에 적기
     * default-character-set = utf8mb4 
-  * 도커 재시작
+  * 컨테이너 재시작
+    * (재시작)
     * mysql -u root -p
     * show variables like 'lower_case_table_names';
     * status<br><br>
