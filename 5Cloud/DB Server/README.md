@@ -1,6 +1,6 @@
 # DB Server
 
-## `[Set-up]`
+## `[Set-up(local)]`
 * MariaDB 설치
     * brew install mariadb
 * 서버 시작
@@ -26,7 +26,7 @@
     * 테이블 생성(기본 SQL문)
     * 데이터 입력(기본 SQL문)
 
-## [DBMS]
+## `[DBMS]`
 * DataBase Management System, DB에 대한 CRUD 기능을 위한 복합체.
   * (서버 + 툴), (스토리지 + 환경변수 + 자료가공 로직)
   * 엄밀히 말하면 구축이 완료된 시스템은 툴이 제거된다.
@@ -38,7 +38,7 @@
 * DB : 테이블의 집합, 3DTensor
 * 테이블 : 데이터의 집합, 데이터 프레임, 2DTensor
 
-## [DB 객체의 종류]
+## `[DB 객체의 종류]`
 * 테이블 : 데이터의 집합, 2DTensor
 * 뷰 : 하나 이상의 테이블을 연결해 사용하는 객체.
 * 인덱스 : 테이블의 값을 찾기 위한 객체

@@ -252,7 +252,7 @@
 ### [서버 구축]
 * 1.DB서버 구축, 2.WAS(Web Application Server) 구축, 3.웹서버 구축
     * 구축은 구동의 역순
-* 구동 순서 : 클라이언트 -> 웹서버(Nginx) -> WAS(Gunicorn -> Django -> Python) -> DB서버<br><br>
+* 구동 순서 : 클라이언트 -> 클라이언트서버 -> 웹서버(Nginx) -> WAS(Gunicorn -> Django -> Python) -> DB서버<br><br>
 
 ### [웹서버]
 * HTTP 요청을 받아서 HTML 같은 웹페이지를 반환하는 프로그램.
