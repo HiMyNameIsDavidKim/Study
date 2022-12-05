@@ -1,20 +1,20 @@
 # 📚Study📚
 
 ## 💪Basic
-  - [`알고리즘⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
+  - [`Algorithm⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
 
-  - [`자료구조`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
+  - [`Data Structure`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
   
   - [`Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
 
-  - [`대수학`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
+  - [`Algebra`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
 
-  - [`통계학`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
+  - [`Statistics`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
 
 <br>
 
 ## 🐍Python
-  - [`나도코딩`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
+  - [`Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
 
   - [`AIaaS(Naver Cloud)⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
 
@@ -58,7 +58,7 @@
 <br>
 
 ## ☕️Java
-  - [`기초문법 및 AI 활용`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
+  - [`Basic and How apply to AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
 
 <br>
 
