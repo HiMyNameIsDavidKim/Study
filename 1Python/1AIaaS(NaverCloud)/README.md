@@ -54,7 +54,8 @@
     * 팩토리 패턴과 반대되는 개념. (모델링 = 프로토타입, 완성 후 배포 = 팩토리)
 * 상태 : 객체 내부에 또 다른 객체를 만들고, 이를 상태 객체로 정의한다.
     * 메인 객체 = field, 서브 객체 = state
-    * (ex. 파이썬의 클로저, SQL의 서브쿼리)<br><br>
+    * (ex. 파이썬의 클로저, SQL의 서브쿼리)
+* (이주 예정, https://hirlawldo.tistory.com/169) <br><br>
 
 ### [객체지향의 기본 구조]
 * constructor -> static -> information processing -> print

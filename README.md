@@ -55,10 +55,12 @@
 
   - [`🐳Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
 
+  - [`⚛️React`]
+
 <br>
 
 ## ☕️Java
-  - [`Basic and How apply to AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
+  - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
 
 <br>
 
