@@ -59,13 +59,13 @@
 
 <br>
 
-## ☕️Java
-  - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
+## 🦋Flutter
+  - [`Dart Basic`]
 
 <br>
 
-## 🦋Flutter
-  - [`Dart Basic`]
+## ☕️Java
+  - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
 
 <br>
 
