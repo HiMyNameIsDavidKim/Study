@@ -10,8 +10,8 @@
     * pip install markdown
     * django-admin startproject admin .
     * python manage.py migrate
-    * python m (만 치고 탭키) createsuperuser --email (본인이메일) --user (본인아이디)
-    * python m (만 치고 탭키) runserver
+    * python manage.py createsuperuser --email (본인이메일) --user (본인아이디)
+    * python manage.py runserver
     * http://127.0.0.1:8000 를 브라우저 주소창에 넣고 엔터
     * 종료 : Control + C
 * 가상환경 설정
