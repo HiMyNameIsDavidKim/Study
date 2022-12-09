@@ -1,7 +1,2 @@
-# Nado
-
-
-
-
-
-
+# Basic
+* reference : youtube nadocoding

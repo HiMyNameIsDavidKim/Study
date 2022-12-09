@@ -14,7 +14,11 @@
 * 정형 데이터 : 자료구조 내부에 있는 데이터. 구조화 되어 있다.
 * 비정형 데이터 : 자료구조에 구조화되어 있지 않은 데이터.<br><br>
 
-## `[Canny Edge Detector]`
+
+
+## `[Detector]`
+
+### [Canny Edge Detector]
 * 4단계를 진행하여 경계를 찾는다.(스무딩, 그라디언트, 억제, 트래킹)
     * 스무딩 : 노이즈 제거, 가우시안 필터 사용
     * 그라디언트 계산 : 미분해서 인텐시티가 급격하게 변하는 부분 찾기, 소벨 필터 사용
@@ -22,7 +26,7 @@
     * 엣지 트래킹 : 그라디언트에 최대 최소 바운더리를 부여해서 나머지 날림.
 * (ref. flaskProject의 CVbasic 참고)<br><br>
 
-## `[Hough Line Detector]`
+## [Hough Line Detector]
 * 3단계를 진행하여 선을 찾는다.(xy평면, ab평면 변환, 쓰레숄드와 비교)
     * 한점을 지나는 '모든' 직선은 y=ax+b 이다.
     * 이를 (a,b)평면으로 이동할 수 있다. 이때 직선 b=-ax+y 로 표현된다.
@@ -31,11 +35,14 @@
     * (a,b) 평면의 교점들을 하나하나 검사해서 쓰레숄드 이상일 경우 그 직선을 검출할 수 있다.
 * (ref. flaskProject의 CVbasic 참고)<br><br>
 
-## `[Haar Casecard Classifier]`
+
+
+## `[Classifier]`
+
+### [Haar Casecard Classifier]
 * 4단계를 진행하여 얼굴을 인식한다. 하르 피쳐 셀렉션이 사용된다.
     * Haar feature selection
     * 적분 이미지
     * adaboost training
     * casecade classifier
 * 특징을 추출하고 얼굴 영역을 판단하는 윈도우(24x24)와 효율적인 비교 알고리즘을 활용.
-
