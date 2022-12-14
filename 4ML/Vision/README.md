@@ -103,8 +103,19 @@
 
 
 
+## `[Trouble Shooting]`
+
+### [파이토치 M1 Error]
+* DataLoader의 num_workers에 오류가 있음. 0으로 둬야함.<br><br>
+
+
+
 ## `[DL Model]`
 
 ### [DL 이미지 생성 모델]
 * [장고 프로젝트 링크](https://github.com/HiMyNameIsDavidKim/djangoProject/blob/main/moviee/movies/services.py)
-* 
+* DCGAN
+    * Deep Conv GAN, GAN에 콘볼루션망을 적용하여 성능을 향상시킨 모델.
+    * GAN : 적대적인 두 신경망을 경쟁시켜 개선시키는 신경망.
+* 시드 : 매번 다른 값이 나오면 정확도 평가가 안되기 때문에 지정하는 설정값
+* 데이터셋 입력 -> 가중치 부여 -> 모델 정의<br><br>
