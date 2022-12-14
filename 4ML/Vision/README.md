@@ -47,13 +47,15 @@
     * casecade classifier
 * 특징을 추출하고 얼굴 영역을 판단하는 윈도우(24x24)와 효율적인 비교 알고리즘을 활용.<br><br>
 
+
+
 ## `[GPU 가속 설정]`
 * 파이토치와 텐서플로우 사용하기 위해서는 GPU 가속이 필수적이다.
-    * NVIDIA는 GPU, 애플 실리콘은 MPS.
+    * NVIDIA는 GPU, 애플 실리콘은 MPS.<br><br>
 
 ### [CUDA]
 * NVIDIA가 만든 병렬 컴퓨팅 API 모델
-* CUDA 설정 (윈도우 : https://parksrazor.tistory.com/786)
+* CUDA 설정 (윈도우 : https://parksrazor.tistory.com/786)<br><br>
 
 ### [MPS]
 * Metal Performance Shaders, 딥러닝 시 GPU 가속에 사용된다.
@@ -97,4 +99,12 @@
     * device = torch.device('mps')
     * print('Torch device:', device)
     * print("TF GPUs Available: ", tf.config.experimental.list_physical_devices('GPU')
-    * print('scikit-learn version : ', sklearn.__version__)
+    * print('scikit-learn version : ', sklearn.__version__)<br><br>
+
+
+
+## `[DL Model]`
+
+### [DL 이미지 생성 모델]
+* [장고 프로젝트 링크](https://github.com/HiMyNameIsDavidKim/djangoProject/blob/main/moviee/movies/services.py)
+* 
