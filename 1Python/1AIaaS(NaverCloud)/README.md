@@ -370,4 +370,7 @@
 * 가상환경 : 독립적인 환경변수 구성의 환경. 라이브러리간 충돌을 방지한다.
 * parameter : 매개변수, 변수의 '이름'
 * argument : 전달인자, 변수의 '값'
-    * (ex. def test(param1, param2): ~~~로 정의 / test('arg1', 'arg2')로 사용)<br><br>
+    * (ex. def test(param1, param2): ~~~로 정의 / test('arg1', 'arg2')로 사용)
+* label : DB에 저장된 정답.
+* ground truth : 모델이 예측해주길 바라는 정답. 엔지니어가 원하는 답
+    * (ex. label은 O, X 였으나, ground truth는 O-1, O-2, X-1, X-2 으로 나눌 수 있다.)<br><br>
