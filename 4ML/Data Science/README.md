@@ -8,6 +8,7 @@
 ### [라이브러리]
 * 넘파이 : array 가공 라이브러리.
     * shape : (샘플 수, 특성 수) 보기
+    * column_stack : 계산된 컬럼 추가
 * 판다스 : 데이터 분석 및 가공에 주로 사용되는 라이브러리.
     * columns, head(), tail(), shape, info(), describe() : 정보 보기
     * mean(), sum(), max(), min() : 집계함수
