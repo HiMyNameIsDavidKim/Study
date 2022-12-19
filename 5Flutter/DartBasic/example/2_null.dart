@@ -8,5 +8,6 @@ void main(){
   //when you want explain this is not null,
   //add '!' after var.
   String? name2 = 'code factory';
+  name2 = null;
   print(name2!);
 }
