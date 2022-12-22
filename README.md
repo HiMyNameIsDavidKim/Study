@@ -24,7 +24,9 @@
 
 <br>
 
-## 🤖ML
+## 🧠AI
+  - [`🤖ML & DL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+
   - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
   - [`📷Computer Vision`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
