@@ -39,8 +39,8 @@
     * lower_case_table_names=1
     * skip-host-cache
     * skip-name-resolve
-    * collation-server = utf8_unicode_ci 
-    * init-connect='SET NAMES utf8' 
+    * collation-server = utf8_unicode_ci
+    * init-connect='SET NAMES utf8'
     * character-set-server = utf8
   * [client] 밑에 적기
     * default-character-set = utf8mb4 
