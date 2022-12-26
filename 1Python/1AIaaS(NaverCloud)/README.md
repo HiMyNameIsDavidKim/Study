@@ -17,7 +17,8 @@
     * ANACONDA_HOME1 : C:\ProgramData\Anaconda3
     * ANACONDA_HOME2 : C:\ProgramData\Anaconda3\Scripts
     * ANACONDA_HOME3 : C:\ProgramData\Anaconda3\Library\bin
-    * ANACONDA_HOME4 : C:\ProgramData\Anaconda3\Library\mingw-w64\bin<br><br>
+    * ANACONDA_HOME4 : C:\ProgramData\Anaconda3\Library\mingw-w64\bin
+<br><br>
 
 
 
@@ -28,13 +29,15 @@
 * 클래스 밖의 메서드는 스태틱 메서드라고 부른다. (클래스 안은 다이나믹 메서드)
 * 화면에 구현할 것을 스태틱 메서드에 넣는다.
 * (if문 main) 대신에 @staticmethod를 사용할 수 있다.
-* 이때 @를 데코레이터라고 부른다.<br><br>
+* 이때 @를 데코레이터라고 부른다.
+<br><br>
 
 ### [생성자와 소멸자]
 * 생성자(constructor) : init 메서드, 객체 지향에서 객체의 초기화를 담당하는 서브루틴.
     * 생성자 괄호 안에 있는 것들이 property 이다.
 * 소멸자(destructor) : del 메서드, 객체가 소멸될 때 자동으로 발생하는 서브루틴.
-    * 생성되고 소멸이 안되면 메모리가 부족해진다. 반드시 죽여야한다.<br><br>
+    * 생성되고 소멸이 안되면 메모리가 부족해진다. 반드시 죽여야한다.
+<br><br>
 
 ### [디자인 패턴]
 * 소프트웨어 설계의 특정 문맥에서 공통적인 문제에 대해 재사용 가능한 해결책.
@@ -48,7 +51,8 @@
     * 행위 패턴 : 알고리즘과 객체 간의 책임을 할당하는 패턴. 작업 분배를 추구한다.
         * 책임 연쇄, 커맨드, 인터프리터, 이터레이터, 중재자, 메멘토, 옵서버, 상태, 전략, 템플릿 메서드, 비지터
 * 생성패턴은 인스턴스화에 대한 패턴, 구조패턴은 자료구조에 대한 패턴, 행위 패턴은 함수에 대한 패턴.
-    * 책임 할당에서 책임은 반드시 리턴을 준다라는 뜻.<br><br>
+    * 책임 할당에서 책임은 반드시 리턴을 준다라는 뜻.
+<br><br>
 
 ### [디자인 패턴 상세 고찰]
 * 팩토리 메서드 : 클래스의 프로퍼티를 변경하거나 확장해야 할 때 사용하는 패턴.
@@ -63,20 +67,23 @@
     * (ex. 파이썬의 클로저, SQL의 서브쿼리)
 * 아토믹 : 단계적으로 추상적인 것에서 구체화 하는 설계 패턴.
     * 아톰 -> 몰레큘 -> 유기체 -> 템플렛 -> 페이지
-* (이주 예정, https://hirlawldo.tistory.com/169) <br><br>
+* (이주 예정, https://hirlawldo.tistory.com/169) 
+<br><br>
 
 ### [객체지향의 기본 구조]
 * constructor -> static -> information processing -> print
 * 객체지향에서 값은 크게 property(포멧), information(처리 완료), data(처리 전) 3가지로 존재한다.
     * property = 컵, information = 커피, data = 커피콩
-    * constructor = property, information processing = information, static = data<br><br>
+    * constructor = property, information processing = information, static = data
+<br><br>
 
 ### [CRUD]
 * 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능.
 * Create, Read, Update, Delete 4가지
     * Read는 2개로 나뉘고, 전체를 보여주는 경우 List(목록). 일부를 보여주는 경우 Search(검색).
 * 엔진구조 : 소프트웨어에서 계속 반복해서 돌리다가 원할때 멈추는 구조를 엔진구조라고 한다.
-* 스태틱 메인 메서드는 CRUD로 구성된 엔진구조로 설계한다.<br><br>
+* 스태틱 메인 메서드는 CRUD로 구성된 엔진구조로 설계한다.
+<br><br>
 
 ### [MTV 패턴 설계]
 * 전체 프레임워크를 Model, Template, View로 나누는 설계.
@@ -93,7 +100,8 @@
     * 스탠다드 클래스와는 다른 데이터 클래스 구조이며, 데코레이터를 달아줘야 한다.
     * context : 파일이 저장된 경로
     * label : 답안지
- - [`작업 순서 메모`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS)/2Flask)<br><br>
+ - [`작업 순서 메모`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2NaverCloud(AIaaS)/2Flask)
+<br><br>
 
 ### [DDD 설계]
 * 전체 프레임워크를 Domain Driven Design로 나누는 도메인 주도 설계.
@@ -102,7 +110,8 @@
 * 엔터티와 VO를 기본 블록으로 사용한다.
     * VO : Value Object, 한개 이상의 속성들을 묶어서 특정 값을 나타내는 객체.
     * 엔터티의 특정 값들을 VO로 묶어서 포장할 수 있다.
-    * 개체 : 특정 값을 나타내는 객체. VO는 곧 개체이다.<br><br>
+    * 개체 : 특정 값을 나타내는 객체. VO는 곧 개체이다.
+<br><br>
 
 ### [EDA 설계]
 * Event Driven Architecture, 이벤트 주도 구조 설계
@@ -110,7 +119,8 @@
 * 상호 간 결합도를 낮추기 위해 비동기 방식으로 메시지를 전달하는 설계법.
     * 핵심은 ‘비동기식’이라는 것.
     * 발행자와 구독자 중간에 추상 레이어를 만들어 송수신만 담당 시킨다.
-    * 이 레이어를 ‘Event Data Store’라고 정의한다.<br><br>
+    * 이 레이어를 ‘Event Data Store’라고 정의한다.
+<br><br>
 
 
 
@@ -136,7 +146,8 @@
     * 맵 함수 : 리스트의 요소를 하나씩 뽑아서 새로운 리스트에 저장하기 위해 사용.
         * map(함수, 리스트)로 인자를 받으며, 리스트에서 엘리먼트를 1개씩 꺼내 함수에 대입하고, 결과값으로 구성된 새로운 리스트를 생성.
     * kwargs(**) : 딕셔너리형 컨테이너 타입의 데이터, 가변 파라미터에 사용.
-    * generator : yield만 사용하여 간단하게 이터레이터를 생성하는 함수. (iter 메서드와 next 메서드를 내장)<br><br>
+    * generator : yield만 사용하여 간단하게 이터레이터를 생성하는 함수. (iter 메서드와 next 메서드를 내장)
+<br><br>
 
 ### [Getter & Setter]
 * 메서드를 선언할 때 데코레이터로 역할을 구분하는 것이 좋다.
@@ -145,7 +156,8 @@
     * 데코레이터 '@property'를 사용한다.
 * setter : 프로퍼티를 저장하는 메서드, 리턴이 없다.
     * 데코레이터 '@변수.setter'를 사용한다.
-* 더블 언더바 메서드(ex. init, str, main)는 내부에 암호화 된 것이다.<br><br>
+* 더블 언더바 메서드(ex. init, str, main)는 내부에 암호화 된 것이다.
+<br><br>
 
 ### [Framework]
 * 알고리즘(=솔루션)에 사용되는 구조. 일반인들이 말하는 시스템.
@@ -155,7 +167,8 @@
     * FastAPI : 고속 전용 웹 프레임워크.
 * Directory : 리소스, 자원들(DB)이 들어있음. 풀었을때 기능이 상실되지 않는다.
 * Package : 소스(소스코드), 코드들이 들어있음. 풀었을때 기능이 상실된다.
-    * 디렉토리와 패키지 모두 파일을 래핑하는 용도.<br><br>
+    * 디렉토리와 패키지 모두 파일을 래핑하는 용도.
+<br><br>
 
 ### [클로저]
 * 함수의 환경(지역변수 + 코드)을 계속 유지하면서, 호출 당할 경우 환경을 꺼내서 사용하는 함수.
@@ -166,18 +179,21 @@
 * 람다식과 함께 사용된다. (ex. return lambda x: a*x + b)
 * 스코프 : 변수에 접근할 수 있는 범위. 리전같은 의미. (ex. 글로벌 스코프, 로컬 스코프)
 * global, local, nonlocal 개념과 클로저의 nonlocal 활용
-    * nonlocal은 가장 가까운 바깥 지역 변수를 찾는다.<br><br>
+    * nonlocal은 가장 가까운 바깥 지역 변수를 찾는다.
+<br><br>
 
 
 
 ## `[AI 수학]`
 * AI에서 데이터의 입력, 출력, AI모델 구성, 학습 모든 과정이 수학적으로 표현된다.
-* 인공지능은 그 자체로 확률모델이며, 학습에는 미분 개념이 포함된 최적화 기법이 사용된다.<br><br>
+* 인공지능은 그 자체로 확률모델이며, 학습에는 미분 개념이 포함된 최적화 기법이 사용된다.
+<br><br>
 
 ### [AI에 사용되는 3개의 수학]
 * 선형대수학 : 기본 표현. AI 데이터는 주로 숫자 배열(=자료구조)로 표현 하는데, 선대의 벡터나 행렬과 같은 개념이다.
 * 통계학 : 구조 설계. 머신러닝은 추론 통계학의 확률 분포 모델이다. 모델의 구조는 확률 분포의 형태이며, 모델의 파라미터는 확률 분포의 세부값이다.
-* 미적분 : 성능 향상. 데이터가 가지고 있는 태생적 노이즈를 제거할 수 있으며, 파라미터 변화량 vs 예측값의 변화량 사이의 관계를 계산할 수 있다.<br><br>
+* 미적분 : 성능 향상. 데이터가 가지고 있는 태생적 노이즈를 제거할 수 있으며, 파라미터 변화량 vs 예측값의 변화량 사이의 관계를 계산할 수 있다.
+<br><br>
 
 ### [텐서]
 * 인공지능에서 다차원 배열(multil dimensinal array).
@@ -190,18 +206,21 @@
     * T2 입장에서는 T1이 스칼라이다. (상대적인 개념)(특히나 커서는 고차원을 이해할 수 없다.)
 * 캐스팅 : 차원의 이동이 일어나는 경우.
     * reduction : 차원축소, 고차원 -> 저차원 변환, (ex.cb[ ][ ][ ] : 큐브에서 스칼라로 내려감)
-    * expansion : 차원확장, 저차원 -> 고차원 변환, (ex. cb mtx : T2에서 T4로 올라감)<br><br>
+    * expansion : 차원확장, 저차원 -> 고차원 변환, (ex. cb mtx : T2에서 T4로 올라감)
+<br><br>
 
 ### [차원축소]
 * 차원의 저주 : 데이터 수가 너무 많고, 노이즈가 많으면 ‘오버피팅’된다. 인지오류.
 * 상관관계가 너무 높으면 알고리즘의 복잡성이 너무 높아져 오히려 안좋다.
-* 차원 축소에는 feature 선택, feature 추출 2가지 방법이 있다.<br><br>
+* 차원 축소에는 feature 선택, feature 추출 2가지 방법이 있다.
+<br><br>
 
 ### [Convolution]
 * 합성곱. 행렬 분해, 변환, 필터링 할 수 있다. (함수 f를 필터 g로 필터링)
 * 수학에서는 f * g(t) = 적분f(T)g(t-T)dT로 나타낸다.
 * 행렬 계산 예시는 아래와 같다.
-* ![이미지 2022  11  7  오후 12 33](https://user-images.githubusercontent.com/112922638/200221427-807701c2-42bd-4149-aa2d-8e17d19f3193.jpg)<br><br>
+* ![이미지 2022  11  7  오후 12 33](https://user-images.githubusercontent.com/112922638/200221427-807701c2-42bd-4149-aa2d-8e17d19f3193.jpg)
+<br><br>
 
 ### [미적분학의 의미]
 * Gradient : 기울기, 특정 지점에서 스칼라의 변화율.(=편미분)
@@ -211,12 +230,14 @@
 * Curl : 회전, 단위 부피당 회전 성분의 변화율.
     * 물리적 의미 : 벡터장의 vortex(소용돌이) 근원 or 흡수원인 특정 점에서 벡터가 회전하는 정도.
 * Laplacian : 기울기의 발산, 그라디언트의 다이버전스.(=2차 편미분)
-    * 물리적 의미 : 벡터장 내의 벡터의 흐름이 균일하지 못한 정도.<br><br>
+    * 물리적 의미 : 벡터장 내의 벡터의 흐름이 균일하지 못한 정도.
+<br><br>
 
 
 
 ## `[AI]`
-* 사람처럼 학습하고 추론할 수 있는 지능을 가진 컴퓨터 시스템을 만드는 기술.<br><br>
+* 사람처럼 학습하고 추론할 수 있는 지능을 가진 컴퓨터 시스템을 만드는 기술.
+<br><br>
 
 ### [데이터 전처리]
 * 맷플릿롭은 feature 간 스케일 차이를 이해하지 못한다.
@@ -228,9 +249,30 @@
     * (자동)
     * 사이킷런의 StandardScaler() 클래스.
 * 트레이닝셋과 테스트셋을 나누어 평가한다.
-    * train_test_split() 메서드로 자동 스플릿.<br><br>
+    * train_test_split() 메서드로 자동 스플릿.
+<br><br>
 
-### [`ML&DL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+### [ML&DL]
+* ML : 경험을 통해 자동으로 개선하는 컴퓨터 알고리즘.
+* DL : 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
+* [`링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+<br><br>
+
+### [마스터 알고리즘]
+* 각 tribe별로 주로 사용하는 마스터 알고리즘이 있다.
+* symbolists, connectionists, bayesions, analogizsers 4개의 tribe.
+* symbolists : 기원은 로직과 철학이며, inverse deduction을 사용.
+    * inverse deduction : 역연역법, 연역적 논리로 부족한 부분을  역추정하는 방법.
+    * -> Decision Tree 알고리즘
+* connectionists : 기원은 뉴로사이언스이며, back propagation을 사용.
+    * back propagation : 역전파, 입력층 은닉층 출력층으로 순차적 전파, 오차를 계산하여 은닉층으로 다시 전달(역전파), 오차가 줄어드는 방향으로 가중치를 변경
+    * -> ANN 알고리즘
+* bayesions : 기원은 통계학이며, probabilistic inference를 사용.
+    * probabilistic inference : 확률적 추론, 불확실한 사실(확률로 된 결과)를 사용해서 문제의 결론을 얻는 추론 방법.
+    * -> MCMC 알고리즘
+* analogizers : 기원은 심리학이며, kernel machines를 사용.
+    * kernel machines : 문제 해결을 위해 신규 속성을 추가 시키거나, n차 방정식을 적용하는 방법.
+    * -> SVM 알고리즘
 <br><br>
 
 
@@ -240,7 +282,8 @@
 ### [클라우드 컴퓨팅]
 * 클라우드 사업자 : AWS, GCP, NCP
 * On-premise : 기업의 서버를 클라우드가 아닌 전산실 서버에 설치하는 방식.
-* 현재 시장은 온프레미스 -> 클라우드 전환 중이다.<br><br>
+* 현재 시장은 온프레미스 -> 클라우드 전환 중이다.
+<br><br>
 
 ### [서버 구축]
 * 서버 : 서비스를 제공 해주는 시스템.
@@ -250,14 +293,16 @@
     * 툴 : 자료를 가공하는 로직
 * 1.DB서버 구축, 2.WAS(Web Application Server) 구축, 3.웹서버 구축
     * 구축은 구동의 역순
-* 구동 순서 : 클라이언트 -> 클라이언트서버 -> 웹서버(Nginx) -> WAS(Gunicorn -> Django -> Python) -> DB서버<br><br>
+* 구동 순서 : 클라이언트 -> 클라이언트서버 -> 웹서버(Nginx) -> WAS(Gunicorn -> Django -> Python) -> DB서버
+<br><br>
 
 ### [웹서버]
 * HTTP 요청을 받아서 HTML 같은 웹페이지를 반환하는 프로그램.
 * 정적 컨텐츠를 수행하며, 단순하고 즉시 응답 가능한 컨텐츠만 구현한다.
 * 웹서버 프로그램
     * Nginx : 오픈소스 웹 서버 구동 프로그램.
-    * AWS에서는 기존에 구축된 S3를 사용한다.<br><br>
+    * AWS에서는 기존에 구축된 S3를 사용한다.
+<br><br>
 
 ### [WAS]
 * HTTP 프로토콜을 통해 어플리케이션을 수행해주는 미들웨어.
@@ -267,17 +312,21 @@
 * WAS 프로그램
     * Gunicorn : WAS에 사용하는 WSGI(게이트웨이)
     * WSGI : Web Server Gateway Interface
-    * 게이트웨이 : 다른 네트워크로 들어가는 입구 역할을 하는 네트워크 포인트<br><br>
+    * 게이트웨이 : 다른 네트워크로 들어가는 입구 역할을 하는 네트워크 포인트
+<br><br>
+
 
 
 ## `[Flask]`
-* 마이크로 웹 프레임워크. 단순하고 가볍다. 서버 유지비가 싸다.<br><br>
+* 마이크로 웹 프레임워크. 단순하고 가볍다. 서버 유지비가 싸다.
+<br><br>
 
 ### [Path parameter]
 * path, string, int, float, uuid 5가지가 있다.
 * path : ‘/< >’가 없는 디폴트값
 * uuid : 세계 표준 고유 식별자
-* ‘/A/< ~ >’를 DB에서 보면 A는 메타데이터 ~는 로우데이터<br><br>
+* ‘/A/< ~ >’를 DB에서 보면 A는 메타데이터 ~는 로우데이터
+<br><br>
 
 ### [RESTful API]
 * 안전한 정보 교환을 위한 표준 인터페이스 API.
@@ -285,7 +334,8 @@
 * 메서드 종류 : DELETE, GET, POST, PATCH, PUT
   * CRUD 기준 : GET(=READ), POST(=CREATE), PATCH(=부분 UPDATE), PUT(=전체 UPDATE)
 * 해당 프로세스에 맞는 SQL 쿼리를 던져야한다.
-  * SQL 기준 : GET(=SELECT), POST(=INSERT)<br><br>
+  * SQL 기준 : GET(=SELECT), POST(=INSERT)
+<br><br>
 
 
 
@@ -302,7 +352,8 @@
 * SOLID : 코드 스멜을 제거하기 위한 원칙.
 * 코드 스멜 : 쓰레기 냄새가 날때 사용(중복 코드, 억지 복잡성, 커다란 클래스, 투머치 매개변수,  등)
 * OOP와 FP를 잘 섞어서 사용해야 한다. OOP는 정확하며, FP는 빠르다.
-* 구글 맵스 플랫폼 API : GCP가 제공하는 구글지도 정보에 대한 API.<br><br>
+* 구글 맵스 플랫폼 API : GCP가 제공하는 구글지도 정보에 대한 API.
+<br><br>
 
 
 
@@ -330,4 +381,5 @@
     * (ex. def test(param1, param2): ~~~로 정의 / test('arg1', 'arg2')로 사용)
 * label : DB에 저장된 정답.
 * ground truth : 모델이 예측해주길 바라는 정답. 엔지니어가 원하는 답
-    * (ex. label은 O, X 였으나, ground truth는 O-1, O-2, X-1, X-2 으로 나눌 수 있다.)<br><br>
+    * (ex. label은 O, X 였으나, ground truth는 O-1, O-2, X-1, X-2 으로 나눌 수 있다.)
+<br><br>
