@@ -230,6 +230,9 @@
 * 트레이닝셋과 테스트셋을 나누어 평가한다.
     * train_test_split() 메서드로 자동 스플릿.<br><br>
 
+### [`ML&DL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+<br><br>
+
 
 
 ## `[Cloud]`
