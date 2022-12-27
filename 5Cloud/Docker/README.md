@@ -13,7 +13,7 @@
 
 ## `[서버 구축]`
 
-### [DB Server]
+### [DB Server_MySQL]
 * 도커에서 컨테이너 생성
   * docker pull --platform linux/amd64 mysql
   * docker pull --platform linux/amd64 mysql:5.7
@@ -59,9 +59,21 @@
   * python m(탭) runserver
   <br><br>
 
-### [Django(REST)]
-* 
-
+### [Backend Server_Django(REST)]
+* 환경변수 설정
+  * 프로젝트에 requirements.txt 생성
+  * 파일에 설치할 라이브러리 모두 작성
+  * (파이참 터미널)
+  * pip install --user --no-warn-script-location -r requirements.txt 
+* mysql 자동테이블 생성 설정
+  * (파이참 터미널)
+  * django-admin startapp users
+  * admin -> settings.py -> INSTALLED_APPS에 "users.apps.UsersConfig" 하나 추가
+    * 주의 : users의 models.py는 반드시 이렇게 만들어야 한다. (정확하게 안하면 기능 안됨)
+  * users -> models.py의 클래스 안에 use_in_migrations = True 및 컬럼들 추가 코딩
+  * (파이참 터미널)
+  * python manage.py makemigrations
+  * python manage.py migrate
 
 
 ## [Compose Up]

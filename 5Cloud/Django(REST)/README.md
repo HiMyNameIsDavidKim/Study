@@ -34,7 +34,7 @@
     * 종료 : Control + C
 * 환경변수 설정
     * 프로젝트에 requirements.txt 생성
-    * 파일에 패키지 설치할거 다 작성
+    * 파일에 설치할 라이브러리 모두 작성
     * (파이참 터미널)
     * pip install --user --no-warn-script-location -r requirements.txt 
 * mysql 자동테이블 생성 설정
