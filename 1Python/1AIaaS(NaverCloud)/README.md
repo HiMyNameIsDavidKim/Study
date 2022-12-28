@@ -240,19 +240,6 @@
 * 사람처럼 학습하고 추론할 수 있는 지능을 가진 컴퓨터 시스템을 만드는 기술.
 <br><br>
 
-### [데이터 전처리]
-* 맷플릿롭은 feature 간 스케일 차이를 이해하지 못한다.
-* 시그마와 평균에 맞게 표준점수화(z-score) 시켜주는게 좋다.
-    * (수동)
-    * mean = np.mean(train_input, axis=0)
-    * std = np.std(train_input, axis=0)
-    * test_scaled = (test_input - mean) / std
-    * (자동)
-    * 사이킷런의 StandardScaler() 클래스.
-* 트레이닝셋과 테스트셋을 나누어 평가한다.
-    * train_test_split() 메서드로 자동 스플릿.
-<br><br>
-
 ### [ML&DL]
 * ML : 경험을 통해 자동으로 개선하는 컴퓨터 알고리즘.
 * DL : 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
