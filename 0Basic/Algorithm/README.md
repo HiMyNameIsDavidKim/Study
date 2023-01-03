@@ -163,7 +163,7 @@
 ## `[알고리즘의 분류]`
 * 설계기법 분류 : 완전탐색(Brute Force, 순열, 재귀, 비트마스크, BFS), 축소 정복, 분할 정복, 탐욕, 동적 프로그래밍, 백트래킹, 조합
 * 주제별 분류 : 탐색(선형탐색, 이진탐색, 순차탐색, 해시탐색), 정렬(버블정렬, 교환정렬, 선택정렬, 삽입정렬, 힙정렬, 퀵정렬, 병합정렬, 기수정렬), 그래프, 트리
-* [링크](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/Classification)
+* [👉자세하게 고찰해보자.👈](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/Classification)
 <br><br>
 
 
