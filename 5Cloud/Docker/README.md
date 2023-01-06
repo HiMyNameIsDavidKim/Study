@@ -41,12 +41,12 @@
     * skip-host-cache
     * skip-name-resolve
     * collation-server = utf8_unicode_ci
-    * init-connect='SET NAMES utf8'
-    * character-set-server = utf8
+    * init-connect='SET NAMES utf8mb4'
+    * character-set-server = utf8mb4
   * [client] 밑에 적기
-    * default-character-set = utf8mb4 
+    * default-character-set = utf8mb4
   * [mysql] 밑에 적기
-    * default-character-set = utf8mb4 
+    * default-character-set = utf8mb4
   * 컨테이너 재시작
     * (재시작)
     * mysql -u root -p
