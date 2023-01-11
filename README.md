@@ -5,6 +5,8 @@
 
   - [`Data Structure`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
   
+  - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
+
   - [`Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
 
   - [`Algebra`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
