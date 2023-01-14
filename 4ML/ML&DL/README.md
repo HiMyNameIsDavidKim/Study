@@ -196,22 +196,40 @@
     * 가장 정확하지만 가장 느리다
 <br><br>
 
-
-
-## `[비지도 학습]`
-* Unsupervised learning, 타깃이 없을 때 사용하는 알고리즘.
-* 
-<br><br>
-
-
-
-### [Scikit-learn 함수 사용 순서]
+### [Scikit-learn 함수 사용 순서_지도학습]
 * 1.Classifier() or Regressor()
 * 2.cross_validate()
 * 3.fit()
 * 4.scores()
 * 5.save()
 <br><br>
+
+
+
+## `[비지도 학습]`
+* Unsupervised learning, 타깃이 없을 때 사용하는 알고리즘.
+* clustering : 군집, 비슷한 샘플끼리 그룹으로 모으는 작업.
+* cluster : 모여진 그룹 중의 하나.
+* centroid : 클러스터 중심, k-means에 의해 계산된 평균값.
+* 최적의 클러스터 개수(k) 찾기
+    * inertia : 센트로이드와 각 샘플 사이 거리의 제곱 합.
+    * elbow : 클러스터 개수를 늘려가며 이너셔 변화율이 급격히 떨어지는 지점 선정. 
+    * shihoutte : 군집 내 데이터들이 다른 군집과 비교해 얼마나 거리가 가까운지 계산하여 수치적으로 선정. 1에 가까울 수록 좋으며 일반적으로 0.5도 넘기 힘들다.
+* 종류 : 군집(K-means, ), 
+<br><br>
+
+### [비지도 학습의 종류]
+* K-means : 자동으로 군집의 평균값을 찾아주는 알고리즘.
+    * 사이킷런의 KMeans() 클래스.
+    * labels_ 속성값에 정답지 저장.
+    * cluster_centers_ 속성값으로 센트로이드를 불러낼 수 있다.
+    * transform() 메서드로 각 센트로이드까지의 거리 측정 가능.
+* 
+<br><br>
+
+
+
+
 
 
 
