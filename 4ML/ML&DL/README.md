@@ -238,7 +238,7 @@
 
 ## `[DL]`
 * 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
-* 종류 : ANN, DNN(Deep), CNN(Convolution), RNN(Recurrent), LSTM, GRU, GAN
+* 종류 : DNN(Deep), CNN(Convolution), RNN(Recurrent), LSTM, GRU, GAN
 <br><br>
 
 ### [기본 개념]
@@ -272,17 +272,36 @@
     * 비용 함수 : cost function, 모든 샘플에 대하여 예측값과 실제 정답의 차이를 비교하는 함수. 각 샘플에 대한 로스의 총합 = 코스트.
 * 옵티마이저 : 최소의 loss로 학습하는 방법을 찾는 최적화 알고리즘.
     * SGD : 확률적 경사 하강법, 기존 샘플 1개와 새로운 데이터로 최대 그라디언트 계산하여 최대 속도로 학습.
-    * RMSProp : 루트 민 스퀘어 예측법, 기울기에 따라 학습률을 조절해서 정확도 높임.
+    * RMSprop : 루트 민 스퀘어 예측법, 기울기에 따라 학습률을 조절해서 정확도 높임.
     * 모멘텀 : 경사 하강법에 관성 개념을 추가. 지역 최솟값에 갇히지 않도록 설계됨.
     * 아담 : RMSProp과 모멘텀의 하이브리드.
+<br><br>
+
+### [DL 도구 활용]
+* 손실 곡선
+    * 훈련 과정에 발생된 지표 저장.
+    * history = model.fit()
+    * 손실함수(loss)와 정확도(accuracy)가 저장됨.
+    * plt를 통해 플랏.
+* 검증 손실 곡선
+    * fit 메서드의 validation_data 매개변수에 검증데이터 입력.
+    * history에 val_loss와 val_accuracy가 추가됨.
+    * plt를 통해 플랏.
+* 드롭 아웃
+    * 훈련 과정에서 일부 뉴런을 랜덤하게 꺼서 과대적합 제어.
+    * keras.layers.Dropout(0.X) 레이어 추가.
+* 콜백
+    * 과대적합이 시작되면 조기종료 후 최적 모델을 저장.
+    * checkpoint = keras.callbacks.ModelCheckpoint() 클래스
+    * early_stopping = keras.callbacks.EarlyStopping() 클래스
+    * fit 메서드에 아래 파라미터 추가.
+    * callbacks = [checkpoint, early_stopping]
 <br><br>
 
 
 
 ## `[DNN]`
-
-### [ANN]
-* Artificial Neural Network.
+* Deep Neural Network.
 * 입력층 : input layer, 입력되는 값 각 하나하나. (ex. 1920x1080개 픽셀)
 * 출력층 : output layer, 출력되는 결과. (ex. 옷의 카테고리)
 * 밀집층 : dense layer, keras.layers.Dense(뉴런수, 활성함수, (입력크기))
@@ -291,12 +310,13 @@
 * compile 메서드 : (loss = 모델의 손실함수, metrics = 훈련 과정에서 계산할 측정값) 지정.
 * fit 메서드 : (입력 데이터셋, 타깃, 학습 반복 횟수) 지정.
 * 이 밀집층을 단일 층으로 구성하지 않고 여러번 추가하면 DNN.
-<br><br>
-
-### [DNN]
 * 은닉층 : hidden layer, 입력층과 출력층 사이의 모든 층.
     * 은닉층 마다 활성화 함수가 있다. (각 층의 비선형성 부여)
-* 은닉층을 모두 설계한 뒤 리스트에 순서대로 담아 Sequential() 클래스에 전달.
+<br><br>
+
+
+
+## `[CNN]`
 * 
 <br><br>
 
