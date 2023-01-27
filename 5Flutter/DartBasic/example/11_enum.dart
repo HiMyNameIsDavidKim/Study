@@ -1,3 +1,4 @@
+// 상태를 열거해 묶어서 정의한다.
 enum Status{
   approved,
   pending,

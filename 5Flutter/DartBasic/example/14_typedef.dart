@@ -20,7 +20,7 @@ typedef Operation = int Function(int x, int y, int z);
 int add(int x, int y, int z) => x + y + z;
 int sub(int x, int y, int z) => x - y - z;
 
-//실제 사용 시에는 람다랑 유사하게 사용.
+//실제 사용 시 파이썬의 람다와 유사하게 사용.
 int cal(int x, int y, int z, Operation operation){
   return operation(x, y, z);
 }
