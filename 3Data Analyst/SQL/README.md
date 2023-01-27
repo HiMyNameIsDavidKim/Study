@@ -1,5 +1,7 @@
 # SQL
 * Structured Query Language, DB에서 CRUD 기능을 하기 위해 정의한 표준 언어.
+* 🎉SQLD 합격 ()🎉
+<br><br>
 
 ## `[Data Modeling]`
 
