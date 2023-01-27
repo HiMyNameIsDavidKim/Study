@@ -196,14 +196,6 @@
     * 가장 정확하지만 가장 느리다
 <br><br>
 
-### [Scikit-learn 함수 사용 순서_지도학습]
-* 1.Classifier() or Regressor()
-* 2.cross_validate()
-* 3.fit()
-* 4.scores()
-* 5.save()
-<br><br>
-
 
 
 ## `[비지도 학습]`
@@ -242,17 +234,11 @@
     * 주로 다른 머신러닝 알고리즘과 섞어서 사용한다. (feature 개수만 줄이고 타 알고리즘으로 fit())
 <br><br>
 
-### [Scikit-learn 함수 사용 순서_비지도학습]
-* 1.비지도학습 클래스()
-* 2.fit()
-* 3.predict()
-* 4.save()
-<br><br>
-
 
 
 ## `[DL]`
 * 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
+* 종류 : ANN, DNN(Deep), CNN(Convolution), RNN(Recurrent), LSTM, GRU, GAN
 <br><br>
 
 ### [기본 개념]
@@ -291,9 +277,56 @@
     * 아담 : RMSProp과 모멘텀의 하이브리드.
 <br><br>
 
-### [TensorFlow 함수 사용 순서]
-* 1.sequential()
-* 2.compile()
+
+
+## `[DNN]`
+
+### [ANN]
+* Artificial Neural Network.
+* 입력층 : input layer, 입력되는 값 각 하나하나. (ex. 1920x1080개 픽셀)
+* 출력층 : output layer, 출력되는 결과. (ex. 옷의 카테고리)
+* 밀집층 : dense layer, keras.layers.Dense(뉴런수, 활성함수, (입력크기))
+    * 첫번째 층은 반드시 입력크기가 있어야 한다.
+    * 지저분하다고 생각하면 Flatten() 클래스를 통해 2차원을 1차원으로 변환.
+* compile 메서드 : (loss = 모델의 손실함수, metrics = 훈련 과정에서 계산할 측정값) 지정.
+* fit 메서드 : (입력 데이터셋, 타깃, 학습 반복 횟수) 지정.
+* 이 밀집층을 단일 층으로 구성하지 않고 여러번 추가하면 DNN.
+<br><br>
+
+### [DNN]
+* 은닉층 : hidden layer, 입력층과 출력층 사이의 모든 층.
+    * 은닉층 마다 활성화 함수가 있다. (각 층의 비선형성 부여)
+* 은닉층을 모두 설계한 뒤 리스트에 순서대로 담아 Sequential() 클래스에 전달.
+* 
+<br><br>
+
+
+
+
+
+
+
+## `[함수 사용 순서 정리]`
+
+### [Scikit-learn 함수 사용 순서_지도학습]
+* 1.Classifier() or Regressor()
+* 2.cross_validate()
 * 3.fit()
-* 4.evaluate()
+* 4.scores()
 * 5.save()
+<br><br>
+
+### [Scikit-learn 함수 사용 순서_비지도학습]
+* 1.비지도학습 클래스()
+* 2.fit()
+* 3.predict()
+* 4.save()
+<br><br>
+
+### [TensorFlow 함수 사용 순서]
+* 1.model = keras.Sequential()
+* 2.model.add(keras.layers.XXX())
+* 3.compile()
+* 4.fit()
+* 5.evaluate()
+* 6.save()
