@@ -304,9 +304,10 @@
 * Deep Neural Network.
 * 입력층 : input layer, 입력되는 값 각 하나하나. (ex. 1920x1080개 픽셀)
 * 출력층 : output layer, 출력되는 결과. (ex. 옷의 카테고리)
-* 밀집층 : dense layer, keras.layers.Dense(뉴런수, 활성함수, (입력크기))
+* 밀집층 : dense layer, 입력층에 가중치를 곱하는 층.
+    * keras.layers.Dense(뉴런수, 활성함수, (입력크기))
     * 첫번째 층은 반드시 입력크기가 있어야 한다.
-    * 지저분하다고 생각하면 Flatten() 클래스를 통해 2차원을 1차원으로 변환.
+    * 지저분하다고 생각하면 Flatten() 클래스를 통해 2차원을 1차원으로 미리 변환.
 * compile 메서드 : (loss = 모델의 손실함수, metrics = 훈련 과정에서 계산할 측정값) 지정.
 * fit 메서드 : (입력 데이터셋, 타깃, 학습 반복 횟수) 지정.
 * 이 밀집층을 단일 층으로 구성하지 않고 여러번 추가하면 DNN.
@@ -317,7 +318,13 @@
 
 
 ## `[CNN]`
-* 
+* Convolution Neural Network.
+* 입력층의 일부에 가중치 적용. (DNN은 입력층 전체에 가중치 적용)
+* 합성곱층 : Convolution layer, 입력층에 합성곱을 진행하는 층.
+    * keras.layers.Conv2D(필터수, 커널사이즈, 활성함수)
+    * 정보에 편향이 생기지 않도록 padding='same'을 추가해주는 것을 추천.
+* 풀링층 : Pooling layer, 특성맵의 가로세로 크기를 줄이는 층.
+    * keras.layers.MaxPooling2D(풀링크기)
 <br><br>
 
 
