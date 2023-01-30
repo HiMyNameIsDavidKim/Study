@@ -1,5 +1,9 @@
 # Natural Language Processing(자연어 처리)
 
+## `[examples]`
+* 
+<br><br>
+
 ## `[웹 크롤링]`
 * 웹사이트, 하이퍼링크, 데이터를 자동화된 방법으로 수집 분류 저장하는 것.
     * 웹 사이트 : HTTP 프로토콜을 사용하여, URL에 HTML로 쓰인 문서.
