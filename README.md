@@ -9,8 +9,6 @@
   
   - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
 
-  - [`Algebra`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
-
   - [`Statistics`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
 
 <br>
@@ -82,15 +80,11 @@
 ### 📘Book List
 * [print('☑️') if '완독!' == True else print('')]
 * Data Science, ML
-  * 혼공머신(박해선) : 인공지능 머신러닝 딥러닝
+  * ☑️혼공머신(박해선) : 인공지능 머신러닝 딥러닝
   * Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
   * 플로우가 보이는 머신러닝 프로젝트(임선집) : 문과생 데이터 사이언티스트, 머신러닝 딥러닝 프로젝트 실전 예제
-  * 딥러닝으로 걷는 시계열 예측 : 아키텍트, 딥러닝 프로젝트 실전 예제
+  * 딥러닝으로 걷는 시계열 예측(윤영선) : 아키텍트, 딥러닝 프로젝트 실전 예제
   * 딥려닝을 이용한 정형 데이터 분석(마크 라이언) : 데이터 사이언티스트, 딥러닝 프로젝트 실전 예제와 모델 배포
 * Algorithm
   * ☑️ 파이썬 코딩 도장(남재윤) : 파이썬 AtoZ (+파이써닉 맛보기)
-  * 이것이 취업을 위한 코딩 테스트다 with 파이썬
-* Cloud
-  * 처음 배우는 플라스크 웹 프로그래밍(윤정현) : 플라스크 프레임워크
-  * 이것이 리눅스다(우재남) : 리눅스 위에 머신러닝 구현하기
-  * 쉽게 배우는 AWS AI 서비스(피셔 엘거) : AWS AIaaS 구현(가장 어려운 책)
+  * 이것이 취업을 위한 코딩 테스트다 with 파이썬(나동빈)
