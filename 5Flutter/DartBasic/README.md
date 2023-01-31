@@ -2,6 +2,39 @@
 * reference : youtube code factory
 <br><br>
 
+## `[플러터 설치]`
+* Flutter SDK 다운
+    * 플러터 홈페이지에서 zip파일 받기
+    * Users/davidkim에 설치
+    * dart —version
+* 환경변수
+    * vim ~/.zshrc
+    * export PATH="$PATH:/Users/davidkim/flutter/bin"
+* 닥터 실행
+    * flutter doctor
+* Xcode
+    * 앱스토어에서 다운
+    * sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    * sudo xcodebuild -runFirstLaunch
+    * sudo gem install cocoapods
+    * flutter doctor
+* 안드로이드 스튜디오
+    * 홈페이지에서 설치
+    * 안드로이드 스튜디오 실행
+    * Preferences -> system settings -> Android SDK -> Edit 눌러서 설치
+    * Preferences -> Plugins -> flutter 검색, 설치
+    * flutter doctor --android-licenses
+* 프로젝트 생성
+    * New Flutter Project 클릭
+    * Flutter SDK 위치 잡아주기
+    * 이름 = 작성, 프로젝트 타입 = Application, Organization = kr.scalar, 완료
+    * 오른쪽 위 버튼 중에 Device Manager
+    * Create virtual device
+    * Phone -> pixel2 -> 다음 -> API 33 다운 -> 선택 -> 다음 -> Emulator 띄우기 -> 런
+<br><br>
+
+
+
 ## `[Grammar]`
 
 ### [enum]

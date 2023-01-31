@@ -6,11 +6,10 @@
   - [`Data Structure`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
 
   - [`Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
-  
-  - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
 
   - [`Statistics`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
-
+  
+  - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
 <br>
 
 ## 🐍Python
@@ -21,7 +20,6 @@
   - [`Baekjoon`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Baekjoon)
 
   - [`Programmers`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Programmers)
-
 <br>
 
 ## 🪬AI
@@ -33,26 +31,34 @@
   
   - [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
 
-  - [`🎙️Voice`]
-
   - [`🔮Prediction`]
-
 <br>
 
 ## 📊Data Analyst
-  - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
+  - [`SQLD`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
-  - [`R`]
+  - [`R`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
   - [`Tableau`]
   
   - [`Hadoop`]
 
   - [`Analystical Skills`]
+ㄹ<br>
 
+## 🦋Flutter
+  - [`Dart Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/DartBasic)
+
+  - [`Widget`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/Widget)
+
+  - [`Project`]
 <br>
 
-## ☁️Cloud(AWS, GCP, NCP)
+## ☕️Java
+  - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
+<br>
+
+## ☁️Cloud(AWS, GCP)
   - [`🥫DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
 
   - [`🌵Django Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Django(REST))
@@ -60,31 +66,23 @@
   - [`⚛️React Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/React)
 
   - [`🐳Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
-
-<br>
-
-## 🦋Flutter
-  - [`Dart Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/DartBasic)
-
-<br>
-
-## ☕️Java
-  - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
-
 <br>
 
 ## 💼Portfolio
-
 <br>
 
 ### 📘Book List
 * [print('☑️') if '완독!' == True else print('')]
-* Data Science, ML
-  * ☑️혼공머신(박해선) : 인공지능 머신러닝 딥러닝
+* 데이터 분석
   * Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
+  * 혼공분석(박해선) : 파이썬 데이터분석
+  * 혼공R이(강전희) : R 데이터분석
+* ML
+  * ☑️혼공머신(박해선) : 인공지능 머신러닝 딥러닝
   * 플로우가 보이는 머신러닝 프로젝트(임선집) : 문과생 데이터 사이언티스트, 머신러닝 딥러닝 프로젝트 실전 예제
   * 딥러닝으로 걷는 시계열 예측(윤영선) : 아키텍트, 딥러닝 프로젝트 실전 예제
   * 딥려닝을 이용한 정형 데이터 분석(마크 라이언) : 데이터 사이언티스트, 딥러닝 프로젝트 실전 예제와 모델 배포
 * Algorithm
   * ☑️ 파이썬 코딩 도장(남재윤) : 파이썬 AtoZ (+파이써닉 맛보기)
   * 이것이 취업을 위한 코딩 테스트다 with 파이썬(나동빈)
+<br>

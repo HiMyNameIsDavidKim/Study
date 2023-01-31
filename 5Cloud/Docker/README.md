@@ -11,6 +11,18 @@
 * 도커 허브 : 도커 이미지를 올리는 허브. 깃허브와 유사하다.
 <br><br>
 
+### [리셋 명령어]
+* 모든 도커 컨테이너 삭제
+  * docker stop $(docker ps -a -q)
+  * docker rm $(docker ps -a -q)
+* 모든 도커 이미지 삭제
+  * docker rmi $(docker images -q)
+* 이미지 캐시 완전 삭제
+  * docker system prune --all --force
+<br><br>
+
+
+
 ## `[서버 구축]`
 
 ### [DB Server_MySQL]
@@ -74,7 +86,14 @@
   * (파이참 터미널)
   * python manage.py makemigrations
   * python manage.py migrate
+  <br><br>
 
 
-## [Compose Up]
-* 
+
+## `[Compose Up]`
+* 도커에 mysql과 django와 react 3가지를 모두 올려서 합치는 작업.
+* 3개의 다른 컨테이너가 하나로 묶이는 것.
+* docker-compose.yml 수정.
+* 파이참 터미널
+  * docker compose up
+<br><br>

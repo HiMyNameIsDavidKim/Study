@@ -1,12 +1,12 @@
+import sys
+
 def solution(n):
     my_list = []
-    for i in range(0,n):
-        str = int(input())
-        my_list.append(str)
-    my_list = sorted(my_list)
-    for p in my_list:
-        print(p)
+    for _ in range(n):
+        arg = int(sys.stdin.readline().strip())
+        my_list.append(arg)
+    my_list.sort()
+    [print(i) for i in my_list]
 
-if __name__ == "__main__":
-    n = int(input())
-    solution(n)
+n = int(sys.stdin.readline().strip())
+solution(n)
