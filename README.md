@@ -17,9 +17,7 @@
 
   - [`AIaaS⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
 
-  - [`Baekjoon`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Baekjoon)
-
-  - [`Programmers`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Programmers)
+  - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Example)
 <br>
 
 ## 🪬AI
