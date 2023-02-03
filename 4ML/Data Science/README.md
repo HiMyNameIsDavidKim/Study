@@ -1,24 +1,56 @@
 # Data Science
 
+## `[examples]`
+* 
+<br><br>
+
 ## `[Data Science]`
 * 다양한 종류의 데이터로부터 지식과 인사이트를 추출하는 융합분야.
 * 과학적 방법론, 프로세스, 알고리즘, 시스템 등을 동원한다.
 * 통계학, 데이터분석, 머신러닝, 패턴인식을 통합하는 개념으로 정의한다.<br><br>
 
 ### [라이브러리]
-* 넘파이 : array 가공 라이브러리.
+* 넘파이 : array. 가공.
     * shape : (샘플 수, 특성 수) 보기
     * column_stack : 계산된 컬럼 추가
-* 판다스 : 데이터 분석 및 가공에 주로 사용되는 라이브러리.
-    * columns, head(), tail(), shape, info(), describe() : 정보 보기
-    * mean(), sum(), max(), min() : 집계함수
-    * rename() : 컬럼명 바꾸기
-    * value_counts(): 각 컬럼에 몇개의 데이터가 있는지 확인
-    * query() : 조건에 맞는 데이터만 추출 가능(df 출력)
-    * groupby() : 특정 컬럼 1개로 피벗테이블 작성 가능
-    * nlargest() : top n개 뽑아내기
-    * len(df.loc[df[]==0]) : 원하는 값 개수 조회
-    * pd.read_excel : 엑셀 리딩, 시트 지정 필수, 행렬 지정 리딩 가능.
+* 판다스 : DataFrame. 데이터 분석 및 가공.
+    * 조회
+        * pd.read_excel() : 엑셀 리딩, 시트 지정 필수, 행렬 지정 리딩 가능.
+        * columns, head(), tail(), shape, info(), describe() : 정보 보기.
+        * value_counts() : 각 컬럼에 몇개의 데이터가 있는지 확인.
+        * loc[[행], [열]] : 행 or 열 or 요소 조회.
+        * len(df.loc[df['name']==0]) : 원하는 값 개수 조회.
+        * pd.isna() : null값 확인.
+    * 연산
+        * mean(), sum(), max(), min() : 집계함수
+        * assign() : 계산된 컬럼 추가.
+        * merge() : 가로 합치기.
+        * concat() : 세로 합치기.
+    * 수정
+        * rename() : 컬럼명 바꾸기
+        * query() : 조건에 맞는 데이터만 추출 가능(df 출력), 괄호에 조건문.
+        * drop() : 특정 컬럼 제거.
+        * pd.dropna() : 결측치 행 제거.
+        * sort_values() : 특정 컬럼 정렬.
+        * groupby() : 특정 컬럼 1개로 피벗테이블 작성 가능.
+        * nlargest() : top n개 뽑아내기
+* 씨본 : 그래프.
+    * 생성자 매개변수
+        * data = csv_name, x = 'x', y = 'y'
+        * hue = '컬럼명' : 종류별로 색깔 설정.
+        * ci = None : 신뢰구간 표시 제거.
+    * 산점도
+        * sns.scatterplot()
+        * .set(xlim = (0,0), ylim = (0,0)) : 축 범위 설정.
+    * 막대 그래프
+        * sns.barplot()
+        * .sort_values() : 크기순 정렬.
+    * 선 그래프
+        * sns.lineplot()
+    * 박스 플랏
+        * sns.boxplot()
+    * 히스토그램
+        * sns.histplot()
 * 피클 : 자료형의 변환 없이 그대로 피클파일로 저장하는 라이브러리.
     * csv나 excel로 구동하는 것보다 속도가 매우 빠르다.
 * pyplot : 시각화 및 그래프 생성에 주로 사용되는 라이브러리.<br><br>
