@@ -1,6 +1,7 @@
 # Prediction(예측)
 
 ## `[examples]`
+* [`미국인 소득 예측 Decision Tree`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/prediction/state_income.py)
 * [`뇌졸중 예측 Decision Tree`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/prediction/stroke.py)
 * [`주가 분석 LSTM 앙상블`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/prediction/stock_lstm_ensemble.py)
 * [`주가 분석 LSTM`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/prediction/stock_lstm.py)
