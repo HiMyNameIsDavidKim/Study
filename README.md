@@ -29,7 +29,7 @@
   
   - [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
 
-  - [`🔮Prediction`]
+  - [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
 <br>
 
 ## 📊Data Analyst
