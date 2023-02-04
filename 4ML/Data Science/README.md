@@ -1,7 +1,10 @@
 # Data Science
 
 ## `[examples]`
-* 
+* [`T-검정, 상관분석`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/stat_exam.py)
+* [`워드 클라우드(댓글)`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/comment_bts.py)
+* [`워드 클라우드(연설문)`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/speech_moon.py)
+* [`한국복지패널 공공데이터 분석`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/welfare.py)
 <br><br>
 
 ## `[Data Science]`
