@@ -4,6 +4,7 @@
 * [`숫자 MNIST DNN`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/number.py)
 * [`패션 MNIST DNN`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fashion.py)
 * [`사과 분류 CNN`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fruit.py)
+* [`엣지, 직선, 얼굴 검출`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/lenna.py)
 <br><br>
 
 ## `[CV의 주요 개념]`
