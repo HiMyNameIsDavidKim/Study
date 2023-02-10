@@ -1,11 +1,14 @@
 # Computer Vision
 
 ## `[examples]`
-* [`숫자 MNIST DNN`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/number.py)
-* [`패션 MNIST DNN`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fashion.py)
-* [`사과 분류 CNN`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fruit.py)
+* [`숫자 MNIST CNN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/number_torch.py)
+* [`숫자 MNIST DNN_TF`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/number.py)
+* [`패션 MNIST DNN_TF`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fashion.py)
+* [`사과 분류 CNN_TF`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fruit.py)
 * [`엣지, 직선, 얼굴 검출`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/lenna.py)
 <br><br>
+
+
 
 ## `[CV의 주요 개념]`
 * 마하밴드, 콘볼루션, 로버츠 연산, 프리윗 연산, 소벨 연산
