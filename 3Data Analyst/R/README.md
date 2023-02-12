@@ -22,6 +22,11 @@
     * Information : 데이터의 가공으로 데이터간 의미를 도출한 것.
     * Knowledge : 데이터로 도출된 정보를 구조화하여 분류, 재조합을 통해 고유의 지식을 내재화한 것.
     * Wisdom : 지식의 축적과 아이디어가 결합된 창의적 산물.
+* 데이터 저장 방식
+    * RDBMS : Oracle, MSSQL, MySQL
+    * NoSQL : MongoDB, HBase, Redis, Cassandra
+    * 분산파일 시스템 : HDFS
+* 크기순서 : Kilo - Mege - Giga - Tera - Peta - Exa - Zeta - Yota
 <br><br>
 
 ### [데이터베이스]
@@ -34,8 +39,13 @@
     * Stored, 저장되어 있다.
     * Shared, 여러 사람이 이용한다.
     * Changeable, 항상 업데이트 된다.
+* DB 설계 절차
+    * 요구조건 분석
+    * 개념적 설계
+    * 논리적 설계
+    * 물리적 설계
 * 기업의 데이터베이스 경영정보 시스템
-    * OLAP(대화식)
+    * OLAP(분석, 대화식)
     * OLTP(트랜젝션)
     * Data Mining(데이터의 관계, 규칙, 패턴을 찾는 과정)
     * CRM(Customer Relationship Management)(고객 특성 기반 마케팅 활동 계획, 지원, 평가)
@@ -54,6 +64,12 @@
     * Volume(양, 규모 측면)
     * Variety(다양성, 데이터 유형과 소스 측면)
     * Velocity(속도, 데이터 수집과 처리 측면)
+    * 7V는 (Value, Varacity, Validation, Volatility) 추가
+* 출현 배경
+    * 클라우드 컴퓨팅이 경제적 효과를 제공
+    * 양질 전환
+    * 비정형 데이터의 등장
+    * 처리기술의 발달
 * 빅데이터 가치 산정의 어려움
     * 데이터 활용 방식(재사용이나 재조합이 가능하고, 누가 쓰는지에 따라 다름)
     * 새로운 가치 창출(빅데이터가 창출하는 가치를 포함해 산정해야함)
@@ -114,19 +130,22 @@
 * 과제 정의에서부터 결과 도출까지의 과정을 적절히 관리할 수 있도록 사전에 계획하는 작업.
 * 분석은 분석의 대상(What), 분석의 방법(How)에 따라 4가지 유형으로 나뉜다.
     * 방법 = known, 대상 = known -> Optimization
-    * 방법 = known, 대상 = unknown -> Insight
     * 방법 = unknown, 대상 = known -> Solution
+    * 방법 = known, 대상 = unknown -> Insight
     * 방법 = unknown, 대상 = unknown -> Discovery
 <br><br>
 
 ### [분석 방법론]
 * 데이터 분석을 효율적으로 하기 위해서 데이터 분석 방법론(프로세스 정립)이 필요하다.
+* 일정한 수준의 품질, 누구나 동일한 산출물, 간단한 지식만으로도 활용 가능 해야한다.
 * 구성
     * 절차(Procedures)
     * 방법(Method)
     * 도구와 기법(Tools & Techniques)
     * 템플릿과 산출물(Templates & Outputs)
-* 종류 : KDD, 
+* 합리적 의사결정 장애요소 : 고정관념, 편향된 생각, 프레이밍 효과
+    * 긍정적 : 비판적 사고, 직관력, 비편향적 사고
+* 종류 : KDD, CRISP-DM, 빅데이터
 <br><br>
 
 ### [KDD 분석 방법론]
@@ -145,10 +164,10 @@
 * (단계, 일반 과제, 세부 과제, 프로세스 실행) 4가지 레벨로 구성된 계층적 프로세스.
 * 절차
     * 비즈니스 이해 : Business Understanding
-    * 데이터 이해 : Data Understanding
-    * 데이터 준비 : Data Preparation
-    * 모델링 : Modelling
-    * 평가 : Evaluation
+    * 데이터 이해 : Data Understanding, (KDD의 Selection + Preprocessing)
+    * 데이터 준비 : Data Preparation, (KDD의 Transformation)
+    * 모델링 : Modelling, (모델 평가 포함)
+    * 평가 : Evaluation, (분석 결과 평가, 모델링 과정 평가, 모델 적용성 평가 포함)
     * 배포 : Deployment
 <br><br>
 
@@ -161,24 +180,80 @@
     * 데이터 분석 : Analyzing
     * 시스템 구현 : Developing
     * 평가 및 전개 : Deploying
+* 위험 대응 방법 : 회피(avoid), 전이(Transfer), 완화(Mitigate), 수용(Accept)
 <br><br>
 
 ### [분석과제 발굴 방법론]
-* 하향식과 상향식 2가지로 나뉜다.
+* 하향식, 상향식, 점증적 3가지로 나뉜다.
 * 하향식 접근 방식
     * Top Down Approach
+    * 폭포수 모델
     * 솔루션을 찾기 위해 체계적으로 단계화된 과정을 수행하는 방식.
     * 분석 대상(What)이 known 으로, Optimization -> Solution 순서로 진행.
 * 상향식 접근 방식
     * Bottom Up Approach
-    * 문제 정의 자체가 어려운 경우. 데이터 기반 문제 재증의 및 해결방안 탐색을 반복.
+    * 프로토타입 모델
+    * 문제 정의 자체가 어려운 경우. 데이터 기반 문제 재증의 및 해결방안 탐색을 반복. 비지도학습.
     * 분석 대상(What)이 unknown 으로, Discovery -> Insight 순서로 진행.
+* 점증적 개발 방식
+    * 나선형 모델
+    * 반복을 통해 점증적으로 개발.
+    * 복잡성 증가할 수 있으므로 경계.
+* Design Thinking : 중요 의사결정 시 상향식과 하향식을 반복적으로 사용.
 <br><br>
 
-### 
+### [분석과제 관리]
+* 다른 프로젝트 처럼 범위, 일정, 품질, 리스크, 의사소통 관리가 필요하다.
+* 데이터에 기반한 분석 기법을 적용하므로, 5대 주요 영역도 고려하여 관리가 필요하다.
+* 5대 주요 영역
+    * Data Complexity : 데이터의 복잡도
+    * Data Size : 데이터의 크기
+    * Speed : 분석을 뽑는 주기
+    * Analytic Complexity : 분석법의 복잡도
+    * Accuracy & Precision : 정확도와 일관성
+* 여기서 복잡도와 정확도는 트레이드 오프 관계.
+<br><br>
 
+### [분석 마스터플랜 수립]
+* 분석 마스터플랜 : 말그대로 분석에 대한 계획.
+* ISP 방법론 활용, 데이터 분석 기획 특성 고려, 과제 우선순위 결정, 단기 및 중장기로 나누어 수립.
+    * ISP(Information Strategy Planning)
+    * 우선순위 고려 요소 : 전략적 중요도, 비즈니스 성과, ROI, 실행 용이성
+    * 적용범위 고려 요소 : 업무 내재화 적용 수준, 분석 데이터 적용 수준, 기술 적용 수준
+<br><br>
 
+### [분석 거버넌스 체계]
+* 기업에서 데이터가 어떻게 관리, 유지, 규제되는지에 대한 내부적 관리 방식이나 프로세스.
+* 구성요소
+    * System : 분석 관련 IT 기술 및 프로그램.
+    * Data Governance : 데이터 거버넌스.
+    * HR(Human resource) : 분석교육, 마인드육성 체계.
+    * Organization : 분석기획 및 관리 수행 조직.
+    * Process : 과제 기획 및 운영 프로세스.
+<br><br>
 
+### [데이터 거버넌스]
+* 전사 차원의 모든 데이터에 대하여 정책, 지침, 운영조직 등 표준화된 관리 체계를 수립하고 운영을 위한 프레임워크(FW) 및 저장소(Repository)를 구축하는 것.
+* 주요 관리 대상 : 마스터 데이터, 메타 데이터, 데이터 사전.
+* 구성요소
+    * 데이터 표준화
+    * 데이터 관리체계
+    * 데이터 저장소 관리
+    * 표준화 활동
+* 특징
+    * 데이터 가용성, 유용성, 통합성, 보안성, 안정성 확보.
+    * 독자적 or 전사 차원의 IT 거버넌스나 EA의 구성요소로 구축.
+    * 빅데이터 효율적 관리, 데이터 최적화, 데이터 생명주기 관리.
+    * 원칙(Principle), 조직(Organization), 프로세스(Process) 관리.
+    * ERD는 지속적으로 변경사항을 관리.
+<br><br>
+
+### [추가 용어]
+* Servitization : 제조업과 서비스업의 융합 용어.
+* CoE(Center of Excellence) : 조직 내 분석 전문조직.
+* Sandbox : 보안모델. 외부 접근 및 영향을 차단하여 제한된 영역에서만 동작.
+* CMMI : 능력 성숙도 통합 모델. 분석에 대한 성숙도를 평가하기 위한 모델.
+<br><br>
 
 
 
@@ -186,6 +261,12 @@
 
 
 ## `[R 프로그래밍 기본]`
+* 
+<br><br>
+
+
+
+## `[데이터 마트]`
 * 
 <br><br>
 
