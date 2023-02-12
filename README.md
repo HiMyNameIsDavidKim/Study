@@ -70,7 +70,7 @@
 <br>
 
 ### 📘Book List
-* [print('☑️') if '완독!' == True else print('')]
+* [print('☑️') if (완독 == True) else pass]
 * 데이터 분석
   * ☑️ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
   * 혼공분석(박해선) : 파이썬 데이터분석

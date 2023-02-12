@@ -111,8 +111,77 @@
 
 
 ## `[데이터 분석 기획]`
-* 
+* 과제 정의에서부터 결과 도출까지의 과정을 적절히 관리할 수 있도록 사전에 계획하는 작업.
+* 분석은 분석의 대상(What), 분석의 방법(How)에 따라 4가지 유형으로 나뉜다.
+    * 방법 = known, 대상 = known -> Optimization
+    * 방법 = known, 대상 = unknown -> Insight
+    * 방법 = unknown, 대상 = known -> Solution
+    * 방법 = unknown, 대상 = unknown -> Discovery
 <br><br>
+
+### [분석 방법론]
+* 데이터 분석을 효율적으로 하기 위해서 데이터 분석 방법론(프로세스 정립)이 필요하다.
+* 구성
+    * 절차(Procedures)
+    * 방법(Method)
+    * 도구와 기법(Tools & Techniques)
+    * 템플릿과 산출물(Templates & Outputs)
+* 종류 : KDD, 
+<br><br>
+
+### [KDD 분석 방법론]
+* Knowledge Discovery in Database.
+* 데이터를 통해 통계적 패턴이나 지식을 찾을 수 있도록 정리한 프로세스.
+* 절차
+    * 데이터셋 선택 : Selection, 비즈니스 이해, 목표 설정, 데이터 선택, 데이터셋 생성, 타깃 데이터 구성
+    * 데이터 전처리 : Preprocessing, 노이즈, 아웃라이어, 미싱 벨류 처리
+    * 데이터 변환 : Transformation, 변수 생성, 변수 선택, 차원 축소
+    * 데이터 마이닝 : Data Mining, 데이터 마이닝 기법 선택, 알고리즘 선택, 데이터 마이닝 실행
+    * 결과 평가 : Interpretation and Evaluation, 결과 해석, 평가, 분석 목적과 일치성 확인
+<br><br>
+
+### [CRISP-DM 분석 방법론]
+* Cross Industry Standard Process for Data Mining
+* (단계, 일반 과제, 세부 과제, 프로세스 실행) 4가지 레벨로 구성된 계층적 프로세스.
+* 절차
+    * 비즈니스 이해 : Business Understanding
+    * 데이터 이해 : Data Understanding
+    * 데이터 준비 : Data Preparation
+    * 모델링 : Modelling
+    * 평가 : Evaluation
+    * 배포 : Deployment
+<br><br>
+
+### [빅데이터 분석 방법론]
+* 기존 분석 모델에서 빅데이터로 확장하여 분석하기 위한 모델.
+* (단계, 태스크, 스텝) 3가지 레벨로 구성된 계층적 프로세스.
+* 절차
+    * 분석 기획 : Planning
+    * 데이터 준비 : Preparing
+    * 데이터 분석 : Analyzing
+    * 시스템 구현 : Developing
+    * 평가 및 전개 : Deploying
+<br><br>
+
+### [분석과제 발굴 방법론]
+* 하향식과 상향식 2가지로 나뉜다.
+* 하향식 접근 방식
+    * Top Down Approach
+    * 솔루션을 찾기 위해 체계적으로 단계화된 과정을 수행하는 방식.
+    * 분석 대상(What)이 known 으로, Optimization -> Solution 순서로 진행.
+* 상향식 접근 방식
+    * Bottom Up Approach
+    * 문제 정의 자체가 어려운 경우. 데이터 기반 문제 재증의 및 해결방안 탐색을 반복.
+    * 분석 대상(What)이 unknown 으로, Discovery -> Insight 순서로 진행.
+<br><br>
+
+### 
+
+
+
+
+
+
 
 
 
