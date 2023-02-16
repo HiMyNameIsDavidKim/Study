@@ -1,8 +1,8 @@
 # Natural Language Processing(자연어 처리)
 
 ## `[examples]`
-* [`소설 기억 모델 GRU_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/NLP/shakespeare_gru.py)
-* [`소설 기억 모델 RNN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/NLP/shakespeare_rnn.py)
+* [`소설 암기 모델 GRU_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/NLP/shakespeare_gru.py)
+* [`소설 암기 모델 RNN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/NLP/shakespeare_rnn.py)
 * [`입력 기억 모델 LSTM_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/NLP/remember_lstm.py)
 * [`입력 기억 모델 RNN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/NLP/remember_rnn.py)
 <br><br>
