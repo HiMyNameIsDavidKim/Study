@@ -25,7 +25,7 @@
 
   - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
-  - [`📷Computer Vision`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
+  - [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
   
   - [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
 

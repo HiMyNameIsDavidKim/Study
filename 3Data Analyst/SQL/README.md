@@ -4,6 +4,116 @@
     * 강의 -> 기출(유튜브) -> 기출(풀기)
 <br><br>
 
+## `[SQL 기본]`
+* 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.
+* 작성 순서 : SELECT - FROM - WHERE - GROUP BY - HAVING - ORDER BY
+* 실행 순서 : FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY
+* 연산 순서 : NOT - AND - OR<br><br>
+
+### [SQL 언어 종류]
+* DML(Data Manipulation) : 데이터 조작. (등록 검색 수정 삭제)
+    * INSERT(등록) : 테이블에 새로운 데이터를 삽입함.
+    * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
+        * SELECT DISTINCT : 테이블에서 특정 컬럼을 중복제거 후 가져옴.
+    * UPDATE(수정) : 테이블에 특정 컬럼의 값을 수정함. (VALUES랑 같이 써야함.)
+    * DELETE(삭제) : 테이블에 특정 (데이터만) 삭제함.
+* DDL(Data Definition) : 데이터 정의. (생성 삭제 변경 초기화)
+    * CREATE(정의) : 새로운 테이블 생성.
+    * ALTER(변경) : 테이블 or 컬럼의 이름 및 속성 변경/추가/삭제.
+        * RENAME : 이름 변경.
+        * MODIFY : 속성 변경, 제약조건 추가.
+        * ADD : 추가.
+    * DROP(삭제) : (스키마&데이터&구조) 모두 완전 삭제.
+    * RENAME(이름 변경)
+    * TRUNCATE(초기화) : (데이터&구조) 삭제.
+* DCL(Data Control) : 데이터 제어 및 권한 관리. (부여 박탈)
+    * GRANT(부여)
+    * REVOKE(박탈)
+    * COMMIT(트랜잭션 작업 결과 반영)
+    * ROLLBACK(트랜잭션 작업 취소)
+* TCL(Transaction Control) : 데이터 트랜잭션 제어.
+    * COMMIT(트랜잭션 작업 결과 반영)
+    * ROLLBACK(트랜잭션 작업 취소)(지울 경우 DELETE만 복구 가능)
+* 그 외
+    * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행.
+        * IN : for문에서 in이랑 똑같다. or 조건으로 같으면 True.
+    * IS NULL : 빈값. NULL에 연산 시 NULL 리턴함. (반대. IS NOT NULL)
+    * NVL(x,y) : NULL이면 y, NULL이 아니면 x
+    * NVL2(x,y,z) : x가 NULL이면 z, x가 NULL이 아니면 y
+    * NULLIF(x,y) : x=y이면 NULL, 다르면 x
+    * COALESCE(x,y,...) : NULL이 아닌 첫번째 값.
+    * LIKE : 특정 글자가 포함된 값을 보고 싶을 때 사용.
+    * ORDER BY : 정렬 순서 지정. 항상 마지막에 실행된다.(ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
+    * count(컬럼명) : null 제외한 행 수 카운트. (count(*)은 전체 행 카운트)
+    * ON : 조인 시에 조건을 지정.(ex.기준 컬럼)
+    * ROUND : 반올림
+    * 집계함수(SUM, AVG)는 NULL 무시하고 실행 가능.<br><br>
+
+### [DDL의 특징]
+* 데이터 유형
+    * number : 숫자형
+    * date : 날짜형
+    * varchar2 : 가변길이 문자열
+    * char : 고정된 길이 문자열
+* 제약조건(CONSTRAINT) : 컬럼 크리에이트 시 뒤에 적어서 제약을 걸어줌.
+    * default : 기본값 지정 가능
+    * not null : null 입력 시 에러
+    * primary key : 기본키 지정 (유니크 + not null)
+    * forigner key : 외래키 지정<br><br>
+
+### [트랜잭션]
+* 거래라는 뜻으로, DB 처리 작업이 모두 완료 or 모두 취소 되게 하는 작업.
+* 명령어는 COMMIT과 ROLLBACK 두개가 있다.
+* 트랜잭션의 특징
+    * Atomicity : 원자성, 반드시 DB에 모두 반영되던지 전혀 반영되지 않는다.
+    * Consistency : 일관성, 작업 처리 결과가 항상 일관성 있다.
+    * Isolation : 독립성, 서로 다른 트랜잭션에 끼어들 수 없다.
+    * Durability : 지속성, 완료 후에는 영구적으로 반영된다.<br><br>
+
+### [조인]
+* DB에서 테이블간의 결합. (결과 테이블 작성)
+    * FROM과 WHERE 사이에 작성.
+* 이너 조인 : 두 테이블의 공통된 요소(행)만 프린트
+    * using('컬럼명')으로 공통된 요소 지정
+    * 조인의 가장 기본은 이너 조인이다. (inner 작성 안해도 됨)
+* 레프트 아우터 조인 : 이너 조인 + 왼쪽 기준 누락 데이터 
+* 라이트 아우터 조인 : 이너 조인 + 오른쪽 기준 누락 데이터
+* 풀 아우터 조인 : 이너 조인 + 레프트 아우터 조인 + 라이트 아우터 조인
+* 크로스 조인 : 특정 기준 없이, 모든 경우의 수에 대한 결합(데이터가 같을때 가 아니라 경우의 수 전체를 프린트함.)
+* 셀프 조인 : 자기 스스로를 결합시킴. (내 데이터만 이용해서 새 테이블을 생성함.)<br><br>
+
+### [그룹 함수]
+* ROLL UP : 1행 추가해서 특정 값을 연산한 값 출력. 정렬도 진행.
+    * SUB TOTAL만 추가하는 것.
+    * (ex. 001, NULL, 40000)
+* CUBE : 연산이 가능한 모든 경우 다 추가함.
+    * SUB TOTAL, GRAND TOTAL 모두 추가하는 것.
+* GROUPING SETS : CUBE에서 인자를 다 지우고 SUB TOTAL, GRAND TOTAL만 유지.<br><br>
+
+
+
+## `[RDBMS]`
+* 오라클 : 오라클에서 개발한 프로그램. 안정성이 높다. 비싸다.
+* MySQL : 경량 DB 프로그램. 가볍고 종류가 다양하다. 표준 SQL이다.<br><br>
+
+### [RDBMS의 관계]
+* 3가지 관계가 있다.(is a, use a, has a)
+* is a 관계 : 논리구조, Generic (ex. 고등학생 is a 학생)
+* use a 관계 : 의존 관계, Dependency, 사용하는 관계이다. (ex. 프로그래머 use a 컴퓨터)
+* has a 관계 : 연관 관계, Association, 행위에 의해 발생하는 관계이다. (ex. 자동차 has a 엔진)
+  * 프로그래밍에서 use a는 클래스와 클래스의 관계이고, has a는 클래스와 인스턴스의 관계이다.
+* 집합 연관 관계 : Aggregation, 전체와 부분이 서로 독립적인 관계이다. (오버라이딩)
+* 복합 연관 관계 : Composition, 전체와 부분이 동시에 생성되고 동시에 소멸된다. (클래스 인스턴스)<br><br>
+
+### [서브쿼리]
+* 서브쿼리 : 쿼리를 묶어서 하나의 데이터처럼 사용(WHERE 뒤에 사용)
+* 인라인뷰 : 쿼리를 묶어서 하나의 테이블처럼 사용(FROM 뒤에 사용)
+* 스칼라 : 쿼리를 묶어서 하나의 컬럼처럼 사용(SELECT 뒤에 사용)
+* 스칼라 > 서브쿼리 > 인라인뷰 순으로 속도가 빠르다.
+* 파이썬에서 생각할 때, SELECT = retrun, FROM = DataFrame, WHERE = if 이다.<br><br>
+
+
+
 ## `[Data Modeling]`
 
 ### [데이터 모델링의 유의점]
@@ -158,116 +268,6 @@
     * 분할 투명성, 위치 투명성, 매핑 투명성, 중복 투명성, 장애 투명성, 병행 투명성
 * 장점 : 신뢰성, 가용성, 융통성, 응답속도 빠름, 비용 절감
 * 단점 : 오류 유발, 설계의 복잡도 증가, 통제가 어려움, 데이터 무결성 훼손 가능성<br><br>
-
-
-
-## `[SQL 기본]`
-* 관계형 DB에서 데이터 정의, 조작, 제어를 위해 사용하는 언어.
-* 작성 순서 : SELECT - FROM - WHERE - GROUP BY - HAVING - ORDER BY
-* 실행 순서 : FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY
-* 연산 순서 : NOT - AND - OR<br><br>
-
-### [SQL 언어 종류]
-* DML(Data Manipulation) : 데이터 조작. (등록 검색 수정 삭제)
-    * INSERT(등록) : 테이블에 새로운 데이터를 삽입함.
-    * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
-        * SELECT DISTINCT : 테이블에서 특정 컬럼을 중복제거 후 가져옴.
-    * UPDATE(수정) : 테이블에 특정 컬럼의 값을 수정함. (VALUES랑 같이 써야함.)
-    * DELETE(삭제) : 테이블에 특정 (데이터만) 삭제함.
-* DDL(Data Definition) : 데이터 정의. (생성 삭제 변경 초기화)
-    * CREATE(정의) : 새로운 테이블 생성.
-    * ALTER(변경) : 테이블 or 컬럼의 이름 및 속성 변경/추가/삭제.
-        * RENAME : 이름 변경.
-        * MODIFY : 속성 변경, 제약조건 추가.
-        * ADD : 추가.
-    * DROP(삭제) : (스키마&데이터&구조) 모두 완전 삭제.
-    * RENAME(이름 변경)
-    * TRUNCATE(초기화) : (데이터&구조) 삭제.
-* DCL(Data Control) : 데이터 제어 및 권한 관리. (부여 박탈)
-    * GRANT(부여)
-    * REVOKE(박탈)
-    * COMMIT(트랜잭션 작업 결과 반영)
-    * ROLLBACK(트랜잭션 작업 취소)
-* TCL(Transaction Control) : 데이터 트랜잭션 제어.
-    * COMMIT(트랜잭션 작업 결과 반영)
-    * ROLLBACK(트랜잭션 작업 취소)(지울 경우 DELETE만 복구 가능)
-* 그 외
-    * WHERE : 조건식. if와 유사함. 특정 컬럼의 값이 조건에 만족할때만 SELECT실행.
-        * IN : for문에서 in이랑 똑같다. or 조건으로 같으면 True.
-    * IS NULL : 빈값. NULL에 연산 시 NULL 리턴함. (반대. IS NOT NULL)
-    * NVL(x,y) : NULL이면 y, NULL이 아니면 x
-    * NVL2(x,y,z) : x가 NULL이면 z, x가 NULL이 아니면 y
-    * NULLIF(x,y) : x=y이면 NULL, 다르면 x
-    * COALESCE(x,y,...) : NULL이 아닌 첫번째 값.
-    * LIKE : 특정 글자가 포함된 값을 보고 싶을 때 사용.
-    * ORDER BY : 정렬 순서 지정. 항상 마지막에 실행된다.(ASC:오름차순,1,2,3 / DESC:내림차순,3,2,1)
-    * count(컬럼명) : null 제외한 행 수 카운트. (count(*)은 전체 행 카운트)
-    * ON : 조인 시에 조건을 지정.(ex.기준 컬럼)
-    * ROUND : 반올림
-    * 집계함수(SUM, AVG)는 NULL 무시하고 실행 가능.<br><br>
-
-### [DDL의 특징]
-* 데이터 유형
-    * number : 숫자형
-    * date : 날짜형
-    * varchar2 : 가변길이 문자열
-    * char : 고정된 길이 문자열
-* 제약조건(CONSTRAINT) : 컬럼 크리에이트 시 뒤에 적어서 제약을 걸어줌.
-    * default : 기본값 지정 가능
-    * not null : null 입력 시 에러
-    * primary key : 기본키 지정 (유니크 + not null)
-    * forigner key : 외래키 지정<br><br>
-
-### [트랜잭션]
-* 거래라는 뜻으로, DB 처리 작업이 모두 완료 or 모두 취소 되게 하는 작업.
-* 명령어는 COMMIT과 ROLLBACK 두개가 있다.
-* 트랜잭션의 특징
-    * Atomicity : 원자성, 반드시 DB에 모두 반영되던지 전혀 반영되지 않는다.
-    * Consistency : 일관성, 작업 처리 결과가 항상 일관성 있다.
-    * Isolation : 독립성, 서로 다른 트랜잭션에 끼어들 수 없다.
-    * Durability : 지속성, 완료 후에는 영구적으로 반영된다.<br><br>
-
-### [조인]
-* DB에서 테이블간의 결합. (결과 테이블 작성)
-    * FROM과 WHERE 사이에 작성.
-* 이너 조인 : 두 테이블의 공통된 요소(행)만 프린트
-    * using('컬럼명')으로 공통된 요소 지정
-    * 조인의 가장 기본은 이너 조인이다. (inner 작성 안해도 됨)
-* 레프트 아우터 조인 : 이너 조인 + 왼쪽 기준 누락 데이터 
-* 라이트 아우터 조인 : 이너 조인 + 오른쪽 기준 누락 데이터
-* 풀 아우터 조인 : 이너 조인 + 레프트 아우터 조인 + 라이트 아우터 조인
-* 크로스 조인 : 특정 기준 없이, 모든 경우의 수에 대한 결합(데이터가 같을때 가 아니라 경우의 수 전체를 프린트함.)
-* 셀프 조인 : 자기 스스로를 결합시킴. (내 데이터만 이용해서 새 테이블을 생성함.)<br><br>
-
-### [그룹 함수]
-* ROLL UP : 1행 추가해서 특정 값을 연산한 값 출력. 정렬도 진행.
-    * SUB TOTAL만 추가하는 것.
-    * (ex. 001, NULL, 40000)
-* CUBE : 연산이 가능한 모든 경우 다 추가함.
-    * SUB TOTAL, GRAND TOTAL 모두 추가하는 것.
-* GROUPING SETS : CUBE에서 인자를 다 지우고 SUB TOTAL, GRAND TOTAL만 유지.<br><br>
-
-
-
-## `[RDBMS]`
-* 오라클 : 오라클에서 개발한 프로그램. 안정성이 높다. 비싸다.
-* MySQL : 경량 DB 프로그램. 가볍고 종류가 다양하다. 표준 SQL이다.<br><br>
-
-### [RDBMS의 관계]
-* 3가지 관계가 있다.(is a, use a, has a)
-* is a 관계 : 논리구조, Generic (ex. 고등학생 is a 학생)
-* use a 관계 : 의존 관계, Dependency, 사용하는 관계이다. (ex. 프로그래머 use a 컴퓨터)
-* has a 관계 : 연관 관계, Association, 행위에 의해 발생하는 관계이다. (ex. 자동차 has a 엔진)
-  * 프로그래밍에서 use a는 클래스와 클래스의 관계이고, has a는 클래스와 인스턴스의 관계이다.
-* 집합 연관 관계 : Aggregation, 전체와 부분이 서로 독립적인 관계이다. (오버라이딩)
-* 복합 연관 관계 : Composition, 전체와 부분이 동시에 생성되고 동시에 소멸된다. (클래스 인스턴스)<br><br>
-
-### [서브쿼리]
-* 서브쿼리 : 쿼리를 묶어서 하나의 데이터처럼 사용(WHERE 뒤에 사용)
-* 인라인뷰 : 쿼리를 묶어서 하나의 테이블처럼 사용(FROM 뒤에 사용)
-* 스칼라 : 쿼리를 묶어서 하나의 컬럼처럼 사용(SELECT 뒤에 사용)
-* 스칼라 > 서브쿼리 > 인라인뷰 순으로 속도가 빠르다.
-* 파이썬에서 생각할 때, SELECT = retrun, FROM = DataFrame, WHERE = if 이다.<br><br>
 
 
 

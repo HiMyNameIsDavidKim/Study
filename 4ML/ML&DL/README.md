@@ -241,7 +241,7 @@
 
 ## `[DL]`
 * 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
-* 종류 : DNN(Deep), CNN(Convolution), RNN(Recurrent), LSTM, GRU, GAN
+* 종류 : DNN(Deep), CNN(Convolution), RNN(Recurrent), LSTM, GRU, Transfer, Auto Encoder, GAN
 <br><br>
 
 ### [기본 개념]
@@ -276,7 +276,7 @@
     * 아담 : RMSProp과 모멘텀의 하이브리드.
 <br><br>
 
-### [라이브러리]
+### [추가 메모 사항]
 * [`TensorFlow`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/TF)
 * [`PyTorch`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/PT)
 <br><br>
@@ -389,6 +389,13 @@
 
 
 
+## `[Transfer]`
+* 전이학습. 특정 조건에서 얻어진 지식을 다른 상황에 맞게 전이해서 활용.
+* 특징
+    * 데이터가 부족해도 감안할 수 있다.
+
+
+
 ## `[함수 사용 순서 정리]`
 
 ### [Scikit-learn 함수 사용 순서_지도학습]
@@ -412,4 +419,12 @@
 * 3.compile()
 * 4.fit()
 * 5.evaluate()
+* 6.save()
+
+### [PyTorch 함수 사용 순서]
+* 1.class DNNModel(nn.Module)
+* 2.def forward
+* 3.loss_func = , optimizer = 
+* 4.2중 for문
+* 5.model.eval() + for문
 * 6.save()
