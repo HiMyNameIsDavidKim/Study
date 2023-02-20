@@ -1,6 +1,8 @@
 # Computer Vision
 
 ## `[examples]`
+* [`고흐 사진 합성 Style Transfer_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/style_transfer.py)
+* [`패션 MNIST DNN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fashion_torch.py)
 * [`숫자 MNIST CNN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/number_torch.py)
 * [`숫자 MNIST DNN_TF`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/number.py)
 * [`패션 MNIST DNN_TF`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/fashion.py)
