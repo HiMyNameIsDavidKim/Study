@@ -14,6 +14,22 @@
 # git commit -m “10/5 17:50 study update”
 # git push origin main
 
+
+# [브랜치 생성]
+# 폴더 생성
+# git clone (리포지토리의 https 키)
+# cd 폴더
+# git branch -r
+# git checkout -t origin/브렌치명
+
+
+# [풀 리퀘스트]
+# git add .
+# git commit -m “10/5 17:50 study update”
+# git push origin 브렌치명
+# 깃허브 사이트에서 pull request
+
+
 # [Git 응용]
 # 협업 시 git을 사용하려면 추가적인 개념을 알아야 한다.
 # push : 레포지토리 변경사항 업로드.
@@ -37,6 +53,7 @@
 # git branch
 
 # 깃허브 collaborator 추가
+
 
 # [마크다운 문법]
 # 제목 만들기
