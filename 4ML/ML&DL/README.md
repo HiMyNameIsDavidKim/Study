@@ -5,6 +5,17 @@
 * x: 확률변수, y: 타깃, a: 웨이트, b: 바이어스
 <br><br>
 
+
+
+## `[examples]`
+* [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
+* [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
+* [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
+* [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
+<br><br>
+
+
+
 ## `[데이터 전처리]`
 * ML, DL 시 데이터를 사전 가공하는 메서드 정리.
 * 맷플릿롭은 feature 간 스케일 차이를 이해하지 못한다.
@@ -242,7 +253,7 @@
 ## `[DL]`
 * 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
 * 종류 : DNN(Deep), CNN(Convolution), RNN(Recurrent), LSTM, GRU
-* 응용 : Transfer, GAN
+* 응용 : Transfer, Auto Encoder, GAN
 <br><br>
 
 ### [기본 개념]
@@ -404,6 +415,22 @@
     * 콘텐츠 : 더 높은 레이어 내의 피쳐 리스폰스. 스타일을 적용할 대상.
     * 그람 행렬 : 스타일과 콘텐츠를 담는 자료구조. 픽셀을 일렬로 펼친 뒤, 자승 전치 행렬과 내적.
     * 총 손실 = 스타일 손실 * w1 + 콘텐츠 손실 * w2
+<br><br>
+
+
+
+## `[Auto Encoder]`
+* 데이터에 대한 효율적인 압축을 신경망을 통해 자동으로 학습하는 모델.
+* 디퓨전 모델의 어텐션에서 사용된다.
+* 디노이징, 시맨틱 세그멘테이션 등에 활용.
+* 특징
+    * 입력 데이터가 곧 라벨이므로 비지도학습. 그 중에서 차원축소.
+    * 입력 -> (인코더) -> (z) -> (디코더) -> 출력
+* 개념
+    * 인코더 : 입력을 압축시켜 더 낮은 차원인 잠재변수로 만든다.
+    * 디코더 : 잠재변수를 복원해 입력으로 만든다.
+    * 잠재변수 = 코드 = z
+    * 위성사진을 지도앱 이미지로 만드는 것을 생각해보자. 입력에서 차원축소를 진행해 건물, 도로, 산, 크기, 경계 등으로 만들고 이를 다시 복원할 때 표현법을 알려주는 것.
 <br><br>
 
 
