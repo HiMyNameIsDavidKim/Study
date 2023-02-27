@@ -15,13 +15,13 @@
 ## 🐍Python
   - [`Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
 
-  - [`AIaaS⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
+  - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
 
   - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Example)
 <br>
 
 ## 🪬AI
-  - [`🤖ML & DL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+  - [`🤖ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
 
   - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
@@ -50,13 +50,13 @@
 ### 📓Paper List
 * [print('☑️') if (완독 == True) else pass]
 * 
+<br>
 
 ### 📘Book List
 * [print('☑️') if (완독 == True) else pass]
 * 데이터 분석
   * ☑️ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
   * 혼공분석(박해선) : 파이썬 데이터분석
-  * 혼공R이(강전희) : R 데이터분석
 * ML
   * ☑️ 혼공머신(박해선) : 인공지능 머신러닝 딥러닝
   * 플로우가 보이는 머신러닝 프로젝트(임선집) : 문과생 데이터 사이언티스트, 머신러닝 딥러닝 프로젝트 실전 예제
@@ -65,7 +65,7 @@
   * ☑️ 파이토치 첫걸음(최건호) : 파이토치에서 활용
 * Algorithm
   * ☑️ 파이썬 코딩 도장(남재윤) : 파이썬 AtoZ (+파이써닉 맛보기)
-  * 이것이 취업을 위한 코딩 테스트다 with 파이썬(나동빈)
+  * 이것이 취업을 위한 코딩 테스트다 with 파이썬(나동빈) : 알고리즘 정석
 <br>
 
 ## 🦋Flutter

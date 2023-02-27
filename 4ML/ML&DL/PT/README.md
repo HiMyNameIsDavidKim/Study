@@ -27,11 +27,13 @@
 <br><br>
 
 ### [웨이트 초기화]
-* 
+* 기울기 소실 현상 방지, 손실함수 공간을 최적화가 쉬운 형태로 변형.
+* 예시 : Xavier Glorot 초기화, Kaiming He 초기화.
 <br><br>
 
 ### [Learning rate 관리]
-* 
+* 학습률에 따라 모델의 학습이 달라질 수 있다.
+* ![스크린샷 2023-02-27 오전 11 01 33](https://user-images.githubusercontent.com/112922638/221454931-8c81fa83-50cd-4e44-bdb8-1bcc624201d2.png)
 <br><br>
 
 ### [입력 데이터 normalization]
