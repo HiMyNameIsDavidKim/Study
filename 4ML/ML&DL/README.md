@@ -14,6 +14,11 @@
 * [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
 <br><br>
 
+### [추가 메모 사항]
+* [`TensorFlow`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/TF)
+* [`PyTorch`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/PT)
+<br><br>
+
 
 
 ## `[데이터 전처리]`
@@ -286,11 +291,6 @@
     * RMSprop : 루트 민 스퀘어 예측법, 기울기에 따라 학습률을 조절해서 정확도 높임.
     * 모멘텀 : 경사 하강법에 관성 개념을 추가. 지역 최솟값에 갇히지 않도록 설계됨.
     * 아담 : RMSProp과 모멘텀의 하이브리드.
-<br><br>
-
-### [추가 메모 사항]
-* [`TensorFlow`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/TF)
-* [`PyTorch`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/PT)
 <br><br>
 
 
