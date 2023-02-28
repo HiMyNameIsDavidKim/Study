@@ -58,6 +58,7 @@
   * [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
   * [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
   * [`EfficientNet, 2019`](arxiv.org/pdf/1905.11946v5.pdf)
+  * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Modeling
   * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
@@ -80,6 +81,7 @@
   * [`GAN, 2014`](https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf)
   * [`DCGAN, 2015`](https://arxiv.org/pdf/1511.06434.pdf)
   * [`DRAW, 2015`](http://proceedings.mlr.press/v37/gregor15.pdf)
+  * [`Attention is All You Need`](https://arxiv.org/pdf/1706.03762.pdf)
   * [`PixelRNN, 2016`](https://arxiv.org/pdf/1601.06759.pdf)
   * [`PixelCNN, 2016`](https://arxiv.org/pdf/1606.05328.pdf)
   * [`SampleRNN, 2017`](https://arxiv.org/pdf/1612.07837.pdf)

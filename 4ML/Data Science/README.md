@@ -100,11 +100,41 @@
 
 
 ## `[데이터 처리]`
-* 플로우책 169p~
+* ID 변수 설정 -> 데이터 병합 -> 타깃 변수 생성 -> 기타 변수 데이터 처리
+* ID 변수 설정
+    * 널 체크 : df['ID'].isnull().sum()
+    * 중복 체크 : print(len(df['ID']), len(pd.unique(df['ID'])))
+    * 숫자만 있는지 체크 : print(pd.to_numeric(df['ID'], errors='coerce').isna().sum())
+* 데이터 병합
+    * 설정된 ID 변수를 기존 df와 합쳐준다.
+    * comb = pd.merge(df_id, df, how='inner', on='ID')
+* 타깃 변수 생성
+    * 결측치 제거.
+    * 박스플랏 확인 -> 이상치 제거.
+    * 분류일 경우 인덱싱.
+* 기타 변수 데이터 처리
+    * 변수명 뒤에 _x나 _y 등 수정.
+    * 타깃변수, 불필요, 중복인 변수 제거.
+    * 공통 처리
+        * 널 체크, dtype 체크 : df.info()
+        * 널 비율이 50% 이상이면 제거 : df.isnull().mean().sort_values(ascending=False)
+        * (범주형인 경우 널이 20~30%인 케이스가 있고, 중요한 데이터일 가능성이 있다.)
+        * numeric인 피쳐명으로 구성된 numeric_names 리스트 생성.
+        * category인 피쳐명으로 구성된 category_names 리스트 생성.
+    * numeric
+        * 널 체크 : df[numeric_names].isnull().mean().sort_values(ascending=False)
+        * 널 없는게 정상
+        * 분포 확인 : df[numeric_names].describe(); pd.option.display.float_format = f'{:.2f}'
+        * 상식선에서 음수값이나 이상치 제거.
+        * df_numeric 따로 분리.
+    * category
+        * 널 체크 : df[category_names].isnull().mean().sort_values(ascending=False)
+        * 널 값 대체(무응답을 뜻하는 임의값)
+        * 분포 확인 : df[category_names].describe(); pd.option.display.float_format = f'{:.2f}'
+        * df_category 따로 분리.
+    * 병합 : pd.concat([df_numeric, df_category], axis=1)
+    * csv 따로 저장.
 <br><br>
-
-
-
 
 
 
