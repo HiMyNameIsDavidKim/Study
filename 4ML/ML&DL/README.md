@@ -335,6 +335,20 @@
     * 정보에 편향이 생기지 않도록 padding='same'을 추가해주는 것을 추천.
 * 풀링층 : Pooling layer, 특성맵의 가로세로 크기를 줄이는 층.
     * keras.layers.MaxPooling2D(풀링크기)
+* Tensor size 계산
+    * O = (I - K + 2P)/S + 1
+    * (1 더하기 전에 소수점 발생 시 버림!!)
+    * O : output 크기(너비)
+    * I : input 크기(너비)
+    * K : kernel 크기(너비)
+    * P : padding 크기
+    * S : stride
+* 파라미터 수 계산
+    * P = (K^2 x C x N) + N
+    * P : 파라미터 수
+    * K : kernel 크기(너비)
+    * C : 채널 개수
+    * N : 커널 개수
 <br><br>
 
 
