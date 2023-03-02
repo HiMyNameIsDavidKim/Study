@@ -48,18 +48,18 @@
 <br>
 
 ### 📓Paper List
-* [print('✅') if (완독 == True) else pass]
-* Architecture_CV
+* [print('✅') if (READ == True) else pass]
+* Architecture_CNN
   * [`AlexNet, 2012`](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
   * [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf)
   * [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf)
   * [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
-  * [`ResNet, 2015`](https://arxiv.org/pdf/1512.03385v1.pdf)
+  * [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
   * [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
   * [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
   * [`EfficientNet, 2019`](arxiv.org/pdf/1905.11946v5.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
-* Modeling
+* Methods
   * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
@@ -95,13 +95,13 @@
 <br>
 
 ### 📘Book List
-* [print('✅') if (완독 == True) else pass]
+* [print('✅') if (READ == True) else pass]
 * 데이터 분석
   * ✅ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
+  * ✅ 플로우가 보이는 머신러닝 프로젝트(임선집) : 문과생 데이터 사이언티스트, 머신러닝 실전 예제
   * 혼공분석(박해선) : 파이썬 데이터분석
 * ML
   * ✅ 혼공머신(박해선) : 인공지능 머신러닝 딥러닝
-  * 플로우가 보이는 머신러닝 프로젝트(임선집) : 문과생 데이터 사이언티스트, 머신러닝 실전 예제
   * 딥러닝으로 걷는 시계열 예측(윤영선) : 아키텍트, 딥러닝 프로젝트 실전 예제
   * 딥려닝을 이용한 정형 데이터 분석(마크 라이언) : 데이터 사이언티스트, 딥러닝 실전 예제와 모델 배포
   * ✅ 파이토치 첫걸음(최건호) : 파이토치에서 활용

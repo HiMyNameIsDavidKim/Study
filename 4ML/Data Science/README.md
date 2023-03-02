@@ -139,11 +139,27 @@
 
 
 ## `[탐색적 자료 분석 및 시각화]`
-* 
+* 산점도
+    * 산점도 그릴 피쳐명으로 구성된 scatter_names 리스트 생성.
+    * g = sns.PairGrid(df[scatter_names])
+    * g.map_diag(sns.histplot)
+    * g.map_offdiag(sns.scatterplot)
+    * plt.show()
+* 히스토그램
+    * 단일
+    * sns.histplot(data=df, x='feature').set_title('title')
+    * plt.show()
+    * 오버랩
+    * sns.histplot(data=df, x='feature', hue='feature').set_title('title')
+    * plt.show()
+* 박스플랏
+    * 단일
+    * sns.boxplot(data=df, x='feature').set_title('title')
+    * plt.show()
+    * 비교
+    * sns.boxplot(data=df, x='feature', y='feature').set_title('title')
+    * plt.show()
 <br><br>
-
-
-
 
 
 
