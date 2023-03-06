@@ -15,6 +15,12 @@
 # git push origin main
 
 
+# [용량 큰 파일 삭제]
+# add 한거 한번 취소한 뒤 다시 커밋
+# git reset HEAD^
+# git commit -m “10/5 17:50 study update”
+# git push origin main
+
 # [브랜치 생성]
 # 폴더 생성
 # git clone (리포지토리의 https 키)
