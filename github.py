@@ -15,7 +15,7 @@
 # git push origin main
 
 
-# [용량 큰 파일 삭제]
+# [커밋 안될 때]
 # add 한거 한번 취소한 뒤 다시 커밋
 # git reset HEAD^
 # git commit -m “10/5 17:50 study update”
