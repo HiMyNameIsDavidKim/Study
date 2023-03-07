@@ -54,7 +54,7 @@
   * [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf)
   * [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf)
   * [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
-  * [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
+  * [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
   * [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
   * [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
   * [`EfficientNet, 2019`](arxiv.org/pdf/1905.11946v5.pdf)
