@@ -57,7 +57,9 @@
   * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
   * [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
   * [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
-  * [`EfficientNet, 2019`](arxiv.org/pdf/1905.11946v5.pdf)
+  * [`MobileNet v1, 2017`](https://arxiv.org/pdf/1704.04861.pdf)
+  * [`MobileNet v2, 2018`](https://arxiv.org/pdf/1801.04381.pdf)
+  * [`EfficientNet, 2019`](https://arxiv.org/pdf/1905.11946v5.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Methods
   * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
@@ -85,6 +87,7 @@
   * [`PixelRNN, 2016`](https://arxiv.org/pdf/1601.06759.pdf)
   * [`PixelCNN, 2016`](https://arxiv.org/pdf/1606.05328.pdf)
   * [`SampleRNN, 2017`](https://arxiv.org/pdf/1612.07837.pdf)
+  * [`BNN, 2018`](https://arxiv.org/pdf/1801.07710.pdf)
 * App_Visual Tracking
   * [`SO-DLT, 2015`](https://arxiv.org/pdf/1501.04587.pdf)
   * [`FCNT, 2015`](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Wang_Visual_Tracking_With_ICCV_2015_paper.pdf)
