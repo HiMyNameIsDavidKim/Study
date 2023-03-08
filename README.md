@@ -95,6 +95,10 @@
   * [`SiameseFC, 2016`](https://arxiv.org/pdf/1606.09549.pdf)
   * [`C-COT, 2016`](http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/C-COT_ECCV16.pdf)
   * [`TCNN, 2016`](https://arxiv.org/pdf/1608.07242.pdf)
+* App_chat GPT
+  * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
+  * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
+  * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 <br>
 
 ### 📘Book List
