@@ -1,6 +1,7 @@
 # Data Science
 
 ## `[examples]`
+* [`Spaceship Titanic`]()
 * [`T-검정, 상관분석`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/stat_exam.py)
 * [`워드 클라우드(댓글)`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/comment_bts.py)
 * [`워드 클라우드(연설문)`](https://github.com/HiMyNameIsDavidKim/DS_Example/blob/main/Data_Science/speech_moon.py)
@@ -89,17 +90,30 @@
 * 1.문제제기
 * 2.데이터 구하기
 * 3.타깃 변수 설정
-* 4.데이터 처리 (ID 변수 확인, 타깃 변수 생성)
-* 5.탐색적 자료 분석 및 시각화(결측값 제거, 요약 통계 확인, 이상치 제거, 상관관계 확인, 시각화)
+* 4.데이터 처리
+    * ID 변수 확인
+    * 타깃 변수 생성
+* 5.EDA 및 시각화
+    * 결측값 제거
+    * 요약 통계 확인
+    * 이상치 제거
+    * 상관관계 확인
+    * 시각화
 * 6.머신러닝 모델 수립
-* 7.머신러닝 모델 실행(결정 트리, 로지스틱 회귀, 신경망, KNN)
-* 8.데이터 후처리(데이터 분할, 데이터 변환, 데이터 구간화, 모델 재실행)
+* 7.머신러닝 모델 실행
+* 8.데이터 후처리
+    * 데이터 분할
+    * 데이터 변환
+    * 데이터 구간화
+    * 모델 재실행
 * 9.최적 모델 선정 및 활용
 <br><br>
 
 
 
 ## `[데이터 처리]`
+
+### [플로우 책(임선집)]
 * ID 변수 설정 -> 데이터 병합 -> 타깃 변수 생성 -> 기타 변수 데이터 처리
 * ID 변수 설정
     * 널 체크 : df['ID'].isnull().sum()
@@ -138,7 +152,8 @@
 
 
 
-## `[탐색적 자료 분석 및 시각화]`
+## `[EDA 및 시각화]`
+* EDA : Exploratory Data Analysis, 탐색적 자료 분석.
 * 산점도
     * 산점도 그릴 피쳐명으로 구성된 scatter_names 리스트 생성.
     * g = sns.PairGrid(df[scatter_names])
