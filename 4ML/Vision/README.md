@@ -1,6 +1,7 @@
 # Computer Vision
 
 ## `[Details & Examples]`
+* [`ResNet 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/resnet_paper.py)
 * [`디노이징 오토 인코더_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/auto_encoder.py)
 * [`MNIST GAN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/mnist_gan.py)
 * [`셀럽 얼굴 딥페이크 합성 GAN_PT`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/celeba.py)

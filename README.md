@@ -51,7 +51,7 @@
 * [print('✅') if (READ == True) else pass]
 * Architecture_CNN
   * [`AlexNet, 2012`](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
-  * [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf)
+  * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf)
   * [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf)
   * [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
@@ -95,7 +95,7 @@
   * [`GAN, 2014`](https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf)
   * [`DCGAN, 2015`](https://arxiv.org/pdf/1511.06434.pdf)
   * [`DRAW, 2015`](http://proceedings.mlr.press/v37/gregor15.pdf)
-  * [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Transformer.md)
+  * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Transformer.md)
   * [`PixelRNN, 2016`](https://arxiv.org/pdf/1601.06759.pdf)
   * [`PixelCNN, 2016`](https://arxiv.org/pdf/1606.05328.pdf)
   * [`SampleRNN, 2017`](https://arxiv.org/pdf/1612.07837.pdf)
