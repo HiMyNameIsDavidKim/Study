@@ -58,7 +58,16 @@
 * 모폴로지 연산 : 침식, 팽창, 그라디언트, 탑햇, 블랙햇, 열림, 닫힘
 * 영상처리 : HOG(Histogram of Oriented Gradiant), blob(영상 이진화 객체), LoG(Laplacian of Gaussian), DoG(Diffrence of Gaussian), SIFT(Scale-Invariant Feature Transform), 동차좌표, k-d 트리, RANSAC(RANdom SAmple Consensus), Feature Matching
 * 정형 데이터 : 자료구조 내부에 있는 데이터. 구조화 되어 있다.
-* 비정형 데이터 : 자료구조에 구조화되어 있지 않은 데이터.<br><br>
+* 비정형 데이터 : 자료구조에 구조화되어 있지 않은 데이터.
+<br><br>
+
+### [Classic CV Algorithm]
+* 엣지 검출 : Canny, Laplacian of Gaussian
+* 피쳐 추출 : SIFT, SURF, ORB, BRISK
+* 객체 검출 : HOG, Haar Cascades
+* 이미지 분할 : Watershed, Mean Shift, GrabCut
+* 노이즈 제거 : Gaussian Blur, Median Filter
+<br><br>
 
 
 
@@ -70,7 +79,8 @@
     * 그라디언트 계산 : 미분해서 인텐시티가 급격하게 변하는 부분 찾기, 소벨 필터 사용
     * non-maximum 억제 : 그라디언트의 로컬 최대값만 남기고, 나머지는 0처리.
     * 엣지 트래킹 : 그라디언트에 최대 최소 바운더리를 부여해서 나머지 날림.
-* (ref. flaskProject의 CVbasic 참고)<br><br>
+* (ref. flaskProject의 CVbasic 참고)
+<br><br>
 
 ## [Hough Line Detector]
 * 3단계를 진행하여 선을 찾는다.(xy평면, ab평면 변환, 쓰레숄드와 비교)
@@ -79,7 +89,8 @@
     * (x,y)평면에서 두 점을 지나는 직선은 (a,b)평면에서 두 직선의 교점이다.
         * 한점 = (a,b) 평면의 직선 1개, 두점 = (a,b) 평면의 직선 2개.
     * (a,b) 평면의 교점들을 하나하나 검사해서 쓰레숄드 이상일 경우 그 직선을 검출할 수 있다.
-* (ref. flaskProject의 CVbasic 참고)<br><br>
+* (ref. flaskProject의 CVbasic 참고)
+<br><br>
 
 
 
@@ -91,17 +102,20 @@
     * 적분 이미지
     * adaboost training
     * casecade classifier
-* 특징을 추출하고 얼굴 영역을 판단하는 윈도우(24x24)와 효율적인 비교 알고리즘을 활용.<br><br>
+* 특징을 추출하고 얼굴 영역을 판단하는 윈도우(24x24)와 효율적인 비교 알고리즘을 활용.
+<br><br>
 
 
 
 ## `[GPU 가속 설정]`
 * 파이토치와 텐서플로우 사용하기 위해서는 GPU 가속이 필수적이다.
-    * NVIDIA는 GPU, 애플 실리콘은 MPS.<br><br>
+    * NVIDIA는 GPU, 애플 실리콘은 MPS.
+<br><br>
 
 ### [CUDA]
 * NVIDIA가 만든 병렬 컴퓨팅 API 모델
-* CUDA 설정 (윈도우 : https://parksrazor.tistory.com/786)<br><br>
+* CUDA 설정 (윈도우 : https://parksrazor.tistory.com/786)
+<br><br>
 
 ### [MPS]
 * Metal Performance Shaders, 딥러닝 시 GPU 가속에 사용된다.
@@ -145,14 +159,16 @@
     * device = torch.device('mps')
     * print('Torch device:', device)
     * print("TF GPUs Available: ", tf.config.experimental.list_physical_devices('GPU')
-    * print('scikit-learn version : ', sklearn.__version__)<br><br>
+    * print('scikit-learn version : ', sklearn.__version__)
+<br><br>
 
 
 
 ## `[Trouble Shooting]`
 
 ### [파이토치 M1 Error]
-* DataLoader의 num_workers에 오류가 있음. 0으로 둬야함.<br><br>
+* DataLoader의 num_workers에 오류가 있음. 0으로 둬야함.
+<br><br>
 
 
 
