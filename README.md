@@ -52,7 +52,7 @@
 * Architecture_CNN
   * [`AlexNet, 2012`](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
-  * [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
+  * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
   * [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf)
   * [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
   * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
