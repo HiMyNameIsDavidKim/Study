@@ -52,7 +52,7 @@
 * Architecture_CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
-  * [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
+  * ✅ [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`](https://davidlds.tistory.com/8/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
   * [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
   * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
   * [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
