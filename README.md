@@ -66,17 +66,11 @@
   * [`NoisyStudent, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`RegNet, 2020`](https://arxiv.org/pdf/2003.13678.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
-  * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
   * [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf)
   * [`ViT-G/14, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * [`BASIC-L, 2023`](https://arxiv.org/pdf/2302.06675v2.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
-* Methods
-  * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
-  * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
-  * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
-  * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
 * App_Object Detection
   * [`RCNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
   * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
@@ -89,10 +83,11 @@
   * [`YOLO v3, 2018`](https://arxiv.org/pdf/1804.02767.pdf)
   * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
   * [`EfficientDet, 2019`](https://arxiv.org/pdf/1911.09070.pdf)
+  * [`Detection Transformer, 2020`](https://arxiv.org/pdf/2005.12872.pdf)
+  * [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ViT.md)
+  * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
 * Architecture_Generative
   * [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
-  * [`GAN, 2014`](https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf)
-  * [`DCGAN, 2015`](https://arxiv.org/pdf/1511.06434.pdf)
   * [`DRAW, 2015`](http://proceedings.mlr.press/v37/gregor15.pdf)
   * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Transformer.md)
   * [`PixelRNN, 2016`](https://arxiv.org/pdf/1601.06759.pdf)
@@ -110,6 +105,11 @@
   * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
+* Methods
+  * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
+  * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
+  * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
+  * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
 <br>
 
 ### 📘Book List
