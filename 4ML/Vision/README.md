@@ -45,6 +45,30 @@
     * o : 아웃풋 레이어의 필터 수
 <br><br>
 
+### [CNN 아키텍쳐 구현]
+* 1000줄 언더 코딩.
+* CPU, GPU 도합 500만원 정도 장비.
+* 일주일 정도 학습 예상.
+<br><br>
+
+### [inductive bias]
+* 새로운 데이터에도 적용될 수 있는 일반적인 규칙을 학습하는 편향.
+* 선형 회귀 모델 : 입력 특성과 출력 사이의 선형 관계를 가정하는 inductive bias.
+* CNN : CV inductive bias가 높다.
+* RNN : NLP inductive bias가 높다.
+* 딥러닝에서 inductive bias는 아키텍처, 활성화 함수, 손실 함수 등에 내재된다.
+<br><br>
+
+### [many supervised]
+* self-supervised
+    * 레이블이 없는 데이터를 사용하여 모델을 학습.
+    * 모델이 스스로 데이터에서 의미있는 패턴을 추출.
+    * 이미지 특징 추출 능력을 향상.
+* semi-supervised
+    * 레이블이 있는 데이터와 없는 데이터를 함께 사용하여 모델을 학습.
+    * unsupervised와 self-supervised의 중간.
+<br><br>
+
 
 
 ## `[CV의 주요 개념]`

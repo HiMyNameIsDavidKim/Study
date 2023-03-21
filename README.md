@@ -71,6 +71,9 @@
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * [`BASIC-L, 2023`](https://arxiv.org/pdf/2302.06675v2.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
+* Architecture_Transformer
+  * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Transformer.md)
+  * [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ViT.md)
 * App_Object Detection
   * [`RCNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
   * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
@@ -84,23 +87,22 @@
   * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
   * [`EfficientDet, 2019`](https://arxiv.org/pdf/1911.09070.pdf)
   * [`Detection Transformer, 2020`](https://arxiv.org/pdf/2005.12872.pdf)
-  * [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ViT.md)
   * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
 * Architecture_Generative
   * [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
   * [`DRAW, 2015`](http://proceedings.mlr.press/v37/gregor15.pdf)
-  * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Transformer.md)
   * [`PixelRNN, 2016`](https://arxiv.org/pdf/1601.06759.pdf)
   * [`PixelCNN, 2016`](https://arxiv.org/pdf/1606.05328.pdf)
   * [`SampleRNN, 2017`](https://arxiv.org/pdf/1612.07837.pdf)
   * [`BNN, 2018`](https://arxiv.org/pdf/1801.07710.pdf)
-* App_Visual Tracking
-  * [`SO-DLT, 2015`](https://arxiv.org/pdf/1501.04587.pdf)
-  * [`FCNT, 2015`](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Wang_Visual_Tracking_With_ICCV_2015_paper.pdf)
-  * [`GOTURN, 2016`](https://arxiv.org/pdf/1604.01802.pdf)
-  * [`SiameseFC, 2016`](https://arxiv.org/pdf/1606.09549.pdf)
-  * [`C-COT, 2016`](http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/C-COT_ECCV16.pdf)
-  * [`TCNN, 2016`](https://arxiv.org/pdf/1608.07242.pdf)
+* AutoML
+  * [`Neural Architecture Search, 2017`](https://arxiv.org/pdf/1611.01578.pdf)
+  * [`Parameter Sharing, 2018`](https://arxiv.org/pdf/1802.03268.pdf)
+  * [`MnasNet, 2019`](https://arxiv.org/pdf/1807.11626.pdf)
+  * [`DARTS, 2019`](https://arxiv.org/pdf/1806.09055.pdf)
+  * [`AutoML-Zero, 2020`](https://arxiv.org/pdf/2003.03384.pdf)
+  * [``]()
+  * [``]()
 * App_chat GPT
   * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
