@@ -52,7 +52,7 @@
 * Architecture_CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
-  * ✅ [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`](https://davidlds.tistory.com/8/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
+  * ✅ [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`](https://davidlds.tistory.com/9/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
   * [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
   * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
   * [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
@@ -72,7 +72,7 @@
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Architecture_Transformer
   * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Transformer.md)
-  * [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ViT.md)
+  * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ViT.md)
   * [`ViT-G/14, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf)
 f* App_Object Detection
   * [`RCNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
