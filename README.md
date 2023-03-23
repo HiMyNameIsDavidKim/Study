@@ -44,7 +44,7 @@
   - [`Analystical Skills`]
 <br>
 
-## 💼Portfolio
+## 💼Project
 <br>
 
 ### 📓Paper List
