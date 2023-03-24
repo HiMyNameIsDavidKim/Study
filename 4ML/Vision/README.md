@@ -1,6 +1,7 @@
 # Computer Vision
 
 ## `[Details & Examples]`
+* [`ViT 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/vit_paper.py)
 * [`UNet 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/unet_paper.py)
 * [`ResNet 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/resnet_paper.py)
 * [`VGGNet 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/vggnet_paper.py)
