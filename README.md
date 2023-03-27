@@ -101,6 +101,9 @@
   * [`MnasNet, 2019`](https://arxiv.org/pdf/1807.11626.pdf)
   * [`DARTS, 2019`](https://arxiv.org/pdf/1806.09055.pdf)
   * [`AutoML-Zero, 2020`](https://arxiv.org/pdf/2003.03384.pdf)
+* Analyze data
+  * [`TabNet, 2021`](https://arxiv.org/pdf/1908.07442.pdf)
+  * [`SAINT, 2021`](https://arxiv.org/pdf/2106.01342.pdf)
 * App_chat GPT
   * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
