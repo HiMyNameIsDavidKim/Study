@@ -67,13 +67,15 @@
   * [`RegNet, 2020`](https://arxiv.org/pdf/2003.13678.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
   * [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf)
-  * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
-  * [`BASIC-L, 2023`](https://arxiv.org/pdf/2302.06675v2.pdf)
+  * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Architecture_Transformer
   * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
   * [`ViT-G/14, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT-G14.md)
+  * [`BASIC-L, 2022`](https://arxiv.org/pdf/2203.05482v3.pdf)
+  * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
+  * [`Lion, 2023`](https://arxiv.org/pdf/2302.06675v2.pdf)
 * App_Object Detection
   * [`RCNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
   * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
