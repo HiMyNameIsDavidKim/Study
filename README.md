@@ -63,17 +63,18 @@
   * [`MobileNet v1, 2017`](https://arxiv.org/pdf/1704.04861.pdf)
   * [`MobileNet v2, 2018`](https://arxiv.org/pdf/1801.04381.pdf)
   * [`EfficientNet, 2019`](https://arxiv.org/pdf/1905.11946v5.pdf)
-  * [`NoisyStudent, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
+  * [`EfficientNet-L2, 2021`](https://arxiv.org/pdf/2104.00298.pdf)
+  * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`RegNet, 2020`](https://arxiv.org/pdf/2003.13678.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
-  * [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf)
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Architecture_Transformer
   * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
+  * [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf)
   * [`ViT-G/14, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT-G14.md)
-  * [`BASIC-L, 2022`](https://arxiv.org/pdf/2203.05482v3.pdf)
+  * [`Model soups, 2022`](https://arxiv.org/pdf/2203.05482v3.pdf)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * [`Lion, 2023`](https://arxiv.org/pdf/2302.06675v2.pdf)
 * App_Object Detection
@@ -110,7 +111,7 @@
   * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-* Methods
+* Basic Methods
   * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
