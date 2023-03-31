@@ -67,6 +67,7 @@
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`RegNet, 2020`](https://arxiv.org/pdf/2003.13678.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
+  * [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf)
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
   * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Architecture_Transformer

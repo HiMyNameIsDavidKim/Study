@@ -241,7 +241,7 @@
 * bayesions
     * 기원 : 통계학
     * probabilistic inference : 확률적 추론, 불확실한 사실(확률로 된 결과)를 사용해서 문제의 결론을 얻는 추론 방법.
-    * MCMC 알고리즘
+    * Markov Chain Monte Carlo 알고리즘
 * analogizers
     * 기원 : 심리학
     * kernel machines : 문제 해결을 위해 신규 속성을 추가 시키거나, n차 방정식을 적용하는 방법.
