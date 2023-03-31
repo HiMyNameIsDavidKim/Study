@@ -230,18 +230,22 @@
 ### [마스터 알고리즘]
 * 각 tribe별로 주로 사용하는 마스터 알고리즘이 있다.
 * symbolists, connectionists, bayesions, analogizsers 4개의 tribe.
-* symbolists : 기원은 로직과 철학이며, inverse deduction을 사용.
+* symbolists
+    * 기원 : 로직과 철학
     * inverse deduction : 역연역법, 연역적 논리로 부족한 부분을  역추정하는 방법.
-    * -> Decision Tree 알고리즘
-* connectionists : 기원은 뉴로사이언스이며, back propagation을 사용.
+    * Decision Tree 알고리즘
+* connectionists
+    * 기원 : 뉴로사이언스
     * back propagation : 역전파, 입력층 은닉층 출력층으로 순차적 전파, 오차를 계산하여 은닉층으로 다시 전달(역전파), 오차가 줄어드는 방향으로 가중치를 변경
-    * -> ANN 알고리즘
-* bayesions : 기원은 통계학이며, probabilistic inference를 사용.
+    * ANN 알고리즘
+* bayesions
+    * 기원 : 통계학
     * probabilistic inference : 확률적 추론, 불확실한 사실(확률로 된 결과)를 사용해서 문제의 결론을 얻는 추론 방법.
-    * -> MCMC 알고리즘
-* analogizers : 기원은 심리학이며, kernel machines를 사용.
+    * MCMC 알고리즘
+* analogizers
+    * 기원 : 심리학
     * kernel machines : 문제 해결을 위해 신규 속성을 추가 시키거나, n차 방정식을 적용하는 방법.
-    * -> SVM 알고리즘
+    * SVM 알고리즘
 <br><br>
 
 
