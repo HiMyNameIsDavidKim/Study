@@ -33,7 +33,7 @@
 <br>
 
 ## 📊Data Analyst
-  - [`SQLD`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
+  - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
   - [`R`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
@@ -112,11 +112,12 @@
   * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-* Basic Methods
+* Methods
   * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
   * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * [`ViT Robustness, 2022`](https://proceedings.neurips.cc/paper_files/paper/2022/file/67662aa16456e0df65ab001136f92fd0-Paper-Conference.pdf)
 <br>
 
 ### 📘Book List
