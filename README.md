@@ -117,7 +117,7 @@
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
   * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
-  * [`ViT Robustness, 2022`](https://proceedings.neurips.cc/paper_files/paper/2022/file/67662aa16456e0df65ab001136f92fd0-Paper-Conference.pdf)
+  * ✅ [`ViT Robustness, 2022`](https://proceedings.neurips.cc/paper_files/paper/2022/file/67662aa16456e0df65ab001136f92fd0-Paper-Conference.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
 <br>
 
 ### 📘Book List
