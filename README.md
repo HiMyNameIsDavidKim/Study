@@ -69,7 +69,6 @@
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
   * [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf)
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
-  * [`Survey of CNN, 2020`](https://arxiv.org/pdf/1901.06032.pdf)
 * Architecture_Transformer
   * ✅ [`Transformer, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
