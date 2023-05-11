@@ -70,6 +70,11 @@
     * unsupervised와 self-supervised의 중간.
 <br><br>
 
+### [Convolution Operation]
+* input의 채널 수 = 필터의 채널 수
+* 필터의 개수 = output의 채널 수
+<br><br>
+
 
 
 ## `[CV의 주요 개념]`
