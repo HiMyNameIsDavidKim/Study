@@ -1,6 +1,8 @@
 # Computer Vision
 
 ## `[Details & Examples]`
+* [`Patch-based transformation 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/patch_trans.py)
+* [`ViT GAP 버전 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/vit_GAP.py)
 * [`ViT 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/vit_paper.py)
 * [`UNet 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/unet_paper.py)
 * [`ResNet 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/resnet_paper.py)
