@@ -67,7 +67,7 @@
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`RegNet, 2020`](https://arxiv.org/pdf/2003.13678.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
-  * ✅ [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/CoAtNet.md)
+  * ✅ [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf) / [`Blog Posting`](https://davidlds.tistory.com/23) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/CoAtNet.md)
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
