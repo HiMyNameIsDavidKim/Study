@@ -92,6 +92,7 @@
 * 영상처리 : HOG(Histogram of Oriented Gradiant), blob(영상 이진화 객체), LoG(Laplacian of Gaussian), DoG(Diffrence of Gaussian), SIFT(Scale-Invariant Feature Transform), 동차좌표, k-d 트리, RANSAC(RANdom SAmple Consensus), Feature Matching
 * 정형 데이터 : 자료구조 내부에 있는 데이터. 구조화 되어 있다.
 * 비정형 데이터 : 자료구조에 구조화되어 있지 않은 데이터.
+* [`게슈탈트 디자인 심리학`](https://tammist.tistory.com/13)
 <br><br>
 
 ### [Classic CV Algorithm]
