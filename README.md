@@ -119,6 +119,7 @@
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
   * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
   * [`Augmentation review blog`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
 <br>
 
