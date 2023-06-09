@@ -27,11 +27,15 @@
 <br><br>
 
 ### [weight Initialization]
+* 레이어들의 weight 값을 평균이 0이고 표준편차가 작은 무작위 값으로 설정.
 * 기울기 소실 현상 방지, 손실함수 공간을 최적화가 쉬운 형태로 변형.
     * 기울기 소실 : vanishing gradients, back propagation 과정에서 출력층에서 멀어질 수록 gradient 값이 매우 작아지는 현상.
     * 근본적인 원인은 활성화 함수의 미분값의 크기가 작기 때문.
     * 반대인 기울기 폭주 exploding gradients 도 있다.
 * 예시 : Xavier Glorot 초기화, Kaiming He 초기화.
+* 트랜스포머의 pre-training
+    * fine-tuning의 initialization로 간주할 수 있다.
+    * 비슷한 작업을 수행하며 weight를 최대한 적절한 곳으로 배치(=초기화) 하는 것.
 <br><br>
 
 ### [Learning rate 관리]
