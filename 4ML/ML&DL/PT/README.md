@@ -26,7 +26,7 @@
     * 등등 구글링
 <br><br>
 
-### [웨이트 초기화]
+### [weight Initialization]
 * 기울기 소실 현상 방지, 손실함수 공간을 최적화가 쉬운 형태로 변형.
     * 기울기 소실 : vanishing gradients, back propagation 과정에서 출력층에서 멀어질 수록 gradient 값이 매우 작아지는 현상.
     * 근본적인 원인은 활성화 함수의 미분값의 크기가 작기 때문.
