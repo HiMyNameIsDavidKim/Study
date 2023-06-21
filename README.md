@@ -74,8 +74,6 @@
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
   * ✅ [`Scaling ViT, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
   * ✅ [`ViT Robustness, 2022`](https://proceedings.neurips.cc/paper_files/paper/2022/file/67662aa16456e0df65ab001136f92fd0-Paper-Conference.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
-  * [`Relative attention, 2018`](https://arxiv.org/pdf/1803.02155.pdf)
-  * [`ViT attention visualization, 2021`](https://arxiv.org/pdf/2012.09838v1.pdf)
   * [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf)
   * [`Model soups, 2022`](https://arxiv.org/pdf/2203.05482v3.pdf)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
