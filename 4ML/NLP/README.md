@@ -10,6 +10,13 @@
 
 
 
+## `[LLM]`
+* upstream = pre-training, downstream = fine-tuning
+* foundation model = pre-trained model
+* 
+<br><br>
+
+
 ## `[Attention]`
 * 어탠션 매커니즘 : 특정 시점에 입력 데이터 중에 키워드에 집중하게 하는 기술.
     * 어탠션 매커니즘의 벡터

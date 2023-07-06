@@ -80,7 +80,7 @@
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
 * Apps
   * Segmentation
-    * 
+    * [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf)
   * Depth Estimation
     * 
   * Object Detection
@@ -122,6 +122,7 @@
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
   * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
   * [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
   * [`Augmentation review blog`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
 <br>
