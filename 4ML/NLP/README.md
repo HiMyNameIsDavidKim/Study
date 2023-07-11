@@ -13,7 +13,8 @@
 ## `[LLM]`
 * upstream = pre-training, downstream = fine-tuning
 * foundation model = pre-trained model
-* 
+* prompt : 모델에 대한 지침. 올바른 결과를 유도하는 명령어.
+* prompt engineering : 모델이 특정 작업을 수행하도록 도와주는 텍스트를 생성.
 <br><br>
 
 
