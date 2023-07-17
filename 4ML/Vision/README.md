@@ -1,6 +1,7 @@
 # Computer Vision
 
 ## `[Details & Examples]`
+* [`MLP-Mixer 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/mlp_mixer.py)
 * [`Patch-based transformation 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/patch_trans.py)
 * [`ViT GAP 버전 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/vit_GAP.py)
 * [`ViT 논문 구현`](https://github.com/HiMyNameIsDavidKim/ML_Example/blob/main/CV/vit_paper.py)
