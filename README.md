@@ -98,6 +98,7 @@
     * [`EfficientDet, 2019`](https://arxiv.org/pdf/1911.09070.pdf)
     * [`Detection Transformer, 2020`](https://arxiv.org/pdf/2005.12872.pdf)
     * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
+    * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Gen
     * [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
     * [`DRAW, 2015`](http://proceedings.mlr.press/v37/gregor15.pdf)
