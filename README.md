@@ -53,7 +53,7 @@
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
   * ✅ [`Scaling ViT, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
-  * ✅ [`ViT Robustness, 2022`](https://proceedings.neurips.cc/paper_files/paper/2022/file/67662aa16456e0df65ab001136f92fd0-Paper-Conference.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
+  * ✅ [`ViT Robustness, 2022`](https://arxiv.org/pdf/2110.07858.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
   * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432v1.pdf)
   * [`DaViT, 2022`](https://arxiv.org/pdf/2204.03645v1.pdf)
