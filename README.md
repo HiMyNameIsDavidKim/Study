@@ -79,6 +79,14 @@
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
   * ✅ [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf) / [`Blog Posting`](https://davidlds.tistory.com/23) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/CoAtNet.md)
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
+* Basic Methods
+  * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
+  * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
+  * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
+  * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
+  * [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
+  * [`Augmentation review blog`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
 * Apps
   * Segmentation
     * [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf)
@@ -119,14 +127,6 @@
   * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-* Methods
-  * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
-  * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
-  * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
-  * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
-  * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-  * [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
-  * [`Augmentation review blog`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
 <br>
 
 ### 📘Book List
