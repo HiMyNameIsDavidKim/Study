@@ -11,6 +11,7 @@
 * 연산 순서 : NOT - AND - OR<br><br>
 
 ### [SQL 언어 종류]
+* DML(DUSI), DDL(CARD), DCL(GR), TCL(CR)
 * DML(Data Manipulation) : 데이터 조작. (등록 검색 수정 삭제)
     * INSERT(등록) : 테이블에 새로운 데이터를 삽입함.
     * SELECT(검색) : 테이블에서 특정 컬럼을 가져옴.
