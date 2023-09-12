@@ -48,6 +48,9 @@
 <br>
 
 ### 📓Paper List
+<details>
+  <summary> 👉 click 👈 </summary>
+
 * [print('✅') if (READ == True) else pass]
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
@@ -66,10 +69,9 @@
   * ✅ [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
   * ✅ [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`](https://davidlds.tistory.com/9/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
   * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
-  * [`Xception, 2016`](https://arxiv.org/pdf/1610.02357.pdf)
+  * [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
   * [`NASNet, 2017`](https://arxiv.org/pdf/1707.07012.pdf)
   * [`SENet, 2017`](https://arxiv.org/pdf/1709.01507.pdf)
-  * [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
   * [`MobileNet v1, 2017`](https://arxiv.org/pdf/1704.04861.pdf)
   * [`MobileNet v2, 2018`](https://arxiv.org/pdf/1801.04381.pdf)
   * [`EfficientNet, 2019`](https://arxiv.org/pdf/1905.11946v5.pdf)
@@ -132,8 +134,13 @@
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 <br>
+</details>
+<br>
 
 ### 📘Book List
+<details>
+  <summary> 👉 click 👈 </summary>
+
 * [print('✅') if (READ == True) else pass]
 * 데이터 분석
   * ✅ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
@@ -149,13 +156,15 @@
   * 이것이 취업을 위한 코딩 테스트다 with 파이썬(나동빈) : 알고리즘 정석
   * 헤드 퍼스트 디자인 패턴(에릭 프리먼) : OOP 디자인 패턴
 <br>
+</details>
+<br>
 
 ## 🦋Flutter
   - [`Dart Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/DartBasic)
 
   - [`Widget`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/Widget)
-
-  - [`Project`]
+<!-- 
+  - [`Project`] -->
 <br>
 
 ## ☕️Java
