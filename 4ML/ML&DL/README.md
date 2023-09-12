@@ -7,14 +7,7 @@
 
 
 
-## `[examples]`
-* [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
-* [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
-* [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
-* [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
-<br><br>
-
-### [추가 메모 사항]
+### [라이브러리별 추가 메모]
 * [`TensorFlow`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/TF)
 * [`PyTorch`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL/PT)
 <br><br>
