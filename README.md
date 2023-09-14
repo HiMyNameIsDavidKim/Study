@@ -95,7 +95,7 @@
   * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 * Apps
   * Segmentation
-    * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf)
+    * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
   * Depth Estimation
     * 
   * Object Detection
