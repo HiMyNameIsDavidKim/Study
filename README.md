@@ -59,9 +59,11 @@
   * ✅ [`ViT Robustness, 2022`](https://arxiv.org/pdf/2110.07858.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
   * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432v1.pdf)
+  * [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf)
   * [`DaViT, 2022`](https://arxiv.org/pdf/2204.03645v1.pdf)
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
+  * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
