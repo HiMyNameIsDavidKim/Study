@@ -64,6 +64,7 @@
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
+  * [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
