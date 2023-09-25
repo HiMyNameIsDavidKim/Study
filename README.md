@@ -61,7 +61,7 @@
   * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432v1.pdf)
   * [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf)
   * [`DaViT, 2022`](https://arxiv.org/pdf/2204.03645v1.pdf)
-  * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf)
+  * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
   * [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
