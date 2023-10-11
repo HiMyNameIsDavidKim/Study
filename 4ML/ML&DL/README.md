@@ -451,6 +451,8 @@
     * 구분자는 Leaky ReLU 사용.
 * 응용 사례
     * SRGAN : Super Resolution GAN.
+        * Generator가 저해상도 이미지를 이용해 가짜 고해상도 이미지 생성.
+        * Discriminator가 (가짜 고해상도 이미지 vs 답안 고해상도 이미지) 누가 답안인지 판단.
     * Text to image synthesis : 특정 문장을 벡터화한 뒤, GAN을 활용해 이미지 합성.
     * Pix2Pix : 이미지를 보여주고 GAN을 활용해 새로운 이미지 합성.
 <br><br>
