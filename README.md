@@ -48,9 +48,6 @@
 <br>
 
 ### 📓Paper List
-<details>
-  <summary> 👉 click 👈 </summary>
-
 * [print('✅') if (READ == True) else pass]
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
@@ -65,7 +62,7 @@
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * [`CoCa, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
-  * [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
+  * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
@@ -86,10 +83,10 @@
   * ✅ [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf) / [`Blog Posting`](https://davidlds.tistory.com/23) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/CoAtNet.md)
   * [`RevCol-H, 2022`](https://arxiv.org/pdf/2212.11696v3.pdf)
 * Data
-  * [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
-  * [`Augmentation review post`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
+  * ✅ [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
+  * ✅ [`Augmentation review post`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
   * [`Greedy Policy Search, 2020`](https://arxiv.org/pdf/2002.09103.pdf)
-  * [`Learning Loss for Test-Time Augmentation, 2020`](https://arxiv.org/pdf/2010.11422.pdf)
+  * ✅ [`Learning Loss for Test-Time Augmentation, 2020`](https://arxiv.org/pdf/2010.11422.pdf)
 * Methods
   * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
   * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
@@ -138,13 +135,8 @@
   * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 <br>
-</details>
-<br>
 
 ### 📘Book List
-<details>
-  <summary> 👉 click 👈 </summary>
-
 * [print('✅') if (READ == True) else pass]
 * 데이터 분석
   * ✅ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
@@ -159,8 +151,6 @@
   * ✅ 파이썬 코딩 도장(남재윤) : 파이썬 AtoZ (+파이써닉 맛보기)
   * 이것이 취업을 위한 코딩 테스트다 with 파이썬(나동빈) : 알고리즘 정석
   * 헤드 퍼스트 디자인 패턴(에릭 프리먼) : OOP 디자인 패턴
-<br>
-</details>
 <br>
 
 ## 🦋Flutter
