@@ -10,12 +10,36 @@
 
 
 
+## `[VAE]`
+* 데이터의 latent space를 학습하여 새로운 데이터를 생성할 수 있는 확률적 생성 모델.
+* 베이즈 이론과 가우시안 확률 분포를 활용하며, 인코더와 디코더로 구성된다.
+* latent space가 continuous 하다.
+* 인코더
+    * 입력 데이터를 받아 주요 feature를 인코딩한 결과인 latent variable을 생성한다.
+    * 입력 데이터를 특정 확률 분포(=가우시안)로 변환한다.
+    * 확률 분포를 통해 latent variable의 가능한 값과 가장 잘 표현된 값을 알 수 있다.
+* 디코더
+    * latent variable로 부터 원래 입력 데이터를 재구성한다.
+    * latent variable에서 샘플링된 값을 사용하여 입력 데이터 재구성에 활용한다.
+* 변형
+    * VQ-VAE
+        * latent space가 discrete 하다.
+        * VAE 인코더의 가우시안을 사용하지 않는다. (확률 분포 가정 자체를 안함)
+        * codebook을 discrete하게 양자화한 것으로 가장 가까운 codebook에 매핑한다.
+    * dVAE
+        * latent space가 discrete 하다.
+        * 생성하는 데이터도 discrete 하다.
+        * VAE 인코더의 가우시안을 다항이나 베르누이 같은 이산 확률 분포로 변경한 구조다.
+<br><br>
+
+
 ## `[LLM]`
 * upstream = pre-training, downstream = fine-tuning
 * foundation model = pre-trained model
 * prompt : 모델에 대한 지침. 올바른 결과를 유도하는 명령어.
 * prompt engineering : 모델이 특정 작업을 수행하도록 도와주는 텍스트를 생성.
 <br><br>
+
 
 
 ## `[Attention]`
