@@ -115,7 +115,7 @@
     * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
     * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Gen
-    * [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
+    * ✅ [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
     * [`DRAW, 2015`](http://proceedings.mlr.press/v37/gregor15.pdf)
     * [`PixelRNN, 2016`](https://arxiv.org/pdf/1601.06759.pdf)
     * [`PixelCNN, 2016`](https://arxiv.org/pdf/1606.05328.pdf)
