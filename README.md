@@ -88,10 +88,10 @@
   * [`Greedy Policy Search, 2020`](https://arxiv.org/pdf/2002.09103.pdf)
   * ✅ [`Learning Loss for Test-Time Augmentation, 2020`](https://arxiv.org/pdf/2010.11422.pdf)
 * Methods
-  * [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
-  * [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
-  * [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
-  * [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * ✅ [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
+  * ✅ [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
+  * ✅ [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
+  * ✅ [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
   * [`Loss Predictor, 2019`](https://arxiv.org/pdf/1905.03677.pdf)
   * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 * Apps
