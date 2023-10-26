@@ -71,3 +71,8 @@
     * AdaGrad : 기존에 기울기가 적게 변한 변수는 크게, 많이 변한 변수는 적게 업데이트.
     * AdaDelta : 지정한 비율로 기울기를 부식시켜 업데이트.
 <br><br>
+
+### [모델 정보 불러오기]
+* summary(model, input_size=(3, 224, 224))
+* dir(model)
+* help(model)
