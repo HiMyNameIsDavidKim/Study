@@ -121,6 +121,7 @@
     * [`PixelCNN, 2016`](https://arxiv.org/pdf/1606.05328.pdf)
     * [`SampleRNN, 2017`](https://arxiv.org/pdf/1612.07837.pdf)
     * [`BNN, 2018`](https://arxiv.org/pdf/1801.07710.pdf)
+    * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
 * AutoML
   * [`Neural Architecture Search, 2017`](https://arxiv.org/pdf/1611.01578.pdf)
   * [`Parameter Sharing, 2018`](https://arxiv.org/pdf/1802.03268.pdf)
