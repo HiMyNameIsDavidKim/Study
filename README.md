@@ -92,6 +92,7 @@
   * ✅ [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * ✅ [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
   * ✅ [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * [`Loss Scaling Rule, 2018`](https://arxiv.org/pdf/1706.02677.pdf)
   * [`Loss Predictor, 2019`](https://arxiv.org/pdf/1905.03677.pdf)
   * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 * Apps
