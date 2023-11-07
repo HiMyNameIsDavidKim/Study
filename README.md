@@ -57,6 +57,7 @@
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
   * ✅ [`BEiT, 2021`](https://arxiv.org/pdf/2106.08254.pdf)
   * [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf)
+  * [`CaiT, 2021`](https://arxiv.org/pdf/2103.17239.pdf)
   * [`DaViT, 2022`](https://arxiv.org/pdf/2204.03645v1.pdf)
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
@@ -96,21 +97,19 @@
 * Apps
   * Segmentation
     * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
-  * Depth Estimation
-    * 
+  * Image-Text
+    * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
+    * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432.pdf)
+    * [`Coca, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
   * Object Detection
-    * [`RCNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
+    * [`R-CNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
     * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
     * [`Faster R-CNN, 2015`](https://arxiv.org/pdf/1506.01497.pdf)
+    * [`Mask R-CNN, 2017`](https://arxiv.org/abs/1703.06870)
     * [`YOLO v1, 2016`](https://arxiv.org/pdf/1506.02640.pdf)
     * [`YOLO v2, 2016`](https://arxiv.org/pdf/1612.08242.pdf)
-    * [`SSD, 2015`](https://arxiv.org/pdf/1512.02325.pdf)
-    * [`R-FCN, 2016`](https://arxiv.org/abs/1605.06409)
-    * [`Mask R-CNN, 2017`](https://arxiv.org/abs/1703.06870)
     * [`YOLO v3, 2018`](https://arxiv.org/pdf/1804.02767.pdf)
     * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
-    * [`EfficientDet, 2019`](https://arxiv.org/pdf/1911.09070.pdf)
-    * [`Detection Transformer, 2020`](https://arxiv.org/pdf/2005.12872.pdf)
     * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
     * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Gen
