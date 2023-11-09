@@ -110,7 +110,7 @@
     * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Gen
     * ✅ [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
-    * [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
+    * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
 * AutoML
   * [`Neural Architecture Search, 2017`](https://arxiv.org/pdf/1611.01578.pdf)
