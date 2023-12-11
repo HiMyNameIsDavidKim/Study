@@ -45,6 +45,7 @@
 <br>
 
 ## 💼Project
+  - [`SPRNN`]
 <br>
 
 ### 📓Paper List
