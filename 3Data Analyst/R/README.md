@@ -680,6 +680,14 @@
     * TN / (TN + FP)
 * FP rate
     * FP / (TN + FP)
+* 이해하기
+    * TP = NG정합, TN = OK정합, FN = 미검, FP = 과검
+    * True는 무조건 잘했다. False는 무조건 잘못했다.
+    * Precision : NG판정 중에 NG정합(=과검 평가)
+    * Recall : 실제NG 중에 NG정합(=미검 평가)
+    * F1 : Pre와 Sen의 조화평균. OK와 NG 모두에 대해 높은 정밀도와 높은 재현율.
+    * Accuracy : 전체 중에 정합
+    * Error rate : 전체 중에 미검과검
 <br><br>
 
 ### [분류모델 성능평가]
