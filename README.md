@@ -78,7 +78,7 @@
   * [`EfficientNet-L2, 2021`](https://arxiv.org/pdf/2104.00298.pdf)
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
-  * [`Jigsaw Puzzle CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
+  * ✅ [`Jigsaw Puzzle CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
   * [`Jigsaw Puzzle Context Prediction, 2016`](https://arxiv.org/pdf/1505.05192.pdf)
   * [`Completing Damaged Jigsaw Puzzles, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
   * [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
