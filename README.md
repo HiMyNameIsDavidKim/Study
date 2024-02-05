@@ -85,7 +85,6 @@
 * Data
   * ✅ [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
   * ✅ [`Augmentation review post`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
-  * [`Greedy Policy Search, 2020`](https://arxiv.org/pdf/2002.09103.pdf)
   * ✅ [`Learning Loss for Test-Time Augmentation, 2020`](https://arxiv.org/pdf/2010.11422.pdf)
 * Methods
   * ✅ [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
