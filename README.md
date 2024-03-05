@@ -45,7 +45,7 @@
 <br>
 
 ## 💼Project
-  - [`SPRNN`]
+  - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 <br>
 
 ### 📓Paper List
