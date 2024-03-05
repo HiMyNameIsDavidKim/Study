@@ -48,7 +48,7 @@
   - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 <br>
 
-### 📓Paper List
+## 📓Paper List
 * [print('✅') if (READ == True) else pass]
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
@@ -132,7 +132,7 @@
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 <br>
 
-### 📘Book List
+## 📘Book List
 * [print('✅') if (READ == True) else pass]
 * 데이터 분석
   * ✅ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
