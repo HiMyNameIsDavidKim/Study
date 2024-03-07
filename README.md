@@ -46,7 +46,7 @@
 
 ## 💼Project
   - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
-    - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
+  - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 <br>
 
 ## 📓Paper List
