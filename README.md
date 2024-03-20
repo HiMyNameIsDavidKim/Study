@@ -59,7 +59,7 @@
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
-  * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
+  * ✅ [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
   * ✅ [`BEiT, 2021`](https://arxiv.org/pdf/2106.08254.pdf)
   * [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf)
   * [`CaiT, 2021`](https://arxiv.org/pdf/2103.17239.pdf)
