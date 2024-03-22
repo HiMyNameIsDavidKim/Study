@@ -84,7 +84,7 @@
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
   * ✅ [`Jigsaw Puzzle CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
-  * [`Jigsaw Puzzle knowledge transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
+  * ✅ [`Jigsaw Puzzle knowledge transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
   * [`Jigsaw Puzzle inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
   * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
 * Data
