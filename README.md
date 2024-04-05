@@ -55,8 +55,8 @@
 ## 📓Paper List
 * [print('✅') if (READ == True) else pass]
 * Transformer
-  * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
-  * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
+  * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
+  * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
   * ✅ [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
@@ -69,13 +69,13 @@
   * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
   * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
 * CNN
-  * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
-  * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
+  * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
+  * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
   * ✅ [`Inception v2~3, 2016`](https://arxiv.org/pdf/1512.00567v3.pdf)
   * ✅ [`Inception v4, 2016`](arxiv.org/pdf/1602.07261v2.pdf)
-  * ✅ [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`](https://davidlds.tistory.com/9/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
-  * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4/) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
-  * ✅ [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf)
+  * ✅ [`UNet, 2015`](https://arxiv.org/pdf/1505.04597.pdf) / [`Blog Posting`](https://davidlds.tistory.com/9) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/UNet.md)
+  * ✅ [`ResNet, 2016`](https://arxiv.org/pdf/1512.03385v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/4) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/ResNet.md)
+  * ✅ [`DenseNet, 2017`](https://arxiv.org/pdf/1608.06993v5.pdf) / [`Blog Posting`](https://davidlds.tistory.com/36)
   * ✅ [`CoAtNet, 2021`](https://arxiv.org/pdf/2106.04803.pdf) / [`Blog Posting`](https://davidlds.tistory.com/23) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/CoAtNet.md)
   * [`MobileNet v1, 2017`](https://arxiv.org/pdf/1704.04861.pdf)
   * [`MobileNet v2, 2018`](https://arxiv.org/pdf/1801.04381.pdf)
