@@ -54,17 +54,20 @@
 
 ## 📓Paper List
 * [print('✅') if (READ == True) else pass]
+* New Architecture
+  * ✅ [`I-JEPA, 2021`](https://arxiv.org/pdf/2103.17239.pdf) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/I-JEPA.md)
+  * ✅ [`Vision Mamba, 2024`](https://arxiv.org/pdf/2401.09417v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/38) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/Vision%20Mamba.md)
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
-  * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
-  * ✅ [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
+  * ✅ [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf) / [`Blog Posting`](https://davidlds.tistory.com/37)
   * ✅ [`BEiT, 2021`](https://arxiv.org/pdf/2106.08254.pdf)
   * [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf)
+  * ✅ [`Scaling ViT, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
+  * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * [`CaiT, 2021`](https://arxiv.org/pdf/2103.17239.pdf)
   * [`DaViT, 2022`](https://arxiv.org/pdf/2204.03645v1.pdf)
-  * ✅ [`Scaling ViT, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
   * ✅ [`ViT Robustness, 2022`](https://arxiv.org/pdf/2110.07858.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
   * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
   * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
