@@ -1,6 +1,6 @@
 # 📚Study📚
 
-## 💪Basic
+## 💪 Basic
   - [`Algorithm⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
 
   - [`Data Structure`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
@@ -12,7 +12,7 @@
   - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
 <br>
 
-## 🐍Python
+## 🐍 Python
   - [`Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
 
   - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
@@ -20,7 +20,7 @@
   - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Example)
 <br>
 
-## 🎯AI
+## 🎯 AI
   - [`🤖ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
 
     - [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
@@ -32,7 +32,7 @@
   - [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
 <br>
 
-## 📊Data Analyst
+## 📊 Data Analyst
   - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
   - [`R`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
@@ -44,7 +44,7 @@
   - [`Analystical Skills`]
 <br>
 
-## 💼Project
+## 💼 Project
   - Paper
 
     - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
@@ -52,7 +52,7 @@
     - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 <br>
 
-## 📓Paper List
+## 📓 Paper List
 * [print('✅') if (READ == True) else pass]
 * New Architecture
   * ✅ [`I-JEPA, 2021`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/I-JEPA.md)
@@ -144,7 +144,7 @@
   * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 <br>
 
-## 📘Book List
+## 📘 Book List
 * [print('✅') if (READ == True) else pass]
 * 데이터 분석
   * ✅ Do it 쉽게 배우는 파이썬 데이터 분석(김영우) : 데이터분석, 판다스 라이브러리
@@ -161,17 +161,17 @@
   * 헤드 퍼스트 디자인 패턴(에릭 프리먼) : OOP 디자인 패턴
 <br>
 
-## 🦋Flutter
+## 🦋 Flutter
   - [`Dart Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/DartBasic)
 
   - [`Widget`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Flutter/Widget)
 <br>
 
-## ☕️Java
+## ☕️ Java
   - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
 <br>
 
-## ☁️Cloud(AWS, GCP)
+## ☁️ Cloud(AWS, GCP)
   - [`🥫DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
 
   - [`🌵Django Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Django(REST))
