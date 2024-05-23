@@ -20,7 +20,7 @@
   - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Example)
 <br>
 
-## 🪬AI
+## 🎯AI
   - [`🤖ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
 
     - [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
@@ -87,12 +87,13 @@
   * [`EfficientNet-L2, 2021`](https://arxiv.org/pdf/2104.00298.pdf)
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
+  * ✅ [`MoCo v1, 2020`](https://arxiv.org/pdf/1911.05722) / [`Blog Posting`](https://davidlds.tistory.com/42) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v1.md)
   * ✅ [`Jigsaw Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
   * ✅ [`Jigsaw Co-occurrences, 2018`](https://arxiv.org/pdf/1807.03155)
   * ✅ [`Jigsaw Shortest Path, 2018`](https://arxiv.org/pdf/1809.00898)
   * ✅ [`Jigsaw CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
   * ✅ [`Jigsaw Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
-  * [`Jigsaw Puzzle inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
+  * [`Jigsaw Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
   * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
 * Data
   * ✅ [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
