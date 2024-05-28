@@ -86,6 +86,7 @@
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
   * ✅ [`MoCo v1, 2020`](https://arxiv.org/pdf/1911.05722) / [`Blog Posting`](https://davidlds.tistory.com/42) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v1.md)
+  * ✅ [`MoCo v2, 2020`](https://arxiv.org/pdf/2003.04297) / [`Blog Posting`](https://davidlds.tistory.com/43) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v2.md)
   * ✅ [`Jigsaw Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
   * ✅ [`Jigsaw Co-occurrences, 2018`](https://arxiv.org/pdf/1807.03155)
   * ✅ [`Jigsaw Shortest Path, 2018`](https://arxiv.org/pdf/1809.00898)
