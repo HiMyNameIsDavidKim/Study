@@ -64,7 +64,7 @@
   * ✅ [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf) / [`Blog Posting`](https://davidlds.tistory.com/41) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/DeiT.md)
   * ✅ [`Scaling ViT, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
-  * ✅ [`MoCo v3, 2020`](https://arxiv.org/pdf/2104.02057) / [`Blog Posting`](https://davidlds.tistory.com/44) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MoCo_v3.md)
+  * ✅ [`MoCo v3, 2021`](https://arxiv.org/pdf/2104.02057) / [`Blog Posting`](https://davidlds.tistory.com/44) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MoCo_v3.md)
   * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
   * [`CaiT, 2021`](https://arxiv.org/pdf/2103.17239.pdf)
   * [`DaViT, 2022`](https://arxiv.org/pdf/2204.03645v1.pdf)
