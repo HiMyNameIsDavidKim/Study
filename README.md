@@ -21,17 +21,17 @@
 <br>
 
 ## 🎯 AI
-  - [`🤖ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+  - [`🤖 ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
 
-    - [`📷CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
+    - [`📷 CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
 
-    - [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
+    - [`💬 NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
 
-  - [`🌌Neuroscience`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Neuroscience)
+  - [`🌌 Neuroscience`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Neuroscience)
 
-  - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
+  - [`🧪 Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
-  - [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
+  - [`🔮 Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
 <br>
 
 ## 📊 Data Analyst
