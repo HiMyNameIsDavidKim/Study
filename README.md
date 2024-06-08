@@ -27,6 +27,8 @@
 
     - [`💬NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
 
+  - [`⚡️Neuroscience`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Neuroscience)
+
   - [`🧪Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
 
   - [`🔮Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
