@@ -56,8 +56,9 @@
 * [print('✅') if (READ == True) else pass]
 * New Architecture
   * ✅ [`I-JEPA, 2021`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/I-JEPA.md)
-  * ✅ [`Vision Mamba, 2024`](https://arxiv.org/pdf/2401.09417v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/38) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/Vision%20Mamba.md)
   * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/V-JEPA.md)
+  * ✅ [`Vision Mamba, 2024`](https://arxiv.org/pdf/2401.09417v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/38) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/VisionMamba.md)
+  * ✅ [`MambaOut, 2024`](https://arxiv.org/pdf/2405.07992v3) / [`Blog Posting`](https://davidlds.tistory.com/45) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/MambaOut.md)
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
