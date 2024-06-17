@@ -2,8 +2,9 @@
 
 ## `[Introduction to Perception]`
 
-### [Perceptual process]
+### [Perceptual 과정]
 * Stimuli -> 빛의 반사, 눈에서 변형 -> receptor -> neural processing -> perception <-> recognition <-> action
+* perception(지각) 다음이 recognition(인지) 이다.
 * Stimuli
     * Principle of transformation
         * 환경에서 자극이 들어온다.
@@ -45,13 +46,13 @@
 
 ## `[Beginnings of Perception]`
 
-### [Visual process]
+### [Visual 과정]
 * 환경에서 자극 발생 -> 빛의 반사, transform, retina에 image -> receptor -> neural processing
 * transformation 1 : 객체 -> 이미지
 * transformation 2 : 이미지 -> 전기 신호
 <br><br>
 
-### [Eyes]
+### [눈]
 * cornea: 각막, 빛을 굴절
 * pupil: 동공, 빛의 양 조절
 * lens: 수정체, 초점 조절
@@ -68,7 +69,7 @@
 * ganglion cell: 콘셀 로드셀 신호 융합 알고리즘
 <br><br>
 
-### [Neurons]
+### [Neurons, 뉴런]
 * cell body: 세포가 살아있도록 하는 매커니즘 포함
 * dendrites: 다른 뉴런에서 신호를 받기 위해 뻗어나온 가지
 * axon: nerve fiber, 시신경, 전기 신호 다른 뉴런에 전달
@@ -230,5 +231,132 @@
 ## `[Visual Attention]`
 
 ### [Scanning a scene]
-* 
+* 어텐션이 사진의 부분들을 옮겨다니는 것
+* overt attention : 집중해서 관심을 갖는 부분
+* covert attention : 주변시
+<br><br>
+
+### [Attention]
+* stimulus salience
+    * 어텐션(시선)을 확 끄는 것
+    * 색깔, 대비, 움직임, 방향(orientation)
+* congitive factor에 기반한 선택
+    * 내가 의도적으로 어텐션을 주는 것
+    * 부자연스러운 것을 어텐션
+    * scene schema : 전형적인 씬에 무엇이 있어야 할지에 대한 지식
+* task demands
+    * voluntary, 자발적 선택
+    * 우리가 할 process에 따라 어텐션이 이동한다.
+* inattentional blindness
+    * 어텐션을 주지 않으면 바로 앞에 있는 것도 놓칠 수 있다.
+<br><br>
+
+
+
+## `[Taking Action]`
+
+### [Ecological approach]
+* 이동하는 관찰자를 연구.
+* optic flow : 관찰자가 보는 모든 움직임
+* gradient of flow : 움직임의 속도 차이
+* FOE(Focus of expansion) : 목적지 지점은 움직임이 없다.
+* self-produced information
+    * 사람이 움직이면서 정보를 생성 -> 다음 움직임을 안내하는데 사용한다.
+    * 전문가는 눈 뜨고 공중제비 해야 잘 한다.
+    * 초심자는 눈 뜨고 하나 감고 하나 비슷하다.
+* 감각은 고립되어 작동하지 않고 함께 작동한다.
+    * 자동차 운전(FOE 안봄, 곡선 주행, 측면 위치 정보 활용)
+* affordances : 객체의 용도를 나타내는 정보
+<br><br>
+
+### [Reaching and grasping]
+* dorsal과 ventral을 함께 사용해야 잡을 수 있다.
+* ventral(컵 인식) -> dorsal(손이 컵에 도달) -> 복합(잡기)
+* PRR(Pariental reach region) : 도달 및 잡기를 제어하는 뉴런
+* mirror neurons : 다른 사람이 잡는 것을 관찰할 때에도 반응
+    * 특정 행동 유형에만 반응하도록 특화되어 있다.
+    * 행동에 대한 의도를 이해하는데 관여한다.
+<br><br>
+
+### [Action-based accounts of perception]
+* 행동 기반 인지 이론
+* 자신의 행동 능력에 따라 환경을 다르게 인식한다.
+    * 잘 치는 타자는 공이 크게 보인다.
+    * 최근 승리한 테니스 선수는 네트가 낮아 보인다.
+<br><br>
+
+
+
+## `[Perceiving Motion]`
+
+### [Functions of motion perception]
+* 움직임(모션)은 환경에서 발생하는 사건을 이해하는데 도움을 준다.
+* 무엇이 일어나고 있는지, 어디로 가고 있는지 정보를 준다.
+* 움직임은 어텐션을 끌기도 한다.
+* 위험을 감지했을 때 동물들이 움직임을 멈추는 이유다.
+<br><br>
+
+
+
+## `[Perceiving Color]`
+
+### [Color vision]
+* 사물을 인식, 식별, 분류하는데 도움을 준다.
+* 적절한 색상의 물체는 더 빠르고 정확하게 인식된다.
+<br><br>
+
+### [Trichromatic theory]
+* RGB 세가지 파장의 비율을 조정하여 모든 파장을 일치시킬 수 있다.
+* 생리학적 증거로 원추세포도 3가지 이다.
+* Metamerism: 물리적으로 다른 자극이 지각에서는 동일하다.
+    * 원래 노란색인 물체의 색 = RGB 섞은 노란색
+<br><br>
+
+### [Opponent-process theory]
+* S, M, L 원추세포의 신호가 대립 신경세포에 의해 처리된다.
+* 생리학적 증거로 망막과 LGN에서 대립 신경세포 반응이 있다.
+<br><br>
+
+### [Constancy]
+* color constancy
+    * 조명이 변해도 물체의 색을 상대적으로 일정하게 인식한다.
+    * 따뜻한 조명, 차가운 조명 상관없이 원래 색을 알 수 있다.
+    * 주위 환경과 기억 색상이 영향을 준다.
+* lightness constancy
+    * 명도 역시 다양한 조명 아래에서도 일정하게 인식된다.
+    * 반사율 비율과 그림자 정보가 영향을 준다.
+<br><br>
+
+
+
+## `[Perceiving Depth]`
+
+### [Cue approach]
+* oculomotor
+    * 안구 운동 단서, 눈의 위치와 근육의 긴장을 감지하는 능력
+    * convergence : 가까운 물체를 볼 때 발생, 눈이 안쪽으로 모인다.
+    * accommodation : 물체에 초점, 렌즈 모양이 변화한다.
+* monocular
+    * 한 눈으로 작동하는 단서
+    * occlusion : 한 물체가 다른 물체를 가린다.
+    * relative height : 더 높은 물체는 더 멀리 있는 것으로 보인다.
+    * relative size : 두 물체가 동일한 크기이면 더 멀리 있을때 작다.
+    * perspective convergence : 거리가 멀어질수록 수렴한다.
+    * familiar size : 물체 크기에 대한 사전 지식이 인식에 영향을 준다.
+    * atmospheric perspective : 먼 물체는 덜 선명하다.
+    * texture gradient : 균일하게 배치된 경우 멀수록 더 밀집하다.
+    * shadows : 물체의 위치를 더 명확하게 만든다.
+    * motion parallax : 가까운 물체는 더 빨리 지나가는 것처럼 보인다.
+    * deletion and accretion : 옆으로 움직이면 뒷 물체가 보인다.
+* binocular
+    * 두 눈으로 작동하는 단서
+    * stereoscopic depth : 두 눈에 형성된 이미지의 차이를 고려한다.
+    * binocular disparity : 두 망막에 형성된 이미지의 차이를 고려한다.
+    * corresponding retinal points : 두 망막이 겹쳐질 때 일치점.
+    * horopter : 이 일치점에 있는 물체가 위치하는 표면.
+    * absolute disparity : 물체가 일치점에서 벗어나는 정도.
+    * relative disparity : absolute 값의 상대적 차이 정도.
+    * stereopsis : 입체감, 양안의 disparity 정보로 인한 깊이의 인상.
+    * disparity(부등)이 stereopsis(입체감)을 만든다.
+    * disparity = 기하학적 요소 // stereopsis = 지각적 요소
 <br><br>
