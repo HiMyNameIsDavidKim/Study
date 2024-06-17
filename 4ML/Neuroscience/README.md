@@ -145,19 +145,90 @@
 
 ## `[Cortical Organization]`
 
-### []
-* 
+### [Retinotopic map]
+* 눈과 뇌가 매핑되어 있다.
+* 물체에서 AB간격 CD간격이 있을 때, 눈에서는 간격이 동일하다.
+* 하지만 뇌에서는 이 간격이 다를 수 있다.
+* 특히 포비아 쪽과 매핑되는 cortex의 간격이 더 넓다.
+<br><br>
+
+### [Spatial organization]
+* Magnification factor
+    * visual field와 brain 간 1대1로 매칭되는 부분이 있다.
+    * 글자나 단어를 읽는 것과 같이 정밀한 시각적 인식에 사용된다.
+* Location columns
+    * cortex 표면에 수직으로 배열되어 있다.
+    * 한 컬럼의 모든 뉴런은 동일한 망막 위치의 receptive field를 갖는다.
+    * 이 컬럼 하나 하나가 모델이고 독립적인 디시전을 내린다.
+    * 이 컬럼이 뇌 안에 1000개 정도 있다.
+    * 최종 결정은 다수결로 하거나 강력한 웨이트를 가진 컬럼 하나가 단독행동을 하기도 한다.
+* Orientation columns
+    * 동일하게 cortex 표면에 수직으로 배열되어 있다.
+    * 한 컬럼의 모든 뉴런은 특정 방향의 자극에 가장 잘 반응한다.
+    * 어떤 컬럼은 수평에 어떤 컬럼은 45도에 가장 잘 반응한다.
+<br><br>
+
+### [Streams]
+* what, where, how를 담당하는 각각의 pathway가 있다.
+* 맨 아래 = what pathway = ventral pathway
+* 맨 위 = where pathway = dorsal pathway
+* 맨 위는 곧 액션을 처리하는 부분이므로 how pathway 이기도 하다.
+* 눈에 해당하는 뒤쪽 occipital lobe에서 위 아래 모든 pathway를 사용한다.
+* 한번에 한개의 pathway만 사용한다. (모네 그림)
+<br><br>
+
+### [Modularity]
+* 특정한 구조를 판단하는 영역이 있다.
+* 사람 얼굴에 대한 판단 영역이 따로 있다.
+* IT cortex에 있는 97%가 face 뉴런 혹은 face selective들이다.
+* FFA(Fusiform Face Area), 얼굴 담당
+* PPA(Parahippocampal Place Area), 풍경 인도어 아웃도어 담당
+* EBA(Extrastriate Body Area), 사람의 몸 담당
+* 뇌가 grid로 세상을 판단하는데 이게 육각형으로 예상된다.
 <br><br>
 
 
 
+## `[Perceiving Objects and Scene]`
+
+### [Gestalt perceptual grouping]
+* continuation : 사람이 판단할 때 부드럽게 연결되는걸 그루핑함
+* pragnanz : 최대한 단순하게 그루핑함
+* similarity : 비슷한 것들을 그루핑함
+* proximity : 근처에 있는 것들을 그루핑함
+* common fate : 같은 방향으로 움직이는 것들을 그루핑함
+* common region : 같은 영역을 그루핑함
+<br><br>
+
+### [Perceptual segregation]
+* 피사체 figure와 배경 ground를 구별하는 원리.
+* lower area : 아래 부분을 피겨로 생각함
+* convex side : 볼록 튀어나온 부분을 피겨로 생각함
+* experience : 과거 경험을 피겨 구분에 사용함
+* Global image feature는 더 빨리 인식한다.
+    * 자연스러운가
+    * 오픈된 공간인가
+    * 재질이 어떤가
+    * 차단된 정도가 어떤가
+    * 색이 어떤가
+<br><br>
+
+### [Regularities in the environment]
+* 자연의 규칙을 활용해 인식에 정보를 제공한다.
+* Physical regularities
+    * 자연에는 수직 수평 선이 많다고 가정한다.
+    * 객체는 색이 균일하다고 가정한다.
+    * 빛이 위에서 내려온다고 가정한다.
+* Semantic regularities
+    * 객체를 상상할 때 주변환경도 같이 상상한다.
+    * 의미가 인식에 영향을 준다.
+    * context, 이미지 전체의 맥락을 판단해서 객체를 판단한다.
+<br><br>
 
 
 
+## `[Visual Attention]`
 
-
-
-
-
-
-
+### [Scanning a scene]
+* 
+<br><br>
