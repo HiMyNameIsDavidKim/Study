@@ -113,6 +113,12 @@
 * Apps
   * Segmentation
     * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
+  * LLM
+    * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
+    * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
+    * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
+  * LMM
+    * 
   * Image-Text
     * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
     * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432.pdf)
@@ -141,10 +147,6 @@
 * Analyze data
   * [`TabNet, 2021`](https://arxiv.org/pdf/1908.07442.pdf)
   * [`SAINT, 2021`](https://arxiv.org/pdf/2106.01342.pdf)
-* chat GPT
-  * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
-  * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
-  * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
 <br>
 
 ## 📘 Book List
