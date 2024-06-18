@@ -10,9 +10,9 @@
         * 환경에서 자극이 들어온다.
         * retina에서 자극을 image로 변형한다.
     * Principle of representation
-        * 우리의 인식은 직접 자극이 아니다.
+        * 우리의 percives는 직접 자극이 아니다.
         * 자극에 대한 representation 이다.
-        * receptor와 신경 시스템에서 형성다.
+        * receptor와 신경 시스템에서 형성한다.
 * Receptor
     * visual pigment
         * 빛 에너지를 전기 에너지로 변환하는 화학물질.
