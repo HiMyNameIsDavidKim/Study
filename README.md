@@ -65,19 +65,19 @@
   * ✅ [`DeiT, 2021`](https://arxiv.org/pdf/2012.12877.pdf) / [`Blog Posting`](https://davidlds.tistory.com/41) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/DeiT.md)
   * ✅ [`Scaling ViT, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
+  * ✅ [`ViT Robustness, 2022`](https://arxiv.org/pdf/2110.07858.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
+  * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
+  * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
   * Self-Supervised Learning
     * ✅ [`MoCo v3, 2021`](https://arxiv.org/pdf/2104.02057) / [`Blog Posting`](https://davidlds.tistory.com/44) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MoCo_v3.md)
     * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
+    * ✅ [`I-JEPA, 2023`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/I-JEPA.md)
+    * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/V-JEPA.md)
     * [`CAE`]()
     * [`SimCLR`]()
     * [`DINO`]()
     * [`DINO v2`]()
     * [`iBOT`]()
-    * ✅ [`I-JEPA, 2023`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/I-JEPA.md)
-    * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/V-JEPA.md)
-  * ✅ [`ViT Robustness, 2022`](https://arxiv.org/pdf/2110.07858.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
-  * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
-  * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
@@ -123,7 +123,7 @@
     * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
     * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
   * LMM
-    * 
+    * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/LLaVA_UHD.md)
   * Image-Text
     * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
     * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432.pdf)
