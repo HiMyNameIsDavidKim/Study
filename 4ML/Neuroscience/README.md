@@ -207,11 +207,11 @@
 * convex side : 볼록 튀어나온 부분을 피겨로 생각함
 * experience : 과거 경험을 피겨 구분에 사용함
 * Global image feature는 더 빨리 인식한다.
-    * 자연스러운가
-    * 오픈된 공간인가
-    * 재질이 어떤가
-    * 차단된 정도가 어떤가
-    * 색이 어떤가
+    * naturalness : 자연스러운가
+    * openness : 오픈된 공간인가
+    * roughness : 재질이 어떤가
+    * expansion : 차단된 정도가 어떤가
+    * color : 색이 어떤가
 <br><br>
 
 ### [Regularities in the environment]

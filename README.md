@@ -78,6 +78,7 @@
     * [`DINO`]()
     * [`DINO v2`]()
     * [`iBOT`]()
+    * [`GestaltAE`]()
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
@@ -119,9 +120,11 @@
   * Segmentation
     * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
   * LLM
-    * [`chat GPT-1, 2019`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
-    * [`chat GPT-2, 2020`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
-    * [`chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
+    * [`BERT, 2019`](https://arxiv.org/pdf/1810.04805)
+    * [`Chat GPT-1, 2018`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
+    * [`Chat GPT-2, 2019`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
+    * [`Chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
+    * [`Chat GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
   * LMM
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/LLaVA_UHD.md)
   * Image-Text
@@ -137,18 +140,11 @@
     * [`YOLO v2, 2016`](https://arxiv.org/pdf/1612.08242.pdf)
     * [`YOLO v3, 2018`](https://arxiv.org/pdf/1804.02767.pdf)
     * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
-    * [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf)
     * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Gen
     * ✅ [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
-* AutoML
-  * [`Neural Architecture Search, 2017`](https://arxiv.org/pdf/1611.01578.pdf)
-  * [`Parameter Sharing, 2018`](https://arxiv.org/pdf/1802.03268.pdf)
-  * [`MnasNet, 2019`](https://arxiv.org/pdf/1807.11626.pdf)
-  * [`DARTS, 2019`](https://arxiv.org/pdf/1806.09055.pdf)
-  * [`AutoML-Zero, 2020`](https://arxiv.org/pdf/2003.03384.pdf)
 * Analyze data
   * [`TabNet, 2021`](https://arxiv.org/pdf/1908.07442.pdf)
   * [`SAINT, 2021`](https://arxiv.org/pdf/2106.01342.pdf)
