@@ -78,6 +78,7 @@
     * [`DINO`]()
     * [`DINO v2`]()
     * [`iBOT`]()
+    * [`data2vec`]()
     * [`GestaltAE`]()
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
@@ -121,10 +122,10 @@
     * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
   * LLM
     * [`BERT, 2019`](https://arxiv.org/pdf/1810.04805)
-    * [`Chat GPT-1, 2018`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
-    * [`Chat GPT-2, 2019`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
-    * [`Chat GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-    * [`Chat GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
+    * [`GPT-1, 2018`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
+    * [`GPT-2, 2019`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
+    * [`GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
+    * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
   * LMM
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/LLaVA_UHD.md)
   * Image-Text
