@@ -71,10 +71,9 @@
   * Self-Supervised Learning
     * ✅ [`MoCo v3, 2021`](https://arxiv.org/pdf/2104.02057) / [`Blog Posting`](https://davidlds.tistory.com/44) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MoCo_v3.md)
     * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
+    * ✅ [`CAE`](https://arxiv.org/pdf/2202.03026) / [`Blog Posting`](https://davidlds.tistory.com/47) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/CAE.md)
     * ✅ [`I-JEPA, 2023`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/I-JEPA.md)
     * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/V-JEPA.md)
-    * [`CAE`](https://arxiv.org/pdf/2202.03026) / [`Blog Posting`](https://davidlds.tistory.com/47) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/CAE.md)
-    * [`SimCLR`]()
     * [`DINO`]()
     * [`DINO v2`]()
     * [`iBOT`]()
@@ -96,6 +95,7 @@
   * [`Noisy Student, 2019`](https://arxiv.org/pdf/1911.04252.pdf)
   * [`Meta Pseudo Labels, 2020`](https://arxiv.org/pdf/2003.10580.pdf)
   * Self-Supervised Learning
+    * ✅ [`SimCLR`](https://arxiv.org/pdf/2002.05709/1000)
     * ✅ [`MoCo v1, 2020`](https://arxiv.org/pdf/1911.05722) / [`Blog Posting`](https://davidlds.tistory.com/42) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v1.md)
     * ✅ [`MoCo v2, 2020`](https://arxiv.org/pdf/2003.04297) / [`Blog Posting`](https://davidlds.tistory.com/43) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v2.md)
     * ✅ [`Jigsaw Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
