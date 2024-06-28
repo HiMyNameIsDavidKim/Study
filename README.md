@@ -105,15 +105,15 @@
     * ✅ [`Jigsaw Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
     * [`Jigsaw Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
     * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
-* Data
+* Methods
   * ✅ [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
   * ✅ [`Augmentation review post`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
   * ✅ [`Learning Loss for Test-Time Augmentation, 2020`](https://arxiv.org/pdf/2010.11422.pdf)
-* Methods
   * ✅ [`Dropout, 2014`](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
   * ✅ [`Batch Normalization, 2015`](https://arxiv.org/pdf/1502.03167.pdf)
   * ✅ [`Layer Normalization, 2016`](https://arxiv.org/pdf/1607.06450.pdf?utm_source=sciontist.com&utm_medium=refer&utm_campaign=promote)
   * ✅ [`Adam, 2015`](https://arxiv.org/pdf/1412.6980.pdf)
+  * ✅ [`LARS, 2017`](https://arxiv.org/pdf/1708.03888)
   * [`Loss Scaling Rule, 2018`](https://arxiv.org/pdf/1706.02677.pdf)
   * [`Loss Predictor, 2019`](https://arxiv.org/pdf/1905.03677.pdf)
   * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
