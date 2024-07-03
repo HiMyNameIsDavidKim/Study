@@ -74,7 +74,7 @@
     * ✅ [`CAE`](https://arxiv.org/pdf/2202.03026) / [`Blog Posting`](https://davidlds.tistory.com/47) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/CAE.md)
     * ✅ [`I-JEPA, 2023`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/I-JEPA.md)
     * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/V-JEPA.md)
-    * [`DINO`]()
+    * [`DINO`](https://arxiv.org/pdf/2104.14294)
     * [`DINO v2`]()
     * [`iBOT`]()
     * [`data2vec`]()
