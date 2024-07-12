@@ -70,13 +70,13 @@
   * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
   * Self-Supervised Learning
     * ✅ [`MoCo v3, 2021`](https://arxiv.org/pdf/2104.02057) / [`Blog Posting`](https://davidlds.tistory.com/44) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MoCo_v3.md)
+    * ✅ [`DINO, 2021`](https://arxiv.org/pdf/2104.14294) / [`Blog Posting`](https://davidlds.tistory.com/48) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/DINO.md)
+    * ✅ [`iBOT, 2021`](https://arxiv.org/pdf/2111.07832) / [`Blog Posting`](https://davidlds.tistory.com/49) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/iBOT.md)
     * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
-    * ✅ [`CAE`](https://arxiv.org/pdf/2202.03026) / [`Blog Posting`](https://davidlds.tistory.com/47) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/CAE.md)
+    * ✅ [`CAE, 2024`](https://arxiv.org/pdf/2202.03026) / [`Blog Posting`](https://davidlds.tistory.com/47) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/CAE.md)
     * ✅ [`I-JEPA, 2023`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/I-JEPA.md)
     * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/V-JEPA.md)
-    * ✅ [`DINO`](https://arxiv.org/pdf/2104.14294) / [`Blog Posting`](https://davidlds.tistory.com/48) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/DINO.md)
     * [`DINO v2`]()
-    * ✅ [`iBOT`]()
     * [`data2vec`]()
     * [`GestaltAE`]()
 * CNN
