@@ -73,12 +73,12 @@
     * ✅ [`DINO, 2021`](https://arxiv.org/pdf/2104.14294) / [`Blog Posting`](https://davidlds.tistory.com/48) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/DINO.md)
     * ✅ [`iBOT, 2021`](https://arxiv.org/pdf/2111.07832) / [`Blog Posting`](https://davidlds.tistory.com/49) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/iBOT.md)
     * ✅ [`MAE, 2022`](https://arxiv.org/pdf/2111.06377v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/31) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MAE.md)
+    * ✅ [`data2vec, 2022`](https://arxiv.org/pdf/2202.03555) / [`Blog Posting`](https://davidlds.tistory.com/50) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/data2vec.md)
     * ✅ [`CAE, 2024`](https://arxiv.org/pdf/2202.03026) / [`Blog Posting`](https://davidlds.tistory.com/47) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/CAE.md)
     * ✅ [`I-JEPA, 2023`](https://arxiv.org/pdf/2301.08243v3) / [`Blog Posting`](https://davidlds.tistory.com/39) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/I-JEPA.md)
     * ✅ [`V-JEPA, 2024`](https://openreview.net/pdf?id=WFYbBOEOtv) / [`Blog Posting`](https://davidlds.tistory.com/40) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/V-JEPA.md)
     * [`DINO v2`]()
-    * [`data2vec`]()
-    * [`GestaltAE`]()
+    * [`data2vec v2`]()
 * CNN
   * ✅ [`VGGNet, 2014`](https://arxiv.org/pdf/1409.1556.pdf) / [`Blog Posting`](https://davidlds.tistory.com/6) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/VGGNet.md)
   * ✅ [`Inception v1, 2014`](https://arxiv.org/pdf/1409.4842v1.pdf) / [`Blog Posting`](https://davidlds.tistory.com/7) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/Inception_v1.md)
@@ -105,6 +105,8 @@
     * ✅ [`Jigsaw Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
     * [`Jigsaw Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
     * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
+    * [`SDDRL, 2023`](https://ojs.aaai.org/index.php/AAAI/article/view/25325)
+    * [`JPDVT, 2024`](https://arxiv.org/pdf/2404.07292)
 * Methods
   * ✅ [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
   * ✅ [`Augmentation review post`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
