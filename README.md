@@ -101,7 +101,7 @@
     * ✅ [`Jigsaw Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
     * ✅ [`Jigsaw CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
     * ✅ [`Jigsaw Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
-    * ✅ [`Combination, 2018`](https://arxiv.org/pdf/1807.03155)
+    * ✅ [`Combination, 2018`](https://arxiv.org/pdf/1807.03155) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Combination.md)
     * ✅ [`Brute force, 2018`](https://arxiv.org/pdf/1809.00898)
     * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
     * [`SDDRL, 2023`](https://ojs.aaai.org/index.php/AAAI/article/view/25325)
