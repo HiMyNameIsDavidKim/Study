@@ -66,8 +66,6 @@
   * ✅ [`ViT-G/14, 2022`](https://arxiv.org/pdf/2106.04560v2.pdf) / [`Blog Posting`](https://davidlds.tistory.com/16) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Scaling_ViT.md)
   * ✅ [`MLP-Mixer, 2021`](https://arxiv.org/pdf/2105.01601.pdf) / [`Blog Posting`](https://davidlds.tistory.com/26) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MLP-Mixer.md)
   * ✅ [`ViT Robustness, 2022`](https://arxiv.org/pdf/2110.07858.pdf) / [`Blog Posting`](https://davidlds.tistory.com/18) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Methods/ViT_Robustness.md)
-  * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
-  * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
   * Self-Supervised Learning
     * ✅ [`MoCo v3, 2021`](https://arxiv.org/pdf/2104.02057) / [`Blog Posting`](https://davidlds.tistory.com/44) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/MoCo_v3.md)
     * ✅ [`DINO, 2021`](https://arxiv.org/pdf/2104.14294) / [`Blog Posting`](https://davidlds.tistory.com/48) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/DINO.md)
@@ -98,15 +96,6 @@
     * ✅ [`SimCLR`](https://arxiv.org/pdf/2002.05709/1000)
     * ✅ [`MoCo v1, 2020`](https://arxiv.org/pdf/1911.05722) / [`Blog Posting`](https://davidlds.tistory.com/42) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v1.md)
     * ✅ [`MoCo v2, 2020`](https://arxiv.org/pdf/2003.04297) / [`Blog Posting`](https://davidlds.tistory.com/43) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/CNN/MoCo_v2.md)
-    * ✅ [`Jigsaw Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
-    * ✅ [`Jigsaw CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
-    * ✅ [`Jigsaw Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
-    * ✅ [`Combination, 2018`](https://arxiv.org/pdf/1807.03155) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Combination.md)
-    * ✅ [`Brute force, 2018`](https://arxiv.org/pdf/1809.00898)
-    * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
-    * [`SDDRL, 2023`](https://ojs.aaai.org/index.php/AAAI/article/view/25325)
-    * ✅ [`JPDVT, 2024`](https://arxiv.org/pdf/2404.07292)
-    * [`Jigsaw Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
 * Methods
   * ✅ [`Survey of augmentation, 2021`](https://arxiv.org/pdf/2106.07085.pdf)
   * ✅ [`Augmentation review post`](https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/)
@@ -130,6 +119,18 @@
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
   * LMM
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/LLaVA_UHD.md)
+  * Jigsaw Puzzle
+    * ✅ [`Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
+    * ✅ [`CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
+    * ✅ [`Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
+    * ✅ [`Combination, 2018`](https://arxiv.org/pdf/1807.03155) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Combination.md)
+    * ✅ [`Brute force, 2018`](https://arxiv.org/pdf/1809.00898)
+    * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
+    * [`SDDRL, 2023`](https://ojs.aaai.org/index.php/AAAI/article/view/25325)
+    * ✅ [`JPDVT, 2024`](https://arxiv.org/pdf/2404.07292)
+    * [`Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
+    * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
+    * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
   * Image-Text
     * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
     * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432.pdf)
