@@ -128,7 +128,7 @@
     * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
     * [`SDDRL, 2023`](https://ojs.aaai.org/index.php/AAAI/article/view/25325)
     * ✅ [`JPDVT, 2024`](https://arxiv.org/pdf/2404.07292)
-    * [`Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
+    * [`Jigsaw & Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
     * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
     * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
   * Image-Text
