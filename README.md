@@ -37,6 +37,8 @@
 ## 📊 Data Analyst
   - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
+  - [`SQL_zb`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQL_zb)
+
   - [`R`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
   - [`Tableau`]
@@ -126,7 +128,7 @@
     * ✅ [`Combination, 2018`](https://arxiv.org/pdf/1807.03155) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Combination.md)
     * ✅ [`Brute force, 2018`](https://arxiv.org/pdf/1809.00898) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Brute_Force.md)
     * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
-    * [`Alphazzle, 2023`](https://arxiv.org/pdf/2302.00384)
+    * ✅ [`Alphazzle, 2023`](https://arxiv.org/pdf/2302.00384) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Alphazzle.md)
     * ✅ [`SDDRL, 2023`](https://ojs.aaai.org/index.php/AAAI/article/view/25325) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/SDDRL.md)
     * ✅ [`JPDVT, 2024`](https://arxiv.org/pdf/2404.07292) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/JPDVT.md)
     * [`Jigsaw & Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
