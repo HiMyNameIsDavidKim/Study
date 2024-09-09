@@ -108,6 +108,7 @@
 ### [INSERT 문법]
 * 데이터 추가 명령어
 * 입력한 컬럼 이름 순서와 값의 순서가 일치해야함.
+* insert into 외우기
 * 사전 설정
     * use zerobase;
     * create table person(id int, name varchar(16), age int, sex char);
@@ -124,7 +125,7 @@
 
 ### [SELECT 문법]
 * 데이터 조회 명령어
-* select from 외우기
+* select * from table 외우기
 * 데이터 조회
     * select name, age, sex from person;
     * select * from person;
@@ -138,7 +139,7 @@
 
 ### [UPDATE 문법]
 * 데이터 수정 명령어
-* update set 외우기
+* update table set 수정사항 외우기
 * 데이터 수정
     * update person set age=23 where name='이효리';
     * select * from person where name='이효리';
@@ -146,7 +147,7 @@
 
 ### [DELETE 문법]
 * 데이터 삭제 명령어
-* select from 외우기
+* delete from 외우기
 * 데이터 삭제
     * delete from person where name='이상순';
     * select * from person;
@@ -158,7 +159,7 @@
     * (
         ID int not null auto_increment primary key, 
         NAME varchar(32) not null default '',
-        BRITHDAY date,
+        BIRTHDAY date,
         AGE int,
         SEX char(1),
         JOB_TITLE varchar(32),
@@ -217,12 +218,109 @@
     * select * from celeb where sex='M' and age>40 order by name desc;
     * select * from celeb where age<25 or age>30 order by age;
     * select * from celeb where (age<29 and sex='F') or (age>30 and sex='M') order by age, sex;
-    * select * from celeb where (AGENCY='YG엔터테이먼트' or AGENCY='나무엑터스') and age<30;
+    * select * from celeb where (agency='YG엔터테이먼트' or agency='나무엑터스') and age<30;
 * NOT 사용
-    * 
+    * select * from celeb where not sex='F';
+    * select * from celeb where (agency='YG엔터테이먼트' and not sex='M') or (job_title='가수' and not agency='YG엔터테이먼트');
+    * select * from celeb where (birthday>19901231 and not sex='F') or (birthday<19800101 and not agency='안테나');
+* BETWEEN 사용
+    * select * from celeb where age between 20 and 40;
+    * 범위는 이상, 이하로 해당 숫자 포함이며, and로 대체 가능
+    * select * from celeb where age>=20 and age<=40;
+    * not 같이 사용하려면 between 앞에 적은 컬럼보다 앞에 not
+    * select * from celeb where (not birthday between 19800101 and 19951231 and sex='F') or (agency='YG엔터테이먼트' and not age between 20 and 45);
+* IN 사용
+    * select * from celeb where age in (28, 48);
+    * or로 대체 가능
+    * select * from celeb where age=28 or age=48;
+    * select * from celeb where not agency in ('나무액터스', '안테나', '울림엔터테이먼트') and (sex='F' or age>=45);
+* LIKE 사용
+    * select * from celeb where agency like 'YG엔터테이먼트';
+    * =로 대체 가능
+    * select * from celeb where agency='YG엔터테이먼트';
+    * 퍼센트 (%)
+    * 원하는 부분이 일치하는 데이터
+    * select * from celeb where agency like 'YG%';
+    * select * from celeb where agency like '%엔터테이먼트';
+    * select * from celeb where job_title like '%가수%';
+    * 언더바 (_)
+    * 두번째 글자가 G 인 데이터
+    * select * from celeb where agency like '_G%';
+    * 가 로 시작하고 최소 2글자 이상인 데이터
+    * select * from celeb where job_title like '가_%';
+    * 영 으로 시작하고 모델로 끝나는 데이터
+    * select * from celeb where job_title like '영%모델';
+    * 영화배우, 텔런트 병행 데이터
+    * select * from celeb where job_title like '%영화배우%' and job_title like '%텔런트%';
+    * 직업이 하나 이상, 영화배우 혹은 텔런트가 아닌 데이터
+    * select * from celeb where job_title like '%,%' and not (job_title like '%영화배우%' or job_title like '%텔런트%');
 <br><br>
 
+### [UNION 문법]
+* 여러개 SQL문을 합쳐서 하나의 SQL문으로 만들기
+* 컬럼의 개수가 반드시 같아야 한다.
+* 컬럼의 종류가 달라도 괜찮은데 개수는 같아야 한다.
+* UNION: 중복된 값을 제거하여 리턴
+* UNION ALL: 중복된 값도 모두 리턴
+* 실습환경 구축
+    * create table test1 (no int);
+    * create table test2 (no int);
+    * insert into test1 values (1);
+    * insert into test1 values (2);
+    * insert into test1 values (3);
+    * insert into test2 values (5);
+    * insert into test2 values (6);
+    * insert into test2 values (3);
+* UNION 사용
+    * select * from test1 union all select * from test2;
+    * select * from test1 union select * from test2;
+    * select * from celeb where sex='F' union all select * from celeb where agency ='YG엔터테이먼트';
+    * select * from celeb where sex='F' union select * from celeb where agency ='YG엔터테이먼트';
+<br><br>
 
+### [JOIN 문법]
+* 두개 이상의 테이블을 결합하는 것
+* table1 join table2 on 조건 외우기
+* INNER JOIN: 교집합
+* LEFT JOIN: 왼쪽 + 교집합
+* RIGHT JOIN: 교집합 + 오른쪽
+* FULL OUTER JOIN: 합집합
+* SELF JOIN: 결과는 이너 조인이랑 동일
+* LEFT와 RIGHT 특징
+    * 교집합이 아닌 데이터는 NULL로 채워서 나옴
+    * 레프트는 왼쪽이 먼저 표시, 교집합이 이어서 표시
+    * 라이트는 교집합이 먼저 표시, 오른쪽이 이어서 표시
+* FULL OUTER JOIN 특징
+    * mysql에서는 사용 불가
+    * 순서는 왼쪽 먼저 표시, 교집합 이어서 표시, 오른쪽 이어서 표시
+* 실습환경 구축
+    * create table snl_show (ID int not null auto_increment primary key, SEASON int not null, EPISODE int not null, BROADCAST_DATE date, HOST varchar(32) not null);
+    * desc snl_show;
+    * INSERT INTO snl_show VALUES (1, 8, 7, '2020-09-05', '강동원');
+    INSERT INTO snl_show VALUES (2, 8, 8, '2020-09-12', '유재석');
+    INSERT INTO snl_show VALUES (3, 8, 9, '2020-09-19', '차승원') ;
+    INSERT INTO snl_show VALUES (4, 8, 10, '2020-09-26', '이수현');
+    INSERT INTO snl_show VALUES (5, 9, 1, '2021-09-04', '이병헌') ;
+    INSERT INTO snL_show VALUES (6, 9, 2, '2021-09-11', '하지원') ;
+    INSERT INTO snl_show VALUES (7, 9, 3, '2021-09-18', '제시');
+    INSERT INTO snl_show VALUES (8, 9, 4, '2021-09-25', '조정석');
+    INSERT INTO snl_show VALUES (9, 9, 5, '2021-10-02', '조여정') ;
+    INSERT INTO snl_show VALUES (10, 9, 6, '2021-10-09', '옥주현');
+    * select * from snl_show;
+* JOIN 사용
+    * select celeb.id, celeb.name, snl_show.id, snl_show.host from celeb inner join snl_show on celeb.name=snl_show.host;
+    * select celeb.id, celeb.name, snl_show.id, snl_show.host from celeb left join snl_show on celeb.name=snl_show.host;
+    * select celeb.id, celeb.name, snl_show.id, snl_show.host from celeb right join snl_show on celeb.name=snl_show.host;
+    * select celeb.id, celeb.name, snl_show.id, snl_show.host from celeb left join snl_show on celeb.name=snl_show.host union select celeb.id, celeb.name, snl_show.id, snl_show.host from celeb right join snl_show on celeb.name=snl_show.host;
+* SELF JOIN 사용
+    * 쿼리에서는 생략 가능. 알아서 돌아간다.
+    * from 뒤에 테이블을 2개 다 적어야 한다.
+    * select celeb.id, celeb.name, snl_show.id, snl_show.host from celeb, snl_show where celeb.name=snl_show.host;
+    * select celeb.name, celeb.job_title from celeb, snl_show where celeb.name=snl_show.host and celeb.agency='안테나';
+    * select celeb.name, celeb.age, celeb.job_title, snl_show.season, snl_show.episode from celeb, snl_show where celeb.name=snl_show.host and ((not celeb.job_title like '%영화배우%' and celeb.agency='YG엔터테이먼트') or (celeb.age>=40 and agency!='YG엔터테이먼트'));
+    * select snl_show.id, snl_show.season, snl_show.episode, celeb.name, celeb.job_title from snl_show, celeb where snl_show.host=celeb.name;
+    * select snl_show.host from snl_show, celeb where snl_show.host=celeb.name and (snl_show.episode in (7, 9, 10) or celeb.agency like 'YG______') and broadcast_date>='20200915';
+<br><br>
 
 
 
