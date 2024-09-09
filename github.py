@@ -1,4 +1,4 @@
-# [기본 명령어]
+# [최초 등록]
 # git init
 # git add .
 # git commit -m "first commit"
@@ -14,6 +14,15 @@
 # git commit -m “10/5 17:50 study update”
 # git push origin main
 
+# [깃허브와 로컬 연결]
+# 깃허브에 리포지토리 생성
+# 로컬에 폴더 생성할 곳에서 터미널
+# git clone (리포지토리의 https 키)
+# cd (리포지토리 이름)
+# (파일 수정)
+# git add .
+# git commit -m "first commit"
+# git push -u origin main
 
 # [커밋 안될 때]
 # add 한거 한번 취소한 뒤 다시 커밋

@@ -37,7 +37,7 @@
 ## 📊 Data Analyst
   - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
-  - [`SQL_zb`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQL_zb)
+  - [`SQL_zb`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
   - [`R`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 

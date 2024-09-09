@@ -1,7 +1,9 @@
 # SQL (제로베이스 강의)
 <br><br>
 
-## `[Database]`
+## `[MySQL 기초 및 분법]`
+
+### [Database 정의]
 * 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합체.
 * DBMS: DB를 관리해주는 서비스
 * RDB: 관계형 DB, 저장된 데이터 사이에 관계가 있다.
@@ -322,9 +324,138 @@
     * select snl_show.host from snl_show, celeb where snl_show.host=celeb.name and (snl_show.episode in (7, 9, 10) or celeb.agency like 'YG______') and broadcast_date>='20200915';
 <br><br>
 
+### [CONCAT 문법]
+* 여러 문자열을 하나로 합치거나 연결
+* CONCAT 사용
+    * select concat('concat', ' ', 'test')
+    * select concat('이름:', name) from celeb;
+<br><br>
+
+### [ALIAS 문법]
+* 컬럼이나 테이블 이름에 별칭 생성
+* as라고 사용하면 되는데 생략도 가능
+* ALIAS 사용
+    * select name as '이름' from celeb;
+    * select name as '이름', agency as '소속사' from celeb;
+    * select concat(name, ': ', job_title) as profile from celeb;
+    * select s.season, s.episode, c.name, c.job_title from celeb as c, snl_show as s where c.name=s.host;
+    * select concat(s.season, '-', s.episode, '(', s.broadcast_date, ')') as '방송정보', concat (c.name, '(', c.job_title, ')') as '출연자정보' from celeb as c, snl_show as s where c.name=s.host;
+    * select concat(s.season, '-', s.episode, '(', s.broadcast_date, ')') as '방송정보', concat (c.name, '(', c.job_title, ')') as '출연자정보' from celeb c, snl_show s where c.name=s.host;
+<br><br>
+
+### [DISTINCT 문법]
+* 검색한 결과의 중복 제거
+* select 바로 뒤에 넣기
+* DISTINCT 사용
+    * select distinct agency from celeb;
+    * select sex, job_title from celeb where job_title like '%가수%';
+    * select distinct sex, job_title from celeb where job_title like '%가수%';
+<br><br>
+
+### [LIMIT 문법]
+* 검색결과를 정렬된 순으로 주어진 숫자만큼의 행만 조회
+* 가장 마지막에 적어서 사용
+* LIMIT 사용
+    * select * from celeb limit 3;
+    * select * from celeb order by age limit 4;
+<br><br>
 
 
 
+## `[AWS RDS]`
+
+### [AWS RDS 정의]
+* Amazon Web Service, Relational Database Service
+* 클라우드 상에 데이터베이스를 구축
+<br><br>
+
+### [AWS RDS 생성]
+* 회원가입
+    * AWS 들어가서 회원가입
+    * 개인으로 선택
+    * 리전은 대한민국 선택
+    * 서포트 플랜 선택 (무료 버전)
+* MySQL RDS 생성
+    * AWS 관리 콘솔 -> 왼쪽 상단 서비스 선택
+    * 데이터베이스 - RDS 클릭
+    * 데이터베이스 생성 누르기
+    * 표준 생성 선택
+    * MySQL 선택
+    * 템플릿은 프리티어로 선택
+    * DB 인스턴스 식별자는 그대로 사용
+    * 마스터 사용자 이름 입력 (예시, root)
+    * 마스터 암호 입력 (예시, root)
+    * 프리티어로 사용 가능한 클래스 선택
+    * 버스터블 클래스(t 클래스 포함) 선택
+    * 스토리지 SSD로 선택
+    * 스토리지 자동 조정은 반드시 비활성화
+    * 나머지는 기본으로 선택
+    * 연결 설정은 모두 기본값, 퍼블릭 액세스는 예 선택
+    * 퍼블릭 액세스 가능은 외부에서 연결 가능하도록 하는 것
+    * 보안 그룹, 포트 모두 기본
+    * 데이터베이스 인증은 암호 인증 (test 위한 것. 주의.)
+    * 추가구성 모두 기본값, 백업은 자동 백업 비활성화 선택
+    * 모니터링 비활성화
+    * 유지관리 모두 기본값, 삭제 방지는 활성화
+    * 데이터베이스 생성
+    * 상태가 사용 가능이 되면 생성 완료
+* AWS RDS 외부 접속
+    * AWS 관리 콘솔 -> 왼쪽 상단 서비스 선택
+    * 데이터베이스 - RDS 클릭
+    * Amazon RDS의 데이터베이스 클릭
+    * 생성된 데이터베이스 클릭
+    * 연결 및 보안
+        * VPC 보안 그룹 클릭
+        * 보안 그룹 ID 클릭
+        * 인바운드 규칙 편집
+        * 규칙 추가
+        * MySQL/Aurora 선택, AnywhereIPv4 선택
+        * 규칙 저장 클릭
+        * 외부 접근 권한 발급 완료
+<br><br>
+
+### [AWS RDS 사용]
+* AWS RDS 접속
+    * AWS 관리 콘솔 -> 왼쪽 상단 서비스 선택
+    * 데이터베이스 - RDS 클릭
+    * Amazon RDS의 데이터베이스 클릭
+    * 생성된 데이터베이스 클릭
+    * 연결 및 보안
+    * 엔드포인트, 포트 복사 해놓기
+    * (터미널)
+    * mysql -h <엔드포인트> -P <포트> -u <마스터 사용자 이름> -p
+    * 마스터 암호 입력
+    * show databases;
+    * use mysql
+    * select host, user from user;
+* AWS RDS 중지
+    * AWS 관리 콘솔 -> 왼쪽 상단 서비스 선택
+    * 데이터베이스 - RDS 클릭
+    * Amazon RDS의 데이터베이스 클릭
+    * 중지하려는 데이터베이스 목록 체크
+    * 작업 버튼 -> 중지 클릭
+    * 스냅샷 아니오, 중지합니다 클릭
+    * 시간이 많이 걸림
+    * 7일 중지되고 자동으로 다시 시작되니 주의
+* AWS RDS 시작
+    * AWS 관리 콘솔 -> 왼쪽 상단 서비스 선택
+    * 데이터베이스 - RDS 클릭
+    * Amazon RDS의 데이터베이스 클릭
+    * 시작하려는 데이터베이스 클릭
+    * 오른쪽 상단에 작업 -> 시작 클릭
+    * 시간이 많이 걸림
+<br><br>
+
+
+
+## `[SQL File]`
+
+### [SQL File 정의]
+* 
+* 실습 환경
+    * 깃허브-로컬 레포지토리 하나 파기
+    * vscode로 해당 폴더 실행
+<br><br>
 
 
 
