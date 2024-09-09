@@ -35,11 +35,11 @@
 <br>
 
 ## 📊 Data Analyst
-  - [`SQL`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
+  - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
 
-  - [`SQL_zb`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
+  - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
-  - [`R`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
+  - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
   - [`Tableau`]
   
