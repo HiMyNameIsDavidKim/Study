@@ -125,7 +125,7 @@
     * ✅ [`Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
     * ✅ [`CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
     * ✅ [`Knowledge Transfer, 2018`](https://arxiv.org/pdf/1805.00385.pdf)
-    * ✅ [`Combination, 2018`](https://arxiv.org/pdf/1807.03155) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Combination.md)
+    * ✅ [`Greedy, 2018`](https://arxiv.org/pdf/1807.03155) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Greedy.md)
     * ✅ [`Brute force, 2018`](https://arxiv.org/pdf/1809.00898) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Brute_Force.md)
     * ✅ [`Deepzzle, 2020`](https://arxiv.org/pdf/2005.12548.pdf)
     * ✅ [`Alphazzle, 2023`](https://arxiv.org/pdf/2302.00384) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Jigsaw/Alphazzle.md)
