@@ -17,7 +17,7 @@
 
   - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
 
-  - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/Example)
+  - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example)
 <br>
 
 ## 🎯 AI
