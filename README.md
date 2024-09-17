@@ -15,7 +15,9 @@
 ## 🐍 Python
   - [`Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
 
-  - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS(NaverCloud))
+  - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS_NaverCloud)
+
+  - [`Analysis`]()
 
   - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example)
 <br>
@@ -35,7 +37,7 @@
 <br>
 
 ## 📊 Data Analyst
-  - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL)
+  - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
 
   - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
