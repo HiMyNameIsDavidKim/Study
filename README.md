@@ -7,6 +7,8 @@
 
   - [`Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
 
+  - [`Algebra`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
+
   - [`Statistics`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
   
   - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
@@ -17,7 +19,7 @@
 
   - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS_NaverCloud)
 
-  - [`Analysis`]()
+  - [`Analysis`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase)
 
   - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example)
 <br>
