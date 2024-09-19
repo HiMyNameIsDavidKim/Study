@@ -7,6 +7,14 @@
 * 데이터 타입 확인
 * NULL 값 확인
 * outlier 확인
+    * 특히 음수값 있는지 확인
+    * 도메인 지식 기반으로 처리
+<br><br>
+
+### [가설 수립 후 인사이트 추출]
+* 전체 feature 확인
+* 개인적으로 생각하는 계산된 feature 추출
+* 타겟에 대한 가설 수립 후 증명
 <br><br>
 
 ### [Rule-base 기반 예측]
@@ -45,6 +53,9 @@
     * 데이터의 패턴, 특성, 이상치(Outlier), 숨겨진 관계 등을 확인
 * Data mart
     * feature 데이터를 모아둔 데이터베이스
+* segmentation
+    * 특정한 특성을 가진 카테고리를 그루핑하여 분석
+    * RFM 분석으로 segmentation할 수 있다.
 <br><br>
 
 
@@ -64,6 +75,8 @@
     * df.corr()
     * -1~1 범위
     * 절대값 1에 가까울 수록 상관관계가 높은 것을 의미
+* 고유값 세기
+    * df['col'].nunique()
 <br><br>
 
 ### [파이썬 씨본]
@@ -74,11 +87,19 @@
 * 스캐터 플랏
     * sns.scatterplot(x='Temp', y='Sales', data=df)
     * plt.gcf().set_size_inches(7, 7)
+* 피벗 플랏
+    * 년도별 카테고리별 점유율 변화에 유용
+    * ax = df.plot(kind='barh', stacked=True, title="years amt", rot=0)
+    * for p in ax.patches:
+    *   left, bottom, width, height = p.get_bbox().bounds
+    *   ax.annotate("%.1f"%(width*100), xy=(left+width/2, bottom+height/2), ha='center', va='center', color='black');
 <br><br>
 
 ### [파이썬 사이킷런]
 * 중요 변수 파악
     * 사이킷런 객체 model.feature_importances_ 확인
+* 노멀라이즈
+    * rfm['R'] = minmax_scale(rfm['R'], axis=0, copy=True)
 <br><br>
 
 ### [파이썬 기본 함수]
@@ -93,8 +114,15 @@
 ### [데이터 변환]
 * 화씨 섭씨 변환
     * df['Temp']= (df['Temp']-32) / 1.8
-* 날짜 타입으로 변환
-    * df['Date'] = pd.to_datetime(df['Date'])
+* 날짜 변환
+    * 스트링에서 데이트 타입으로 변환
+        * df['Date'] = pd.to_datetime(df['Date'])
+    * 날짜 + 시간 합쳐서 데이트 타입으로 변환
+        * df_core_store['Date_merge'] = df['date'].astype(str) + ' ' + df['time'].astype(str)
+        * df_core_store['Date_merge'] = pd.to_datetime(df_core_store['Date_merge'])
+    * 년 월 분할
+        * df_core_store['year'] = df_core_store['Date_merge'].dt.year
+        * df_core_store['month'] = df_core_store['Date_merge'].dt.month
 <br><br>
 
 
@@ -123,4 +151,14 @@
 
 ### [AARRR 분석]
 * 
+<br><br>
+
+### [RFM 분석]
+* 고객을 점수화 해서 서비스 등급 구간(grade) 부여
+* R: recency, 최근성, 얼마나 최근에 구매
+* F: frequency, 빈도, 얼마나 자주 구매
+* M: monetary, 금액, 구매 금액
+* 그루핑을 통해 서비스 이용 수준 측정 가능
+* 고객마다 RFM이 어떻게 변하는지 관찰
+* R은 낮을수록 좋기 때문에 노멀라이즈 시 (1-R) 해주기
 <br><br>

@@ -43,13 +43,13 @@
 
   - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
+  - [`Analystical Skills`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Analystical%20Skills)
+
   - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
   - [`Tableau`]
   
   - [`Hadoop`]
-
-  - [`Analystical Skills`]
 <br>
 
 ## 💼 Project
