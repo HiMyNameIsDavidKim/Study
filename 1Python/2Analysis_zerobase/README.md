@@ -14,6 +14,8 @@
     * 0부터 시작해서 스텝 사이즈가 1이 디폴트
 * null 갯수 확인
     * df.isnull().sum()
+* 모든 null 채우기
+    * df = df.fillna(method='ffill').fillna(method='bfill')
 * 전체 컬럼 데이터 개수와 타입 체크
     * df.info()
 * numerical 변수 통계값 확인
@@ -49,7 +51,7 @@
     * df.select_dtypes(include=object).columns
 <br><br>
 
-### [필터링 & 소팅]
+### [filtering & sorting]
 * 값을 기준으로 필터링
     * col 컬럼의 값이 3인 데이터 추출 후 head 출력
         * df[df['col']==3].head()
@@ -96,6 +98,73 @@
     * df.loc[df.item_name =='Izze','item_name'] = 'Fizzy Lizzy'
     * df.loc[df.choice_description.isnull(),'choice_description'] ='NoData'
 <br><br>
+
+### [grouping]
+* 빈도수 출력
+    * value_counts 함수 사용
+    * size 함수도 동일 기능
+    * df_ans = df.host_name.value_counts().sort_index()
+    * null을 세지 않으니 주의
+    * null도 세고 싶을 경우 dropna=True
+* 컬럼 2개를 기준으로 빈도수 출력
+    * groupby 사용
+    * df_ans = df.groupby(['col1','col2'], as_index=False).size()
+* 그룹별 특정 값의 기초통계 값
+    * agg 함수 사용
+    * df_ans = df.groupby('col1')['col2'].agg(['mean','var','max','min'])
+* 피벗 테이블
+    * unstack 함수 사용
+    * df_ans = df.groupby(['col1', 'col2']).price.mean().unstack()
+<br><br>
+
+### [Apply와 Map]
+* 매핑이 간단하면 map-람다 사용
+* 조건이 복잡해지면 함수 선언하고 apply 사용
+* 딕셔너리로 매핑
+    * map 함수 사용
+    * 람다함수 사용
+    * df['mapped_col'] = df.col1.map(lambda x: dic[x])
+    * apply 함수 사용
+    * 함수 하나 선언해서 사용하는 것
+    * df['mapped_col']  =df.col1.apply(changeCategory)
+* 구간 컬럼 정의 후 카운트
+    * 매핑 후 카운트
+    * df['ages']  = df.col1.map(lambda x: x//10 *10)
+    * df_ans = df['ages'].value_counts().sort_index()
+<br><br>
+
+### [Time series]
+* 시계열 데이터 다루기
+* 타입 조회 시 datetime64로 표시
+* 스트링에서 datetime 타입으로 변경
+    * to_datetime 함수 사용
+    * df.col1 = pd.to_datetime(df.col1)
+* 년도의 유니크값 모두 출력
+    * dt.year 함수 사용
+    * unique 함수도 사용
+    * df_ans = df.col1.dt.year.unique()
+* 요일별로 매핑
+    * 월요일:0 ~ 일요일:6
+    * dt.weekday 함수 사용
+    * df['weekday'] = df.col1.dt.weekday
+* 년도-월 기준으로 평균값
+    * 1995-11 처럼 형태 변경
+    * dt.to_period('M') 함수 사용
+    * df_ans = df.groupby(df.col1.dt.to_period('M')).mean(numeric_only=True)
+* 일주일 간격 이동평균
+    * rolling 함수 사용
+    * 데이터 개수 적어서 간격 설정 가능
+    * df_ans= df[['RPT','VAL']].rolling(7).mean()
+* 영어 요일 나타내기
+    * dt.day_name 함수 사용
+    * df['weekday'] = df.col1.dt.day_name()
+<br><br>
+
+### [Pivot, Merge, Concat, Stats]
+* Pivot
+    * 
+<br><br>
+
 
 
 
