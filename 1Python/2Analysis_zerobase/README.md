@@ -160,10 +160,61 @@
     * df['weekday'] = df.col1.dt.day_name()
 <br><br>
 
-### [Pivot, Merge, Concat, Stats]
-* Pivot
-    * 
+### [Pivot]
+* pivot
+    * pivot 함수 사용
+    * index, columns, values 3가지 파라미터
+    * 인덱스가 세로축, 컬럼이 가로축, values가 값
+    * col1에 따른 col2별 col3의 값을 구하라.
+    * df_ans = target.pivot(index='col1',columns='col2',values='col3')
+    * col3의 평균
+    * df_ans = target.pivot(index='col1',columns='col2',values='col3',aggfunc='mean')
+* values가 없을 때 pivot
+    * pivot_table 함수 사용
+    * col2의 갯수
+    * df_ans = target.pivot_table(index='col1',columns='col2',aggfunc='size').fillna(0)
 <br><br>
+
+### [Concat, Merge]
+* 위아래 좌우로 합칠 때는 concat
+* join의 개념을 사용할 때는 merge
+* concat
+    * concat 함수 사용
+    * axis, 0은 행 기준인 위아래, 1은 열 기준인 좌우
+    * axis 기본값은 0
+    * df_ans = pd.concat([df1,df2], axis=0)
+* 둘 다 있는 컬럼만 concat
+    * join='inner' 사용
+    * df_ans = pd.concat([df3,df4], join='inner')
+* 모든 컬럼 concat
+    * join='outer' 사용
+    * 없는 값은 null로 채워짐
+    * df_ans = pd.concat([df3,df4], join='outer').fillna(0)
+* 한 컬럼을 키로 사용해 merge
+    * merge 함수 사용
+    * on 파라미터로 키 설정
+    * df_ans = pd.merge(df5,df6,on='col1',how='inner')
+    * df_ans = pd.merge(df5,df6,on='col1',how='outer').fillna(0)
+<br><br>
+
+### [Statistics 기초 통계값]
+* 컬럼의 갯수 세기
+    * value_counts 함수 사용
+    * df['names'].value_counts()
+* 유니크값 갯수 세기
+    * df['names'].nunique()
+* 가장 많이 등장하는 값
+    * names[names.Count == names.Count.max()]
+* 중앙값
+    * names[names.Count == names.Count.median()]
+* 표준편차
+    * names.Count.std()
+* 기초 통계값
+    * names.describe()
+<br><br>
+
+
+
 
 
 
