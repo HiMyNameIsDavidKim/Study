@@ -213,8 +213,100 @@
     * names.describe()
 <br><br>
 
+### [Series and DataFrame]
+* 데이터 프레임 만들기
+    * pd.DataFrame({
+        'col1', [1, 2, 3, 4, 5],
+        'col2', [1, 2, 3, 4, 5],
+        'col3', [1, 2, 3, 4, 5],
+    })
+* 컬럼 순서 변경
+    * 순서 바꿔서 컬럼 넣고 다시 선언
+    * df = df[['name', 'type', 'hp', 'evolution','pokedex']]
+* 새 컬럼 생성
+    * df['col4'] = [1, 2, 3, 4, 5]
+* hp가 40 이상인 데이터
+    * df[df['hp'] >= 40]
+* 원하는 컬럼만 출력
+    * df[['name', 'type']]
+* df 복제
+    * df.copy() 사용
+    * 같다고 선언하면 연결되서 에러 날 수 있음
+* 값 수정
+    * loc 함수 사용
+    * df.loc[[0],'col1'] = np.nan
+<br><br>
+
+### [Deleting]
+* 컬럼명 할당
+    * df.columns 사용
+    * df.columns = ['sepal_length','sepal_width', 'petal_length', 'petal_width', 'class']
+* 컬럼 하나 지우기
+    * 원본은 보존해야 하므로 새로 선언
+    * df_ans = df[['sepal_length',	'sepal_width',	'petal_length',	'petal_width']]
+* null 있는 행, 열 삭제
+    * df_ans = df.dropna(how='any')
+<br><br>
 
 
+
+## `[Visualization]`
+
+### [seaborn]
+* 히스토그램
+    * ttbill = sns.histplot(df.total_bill)
+    * ttbill.set(xlabel = 'Value', ylabel = 'Frequency', title = "Total Bill")
+* 조인트 플랏
+    * (히스토그램 + 스캐터 플랏) 한번에 표시
+    * sns.jointplot(x ="total_bill", y ="tip", data = df)
+* 페어 플랏
+    * 스캐터 플랏 한번에 모두 표시
+    * 연속형 변수만 가능
+    * sns.pairplot(df)
+* 스트립 플랏
+    * 이산형 변수를 x축에 두고 y축에 연속형 변수에 뿌려보는 그래프
+    * 여러 집단의 연속형 변수 비교
+    * sns.stripplot(x = "day", y = "total_bill", data = df)
+    * 카테고리 2개 활용 가능
+    * 색을 다르게 표시
+    * sns.stripplot(x = "tip", y = "day", hue = "sex", data = df)
+* 박스 플랏
+    * 스트립 플랏이랑 동일한 역할 그래프
+    * 중앙값, IQR 같은 기술통계량 박스로 표시
+    * 박스 밖에 찍힌 것들은 outlier
+    * sns.boxplot(x = "day", y = "total_bill", hue = "time", data = df);
+* 두개 그래프 나란히 표시
+    * FacetGrid 클래스 사용
+    * 두개 집단 연속형 변수 비교
+    * 히스토그램
+        * g = sns.FacetGrid(df, col = "time")
+        * g.map(plt.hist, "tip")
+    * 스캐터 플랏
+        * g = sns.FacetGrid(df, col = "sex", hue = "smoker")
+        * g.map(plt.scatter, "total_bill", "tip", alpha =.7)
+* 두개 그래프 한 평면에 표시
+    * lmplot 함수 사용
+    * 스캐터 플랏
+        * 회귀선 끄려면 fit_reg=False
+        * lm = sns.lmplot(x = 'Age', y = 'Fare', data = df, hue = 'Sex', fit_reg=False)
+<br><br>
+
+### [plt]
+* 파이 차트
+    * males = (df['Sex'] == 'male').sum()
+    * females = (df['Sex'] == 'female').sum()
+    * proportions = [males, females]
+    * plt.pie(
+    * proportions,
+    * labels = ['Males', 'Females'],
+    * shadow = False,
+    * colors = ['blue','red'],
+    * explode = (0.15 , 0),
+    * startangle = 90,
+    * autopct = '%1.1f%%'
+    * )
+    * plt.show()
+<br><br>
 
 
 
