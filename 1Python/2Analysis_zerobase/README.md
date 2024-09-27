@@ -27,6 +27,8 @@
         * df['col'].nunique()
     * 이름 출력
         * df['col'].unique()
+* inf 데이터 처리
+    * df['col'].replace([np.inf, -np.inf], np.nan)
 <br><br>
 
 ### [특정 행과 열의 값]
@@ -45,6 +47,9 @@
 <br><br>
 
 ### [데이터 유형별 출력]
+* 리스트로 나누기
+    * categorical_list = [i for i in df.columns if df[i].dtypes == 'O']
+    * numeric_list = [i for i in df.columns if df[i].dtypes != 'O']
 * numerical 변수
     * df.select_dtypes(exclude=object).columns
 * categorical 변수
@@ -250,7 +255,7 @@
 
 
 
-## `[Visualization]`
+## `[시각화]`
 
 ### [seaborn]
 * 히스토그램
@@ -259,10 +264,19 @@
 * 조인트 플랏
     * (히스토그램 + 스캐터 플랏) 한번에 표시
     * sns.jointplot(x ="total_bill", y ="tip", data = df)
+* 디스트리뷰션 플랏
+    * (히스토그램 + KDE 플랏) 한번에 표시
+    * KDE는 밀도 추정치를 시각화
+    * 연속형 데이터 맨 처음 볼 때 자주 사용
+    * 기초 통계량 같이 보도록 describe와 함께 사용
+    * sns.displot(df['col'])
 * 페어 플랏
     * 스캐터 플랏 한번에 모두 표시
     * 연속형 변수만 가능
     * sns.pairplot(df)
+* 히트맵
+    * 히트맵 표시
+    * sns.heatmap(df_pair.corr(), vmin = -1, vmax = +1, annot = True, cmap = 'coolwarm')
 * 스트립 플랏
     * 이산형 변수를 x축에 두고 y축에 연속형 변수에 뿌려보는 그래프
     * 여러 집단의 연속형 변수 비교
@@ -308,6 +322,94 @@
     * plt.show()
 <br><br>
 
+
+
+## `[모델링]`
+
+### [sklearn]
+* 사이킷런
+* X, Y 분할
+    * X=df_merge.drop(['y'], axis=1)
+    * Y=df_merge['y']
+* 데이터셋 분할
+    * x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+* 모델 난수 고정
+    * rfc = RandomForestClassifier(random_state=42)
+* 학습
+    * rfc.fit(x_train, y_train)
+* 예측
+    * y_pred_train = rfc.predict(x_train)
+    * y_pred_test = rfc.predict(x_test)
+* 성능 확인
+    * 이진분류 모델
+        * print(classification_report(y_train, y_pred_train))
+        * print(classification_report(y_test, y_pred_test))
+    * light gbm 모델
+        * print(classification_report(y_train, y_pred_train))
+        * print(classification_report(y_test, y_pred_test))
+    * 회귀 모델
+        * mse_train = mean_absolute_error(y_train, y_pred_train)
+        * print('mse_train(mse): ', mse_train)
+        * rmse_train = (np.sqrt(mse_train))
+        * print('rmse_train(rmse): ', rmse_train)
+        * r2_train = r2_score(y_train, y_pred_train)
+        * print('rmse_train(r2): ', r2_train)
+        * print('')
+        * mse_test = mean_absolute_error(y_test, y_pred_test)
+        * print('mse_test(mse): ', mse_test)
+        * rmse_test = (np.sqrt(mse_test))
+        * print('rmse_test(rmse): ', rmse_test)
+        * r2_test = r2_score(y_test, y_pred_test)
+        * print('rmse_test(r2): ', r2_test)
+    * 선형 회귀 모델
+        * mse_train = mean_absolute_error(y_train, y_pred_train)
+        * print('mse_train(mse): ', mse_train)
+        * rmse_train = (np.sqrt(mse_train))
+        * print('rmse_train(rmse): ', rmse_train)
+        * r2_train = r2_score(y_train, y_pred_train)
+        * print('rmse_train(r2): ', r2_train)
+        * print('')
+        * mse_test = mean_absolute_error(y_test, y_pred_test)
+        * print('mse_test(mse): ', mse_test)
+        * rmse_test = (np.sqrt(mse_test))
+        * print('rmse_test(rmse): ', rmse_test)
+        * r2_test = r2_score(y_test, y_pred_test)
+        * print('rmse_test(r2): ', r2_test)
+* 하이퍼 파라미터 자동 튜닝
+    * grid_cv = GridSearchCV(rf_clf, param_grid = params, cv = 3, n_jobs = -1, scoring='recall')
+    * grid_cv.fit(x_train, y_train)
+    * print(f'The best params: {grid_cv.best_params_}')
+    * print(f'The best score: {grid_cv.best_score_:.4f}')
+* 중요 변수 파악
+    * ftr_importances_values = rfc.feature_importances_
+    * ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
+    * ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
+    * sns.barplot(x=ftr_top20, y=ftr_top20.index)
+    * plt.show()
+* 피클 모델 save read
+    * saved_model = pickle.dumps(model)
+    * model_from_pickle = pickle.loads(saved_model)
+* PCA 차원축소
+    * pca = PCA(n_components = 2)
+    * principalComponents = pca.fit_transform(x)
+    * principalDf = pd.DataFrame(data = principalComponents, columns = ['principal component 1', 'principal component 2'])
+* AUROC score 출력
+    * y_pred_train_proba = rfc.predict_proba(x_train)[:, 1]
+    * y_pred_test_proba = rfc.predict_proba(x_test)[:, 1]
+    * roc_score_train = roc_auc_score(y_train, y_pred_train_proba)
+    * roc_score_test = roc_auc_score(y_test, y_pred_test_proba)
+    * print("roc_score_train :", roc_score_train)
+    * print("roc_score_test :", roc_score_test)
+* ROC 커브 그리기
+    * roc_curve_plot(y_test, y_pred_test_proba)
+* 표준화 
+    * x = StandardScaler().fit_transform(x)
+* 정규화
+    * rfm['Recency'] = minmax_scale(rfm['Recency'], axis=0, copy=True)
+* 레이블 인코더 사용
+    * 카테고리컬 데이터에 주로 사용
+    * LabelEncoder 클래스 사용
+<br><br>
 
 
 
