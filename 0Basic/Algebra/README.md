@@ -180,7 +180,31 @@
 <br><br>
 
 ### [선형 방정식]
-* 
+* 정의
+    * linear equation
+    * a_1 x_1 + a_2 x_2 + ... + a_n x_n = b
+    * x에 대한 차수가 1차로 이루어진 방정식.
+    * x에 대한 차수가 2차이거나 음수면 비선형 방정식이다.
+* 선형 방정식 계
+    * a system of linear equation, linear system
+    * 2개 이상의 선형 방정식이 있을 때 집합으로 부를 수 있다.
+    * 같은 변수들을 포함한 선형 방정식이 1개 또는 그 이상의 집합을 뜻한다.
+    * 같은 변수가 반드시 1개 이상 있어야 한다.
+* 해의 집합
+    * solution set
+    * 선형 시스템에서 모든 가능한 해의 집합
+    * 2개의 직선은 1개 점의 해를 갖는다.
+    * 2개의 면은 직선으로 된 해의 집합을 갖는다.
+    * 같은 솔루션 셋을 가지면 상등 equivalent 라고 한다.
+* 해 solution
+    * no solution, inconsistent, 평행한 직선 방정식
+    * exactly one solution, consistent, 해가 1개 이상 있는 경우
+    * infinitely many solution, 직선이 겹치는 경우
+    * 선형 방정식 계는 위 3가지 경우만 있다.
+    * 2개의 해가 존재하는 경우는 비선형이다.
+* 행렬의 표시
+    * 계수행렬 coefficient matrix, b를 제외하고 x계수인 a들로만 구성
+    * 첨가행렬 augmented matrix, b까지 포함한 구성
 <br><br>
 
 
