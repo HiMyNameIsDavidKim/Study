@@ -56,6 +56,9 @@
 * segmentation
     * 특정한 특성을 가진 카테고리를 그루핑하여 분석
     * RFM 분석으로 segmentation할 수 있다.
+* KPIs
+    * Key Performance Indicators
+    * 목표, 지표, 고과
 <br><br>
 
 
@@ -69,6 +72,12 @@
     * df.info()
     * df.isnull().sum()
     * df.describe()
+* 타입 확인
+    * df.info()
+    * 숫자로 보이는데 문자인 경우 체크
+    * 문자로 보이는데 숫자인 경우 체크
+    * 인트 플롯 체크
+    * dtype 결과가 dtype('O')이면 'Object'라는 뜻으로 문자열이다.
 * numerical 데이터 확인
     * pd.DataFrame(df.describe())에서 마이너스 있는지 특히 잘 체크한다.
 * 상관계수 뽑기
@@ -77,6 +86,9 @@
     * 절대값 1에 가까울 수록 상관관계가 높은 것을 의미
 * 고유값 세기
     * df['col'].nunique()
+* 제이슨 파일 불러오는 코드
+    * 따로 함수 선언 필요
+    * 처리할 컬럼 알고 있어야 함
 <br><br>
 
 ### [파이썬 씨본]
@@ -100,15 +112,6 @@
     * 사이킷런 객체 model.feature_importances_ 확인
 * 노멀라이즈
     * rfm['R'] = minmax_scale(rfm['R'], axis=0, copy=True)
-<br><br>
-
-### [파이썬 기본 함수]
-* 타입 확인
-    * df.info()
-    * 숫자로 보이는데 문자인 경우 체크
-    * 문자로 보이는데 숫자인 경우 체크
-    * 인트 플롯 체크
-    * dtype 결과가 dtype('O')이면 'Object'라는 뜻으로 문자열이다.
 <br><br>
 
 ### [데이터 변환]
