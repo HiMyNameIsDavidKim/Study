@@ -341,27 +341,12 @@
     * y_pred_train = rfc.predict(x_train)
     * y_pred_test = rfc.predict(x_test)
 * 성능 확인
-    * 이진분류 모델
+    * 이진분류 모델, light gbm 모델
         * print(classification_report(y_train, y_pred_train))
         * print(classification_report(y_test, y_pred_test))
-    * light gbm 모델
-        * print(classification_report(y_train, y_pred_train))
-        * print(classification_report(y_test, y_pred_test))
-    * 회귀 모델
-        * mse_train = mean_absolute_error(y_train, y_pred_train)
-        * print('mse_train(mse): ', mse_train)
-        * rmse_train = (np.sqrt(mse_train))
-        * print('rmse_train(rmse): ', rmse_train)
-        * r2_train = r2_score(y_train, y_pred_train)
-        * print('rmse_train(r2): ', r2_train)
-        * print('')
-        * mse_test = mean_absolute_error(y_test, y_pred_test)
-        * print('mse_test(mse): ', mse_test)
-        * rmse_test = (np.sqrt(mse_test))
-        * print('rmse_test(rmse): ', rmse_test)
-        * r2_test = r2_score(y_test, y_pred_test)
-        * print('rmse_test(r2): ', r2_test)
-    * 선형 회귀 모델
+        * AUROC score 평가
+        * ROC 커브 분석
+    * 회귀 모델, 선형회귀 모델
         * mse_train = mean_absolute_error(y_train, y_pred_train)
         * print('mse_train(mse): ', mse_train)
         * rmse_train = (np.sqrt(mse_train))
