@@ -47,7 +47,7 @@
 <br><br>
 
 ### [ML 기반 예측]
-* 
+* [`파이썬 분석의 모델링 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase) 참고
 * 프로세스
     * X(feature 데이터)와 Y(정답 데이터) 만들기
     * 트레이닝셋 트레인셋 분할
@@ -69,21 +69,20 @@
     * (예측값 vs 실제값) 리니어 플랏 분석
 <br><br>
 
-### [프로젝트 유형]
+### [대표 프로젝트 유형]
 * 데이터 EDA 및 인사이트 (대부분)
 * 분류, 회귀 모델
-* 그외 분석 모델
-    * segmentation
-        * 특정한 특성을 가진 카테고리를 그루핑하여 분석
-        * RFM 분석으로 segmentation할 수 있다.
-    * 이상 탐지
-        * 정의한 이상 데이터 패턴들 분석
-        * 룰베이스로 로직 만들기
-        * 모델링도 좋지만 도메인 지식으로 로직 만드는게 좋을 때가 많다.
+* 이상 탐지 모델
+    * 정의한 이상 데이터 패턴들 분석
+    * 룰베이스로 로직 만들기
+    * 모델링도 좋지만 도메인 지식으로 로직 만드는게 좋을 때가 많다.
+* segmentation
+    * 군집 모델
+    * 특정한 특성을 가진 카테고리를 그루핑하여 분석
+    * RFM 분석으로 segmentation할 수 있다.
 <br><br>
 
 ### [개념 용어]
-* 시나리오가 주어지면 4가지 작성 (문제정의, 기대효과, 해결방안, 성과측정)
 * 데이터 EDA
     * Exploratory Data Analysis, 탐색적 데이터 분석
     * 데이터를 이해하고 분석하기 위해 사용하는 초기 과정
@@ -93,6 +92,57 @@
 * KPIs
     * Key Performance Indicators
     * 목표, 지표, 고과
+* 증감률(%) vs 퍼센티지 포인트(%p)
+    * 증감률
+        * %, 이전 기간 대비 현재 기간의 값 변화
+        * (현재 - 이전)/(이전) * 100
+        * ex. 매출 성장률
+    * 퍼센티지 포인트
+        * %p, 퍼센트 자체의 증감을 나타내는 단위
+        * (현재% - 이전%)
+        * 마켓 쉐어 퍼센티지 증가
+    * 증감률은 값을 기준으로 변화가 어떤지 볼 때 사용한다.
+    * 퍼센티지 포인트는 퍼센트 자체의 변화를 표현하기 위해 사용한다.
+* 기술통계량
+    * 데이터의 전반적인 특성을 이해
+    * 분석의 방향성을 결정
+    * 중심의 경향성: 평균, 중앙값, 최빈값
+        * 평균, (장) 가장 대표, (단) outlier 영향 큼
+        * 중앙값, (장) outlier 영향 적음, (단) 모수 크면 무의미
+        * 최빈값, (장) 숫자가 아니어도 사용 가능
+    * 퍼짐의 척도: 범위, 분산, 표준편차
+        * 분산, (장) 가장 대표, (단) 제곱으로 직관성 저하
+        * 표준편차, (장) 루트로 직관성 높음
+    * 형태의 척도: skewness, kurtosis
+        * skewness, 왜도, 좌우로 치우쳐진 정도
+        * kurtosis, 첨도, 데이터가 얼마나 뾰족한지
+    * 위치의 척도: 백분위수, 4분위수
+        * 백분위수, 특정 백분율이 위치하는 값, 시그마
+        * 4분위수, 25%, 50%, 75%가 위치하는 값
+* 통계적 추론: 표본 데이터를 이용하여 모집단의 정보를 추론하는 과정
+* 중심 극한 정리
+    * 표본이 충분히 클 때 성립한다.
+    * 여러 표본의 표본평균이 이루는 분포가 정규분포에 가까워 진다.
+* 정규성 검정
+    * 특정 데이터셋이 정규분포를 따르는지 검증하는 과정
+    * 정규분포를 따라야 통계적 방법론이나 기법이 유효하게 작동한다.
+    * 귀무가설: H0, 데이터셋이 정규분포를 따른다.
+    * 대립가설: H1, 데이터셋이 정규분포를 따르지 않는다.
+    * 다양한 검정 방법으로 귀무가설의 채택 여부를 결정한다.
+    * 대부분 p-value가 0.05 이상이면 정규성을 가정한다.
+    * [`ADsP 통계적 추정, 정규성 검정 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R) 참고
+* 상관관계 분석
+    * 연속형 변수 2개 간의 선형적 관계를 분석
+    * a변수가 증가할때 b변수도 증가하는지 분석
+    * 선형관계의 부호와 크기 파악
+    * 얼마나 관계되었는지 상관계수 r로 표현한다.
+    * 피어슨 상관계수
+* 회귀 모델
+    * 독립 변수 X와 종속 변수 Y 간의 관계, 선형 방정식을 모델링
+    * 주어진 독립 변수에 대한 종속 변수의 값을 예측
+    * metric으로 MSE, RMSE 사용
+    * 선형 회귀, 다항 회귀, 릿지 회귀, 라쏘 회귀
+    * [`ADsP 회귀 분석 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R) 참고
 <br><br>
 
 ### [도메인 지식 메모]
@@ -100,6 +150,22 @@
     * MAU: monthly active users, 한달동안 앱에서 활동하는 순 유저 수
     * 월 트랜젝션 AMT: 트랜젝션으로 발생한 매출(amount) 양
     * 월 conversion rate: 고객 전환율, (매출/고객수) 비율
+* 광고 지표
+    * CTR: click through rate, (광고 클릭수)/(광고 노출수) * 100
+    * ROAS: return on ad spend, (광고로 인한 수익)/ (광고 비용)
+    * Cost for Acquisition: ROAS와 같은 지표
+* 웹,앱 지표
+    * retention: 남아있는 유저 비율, (특정 기간 이후의 사용자 수)/(처음 서비스를 이용한 사용자 수) * 100
+    * DAU: daily active users, 하루 기준 유니크 유저 수
+    * click: 몇번 클릭 했는지
+    * time spent: 시간을 얼마나 소요했는지
+* 마켓팅 지표
+    * CAC: customer aquisition cost, (특정 기간동안 총 마케팅 비용)/(동기간 동안 획득한 새 고객 수)
+    * NPS: net romoter score, (추천 응답자 비율) - (비추천 응답자 비율)
+    * CLTV: customer lifetime value, (고객 당 평균 수익) * (고객 관계 유지 평균 기간)
+* 금융 지표
+    * ROI: return on investment, (투자로 얻은 수익 - 투자비)/(투자비) * 100
+    * CAGR: compound annual growth rate, (말기 가치)/(초기 가치)^(1/기간) - 1
 <br><br>
 
 
@@ -133,7 +199,7 @@
 <br><br>
 
 ### [파이썬 씨본]
-* [파이썬 분석의 시각화 부분](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase) 참고
+* [`파이썬 분석의 시각화 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase) 참고
 * categorical 데이터 확인
     * sns.catplot 하면 몇개의 카테고리인지 체크하고 분포 체크할 수 있다.
     * 카테고리컬은 다 catplot 해보는게 좋다.
@@ -151,6 +217,12 @@
     * for p in ax.patches:
     *   left, bottom, width, height = p.get_bbox().bounds
     *   ax.annotate("%.1f"%(width*100), xy=(left+width/2, bottom+height/2), ha='center', va='center', color='black')
+* 테이블 그라데이션 표시
+    * 플랏 말고 테이블 상태에서 overview 가능
+    * df.style.background_gradient(cmap='Blues', subset=['col1'])
+* GPS 데이터 시각화
+    * 스캐터 플랏 사용하기
+    * plt.scatter(df['Lon'], df['Lat'], s=1, alpha=0.5)
 <br><br>
 
 ### [파이썬 사이킷런]
