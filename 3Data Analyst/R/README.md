@@ -661,6 +661,8 @@
 
 ### [오분류표 평가지표]
 * ![이미지 오분류표](https://user-images.githubusercontent.com/112922638/219871290-f83c56ad-0d37-43b8-9e06-918dcef0a34d.png)
+* True는 무조건 잘했다. False는 무조건 잘못했다.
+* Positive, Negative는 귀무가설 대립가설이라 경우에 따라 달라진다.
 * 정밀도
     * Precision(=Pre)
     * TP / (TP + FP)
@@ -680,14 +682,21 @@
     * TN / (TN + FP)
 * FP rate
     * FP / (TN + FP)
-* 이해하기
+* 제조 불량 검출 도메인
     * TP = NG정합, TN = OK정합, FN = 미검, FP = 과검
-    * True는 무조건 잘했다. False는 무조건 잘못했다.
     * Precision : NG판정 중에 NG정합(=과검 평가)
     * Recall : 실제NG 중에 NG정합(=미검 평가)
-    * F1 : Pre와 Sen의 조화평균. OK와 NG 모두에 대해 높은 정밀도와 높은 재현율.
+    * F1 : Pre와 Sen의 조화평균. OK와 NG 모두에 대해 높은 성능
     * Accuracy : 전체 중에 정합
     * Error rate : 전체 중에 미검과검
+* 데이터 사이언스 해석
+    * 도메인별로 중요한 지표가 다르다.
+    * 오분류표를 confusion matrix 라고 한다.
+    * 웬만하면 F1 score와 confusion matrix 모두 보는게 좋다.
+    * accuracy 정분류율 : 직관적인 모델의 예측 성능
+    * precision 정밀도 : 과검 없이 더 정확한 예측이 필요한 경우
+    * recall 재현율 : 과하게 잡더라도 절대 놓치는 일이 없어야 하는 경우
+    * F1 : 정확하면서도 놓치지 않도록 예측이 필요한 경우
 <br><br>
 
 ### [분류모델 성능평가]
