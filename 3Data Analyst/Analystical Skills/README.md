@@ -233,6 +233,11 @@
 <br><br>
 
 ### [데이터 변환]
+* 커스텀 함수 사용해서 변환
+    * 커스텀 함수 선언 후 사용
+    * df['Date'].apply(remove_p)
+    * 짧은 경우 람다 사용
+    * df['Date'].apply(lambda x: x.replace(' p)', '')
 * 화씨 섭씨 변환
     * df['Temp']= (df['Temp']-32) / 1.8
 * 날짜 변환
