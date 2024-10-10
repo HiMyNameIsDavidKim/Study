@@ -47,7 +47,7 @@
 
   - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
-  - [`Tableau`]
+  - [`Tableau`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Tableau)
   
   - [`Hadoop`]
 <br>
