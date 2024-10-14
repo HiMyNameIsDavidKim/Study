@@ -39,16 +39,20 @@
 <br>
 
 ## 📊 Data Analyst
-  - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
-
-  - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
-
   - [`Analystical Skills`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Analystical%20Skills)
 
   - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
   - [`Tableau`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Tableau)
-  
+
+  - [`Looker Studio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Looker_Studio)
+
+  - [`Big Query`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Big_Query)
+
+  - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
+
+  - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
+
   - [`Hadoop`]
 <br>
 
