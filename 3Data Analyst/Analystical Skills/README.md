@@ -166,6 +166,13 @@
 * 금융 지표
     * ROI: return on investment, (투자로 얻은 수익 - 투자비)/(투자비) * 100
     * CAGR: compound annual growth rate, (말기 가치)/(초기 가치)^(1/기간) - 1
+* 이커머스
+    * 객단가: 고객 1명이 평균적으로 얼마를 구입하는지, (주문빈도) * (건당주문금액)
+    * ARPU: avg revenue per user, (매출) / (사용자 수)
+    * ARPPU: avg revenue per paid user, (매출) / (구매자 수)
+    * YTD 총계: 해당 연도 안에서 해당 월까지의 누적 매출, 연매출 목표까지 얼마나 달성했는지 보려는 의도
+    * YTD 성장률: 올해 YTD 총계 vs 작년 YTD 총계
+    * YoY: year of year, 전년 대비 비교
 <br><br>
 
 

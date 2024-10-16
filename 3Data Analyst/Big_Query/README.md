@@ -64,6 +64,22 @@
     * TIMESTAMP_TRUNC('날짜', '남기는 부분')
 <br><br>
 
+### [유용한 함수 정리]
+* 빅쿼리는 행기반이 아니라 열기반으로 저장한다.
+* 따라서 빅쿼리에서는 컬럼이 중요하다.
+* 필요없는 컬럼 빼고 다 불러오기
+    * select * except('제외할 컬럼')
+* 몇개 컬럼은 연산하거나 이름 바꾸고 불러오기
+    * select * replace('대체할 컬럼' as '새 컬럼명')
+* 데이터 타입 변경
+    * cast('컬럼명' as '데이터 타입')
+    * cast는 에러나면 멈춘다.
+    * 에러날 때 null로 채우려면 safe_cast
+    * safe_cast('컬럼명' as '데이터 타입')
+    * 이외에도 safe 붙은 함수들은 에러 시 null 채운다.
+    * 특히 safe_divide()가 유용하다.
+<br><br>
+
 
 
 ## `[실습: 지표 개발, 지표 분석, 지표 관리]`
@@ -154,11 +170,61 @@
 <br><br>
 
 ### [날짜별 지표 쿼리]
-* 
+* 연도별 집계하기
+    * 2번 셀렉트에 extract(year from ord.order_approved_at) as ord_year, 추가
+    * 3번 셀렉트에 ord_year 추가
+    * 3번 맨아래에 group by ord_year와 order by ord_year 적기 
 <br><br>
 
 
 
+## `[실습: 대시보드 데이터 만들기]`
+
+### [데이터셋 준비]
+* 쿼리 수정
+* 1번
+    * with tb as (
+        select
+            item.order_id,
+            sum(item.price) as ord_amt,
+            count(item.order_item_id) as prd_cnt
+        from `olist.olist_order_items` as item
+        group by item.order_id
+    )
+* 2번
+    * , base as (
+        select
+            date(ord.order_approved_at) as ord_date,
+            ord.order_id,
+            ord.customer_id,
+            cust.customer_unique_id,
+            tb.ord_amt,
+            tb.prd_cnt,
+        from `olist.olist_orders` as ord
+        left join `olist.olist_customers` as cust
+            on ord.customer_id = cust.customer_id
+        inner join tb
+            on ord.order_id = tb.order_id
+        where True
+            and order_status in ('delivered', 'shipped')
+            and order_approved_at is not null
+    )
+* 3번
+    * select
+        ord_date,
+        round(sum(ord_amt), 2) as ord_amt,
+        count(distinct order_id) as ord_cnt,
+        sum(prd_cnt) as prd_cnt,
+        round(ifnull(safe_divide(sum(ord_amt), count(distinct order_id)), 0), 2) as avg_ord_amt,
+        round(ifnull(safe_divide(sum(prd_cnt), count(distinct order_id)), 0), 2) as avg_prd_cnt,
+        round(ifnull(safe_divide(sum(ord_amt), count(distinct prd_cnt)), 0), 2) as avg_price,
+        count(distinct customer_unique_id) as cust_cnt,
+        round(ifnull(safe_divide(count(distinct order_id), count(distinct customer_unique_id)), 0), 2) as cust_freq
+    from base
+    group by ord_date
+    order by ord_date
+* 결과 저장 -> 구글시트 저장
+<br><br>
 
 
 
