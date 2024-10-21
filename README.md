@@ -43,15 +43,23 @@
 
   - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
-  - [`Tableau`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Tableau)
+  - `Visualization`
 
-  - [`Looker Studio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Looker_Studio)
+    - [`Tableau`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Tableau)
 
-  - [`Big Query`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Big_Query)
+    - [`Looker Studio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Looker_Studio)
 
-  - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
+  - `Query`
 
-  - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
+    - [`Big Query`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Big_Query)
+
+    - [`DBeaver`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/DBeaver)
+
+  - `Certification`
+
+    - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
+
+    - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 
   - [`Hadoop`]
 <br>

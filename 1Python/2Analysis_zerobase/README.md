@@ -119,7 +119,11 @@
     * df_ans = df.groupby('col1')['col2'].agg(['mean','var','max','min'])
 * 피벗 테이블
     * unstack 함수 사용
+    * 그룹한 컬럼 중에 마지막 컬럼을 좌측에서 상단으로 이동
     * df_ans = df.groupby(['col1', 'col2']).price.mean().unstack()
+    * df_ans = df.groupby(['col1', 'col2, 'col3']).price.mean().unstack()
+    * 마지막 컬럼 말고 다른 컬럼도 이동 가능
+    * df_ans = df.groupby(['col1', 'col2', 'col3]).price.mean().unstack(1)
 <br><br>
 
 ### [Apply와 Map]
@@ -292,6 +296,7 @@
 * 두개 그래프 나란히 표시
     * FacetGrid 클래스 사용
     * 두개 집단 연속형 변수 비교
+    * col에 기준 컬럼 넣기
     * 히스토그램
         * g = sns.FacetGrid(df, col = "time")
         * g.map(plt.hist, "tip")
