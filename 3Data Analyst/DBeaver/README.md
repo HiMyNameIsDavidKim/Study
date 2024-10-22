@@ -44,12 +44,12 @@
 * 유니크한 고유 키값 정하기 (ex. 사번)
 * table create
     * create table로 껍데기 만들기 -> insert into로 넣기
-        * CREATE TABLE db2 (col1 int(11), col2 varchar(50));
-        * INSERT INTO db2 (SELECT col1, col2 FROM db1);
+        * CREATE TABLE table2 (col1 int(11), col2 varchar(50));
+        * INSERT INTO table2 (SELECT col1, col2 FROM table1);
     * source table로 소싱 -> create (select from )으로 넣기
         * 소싱할 테이블 더블클릭 -> 테이블 좌측상단 우클릭
         * Advanced copy -> 컬럼명 복사
-        * CREATE TABLE db2 (SELECT col1, col2, FROM db1);
+        * CREATE TABLE table2 (SELECT col1, col2, FROM table1);
 * DB 더블클릭 -> 엔티티 관계도 확인 가능
 * 원하는 키값 db2에서 드래그 앤 db1으로 드랍
 <br><br>

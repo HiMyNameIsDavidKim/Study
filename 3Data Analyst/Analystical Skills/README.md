@@ -26,7 +26,7 @@
 * NULL 값 확인
     * df.isnull().sum()
 * outlier 확인
-    * df.discribe()
+    * df.describe()
     * 특히 min, max에 음수값 있는지 확인
     * 도메인 지식 기반으로 처리
 <br><br>
@@ -202,6 +202,12 @@
     * sns.catplot 하면 몇개의 카테고리인지 체크하고 분포 체크할 수 있다.
     * 카테고리컬은 다 catplot 해보는게 좋다.
     * for문으로 돌리기
+    * for col in categorical_columns:
+    *     sns.catplot(x=col, y="Sales", kind="bar", palette="pastel", edgecolor=".6",data=df)
+    *     plt.gcf().set_size_inches(25, 3)
+    *     plt.xticks(fontsize=16)
+    *     plt.legend()
+    *     plt.show()
 * 스캐터 플랏
     * 산점도 분포 확인
     * sns.scatterplot(x='Temp', y='Sales', data=df)

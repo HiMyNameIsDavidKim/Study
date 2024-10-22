@@ -280,7 +280,7 @@
     * sns.pairplot(df)
 * 히트맵
     * 히트맵 표시
-    * sns.heatmap(df_pair.corr(), vmin = -1, vmax = +1, annot = True, cmap = 'coolwarm')
+    * sns.heatmap(df_yield[numeric_columns].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
 * 스트립 플랏
     * 이산형 변수를 x축에 두고 y축에 연속형 변수에 뿌려보는 그래프
     * 여러 집단의 연속형 변수 비교

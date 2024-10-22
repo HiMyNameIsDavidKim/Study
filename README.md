@@ -49,6 +49,8 @@
 
     - [`Looker Studio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Looker_Studio)
 
+    - [`Power BI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Power_BI)
+
   - `Query`
 
     - [`Big Query`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Big_Query)
