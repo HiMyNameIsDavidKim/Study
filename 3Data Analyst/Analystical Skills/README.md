@@ -10,73 +10,9 @@
     * 해결방안: 해결에 사용할 분석 타겟, 분석 유형, 타겟에 의한 의사결정
     * 성과측정: 솔루션의 as-is to-be 정량 지표 비교
     * 운영: 솔루션 운영 프로세스 설계, 주기 설정, 모델 업데이트, 오류 대비
+* 데이터 전처리
 * 데이터 EDA
 * 모델링 or 인사이트
-<br><br>
-
-### [데이터 전처리 4단계]
-* 데이터 형태 확인
-    * df.shape
-* 데이터 타입 확인
-    * df.info()
-    * 숫자로 보이는데 문자인 경우 확인
-    * 문자로 보이는데 숫자인 경우 확인
-    * object 타입(스트링) 확인
-    * 인트 플롯 확인
-* NULL 값 확인
-    * df.isnull().sum()
-* outlier 확인
-    * df.describe()
-    * 특히 min, max에 음수값 있는지 확인
-    * 도메인 지식 기반으로 처리
-<br><br>
-
-### [EDA baseline]
-* 데이터 유형 분리
-    * cols_numerical = df.select_dtypes(exclude=object).columns
-    * cols_categorical = df.select_dtypes(include=object).columns
-* categorical
-    * 구성 비율 파이 플랏
-        * ```python
-          males = (df['Sex'] == 'male').sum()
-          females = (df['Sex'] == 'female').sum()
-          proportions = [males, females]
-          plt.pie(
-          proportions,
-          labels = ['Males', 'Females'],
-          shadow = False,
-          colors = ['blue','red'],
-          explode = (0.15 , 0),
-          startangle = 90,
-          autopct = '%1.1f%%'
-          )
-          plt.show()
-          ```
-    * 바 플랏 for문
-        * ```python 
-          plt.style.use(['dark_background'])
-          for col in cols_categorical:
-              if df[col].nunique() > 10:
-                  continue
-              sns.barplot(x=col, y="Sales", data=df, color="skyblue", edgecolor=".6", label="Sales")
-              plt.gcf().set_size_inches(25, 3)
-              plt.xticks(fontsize=16)
-              plt.legend()
-              plt.show()
-          ```
-        * ```python 
-          plt.style.use(['dark_background'])
-          for col in cols_categorical:
-              if df[col].nunique() > 10:
-                  sns.barplot(x="Sales", y=col, data=df, color="skyblue", edgecolor=".6", label="Sales")
-                  plt.gcf().set_size_inches(25, 3)
-                  plt.xticks(fontsize=16)
-                  plt.legend()
-                  plt.show()
-          ```
-* numerical
-    * 상관계수 히트맵
-        * sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
 <br><br>
 
 ### [가설 수립 후 인사이트 추출]
@@ -95,7 +31,6 @@
 <br><br>
 
 ### [ML 기반 예측]
-* [`파이썬 분석의 모델링 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase) 참고
 * 프로세스
     * X(feature 데이터)와 Y(정답 데이터) 만들기
     * 트레이닝셋 트레인셋 분할
@@ -129,6 +64,154 @@
     * 특정한 특성을 가진 카테고리를 그루핑하여 분석
     * RFM 분석으로 segmentation할 수 있다.
 <br><br>
+
+
+
+## `[분석 코드 baseline]`
+
+### [데이터 전처리 4단계]
+* 데이터 형태 확인
+    * df.shape
+* 데이터 타입 확인
+    * df.info()
+    * 숫자로 보이는데 문자인 경우 확인
+    * 문자로 보이는데 숫자인 경우 확인
+    * object 타입(스트링) 확인
+    * 인트 플롯 확인
+* NULL 값 확인
+    * df.isnull().sum()
+* outlier 확인
+    * df.describe()
+    * 특히 min, max에 음수값 있는지 확인
+    * 도메인 지식 기반으로 처리
+<br><br>
+
+### [EDA baseline]
+* 데이터 유형 분리
+    * ```python
+      cols_categorical = df.select_dtypes(include=object).columns
+      cols_numerical = df.select_dtypes(exclude=object).columns
+      ```
+* categorical
+    * 구성 비율 테이블
+        * ```python
+          for col in cols_categorical:
+              print(f'-'*50)
+              print(f'##### {col} Distribution #####')
+              labels = df[col].unique()
+              cnts = [(df[col] == label).sum() for label in labels]
+              table = pd.DataFrame({col: labels, 'Count': cnts})
+              table['Percentage'] = table['Count'] / table['Count'].sum() * 100
+              table = table.sort_values(by='Percentage', ascending=False).reset_index(drop=True)
+              styled_table = table.style.background_gradient(subset=['Percentage'], cmap='Blues').format({'Percentage': '{:.2f}%'})
+              display(styled_table)
+              print(f'-'*50)
+          ```
+    * 구성 비율 파이 플랏 (5개 이하만, 필수x)
+        * ```python
+          plt.style.use(['seaborn'])
+          for col in cols_categorical:
+              labels = df[col].unique()
+              cnts = [(df[col] == label).sum() for label in labels]
+              if len(labels) > 5:
+                  continue
+              print(f'-'*50)
+              print(f'##### {col} Distribution #####')
+              plt.pie(
+              cnts,
+              labels = labels,
+              shadow = False,
+              startangle = 90,
+              autopct = '%1.1f%%',
+              )
+              plt.show()
+              print(f'-'*50)
+          ```
+    * 바 플랏 for문
+        * y가 연속형
+        * ```python 
+          plt.style.use(['dark_background'])
+          for col in cols_categorical:
+              print(f'-'*50)
+              print(f'##### {col} Distribution #####')
+              sns.barplot(x=col, y="y", data=df, color="skyblue", edgecolor=".6", label="Sales")
+              plt.gcf().set_size_inches(25, 3)
+              plt.xticks(fontsize=16)
+              plt.legend()
+              plt.show()
+              print(f'-'*50)
+          ```
+        * y가 이산형
+        * ```python 
+          plt.style.use(['dark_background'])
+          for col in cols_categorical:
+              print(f'-'*50)
+              print(f'##### {col} Distribution #####')
+              sns.catplot(x=col, hue="y", data=df, kind="count", palette="pastel", edgecolor=".6")
+              plt.gcf().set_size_inches(25, 3)
+              plt.xticks(fontsize=16)
+              plt.legend()
+              plt.show()
+              print(f'-'*50)
+          ```
+* numerical
+    * 상관계수 히트맵
+        * ```python
+          plt.style.use(['seaborn'])
+          sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+          plt.show()
+          ```
+    * 히스토그램
+        * y가 연속형
+        * 
+        * y가 이산형
+        * ```python
+          color_map = {'no': 'red', 'yes': 'blue'}
+          plt.style.use(['seaborn'])
+          for col in cols:
+              for label, color in color_map.items():
+                      plt.hist(df[df['y'] == label][col], bins=20, color=color, alpha=0.5,   label=f'y={label}')
+              plt.xlabel(col)
+              plt.ylabel('Frequency')
+              plt.title(f'Histogram of {col}')
+              plt.show()
+    * 산점도
+        * y가 연속형
+        * 
+        * y가 이산형
+        * ```python
+          plt.style.use(['seaborn'])
+          cols = ['y', 'col1', 'col2', 'col3']
+          sns.pairplot(df[cols], hue='y')
+          plt.show()
+          ```
+<br><br>
+
+### [분류 baseline]
+* 모델링
+    * 
+* 평가
+    * 
+* 해석
+    * 
+<br><br>
+
+### [회귀 baseline]
+* 모델링
+    * 
+* 평가
+    * 
+* 해석
+    * 
+<br><br>
+
+### [이상탐지 baseline]
+* 
+<br><br>
+
+
+
+## `[개념 및 이론]`
 
 ### [개념 용어]
 * 데이터 EDA
@@ -215,9 +298,7 @@
             * ARPPU: avg revenue per paid user, (매출) / (구매자 수)
 <br><br>
 
-
-
-## `[통계 요약]`
+### [통계 요약]
 * 기술통계량
     * 데이터의 전반적인 특성을 이해
     * 분석의 방향성을 결정
