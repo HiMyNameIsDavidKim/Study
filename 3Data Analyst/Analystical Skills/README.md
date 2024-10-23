@@ -37,21 +37,46 @@
     * cols_categorical = df.select_dtypes(include=object).columns
 * categorical
     * 구성 비율 파이 플랏
-        * 
+        * ```python
+          males = (df['Sex'] == 'male').sum()
+          females = (df['Sex'] == 'female').sum()
+          proportions = [males, females]
+          plt.pie(
+          proportions,
+          labels = ['Males', 'Females'],
+          shadow = False,
+          colors = ['blue','red'],
+          explode = (0.15 , 0),
+          startangle = 90,
+          autopct = '%1.1f%%'
+          )
+          plt.show()
+          ```
     * 바 플랏 for문
         * ```python 
-        plt.style.use(['dark_background'])
-        for col in cols_categorical:
-            sns.catplot(x=col, y="Sales", kind="bar", palette="pastel", edgecolor=".6",data=df)
-            plt.gcf().set_size_inches(25, 3)
-            plt.xticks(fontsize=16)
-            plt.legend()
-            plt.show()
-        ```
+          plt.style.use(['dark_background'])
+          for col in cols_categorical:
+              if df[col].nunique() > 10:
+                  continue
+              sns.barplot(x=col, y="Sales", data=df, color="skyblue", edgecolor=".6", label="Sales")
+              plt.gcf().set_size_inches(25, 3)
+              plt.xticks(fontsize=16)
+              plt.legend()
+              plt.show()
+          ```
+        * ```python 
+          plt.style.use(['dark_background'])
+          for col in cols_categorical:
+              if df[col].nunique() > 10:
+                  sns.barplot(x="Sales", y=col, data=df, color="skyblue", edgecolor=".6", label="Sales")
+                  plt.gcf().set_size_inches(25, 3)
+                  plt.xticks(fontsize=16)
+                  plt.legend()
+                  plt.show()
+          ```
 * numerical
     * 상관계수 히트맵
         * sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
-    * 
 <br><br>
 
 ### [가설 수립 후 인사이트 추출]
