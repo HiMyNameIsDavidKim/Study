@@ -163,27 +163,52 @@
           ```
     * 히스토그램
         * y가 연속형
-        * 
+        * ```python
+          plt.style.use(['seaborn'])
+          for col in cols_numerical:
+              print(f'-'*50)
+              print(f'##### {col} Histogram #####')
+              plt.hist(df[col], bins=20, color='skyblue', alpha=0.5)
+              plt.xlabel(col)
+              plt.ylabel('Frequency')
+              plt.show()
+              print(f'-'*50)
+          ```
         * y가 이산형
         * ```python
           color_map = {'no': 'red', 'yes': 'blue'}
           plt.style.use(['seaborn'])
-          for col in cols:
+          for col in cols_numerical:
+              print(f'-'*50)
+              print(f'##### {col} Histogram #####')
               for label, color in color_map.items():
                       plt.hist(df[df['y'] == label][col], bins=20, color=color, alpha=0.5,   label=f'y={label}')
               plt.xlabel(col)
               plt.ylabel('Frequency')
               plt.title(f'Histogram of {col}')
               plt.show()
+              print(f'-'*50)
+          ```
     * 산점도
         * y가 연속형
-        * 
+        * ```python
+          plt.style.use(['seaborn'])
+          for col in cols_numerical:
+              if df[col].dtype == bool:
+                  df[col] = df[col].astype(int)
+              print(f'-'*50)
+              print(f'##### {col} Scatter #####')
+              sns.scatterplot(x=col, y='y', data=df)
+              plt.show()
+              print(f'-'*50)
+          ```
         * y가 이산형
         * ```python
           plt.style.use(['seaborn'])
           cols = ['y', 'col1', 'col2', 'col3']
           sns.pairplot(df[cols], hue='y')
           plt.show()
+          print(f'-'*50)
           ```
 <br><br>
 
