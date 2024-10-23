@@ -31,6 +31,29 @@
     * 도메인 지식 기반으로 처리
 <br><br>
 
+### [EDA baseline]
+* 데이터 유형 분리
+    * cols_numerical = df.select_dtypes(exclude=object).columns
+    * cols_categorical = df.select_dtypes(include=object).columns
+* categorical
+    * 구성 비율 파이 플랏
+        * 
+    * 바 플랏 for문
+        * ```python 
+        plt.style.use(['dark_background'])
+        for col in cols_categorical:
+            sns.catplot(x=col, y="Sales", kind="bar", palette="pastel", edgecolor=".6",data=df)
+            plt.gcf().set_size_inches(25, 3)
+            plt.xticks(fontsize=16)
+            plt.legend()
+            plt.show()
+        ```
+* numerical
+    * 상관계수 히트맵
+        * sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+    * 
+<br><br>
+
 ### [가설 수립 후 인사이트 추출]
 * 전체 feature 확인
 * 개인적으로 생각하는 계산된 feature 추출
@@ -169,108 +192,7 @@
 
 
 
-## `[유용한 코드]`
-
-### [파이썬 판다스]
-* 데이터프레임 기본 체크
-    * 불러오고 헤드 출력 해보기
-        * df.head()
-    * 전처리 4단계
-        * df.shape
-        * df.info()
-        * df.isnull().sum()
-        * df.describe()
-* 타입 확인
-    * df.info()
-    * dtype 결과가 dtype('O')이면 'Object'라는 뜻으로 문자열이다.
-* numerical 데이터 확인
-    * df.describe()에서 마이너스 있는지 특히 잘 체크한다.
-* 상관계수 뽑기
-    * df.corr()
-    * -1~1 범위
-    * 절대값 1에 가까울 수록 상관관계가 높은 것을 의미
-* 고유값 세기
-    * df['col'].nunique()
-* 제이슨 파일 불러오는 코드
-    * 따로 함수 선언 필요
-    * 처리할 컬럼 알고 있어야 함
-<br><br>
-
-### [파이썬 씨본]
-* [`파이썬 분석의 시각화 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase) 참고
-* categorical 데이터 확인
-    * sns.catplot 하면 몇개의 카테고리인지 체크하고 분포 체크할 수 있다.
-    * 카테고리컬은 다 catplot 해보는게 좋다.
-    * for문으로 돌리기
-    * for col in categorical_columns:
-    *     sns.catplot(x=col, y="Sales", kind="bar", palette="pastel", edgecolor=".6",data=df)
-    *     plt.gcf().set_size_inches(25, 3)
-    *     plt.xticks(fontsize=16)
-    *     plt.legend()
-    *     plt.show()
-* 스캐터 플랏
-    * 산점도 분포 확인
-    * sns.scatterplot(x='Temp', y='Sales', data=df)
-    * plt.gcf().set_size_inches(7, 7)
-* 박스 플랏
-    * 카테고리별 분포 확인, 기초통계값 확인
-    * sns.boxplot(x='killsCategories', y='winPlacePerc', data=kills)
-* 피벗 플랏
-    * 년도별 카테고리별 점유율 변화에 유용
-    * ax = df.plot(kind='barh', stacked=True, title="years amt", rot=0)
-    * for p in ax.patches:
-    *   left, bottom, width, height = p.get_bbox().bounds
-    *   ax.annotate("%.1f"%(width*100), xy=(left+width/2, bottom+height/2), ha='center', va='center', color='black')
-* 테이블 그라데이션 표시
-    * 플랏 말고 테이블 상태에서 overview 가능
-    * df.style.background_gradient(cmap='Blues', subset=['col1'])
-* GPS 데이터 시각화
-    * 스캐터 플랏 사용하기
-    * plt.scatter(df['Lon'], df['Lat'], s=1, alpha=0.5)
-<br><br>
-
-### [파이썬 사이킷런]
-* 중요 변수 파악
-    * 사이킷런 객체 model.feature_importances_ 확인
-* 노멀라이즈
-    * rfm['R'] = minmax_scale(rfm['R'], axis=0, copy=True)
-<br><br>
-
-### [데이터 변환]
-* 커스텀 함수 사용해서 변환
-    * 커스텀 함수 선언 후 사용
-    * df['Date'].apply(remove_p)
-    * 짧은 경우 람다 사용
-    * df['Date'].apply(lambda x: x.replace(' p)', '')
-* 화씨 섭씨 변환
-    * df['Temp']= (df['Temp']-32) / 1.8
-* 날짜 변환
-    * 스트링에서 데이트 타입으로 변환
-        * df['Date'] = pd.to_datetime(df['Date'])
-    * 날짜 + 시간 합쳐서 데이트 타입으로 변환
-        * df_core_store['Date_merge'] = df['date'].astype(str) + ' ' + df['time'].astype(str)
-        * df_core_store['Date_merge'] = pd.to_datetime(df_core_store['Date_merge'])
-    * 년 월 분할
-        * df_core_store['year'] = df_core_store['Date_merge'].dt.year
-        * df_core_store['month'] = df_core_store['Date_merge'].dt.month
-    * 월데이터 보기 힘들때 변환
-        * df = df.replace({'January' : '01.January',
-            'February' : '02.February',
-            'March' : '03.March',
-            'April' : '04.April',
-            'May' : '05.May',
-            'June' : '06.June',
-            'July' : '07.July',
-            'August' : '08.August',
-            'September' : '09.September',
-            'October' : '10.October',
-            'November' : '11.November',
-            'December' : '12.December'})
-<br><br>
-
-
-
-## `[통계 요약 정리]`
+## `[통계 요약]`
 * 기술통계량
     * 데이터의 전반적인 특성을 이해
     * 분석의 방향성을 결정

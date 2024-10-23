@@ -129,6 +129,11 @@
 ### [Apply와 Map]
 * 매핑이 간단하면 map-람다 사용
 * 조건이 복잡해지면 함수 선언하고 apply 사용
+* 커스텀 함수 사용해서 변환
+    * 커스텀 함수 선언 후 사용
+    * df['Date'].apply(remove_p)
+    * 짧은 경우 람다 사용
+    * df['Date'].apply(lambda x: x.replace(' p)', '')
 * 딕셔너리로 매핑
     * map 함수 사용
     * 람다함수 사용
@@ -257,6 +262,33 @@
     * df_ans = df.dropna(how='any')
 <br><br>
 
+### [데이터 변환]
+* 화씨 섭씨 변환
+    * df['Temp']= (df['Temp']-32) / 1.8
+* 날짜 변환
+    * 스트링에서 데이트 타입으로 변환
+        * df['Date'] = pd.to_datetime(df['Date'])
+    * 날짜 + 시간 합쳐서 데이트 타입으로 변환
+        * df_core_store['Date_merge'] = df['date'].astype(str) + ' ' + df['time'].astype(str)
+        * df_core_store['Date_merge'] = pd.to_datetime(df_core_store['Date_merge'])
+    * 년 월 분할
+        * df_core_store['year'] = df_core_store['Date_merge'].dt.year
+        * df_core_store['month'] = df_core_store['Date_merge'].dt.month
+    * 월데이터 보기 힘들때 변환
+        * df = df.replace({'January' : '01.January',
+            'February' : '02.February',
+            'March' : '03.March',
+            'April' : '04.April',
+            'May' : '05.May',
+            'June' : '06.June',
+            'July' : '07.July',
+            'August' : '08.August',
+            'September' : '09.September',
+            'October' : '10.October',
+            'November' : '11.November',
+            'December' : '12.December'})
+<br><br>
+
 
 
 ## `[시각화]`
@@ -293,6 +325,22 @@
     * 중앙값, IQR 같은 기술통계량 박스로 표시
     * 박스 밖에 찍힌 것들은 outlier
     * sns.boxplot(x = "day", y = "total_bill", hue = "time", data = df);
+* 스캐터 플랏
+    * 산점도 분포 확인
+    * sns.scatterplot(x='Temp', y='Sales', data=df)
+    * plt.gcf().set_size_inches(7, 7)
+* 피벗 플랏
+    * 년도별 카테고리별 점유율 변화에 유용
+    * ax = df.plot(kind='barh', stacked=True, title="years amt", rot=0)
+    * for p in ax.patches:
+    *   left, bottom, width, height = p.get_bbox().bounds
+    *   ax.annotate("%.1f"%(width*100), xy=(left+width/2, bottom+height/2), ha='center', va='center', color='black')
+* 테이블 그라데이션 표시
+    * 플랏 말고 테이블 상태에서 overview 가능
+    * df.style.background_gradient(cmap='Blues', subset=['col1'])
+* GPS 데이터 시각화
+    * 스캐터 플랏 사용하기
+    * plt.scatter(df['Lon'], df['Lat'], s=1, alpha=0.5)
 * 두개 그래프 나란히 표시
     * FacetGrid 클래스 사용
     * 두개 집단 연속형 변수 비교
