@@ -92,9 +92,17 @@
       cols_categorical = df.select_dtypes(include=object).columns
       cols_numerical = df.select_dtypes(exclude=object).columns
       ```
+* Boolian 처리
+    * ```python
+      cols_bool = ['col1']
+      for col in cols_bool:
+          cols_numerical = cols_numerical.drop(col)
+          cols_categorical = cols_categorical.append(pd.Index([col]))
+      ```
 * categorical
     * 구성 비율 테이블
         * ```python
+          [print(f'{col}: {df[col].nunique()}') for col in cols_categorical]
           for col in cols_categorical:
               print(f'-'*50)
               print(f'##### {col} Distribution #####')
@@ -209,6 +217,20 @@
           sns.pairplot(df[cols], hue='y')
           plt.show()
           print(f'-'*50)
+          ```
+* 시계열
+    * 히스토그램
+        * ```python
+
+          ```
+    * 라인 그래프
+        * ```python
+          df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
+          for col in cols_categorical:
+              df_temp = df.groupby(['Date_1', col]).size().reset_index(name='Count')
+              sns.lineplot(data=df_temp, x='Date_1', y='Count', hue=col)
+              plt.xticks(rotation=90)
+              plt.show()
           ```
 <br><br>
 

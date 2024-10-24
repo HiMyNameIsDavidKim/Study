@@ -113,7 +113,7 @@
     * null도 세고 싶을 경우 dropna=True
 * 컬럼 2개를 기준으로 빈도수 출력
     * groupby 사용
-    * df_ans = df.groupby(['col1','col2'], as_index=False).size()
+    * df_ans = df.groupby([col1, col2]).size().unstack(fill_value=0)
 * 그룹별 특정 값의 기초통계 값
     * agg 함수 사용
     * df_ans = df.groupby('col1')['col2'].agg(['mean','var','max','min'])
