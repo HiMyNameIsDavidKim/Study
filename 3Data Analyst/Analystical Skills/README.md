@@ -248,15 +248,17 @@
 
 
           df_temp = df.copy()
-          X = df_temp.drop('country_destination', axis=1)
-          Y = df_temp['country_destination']
+          X = df_temp.drop('y', axis=1)
+          Y = df_temp['y']
 
           cols_drop = ['id']
           for col in cols_drop:
               X.drop(col, axis=1, inplace=True)
 
-          cols_date = ['date_account_created', 'timestamp_first_active']
+          cols_date = ['date_1', 'date_2']
           for col in cols_date:
+              X[f'week_{col}'] = X[col].dt.dayofweek
+              X[f'month_{col}'] = X[col].dt.month
               X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
 
           for column in X.columns:
@@ -269,20 +271,49 @@
           model.fit(x_train, y_train)
         ```
     * 회귀
-        * 
-    
-* 평가
-    * acc
         * ```python
-            from sklearn.metrics import accuracy_score
+          from sklearn.model_selection import train_test_split
+          from sklearn.preprocessing import LabelEncoder
+          from sklearn.ensemble import RandomForestClassifier
 
-            y_pred_test = model.predict(x_test)
-            accuracy = accuracy_score(y_test, y_pred_test)
-            print(f"Accuracy: {accuracy*100:.2f}%")
+
+          df_temp = df.copy()
+          X = df_temp.drop('y', axis=1)
+          Y = df_temp['y']
+
+          cols_drop = ['id']
+          for col in cols_drop:
+              X.drop(col, axis=1, inplace=True)
+
+          cols_date = ['date_1', 'date_2']
+          for col in cols_date:
+              X[f'week_{col}'] = X[col].dt.dayofweek
+              X[f'month_{col}'] = X[col].dt.month
+              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
+
+          for column in X.columns:
+              if X[column].dtype == object:
+                  le = LabelEncoder()
+                  X[column] = le.fit_transform(X[column])
+
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
+          model = RandomForestRegressor(n_estimators=500, max_depth=4, random_state=42)
+          model.fit(x_train, y_train)
+        ```
+* 평가
+    * acc (분류)
+        * ```python
+          from sklearn.metrics import accuracy_score
+
+
+          y_pred_test = model.predict(x_test)
+          accuracy = accuracy_score(y_test, y_pred_test)
+          print(f"Accuracy: {accuracy*100:.2f}%")
           ```
     * report (분류)
         * ```python
           from sklearn.metrics import classification_report
+
 
           y_pred_train = model.predict(x_train)
           print(classification_report(y_train, y_pred_train))
@@ -290,31 +321,27 @@
           y_pred_test = model.predict(x_test)
           print(classification_report(y_test, y_pred_test))
           ```
-    * report (회귀)
-        * 
-    * 자동 튜닝
+    * r^2, mse (회귀)
         * ```python
-          from sklearn.model_selection import GridSearchCV
+          from sklearn.metrics import r2_score, mean_squared_error
 
-          param_grid = {
-              'n_estimators': [50, 100, 200],  # 트리 개수
-              'max_depth': [None, 10, 20, 30],  # 트리의 최대 깊이
-              'min_samples_split': [2, 5, 10],  # 노드를 분할하기 위한 최소 샘플 수
-              'min_samples_leaf': [1, 2, 4],  # 리프 노드의 최소 샘플 수
-              'max_features': ['auto', 'sqrt', 'log2']  # 최적의 분할을 위해 고려할 기능 수
-          }
 
-          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='recall')
-          grid_cv.fit(x_train, y_train)
-          print(f'The best params: {grid_cv.best_params_}')
-          print(f'The best score: {grid_cv.best_score_:.4f}')
+          y_pred_train = model.predict(x_train)
+          y_pred_test = model.predict(x_test)
+
+          r2_train = r2_score(y_train, y_pred_train)
+          r2_test = r2_score(y_test, y_pred_test)
+          print('r^2_score(train): ', r2_train)
+          print('r^2_score(test): ', r2_test)
+          print('')
+          mae_train = mean_squared_error(y_train, y_pred_train)
+          mae_test = mean_squared_error(y_test, y_pred_test)
+          print('mae_train(train): ', mae_train)
+          print('mae_test(test): ', mae_test)
           ```
 * 해석
     * feature importance
         * ```python
-          import seaborn as sns
-          import matplotlib.pyplot as plt
-
           sns.set(style="darkgrid")
           palette = sns.color_palette("bright", 20)
           ftr_importances_values = model.feature_importances_
@@ -323,19 +350,43 @@
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
           plt.show()
           ```
-    * AUROC
+    * PCA 차원 축소
+        * ```python
+          from sklearn.decomposition import PCA
+          from sklearn.preprocessing import StandardScaler
+
+          N = 2
+          scaler = StandardScaler()
+          X_scaled = scaler.fit_transform(X)
+          pca = PCA(n_components=N)
+
+          X_pca = pca.fit_transform(X_scaled)
+          for i in range(N):
+              component_str = [f'{value:.2f}' for value in pca.components_[i]]
+              ratio_str = f'{pca.explained_variance_ratio_[i]:.2f}'
+              print(f'Comp {i+1} config: {component_str}')
+              print(f'Comp {i+1} ratio: {ratio_str}')
+          
+          plt.style.use(['seaborn'])
+          plt.scatter(X_pca[:, 0], X_pca[:, 1])
+          plt.xlabel('Principal Comp 1')
+          plt.ylabel('Principal Comp 2')
+          plt.show()
+          ```
+    * AUROC (분류)
         * ```python
           from sklearn.metrics import roc_auc_score
+
 
           y_pred_proba = model.predict_proba(x_test)
           auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
           print(f"AUROC (ovo): {auroc_ovo:.4f}")
           ```
-    * ROC Curve
+    * ROC Curve (분류)
         * ```python
           from sklearn.metrics import roc_curve, auc
           from sklearn.preprocessing import label_binarize
-          import matplotlib.pyplot as plt
+
 
           y_test_bin = label_binarize(y_test, classes=model.classes_)
           n_classes = y_test_bin.shape[1]
@@ -356,9 +407,33 @@
           plt.legend(loc="lower right")
           plt.show()
           ```
+    * 시각화 (회귀)
+        * ```python
+          pd.options.display.float_format = '{:.2f}'.format
+          result = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred_test})
+          result['diff'] = result['Real Values'] - result['Predicted Values']
+
+          sns.set(style="darkgrid")
+          sns.scatterplot(x=result['Real Values'], y=result['Predicted Values'])
+          lim_min = min(result['Real Values'].min(), result['Predicted Values'].min())
+          lim_max = max(result['Real Values'].max(), result['Predicted Values'].max())
+          plt.xlim(lim_min, lim_max)
+          plt.ylim(lim_min, lim_max)
+          x = [lim_min, lim_max]
+          y = [lim_min, lim_max]
+          plt.plot(x, y, color='red')
+          plt.show()
+
+          result = result.reset_index(drop=True)
+          plt.plot(result.index, result['Real Values'], label='Real')
+          plt.plot(result.index, result['Predicted Values'], label='Pred')
+          plt.legend()
+          plt.show()
+          ```
     * confusion matrix (다중분류)
         * ```python
           from sklearn.metrics import confusion_matrix
+
 
           plt.style.use(['seaborn'])
           cm = confusion_matrix(y_test, y_pred_test)
@@ -368,6 +443,25 @@
           plt.ylabel('True Label')
           plt.title('Confusion Matrix')
           plt.show()
+          ```
+* 개선
+    * 자동 튜닝
+        * ```python
+          from sklearn.model_selection import GridSearchCV
+
+
+          param_grid = {
+              'n_estimators': [50, 100, 200],  # 트리 개수
+              'max_depth': [None, 10, 20, 30],  # 트리의 최대 깊이
+              'min_samples_split': [2, 5, 10],  # 노드를 분할하기 위한 최소 샘플 수
+              'min_samples_leaf': [1, 2, 4],  # 리프 노드의 최소 샘플 수
+              'max_features': ['auto', 'sqrt', 'log2']  # 최적의 분할을 위해 고려할 기능 수
+          }
+
+          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='recall')
+          grid_cv.fit(x_train, y_train)
+          print(f'The best params: {grid_cv.best_params_}')
+          print(f'The best score: {grid_cv.best_score_:.4f}')
           ```
 <br><br>
 
@@ -554,6 +648,10 @@
 * 그루핑을 통해 서비스 이용 수준 측정 가능
 * 고객마다 RFM이 어떻게 변하는지 관찰
 * R은 낮을수록 좋기 때문에 노멀라이즈 시 (1-R) 해주기
+<br><br>
+
+### [코호트 분석]
+* 
 <br><br>
 
 
