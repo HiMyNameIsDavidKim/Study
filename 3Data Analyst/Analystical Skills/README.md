@@ -100,7 +100,7 @@
           cols_categorical = cols_categorical.append(pd.Index([col]))
       ```
 * categorical
-    * 구성 비율 테이블
+    * 구성 비율 테이블(카운트)
         * ```python
           [print(f'{col}: {df[col].nunique()}') for col in cols_categorical]
           for col in cols_categorical:
@@ -109,30 +109,25 @@
               labels = df[col].unique()
               cnts = [(df[col] == label).sum() for label in labels]
               table = pd.DataFrame({col: labels, 'Count': cnts})
-              table['Percentage'] = table['Count'] / table['Count'].sum() * 100
-              table = table.sort_values(by='Percentage', ascending=False).reset_index(drop=True)
-              styled_table = table.style.background_gradient(subset=['Percentage'], cmap='Blues').format({'Percentage': '{:.2f}%'})
+              table['Ratio'] = table['Count'] / table['Count'].sum() * 100
+              table = table.sort_values(by='Ratio', ascending=False).reset_index(drop=True)  # head(10)
+              styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
               display(styled_table)
               print(f'-'*50)
           ```
-    * 구성 비율 파이 플랏 (5개 이하만, 필수x)
+    * 구성 비율 테이블(집계)
         * ```python
           plt.style.use(['seaborn'])
           for col in cols_categorical:
-              labels = df[col].unique()
-              cnts = [(df[col] == label).sum() for label in labels]
-              if len(labels) > 5:
+              if col in cols_skip:
                   continue
               print(f'-'*50)
               print(f'##### {col} Distribution #####')
-              plt.pie(
-              cnts,
-              labels = labels,
-              shadow = False,
-              startangle = 90,
-              autopct = '%1.1f%%',
-              )
-              plt.show()
+              df_temp = df.groupby(col).agg({'Quantity': 'sum'})
+              df_temp['Ratio'] = df_temp['Quantity'] / df_temp['Quantity'].sum() * 100
+              table = df_temp.sort_values(by='Ratio', ascending=False)  # head(10)
+              styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
+              display(styled_table)
               print(f'-'*50)
           ```
     * 바 플랏 for문
@@ -174,9 +169,10 @@
         * ```python
           plt.style.use(['seaborn'])
           for col in cols_numerical:
+              mean_y = df.groupby(col)['y'].mean()
               print(f'-'*50)
               print(f'##### {col} Histogram #####')
-              plt.hist(df[col], bins=20, color='skyblue', alpha=0.5)
+              plt.bar(mean_y.index, mean_y, color='skyblue', alpha=0.5)
               plt.xlabel(col)
               plt.ylabel('Frequency')
               plt.show()
@@ -184,16 +180,13 @@
           ```
         * y가 이산형
         * ```python
-          color_map = {'no': 'red', 'yes': 'blue'}
           plt.style.use(['seaborn'])
           for col in cols_numerical:
               print(f'-'*50)
               print(f'##### {col} Histogram #####')
-              for label, color in color_map.items():
-                      plt.hist(df[df['y'] == label][col], bins=20, color=color, alpha=0.5,   label=f'y={label}')
+              sns.histplot(data=df, x=col, hue='y', bins=20, alpha=0.5)
               plt.xlabel(col)
               plt.ylabel('Frequency')
-              plt.title(f'Histogram of {col}')
               plt.show()
               print(f'-'*50)
           ```
@@ -202,8 +195,6 @@
         * ```python
           plt.style.use(['seaborn'])
           for col in cols_numerical:
-              if df[col].dtype == bool:
-                  df[col] = df[col].astype(int)
               print(f'-'*50)
               print(f'##### {col} Scatter #####')
               sns.scatterplot(x=col, y='y', data=df)
@@ -223,12 +214,22 @@
         * ```python
 
           ```
-    * 라인 그래프
+    * 라인 그래프(카운트)
         * ```python
           df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
           for col in cols_categorical:
               df_temp = df.groupby(['Date_1', col]).size().reset_index(name='Count')
               sns.lineplot(data=df_temp, x='Date_1', y='Count', hue=col)
+              plt.xticks(rotation=90)
+              plt.show()
+          ```
+    * 라인 그래프(집계)
+        * ```python
+          df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
+          for col in cols_categorical:
+              top10 = df.groupby(col)['y'].sum().nlargest(10).index
+              df_temp = df[df[col].isin(top10)].groupby(['date_1', col]).agg({'y': 'sum'}).reset_index()
+              sns.lineplot(data=df_temp, x='date_1', y='y', hue=col)
               plt.xticks(rotation=90)
               plt.show()
           ```
