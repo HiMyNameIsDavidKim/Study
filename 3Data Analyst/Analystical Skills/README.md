@@ -117,10 +117,7 @@
           ```
     * 구성 비율 테이블(집계)
         * ```python
-          plt.style.use(['seaborn'])
           for col in cols_categorical:
-              if col in cols_skip:
-                  continue
               print(f'-'*50)
               print(f'##### {col} Distribution #####')
               df_temp = df.groupby(col).agg({'Quantity': 'sum'})
@@ -235,7 +232,16 @@
           ```
 <br><br>
 
-### [분류 baseline]
+### [이진분류 baseline]
+* 모델링
+    * 
+* 평가
+    * 
+* 해석
+    * 
+<br><br>
+
+### [다중분류 baseline]
 * 모델링
     * 
 * 평가
@@ -254,7 +260,12 @@
 <br><br>
 
 ### [이상탐지 baseline]
-* 
+* 모델링
+    * 
+* 평가
+    * 
+* 해석
+    * 
 <br><br>
 
 
@@ -425,4 +436,18 @@
 * 그루핑을 통해 서비스 이용 수준 측정 가능
 * 고객마다 RFM이 어떻게 변하는지 관찰
 * R은 낮을수록 좋기 때문에 노멀라이즈 시 (1-R) 해주기
+<br><br>
+
+
+
+## `[Business Modeling]`
+
+### [collaborative 필터링]
+* 추천 알고리즘 모델
+* 
+<br><br>
+
+### [Content-based 필터링]
+* 추천 알고리즘 모델
+* 
 <br><br>
