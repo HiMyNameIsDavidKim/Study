@@ -207,10 +207,6 @@
           print(f'-'*50)
           ```
 * 시계열
-    * 히스토그램
-        * ```python
-
-          ```
     * 라인 그래프(카운트)
         * ```python
           df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
@@ -230,42 +226,164 @@
               plt.xticks(rotation=90)
               plt.show()
           ```
+    * 히스토그램
+        * ```python
+
+          ```
+    * 히트맵
+        * ```python
+
+          ```
 <br><br>
 
-### [이진분류 baseline]
+### [머신러닝 baseline]
 * 모델링
-    * 
-* 평가
-    * 
-* 해석
-    * 
-<br><br>
+    * 이진분류
+        * 
+    * 다중분류
+        * ```python
+          from sklearn.model_selection import train_test_split
+          from sklearn.preprocessing import LabelEncoder
+          from sklearn.ensemble import RandomForestClassifier
 
-### [다중분류 baseline]
-* 모델링
-    * 
-* 평가
-    * 
-* 해석
-    * 
-<br><br>
 
-### [회귀 baseline]
-* 모델링
-    * 
+          df_temp = df.copy()
+          X = df_temp.drop('country_destination', axis=1)
+          Y = df_temp['country_destination']
+
+          cols_drop = ['id']
+          for col in cols_drop:
+              X.drop(col, axis=1, inplace=True)
+
+          cols_date = ['date_account_created', 'timestamp_first_active']
+          for col in cols_date:
+              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
+
+          for column in X.columns:
+              if X[column].dtype == object:
+                  le = LabelEncoder()
+                  X[column] = le.fit_transform(X[column])
+
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          model = RandomForestClassifier(random_state=42)
+          model.fit(x_train, y_train)
+        ```
+    * 회귀
+        * 
+    
 * 평가
-    * 
+    * acc
+        * ```python
+            from sklearn.metrics import accuracy_score
+
+            y_pred_test = model.predict(x_test)
+            accuracy = accuracy_score(y_test, y_pred_test)
+            print(f"Accuracy: {accuracy*100:.2f}%")
+          ```
+    * report (분류)
+        * ```python
+          from sklearn.metrics import classification_report
+
+          y_pred_train = model.predict(x_train)
+          print(classification_report(y_train, y_pred_train))
+
+          y_pred_test = model.predict(x_test)
+          print(classification_report(y_test, y_pred_test))
+          ```
+    * report (회귀)
+        * 
+    * 자동 튜닝
+        * ```python
+          from sklearn.model_selection import GridSearchCV
+
+          param_grid = {
+              'n_estimators': [50, 100, 200],  # 트리 개수
+              'max_depth': [None, 10, 20, 30],  # 트리의 최대 깊이
+              'min_samples_split': [2, 5, 10],  # 노드를 분할하기 위한 최소 샘플 수
+              'min_samples_leaf': [1, 2, 4],  # 리프 노드의 최소 샘플 수
+              'max_features': ['auto', 'sqrt', 'log2']  # 최적의 분할을 위해 고려할 기능 수
+          }
+
+          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='recall')
+          grid_cv.fit(x_train, y_train)
+          print(f'The best params: {grid_cv.best_params_}')
+          print(f'The best score: {grid_cv.best_score_:.4f}')
+          ```
 * 해석
-    * 
+    * feature importance
+        * ```python
+          import seaborn as sns
+          import matplotlib.pyplot as plt
+
+          sns.set(style="darkgrid")
+          palette = sns.color_palette("bright", 20)
+          ftr_importances_values = model.feature_importances_
+          ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
+          ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
+          sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
+          plt.show()
+          ```
+    * AUROC
+        * ```python
+          from sklearn.metrics import roc_auc_score
+
+          y_pred_proba = model.predict_proba(x_test)
+          auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
+          print(f"AUROC (ovo): {auroc_ovo:.4f}")
+          ```
+    * ROC Curve
+        * ```python
+          from sklearn.metrics import roc_curve, auc
+          from sklearn.preprocessing import label_binarize
+          import matplotlib.pyplot as plt
+
+          y_test_bin = label_binarize(y_test, classes=model.classes_)
+          n_classes = y_test_bin.shape[1]
+          
+          plt.style.use(['seaborn'])
+          plt.figure()
+          for i in range(n_classes):
+              fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_pred_proba[:, i])
+              roc_auc = auc(fpr, tpr)
+              plt.plot(fpr, tpr, label=f'Class {model.classes_[i]} (AUC = {roc_auc:.2f})')
+
+          plt.plot([0, 1], [0, 1], 'k--', lw=1)
+          plt.xlim([0.0, 1.0])
+          plt.ylim([0.0, 1.05])
+          plt.xlabel('False Positive Rate')
+          plt.ylabel('True Positive Rate')
+          plt.title('ROC Curve')
+          plt.legend(loc="lower right")
+          plt.show()
+          ```
+    * confusion matrix (다중분류)
+        * ```python
+          from sklearn.metrics import confusion_matrix
+
+          plt.style.use(['seaborn'])
+          cm = confusion_matrix(y_test, y_pred_test)
+          plt.figure()
+          sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+          plt.xlabel('Predicted Label')
+          plt.ylabel('True Label')
+          plt.title('Confusion Matrix')
+          plt.show()
+          ```
 <br><br>
 
 ### [이상탐지 baseline]
 * 모델링
-    * 
+    * ```python
+
+      ```
 * 평가
-    * 
+    * ```python
+
+      ```
 * 해석
-    * 
+    * ```python
+
+      ```
 <br><br>
 
 
