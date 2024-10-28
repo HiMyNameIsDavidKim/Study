@@ -67,6 +67,48 @@
 
 
 
+## `[Business Analysis]`
+
+### [A/B 테스트]
+* 
+<br><br>
+
+### [퍼널 분석]
+* 
+<br><br>
+
+### [리텐션 분석]
+* 
+<br><br>
+
+### [Coustomer Lifetime value 분석]
+* 
+<br><br>
+
+### [LTV 분석]
+* 
+<br><br>
+
+### [AARRR 분석]
+* 
+<br><br>
+
+### [RFM 분석]
+* 고객을 점수화 해서 서비스 등급 구간(grade) 부여
+* R: recency, 최근성, 얼마나 최근에 구매
+* F: frequency, 빈도, 얼마나 자주 구매
+* M: monetary, 금액, 구매 금액
+* 그루핑을 통해 서비스 이용 수준 측정 가능
+* 고객마다 RFM이 어떻게 변하는지 관찰
+* R은 낮을수록 좋기 때문에 노멀라이즈 시 (1-R) 해주기
+<br><br>
+
+### [코호트 분석]
+* 
+<br><br>
+
+
+
 ## `[분석 코드 baseline]`
 
 ### [데이터 전처리 4단계]
@@ -238,9 +280,7 @@
 
 ### [머신러닝 baseline]
 * 모델링
-    * 이진분류
-        * 
-    * 다중분류
+    * 분류
         * ```python
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
@@ -269,7 +309,7 @@
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
           model = RandomForestClassifier(random_state=42)
           model.fit(x_train, y_train)
-        ```
+          ```
     * 회귀
         * ```python
           from sklearn.model_selection import train_test_split
@@ -299,46 +339,48 @@
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
           model = RandomForestRegressor(n_estimators=500, max_depth=4, random_state=42)
           model.fit(x_train, y_train)
-        ```
+          ```
 * 평가
-    * acc (분류)
-        * ```python
-          from sklearn.metrics import accuracy_score
+    * 분류
+        * acc
+            * ```python
+              from sklearn.metrics import accuracy_score
 
 
-          y_pred_test = model.predict(x_test)
-          accuracy = accuracy_score(y_test, y_pred_test)
-          print(f"Accuracy: {accuracy*100:.2f}%")
-          ```
-    * report (분류)
-        * ```python
-          from sklearn.metrics import classification_report
+              y_pred_test = model.predict(x_test)
+              accuracy = accuracy_score(y_test, y_pred_test)
+              print(f"Accuracy: {accuracy*100:.2f}%")
+              ```
+        * report
+            * ```python
+              from sklearn.metrics import classification_report
 
 
-          y_pred_train = model.predict(x_train)
-          print(classification_report(y_train, y_pred_train))
+              y_pred_train = model.predict(x_train)
+              print(classification_report(y_train, y_pred_train))
 
-          y_pred_test = model.predict(x_test)
-          print(classification_report(y_test, y_pred_test))
-          ```
-    * r^2, mse (회귀)
-        * ```python
-          from sklearn.metrics import r2_score, mean_squared_error
+              y_pred_test = model.predict(x_test)
+              print(classification_report(y_test, y_pred_test))
+              ```
+    * 회귀
+        * r^2, mse
+            * ```python
+              from sklearn.metrics import r2_score, mean_squared_error
 
 
-          y_pred_train = model.predict(x_train)
-          y_pred_test = model.predict(x_test)
+              y_pred_train = model.predict(x_train)
+              y_pred_test = model.predict(x_test)
 
-          r2_train = r2_score(y_train, y_pred_train)
-          r2_test = r2_score(y_test, y_pred_test)
-          print('r^2_score(train): ', r2_train)
-          print('r^2_score(test): ', r2_test)
-          print('')
-          mae_train = mean_squared_error(y_train, y_pred_train)
-          mae_test = mean_squared_error(y_test, y_pred_test)
-          print('mae_train(train): ', mae_train)
-          print('mae_test(test): ', mae_test)
-          ```
+              r2_train = r2_score(y_train, y_pred_train)
+              r2_test = r2_score(y_test, y_pred_test)
+              print('r^2_score(train): ', r2_train)
+              print('r^2_score(test): ', r2_test)
+              print('')
+              mae_train = mean_squared_error(y_train, y_pred_train)
+              mae_test = mean_squared_error(y_test, y_pred_test)
+              print('mae_train(train): ', mae_train)
+              print('mae_test(test): ', mae_test)
+              ```
 * 해석
     * feature importance
         * ```python
@@ -351,6 +393,8 @@
           plt.show()
           ```
     * PCA 차원 축소
+        * 높을수록 좋은 값
+        * 낮은 경우 표준화, 정규화, 이상치 제거, 상관계수 높은 특성 제거
         * ```python
           from sklearn.decomposition import PCA
           from sklearn.preprocessing import StandardScaler
@@ -458,7 +502,7 @@
               'max_features': ['auto', 'sqrt', 'log2']  # 최적의 분할을 위해 고려할 기능 수
           }
 
-          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='recall')
+          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='f1')
           grid_cv.fit(x_train, y_train)
           print(f'The best params: {grid_cv.best_params_}')
           print(f'The best score: {grid_cv.best_score_:.4f}')
@@ -466,18 +510,16 @@
 <br><br>
 
 ### [이상탐지 baseline]
-* 모델링
-    * ```python
+* 
+<br><br>
 
-      ```
-* 평가
-    * ```python
+### [RFM baseline]
+* 
+<br><br>
 
-      ```
-* 해석
-    * ```python
-
-      ```
+### [collaborative 필터링 baseline]
+* 추천 알고리즘 모델
+* 
 <br><br>
 
 
@@ -614,56 +656,3 @@
 
 
 
-## `[Business Analysis]`
-
-### [A/B 테스트]
-* 
-<br><br>
-
-### [퍼널 분석]
-* 
-<br><br>
-
-### [리텐션 분석]
-* 
-<br><br>
-
-### [Coustomer Lifetime value 분석]
-* 
-<br><br>
-
-### [LTV 분석]
-* 
-<br><br>
-
-### [AARRR 분석]
-* 
-<br><br>
-
-### [RFM 분석]
-* 고객을 점수화 해서 서비스 등급 구간(grade) 부여
-* R: recency, 최근성, 얼마나 최근에 구매
-* F: frequency, 빈도, 얼마나 자주 구매
-* M: monetary, 금액, 구매 금액
-* 그루핑을 통해 서비스 이용 수준 측정 가능
-* 고객마다 RFM이 어떻게 변하는지 관찰
-* R은 낮을수록 좋기 때문에 노멀라이즈 시 (1-R) 해주기
-<br><br>
-
-### [코호트 분석]
-* 
-<br><br>
-
-
-
-## `[Business Modeling]`
-
-### [collaborative 필터링]
-* 추천 알고리즘 모델
-* 
-<br><br>
-
-### [Content-based 필터링]
-* 추천 알고리즘 모델
-* 
-<br><br>
