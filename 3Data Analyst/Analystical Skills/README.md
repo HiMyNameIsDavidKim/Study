@@ -157,45 +157,45 @@
               display(styled_table)
               print(f'-'*50)
           ```
-    * 구성 비율 테이블(집계)
+    * 구성 비율 테이블(y 집계)
         * ```python
           for col in cols_categorical:
               print(f'-'*50)
               print(f'##### {col} Distribution #####')
-              df_temp = df.groupby(col).agg({'Quantity': 'sum'})
-              df_temp['Ratio'] = df_temp['Quantity'] / df_temp['Quantity'].sum() * 100
+              df_temp = df.groupby(col).agg({'y': 'sum'})
+              df_temp['Ratio'] = df_temp['y'] / df_temp['y'].sum() * 100
               table = df_temp.sort_values(by='Ratio', ascending=False)  # head(10)
               styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
               display(styled_table)
               print(f'-'*50)
           ```
-    * 바 플랏 for문
+    * 바 플랏
         * y가 연속형
-        * ```python 
-          plt.style.use(['dark_background'])
-          for col in cols_categorical:
-              print(f'-'*50)
-              print(f'##### {col} Distribution #####')
-              sns.barplot(x=col, y="y", data=df, color="skyblue", edgecolor=".6", label="Sales")
-              plt.gcf().set_size_inches(25, 3)
-              plt.xticks(fontsize=16)
-              plt.legend()
-              plt.show()
-              print(f'-'*50)
-          ```
+            * ```python 
+              plt.style.use(['dark_background'])
+              for col in cols_categorical:
+                  print(f'-'*50)
+                  print(f'##### {col} Distribution #####')
+                  sns.barplot(x=col, y="y", data=df, color="skyblue", edgecolor=".6", label="Sales")
+                  plt.gcf().set_size_inches(25, 3)
+                  plt.xticks(fontsize=16)
+                  plt.legend()
+                  plt.show()
+                  print(f'-'*50)
+              ```
         * y가 이산형
-        * ```python 
-          plt.style.use(['dark_background'])
-          for col in cols_categorical:
-              print(f'-'*50)
-              print(f'##### {col} Distribution #####')
-              sns.catplot(x=col, hue="y", data=df, kind="count", palette="pastel", edgecolor=".6")
-              plt.gcf().set_size_inches(25, 3)
-              plt.xticks(fontsize=16)
-              plt.legend()
-              plt.show()
-              print(f'-'*50)
-          ```
+            * ```python 
+              plt.style.use(['dark_background'])
+              for col in cols_categorical:
+                  print(f'-'*50)
+                  print(f'##### {col} Distribution #####')
+                  sns.catplot(x=col, hue="y", data=df, kind="count", palette="pastel", edgecolor=".6")
+                  plt.gcf().set_size_inches(25, 3)
+                  plt.xticks(fontsize=16)
+                  plt.legend()
+                  plt.show()
+                  print(f'-'*50)
+              ```
 * numerical
     * 상관계수 히트맵
         * ```python
@@ -204,77 +204,129 @@
           plt.show()
           ```
     * 히스토그램
-        * y가 연속형
-        * ```python
-          plt.style.use(['seaborn'])
-          for col in cols_numerical:
-              mean_y = df.groupby(col)['y'].mean()
-              print(f'-'*50)
-              print(f'##### {col} Histogram #####')
-              plt.bar(mean_y.index, mean_y, color='skyblue', alpha=0.5)
-              plt.xlabel(col)
-              plt.ylabel('Frequency')
-              plt.show()
-              print(f'-'*50)
-          ```
-        * y가 이산형
         * ```python
           plt.style.use(['seaborn'])
           for col in cols_numerical:
               print(f'-'*50)
               print(f'##### {col} Histogram #####')
-              sns.histplot(data=df, x=col, hue='y', bins=20, alpha=0.5)
+              sns.histplot(df[col], bins=20, alpha=0.5)
               plt.xlabel(col)
               plt.ylabel('Frequency')
+              plt.grid(axis='y', alpha=0.75)
               plt.show()
               print(f'-'*50)
           ```
     * 산점도
         * y가 연속형
-        * ```python
-          plt.style.use(['seaborn'])
-          for col in cols_numerical:
-              print(f'-'*50)
-              print(f'##### {col} Scatter #####')
-              sns.scatterplot(x=col, y='y', data=df)
-              plt.show()
-              print(f'-'*50)
-          ```
+            * ```python
+              plt.style.use(['seaborn'])
+              for col in cols_numerical:
+                  print(f'-'*50)
+                  print(f'##### {col} Scatter #####')
+                  sns.scatterplot(x=col, y='y', data=df)
+                  plt.show()
+                  print(f'-'*50)
+              ```
         * y가 이산형
-        * ```python
-          plt.style.use(['seaborn'])
-          cols = ['y', 'col1', 'col2', 'col3']
-          sns.pairplot(df[cols], hue='y')
-          plt.show()
-          print(f'-'*50)
-          ```
+            * ```python
+              plt.style.use(['seaborn'])
+              print(f'-'*50)
+              cols = ['y'] + cols_numerical
+              sns.pairplot(df[cols], hue='y')
+              plt.show()
+              print(f'-'*50)
+              ```
+    * 라인 그래프
+        * y가 연속형
+            * (불가능, 선이 꼬인다.)
+        * y가 이산형
+            * ```python
+              plt.style.use(['seaborn'])
+              for col in cols_numerical:
+                  print(f'-'*50)
+                  print(f'##### {col} Line #####')
+                  df_temp = df.groupby(['y', col]).size().unstack()
+                  df_temp.T.plot()
+                  plt.ylabel(f"Cnt of {col}")
+                  plt.xlabel(col)
+                  plt.grid(True)
+                  plt.legend(title='y')
+                  plt.show()
+                  print(f'-'*50)
+              ```
 * 시계열
-    * 라인 그래프(카운트)
+    * categorical
+        * 라인 그래프 (카운트, y 집계)
+            * ```python
+              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
+              plt.style.use(['seaborn'])
+              for col in cols_categorical:
+                  print(f'-'*50)
+                  print(f'##### {col} Line #####')
+                  df_temp = pd.DataFrame(df.groupby([col, 'Date_1'], as_index=False)['UniqueID'].count())  # sum, mean
+                  sns.lineplot(x='Date_1', y='UniqueID', hue=col, data = df_temp)
+                  plt.xticks(rotation=90)
+                  plt.show()
+                  print(f'-'*50)
+              ```
+        * 히스토그램 (카운트, y 집계)
+            * ```python
+              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
+              plt.style.use(['seaborn'])
+              for col in cols_categorical:
+                  print(f'-'*50)
+                  print(f'##### {col} Line #####')
+                  df_temp = pd.DataFrame(df.groupby([col, 'Date_1'], as_index=False)['UniqueID'].count())  # sum, mean
+                  sns.barplot(x='Date_1', y='UniqueID', hue=col, data = df_temp)
+                  plt.xticks(rotation=90)
+                  plt.show()
+                  print(f'-'*50)
+              ```
+    * numerical
+        * 라인 그래프 (값 그대로)
+            * ```python
+              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
+              plt.style.use(['seaborn'])
+              for col in cols_numerical:
+                  print(f'-'*50)
+                  print(f'##### {col} Line #####')
+                  plt.plot(df['Date_1'], df[col])
+                  plt.xlabel('Date_1')
+                  plt.ylabel(col)
+                  plt.show()
+                  print(f'-'*50)
+              ```
+        * 라인 그래프 (y랑 같이 보기)
+            * ```python
+              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
+              plt.style.use(['seaborn'])
+              for col in cols_numerical:
+                  print(f'-'*50)
+                  print(f'##### {col} Line #####')
+                  fig, ax1 = plt.subplots()
+                  ax1.plot(df['Date'], df['y'], color='blue')
+                  ax2 = ax1.twinx()
+                  ax2.plot(df['Date'], df[col], color='red')
+                  fig.legend()
+                  plt.show()
+                  print(f'-'*50)
+              ```
+    * 연별 월별 히스토그램
         * ```python
-          df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-          for col in cols_categorical:
-              df_temp = df.groupby(['Date_1', col]).size().reset_index(name='Count')
-              sns.lineplot(data=df_temp, x='Date_1', y='Count', hue=col)
-              plt.xticks(rotation=90)
-              plt.show()
-          ```
-    * 라인 그래프(집계)
-        * ```python
-          df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-          for col in cols_categorical:
-              top10 = df.groupby(col)['y'].sum().nlargest(10).index
-              df_temp = df[df[col].isin(top10)].groupby(['date_1', col]).agg({'y': 'sum'}).reset_index()
-              sns.lineplot(data=df_temp, x='date_1', y='y', hue=col)
-              plt.xticks(rotation=90)
-              plt.show()
-          ```
-    * 히스토그램
-        * ```python
-
+          df['Date_year'] = df["Date"].dt.strftime("%Y")
+          df['Date_month'] = df["Date"].dt.strftime("%m")
+          plt.style.use(['seaborn'])
+          df_temp = pd.DataFrame(df.groupby(['Date_year', 'Date_month'], as_index=False)['UniqueID'].count())
+          sns.barplot(x='Date_month', y='UniqueID', hue='Date_year', data = df_temp)
+          plt.show()
           ```
     * 히트맵
         * ```python
-
+          df['Date_year'] = df["Date"].dt.strftime("%Y")
+          df['Date_month'] = df["Date"].dt.strftime("%m")
+          df_pivot = df.pivot_table(index='Date_month', columns='Date_year', values='CPI')
+          sns.heatmap(df_pivot, cmap="Blues", cbar=True)
+          plt.show()
           ```
 <br><br>
 
