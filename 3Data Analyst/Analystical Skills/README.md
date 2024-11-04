@@ -142,7 +142,7 @@
           cols_categorical = cols_categorical.append(pd.Index([col]))
       ```
 * categorical
-    * 구성 비율 테이블(카운트)
+    * 구성 비율(카운트)
         * ```python
           [print(f'{col}: {df[col].nunique()}') for col in cols_categorical]
           for col in cols_categorical:
@@ -153,8 +153,31 @@
               table = pd.DataFrame({col: labels, 'Count': cnts})
               table['Ratio'] = table['Count'] / table['Count'].sum() * 100
               table = table.sort_values(by='Ratio', ascending=False).reset_index(drop=True)  # head(10)
+            
+              # Table
               styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
               display(styled_table)
+              
+              # Pie Plot
+              fig, ax = plt.subplots(figsize=(12, 7), subplot_kw=dict(aspect="equal"), dpi= 80)
+              data = table['Count']
+              categories = df[col]
+              explode = [0] * df[col].nunique()
+              explode[0] = 0.1
+              def func(pct, allvals):
+                  absolute = int(pct/100.*np.sum(allvals))
+                  return "{:.1f}% ({:d})".format(pct, absolute)
+              wedges, texts, autotexts = ax.pie(data, 
+                                              autopct=lambda pct: func(pct, data),
+                                              textprops=dict(color="w"), 
+                                              colors=plt.cm.Dark2.colors,
+                                              startangle=140,
+                                              explode=explode)
+              ax.legend(wedges, categories, title=f"{col} Class", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+              plt.setp(autotexts, size=10, weight=700)
+              ax.set_title(f"Class of {col}: Pie Plot")
+              plt.show()
+
               print(f'-'*50)
           ```
     * 구성 비율 테이블(y 집계)
@@ -165,8 +188,31 @@
               df_temp = df.groupby(col).agg({'y': 'sum'})
               df_temp['Ratio'] = df_temp['y'] / df_temp['y'].sum() * 100
               table = df_temp.sort_values(by='Ratio', ascending=False)  # head(10)
+
+              # Table
               styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
               display(styled_table)
+            
+              # Pie Plot
+              fig, ax = plt.subplots(figsize=(12, 7), subplot_kw=dict(aspect="equal"), dpi= 80)
+              data = table['y']
+              categories = df[col]
+              explode = [0] * df[col].nunique()
+              explode[0] = 0.1
+              def func(pct, allvals):
+                  absolute = int(pct/100.*np.sum(allvals))
+                  return "{:.1f}% ({:d})".format(pct, absolute)
+              wedges, texts, autotexts = ax.pie(data, 
+                                              autopct=lambda pct: func(pct, data),
+                                              textprops=dict(color="w"), 
+                                              colors=plt.cm.Dark2.colors,
+                                              startangle=140,
+                                              explode=explode)
+              ax.legend(wedges, categories, title=f"{col} Class", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+              plt.setp(autotexts, size=10, weight=700)
+              ax.set_title(f"Class of {col}: Pie Plot")
+              plt.show()
+
               print(f'-'*50)
           ```
     * 바 플랏
@@ -189,10 +235,15 @@
               for col in cols_categorical:
                   print(f'-'*50)
                   print(f'##### {col} Distribution #####')
-                  sns.catplot(x=col, hue="y", data=df, kind="count", palette="pastel", edgecolor=".6")
-                  plt.gcf().set_size_inches(25, 3)
-                  plt.xticks(fontsize=16)
-                  plt.legend()
+                  ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
+                  g = sns.catplot(x="y", col=col, col_wrap=4, data=df,
+                              kind="count", height=3.5, aspect=.8,  palette='deep')
+                  for ax in g.axes.flat:
+                      cat = ax.get_title().split(" = ")[-1]
+                      if cat in ratio_1:
+                          ax.text(0.5, 0.94,
+                                  f"y Rate: {ratio_1[cat]:.2f}%", 
+                                  ha="center", va="bottom", transform=ax.transAxes, fontsize=10, color="blue")
                   plt.show()
                   print(f'-'*50)
               ```
@@ -201,6 +252,22 @@
         * ```python
           plt.style.use(['seaborn'])
           sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+          plt.show()
+          ```
+    * 바이올린 플랏
+        * ```python
+          n_cols = 4
+          n_rows = (len(filtered_cols) + n_cols - 1) // n_cols
+          fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
+          axs = axs.flatten()
+          plt.style.use(['seaborn'])
+          for i, col in enumerate(filtered_cols):
+              sns.violinplot(x='y', y=col, data=df, scale='width', inner='quartile', ax=axs[i], palette='deep')
+              axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
+              axs[i].set_xlabel(col, fontsize=12)
+          for j in range(i + 1, len(axs)):
+                  axs[j].axis('off')
+          plt.tight_layout()
           plt.show()
           ```
     * 히스토그램
@@ -222,7 +289,7 @@
               plt.style.use(['seaborn'])
               for col in cols_numerical:
                   print(f'-'*50)
-                  print(f'##### {col} Scatter #####')
+                  print(f'##### {col} Scatter Plot #####')
                   sns.scatterplot(x=col, y='y', data=df)
                   plt.show()
                   print(f'-'*50)
@@ -231,8 +298,9 @@
             * ```python
               plt.style.use(['seaborn'])
               print(f'-'*50)
+              print(f'##### Pair Plot #####')
               cols = ['y'] + cols_numerical
-              sns.pairplot(df[cols], hue='y')
+              sns.pairplot(df_temp, kind="scatter", hue="y", plot_kws=dict(s=80, edgecolor="white", linewidth=2.5))
               plt.show()
               print(f'-'*50)
               ```
@@ -244,7 +312,7 @@
               plt.style.use(['seaborn'])
               for col in cols_numerical:
                   print(f'-'*50)
-                  print(f'##### {col} Line #####')
+                  print(f'##### {col} Line Plot #####')
                   df_temp = df.groupby(['y', col]).size().unstack()
                   df_temp.T.plot()
                   plt.ylabel(f"Cnt of {col}")
