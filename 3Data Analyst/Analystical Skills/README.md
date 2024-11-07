@@ -250,7 +250,7 @@
 * numerical
     * 상관계수 히트맵
         * ```python
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
           plt.show()
           ```
@@ -260,7 +260,7 @@
           n_rows = (len(filtered_cols) + n_cols - 1) // n_cols
           fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
           axs = axs.flatten()
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           for i, col in enumerate(filtered_cols):
               sns.violinplot(x='y', y=col, data=df, scale='width', inner='quartile', ax=axs[i], palette='deep')
               axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
@@ -272,7 +272,7 @@
           ```
     * 히스토그램
         * ```python
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           for col in cols_numerical:
               print(f'-'*50)
               print(f'##### {col} Histogram #####')
@@ -286,7 +286,7 @@
     * 산점도
         * y가 연속형
             * ```python
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_numerical:
                   print(f'-'*50)
                   print(f'##### {col} Scatter Plot #####')
@@ -296,7 +296,7 @@
               ```
         * y가 이산형
             * ```python
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               print(f'-'*50)
               print(f'##### Pair Plot #####')
               cols = ['y'] + cols_numerical
@@ -309,7 +309,7 @@
             * (불가능, 선이 꼬인다.)
         * y가 이산형
             * ```python
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_numerical:
                   print(f'-'*50)
                   print(f'##### {col} Line Plot #####')
@@ -327,7 +327,7 @@
         * 라인 그래프 (카운트, y 집계)
             * ```python
               df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_categorical:
                   print(f'-'*50)
                   print(f'##### {col} Line #####')
@@ -340,7 +340,7 @@
         * 히스토그램 (카운트, y 집계)
             * ```python
               df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_categorical:
                   print(f'-'*50)
                   print(f'##### {col} Line #####')
@@ -354,7 +354,7 @@
         * 라인 그래프 (값 그대로)
             * ```python
               df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_numerical:
                   print(f'-'*50)
                   print(f'##### {col} Line #####')
@@ -367,7 +367,7 @@
         * 라인 그래프 (y랑 같이 보기)
             * ```python
               df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_numerical:
                   print(f'-'*50)
                   print(f'##### {col} Line #####')
@@ -383,7 +383,7 @@
         * ```python
           df['Date_year'] = df["Date"].dt.strftime("%Y")
           df['Date_month'] = df["Date"].dt.strftime("%m")
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           df_temp = pd.DataFrame(df.groupby(['Date_year', 'Date_month'], as_index=False)['UniqueID'].count())
           sns.barplot(x='Date_month', y='UniqueID', hue='Date_year', data = df_temp)
           plt.show()
@@ -531,7 +531,7 @@
               print(f'Comp {i+1} config: {component_str}')
               print(f'Comp {i+1} ratio: {ratio_str}')
           
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           plt.scatter(X_pca[:, 0], X_pca[:, 1])
           plt.xlabel('Principal Comp 1')
           plt.ylabel('Principal Comp 2')
@@ -555,7 +555,7 @@
           y_test_bin = label_binarize(y_test, classes=model.classes_)
           n_classes = y_test_bin.shape[1]
           
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           plt.figure()
           for i in range(n_classes):
               fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_pred_proba[:, i])
@@ -599,7 +599,7 @@
           from sklearn.metrics import confusion_matrix
 
 
-          plt.style.use(['seaborn'])
+          plt.style.use(['seaborn-v0_8'])
           cm = confusion_matrix(y_test, y_pred_test)
           plt.figure()
           sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
@@ -615,11 +615,10 @@
 
 
           param_grid = {
-              'n_estimators': [50, 100, 200],  # 트리 개수
-              'max_depth': [None, 10, 20, 30],  # 트리의 최대 깊이
-              'min_samples_split': [2, 5, 10],  # 노드를 분할하기 위한 최소 샘플 수
-              'min_samples_leaf': [1, 2, 4],  # 리프 노드의 최소 샘플 수
-              'max_features': ['auto', 'sqrt', 'log2']  # 최적의 분할을 위해 고려할 기능 수
+            'n_estimators': [100, 200, 300],  # 트리 개수
+            'max_depth': [None, 10, 20],  # 트리의 최대 깊이
+            'min_samples_split': [2, 5, 10],  # 노드를 분할하기 위한 최소 샘플 수
+            'min_samples_leaf': [1, 2, 4],  # 리프 노드의 최소 샘플 수
           }
 
           grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='f1')
@@ -737,6 +736,7 @@
 * 물류 유통 지표
     * DOC: day of coverage, 재고로 몇일 판매 가능한지, (재고량) / (하루 판매량)
     * DOC가 낮으면 빨리 소진 되니까 재고 전환율이 높은 것이다.
+    * SKU grade: 잘팔리는 활성 재고를 상위 등급으로 부여한다.
 <br><br>
 
 ### [통계 요약]

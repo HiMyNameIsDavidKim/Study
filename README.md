@@ -41,8 +41,6 @@
 ## 📊 Data Analyst
   - [`Analystical Skills`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Analystical%20Skills)
 
-  - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
-
   - `Visualization`
 
     - [`Tableau`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Tableau)
@@ -52,6 +50,8 @@
     - [`Power BI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Power_BI)
 
   - `Query`
+
+    - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
     - [`Big Query`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Big_Query)
 
