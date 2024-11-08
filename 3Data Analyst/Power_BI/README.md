@@ -125,6 +125,14 @@
     * CALCULATE(<expression>, <filter1>, <filter2> [, _])
     * expression은 sum, avg, min, max 등등 집계함수
     * filter는 조건, (ex. 테이블1의 col 값과 테이블2의 col 값이 같을 때)
+* SUMX
+    * 컬럼을 만들고 계산한 값을 저장하고 싶을때 사용하는 함수
+    * col = SUMX(<table>, <expression>)
+    * 데이터 탭에 calculation에서 저장된 것을 볼 수 있다.
+* SWITCH
+    * value 값을 바꾸면 컬럼의 결과도 바뀌는 함수
+    * 지표를 선택할 때마다 그래프가 바뀌게 하고 싶을때 사용한다.
+    * SWITCH(<expression>, <value1>, <result1>, <value2>, <result2>, ...)
 <br><br>
 
 ### [슬라이서 버튼]
@@ -146,6 +154,9 @@
     * 축을 공유하기 때문에 보기 편할 경우가 있다.
 <br><br>
 
-
+### [영역 그래프]
+* 시각화 탭 -> 누적 영역형 차트 클릭
+* 범례에 컬럼 넣으면 여러 영역 표현 가능하다.
+<br><br>
 
 
