@@ -728,12 +728,16 @@
             * LTV: 고객 생애 가치, 한명의 고객에게 기대되는 수익
             * ARPU: avg revenue per user, (매출) / (사용자 수)
             * ARPPU: avg revenue per paid user, (매출) / (구매자 수)
-* 물류 유통 용어
+* 유통 물류 용어
+    * 구매 -> 재고 -> 판매 -> 출고
     * 재고: 입고량 - 판매량
     * 권장 판매가(list price) -> 할인 -> 실 판매가(net price)
     * SKU: stock keeping unit, 재고 관리를 위한 최소 단위 코드
     * Unit Quantity: 상품의 개수
-* 물류 유통 지표
+    * PO: purchase order, 구매 및 발주, 입고를 위해 하는 process
+    * SCM: supply chain management, 공급망 관리
+    * 공급망 구성: 브랜드, 벤더, 운송업체, 물류창고
+* 유통 물류 지표
     * DOC: day of coverage, 재고로 몇일 판매 가능한지, (재고량) / (하루 판매량)
     * DOC가 낮으면 빨리 소진 되니까 재고 전환율이 높은 것이다.
     * SKU grade: 잘팔리는 활성 재고를 상위 등급으로 부여한다.
