@@ -505,8 +505,8 @@
     * feature importance
         * ```python
           sns.set(style="darkgrid")
-          palette = sns.color_palette("bright", 20)
-          ftr_importances_values = model.feature_importances_
+          palette = sns.color_palette("turbo", 20)[::-1]
+          ftr_importances_values = model.feature_importances_  # lgb.feature_importance()
           ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
           ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
