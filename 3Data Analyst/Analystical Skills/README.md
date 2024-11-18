@@ -506,7 +506,7 @@
         * ```python
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
-          ftr_importances_values = model.feature_importances_  # lgb.feature_importance()
+          ftr_importances_values = model.feature_importances_  # lgb: model.feature_importance()
           ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
           ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
@@ -537,22 +537,18 @@
           plt.ylabel('Principal Comp 2')
           plt.show()
           ```
-    * AUROC (분류)
-        * ```python
-          from sklearn.metrics import roc_auc_score
-
-
-          y_pred_proba = model.predict_proba(x_test)
-          auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
-          print(f"AUROC (ovo): {auroc_ovo:.4f}")
-          ```
     * ROC Curve (분류)
+        * 모델의 전반적인 분류 성능이 좋다.
         * ```python
           from sklearn.metrics import roc_curve, auc
           from sklearn.preprocessing import label_binarize
 
 
-          y_test_bin = label_binarize(y_test, classes=model.classes_)
+          y_pred_proba = model.predict_proba(x_test)  # lgb: model.predict(X, output_margin=False)
+          if Y_predict.ndim == 1:
+              Y_predict = Y_predict.reshape(-1, 1)
+          classes = model.classes_
+          y_test_bin = label_binarize(y_test, classes=classes)
           n_classes = y_test_bin.shape[1]
           
           plt.style.use(['seaborn-v0_8'])
@@ -560,7 +556,7 @@
           for i in range(n_classes):
               fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_pred_proba[:, i])
               roc_auc = auc(fpr, tpr)
-              plt.plot(fpr, tpr, label=f'Class {model.classes_[i]} (AUC = {roc_auc:.2f})')
+              plt.plot(fpr, tpr, label=f'Class {classes[i]} (AUC = {roc_auc:.2f})')
 
           plt.plot([0, 1], [0, 1], 'k--', lw=1)
           plt.xlim([0.0, 1.0])
@@ -569,6 +565,33 @@
           plt.ylabel('True Positive Rate')
           plt.title('ROC Curve')
           plt.legend(loc="lower right")
+          plt.show()
+          ```
+    * AUROC 만 (분류)
+        * ```python
+          from sklearn.metrics import roc_auc_score
+
+
+          y_pred_proba = model.predict_proba(x_test)  # lgb: model.predict(X, output_margin=False)
+          auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
+          print(f"AUROC (ovo): {auroc_ovo:.4f}")
+          ```
+    * Cumulative Gains Curve
+        * 가장 잘 예측한 샘플들에서 실제로 많은 중요한 결과를 찾았다.
+        * ```python
+          y_test = y_test.to_numpy()
+          y_pred_proba = model.predict_proba(x_test)  # lgb: model.predict(X, output_margin=False)
+          sorted_indices = np.argsort(y_pred_proba)[::-1]
+          sorted_y_test = y_test[sorted_indices]
+          cumulative_gains = np.cumsum(sorted_y_test) / np.sum(sorted_y_test)
+
+          plt.plot([0, len(y_test)], [0, 1], linestyle="--", label="Random Model")
+          plt.plot(np.arange(1, len(y_test) + 1), cumulative_gains, label="LightGBM Model", color='blue')
+          plt.title('Cumulative Gains Curve')
+          plt.xlabel('Percentage of Samples (%)')
+          plt.ylabel('Cumulative Gains (%)')
+          plt.legend()
+          plt.grid(True)
           plt.show()
           ```
     * 시각화 (회귀)
