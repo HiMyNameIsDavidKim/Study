@@ -109,6 +109,24 @@
 
 
 
+## `[모델링 실전 팁]`
+* 개념: [`ML 트리 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL) 참고
+<br><br>
+
+### [LightGBM]
+* 
+<br><br>
+
+### [XGBoost]
+* 
+<br><br>
+
+### [TabNet]
+* 
+<br><br>
+
+
+
 ## `[분석 코드 baseline]`
 
 ### [데이터 전처리 4단계]
@@ -401,6 +419,7 @@
 ### [머신러닝 baseline]
 * 모델링
     * 분류
+        * 랜덤 포레스트
         * ```python
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
@@ -429,6 +448,199 @@
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
           model = RandomForestClassifier(random_state=42)
           model.fit(x_train, y_train)
+          ```
+        * LightGBM
+        * ```python
+          from sklearn.model_selection import train_test_split
+          from sklearn.preprocessing import LabelEncoder
+          from sklearn.ensemble import RandomForestClassifier
+
+
+          LEARNING_RATE = 3e-2
+          NUM_BOOST_ROUND = 500
+          THRESHOLD = 0.3
+
+          params = {
+              "learning_rate": LEARNING_RATE,
+              "num_leaves": 16,
+              "max_depth": 6,
+              "drop_rate": 0.3,
+              "max_drop": 50,
+              "feature_fraction": 0.5,
+              "min_child_samples": 10,
+              "min_child_weight": 0.01,
+              "subsample": 0.9,
+              "is_unbalance": False,
+              "max_bin": 256,
+              "verbosity": -1,
+              "min_split_gain": 0,
+              "boosting_type": 'gbdt',
+              "objective": "binary",
+              'metric': 'binary_logloss',
+              "seed": 42,
+              # "early_stopping_rounds": 200,
+          }
+
+          df_temp = df.copy()
+          X = df_temp.drop('y', axis=1)
+          Y = df_temp['y']
+
+          cols_drop = ['id']
+          for col in cols_drop:
+              X.drop(col, axis=1, inplace=True)
+
+          cols_date = ['date_1', 'date_2']
+          for col in cols_date:
+              X[f'week_{col}'] = X[col].dt.dayofweek
+              X[f'month_{col}'] = X[col].dt.month
+              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
+
+          for column in X.columns:
+              if X[column].dtype == object:
+                  le = LabelEncoder()
+                  X[column] = le.fit_transform(X[column])
+
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          ds_train = lgb.Dataset (x_train, label = y_train)
+          ds_test = lgb.Dataset (x_test, label = y_test)
+
+          model = lgb.train(
+              params,
+              ds_train,
+              NUM_BOOST_ROUND,
+              # valid_sets=[ds_test],
+              # valid_names=['test'],
+          )
+          ```
+        * XGBoost
+        * ```python
+          from sklearn.model_selection import train_test_split
+          from sklearn.preprocessing import LabelEncoder
+          from sklearn.ensemble import RandomForestClassifier
+
+
+          df_temp = df.copy()
+          X = df_temp.drop('y', axis=1)
+          Y = df_temp['y']
+
+          cols_drop = ['id']
+          for col in cols_drop:
+              X.drop(col, axis=1, inplace=True)
+
+          cols_date = ['date_1', 'date_2']
+          for col in cols_date:
+              X[f'week_{col}'] = X[col].dt.dayofweek
+              X[f'month_{col}'] = X[col].dt.month
+              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
+
+          for column in X.columns:
+              if X[column].dtype == object:
+                  le = LabelEncoder()
+                  X[column] = le.fit_transform(X[column])
+
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          model = xgb.XGBClassifier(objective='multi:softmax', num_class=len(Y.unique()), random_state=42)
+          model.fit(x_train, y_train)
+          ```
+        * TabNet
+        * ```python
+          !pip install -q pytorch-tabnet==3.1.1
+          ```
+        * ```python
+          from sklearn.model_selection import train_test_split
+          from sklearn.preprocessing import LabelEncoder
+          from pytorch_tabnet.tab_model  import TabNetClassifier
+          from pytorch_tabnet.metrics import Metric
+          from sklearn.metrics import f1_score
+          import torch
+
+
+          device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+          print(f"Using device: {device}")
+          
+          CAT_EMB_DIM = 10  # cat_dim의 배수 추천
+          N_A = 8
+          N_D = 8
+          LEARNING_RATE = 3e-2
+          BATCH_SIZE = 2048
+          PATIENCE = 30
+          EPOCH = 60
+          NUM_WORKERS = 1
+
+          df_temp = df.copy()
+          X = df_temp.drop('y', axis=1)
+          Y = df_temp['y']
+
+          cols_drop = ['id']
+          for col in cols_drop:
+              X.drop(col, axis=1, inplace=True)
+
+          cols_date = ['date_1', 'date_2']
+          for col in cols_date:
+              X[f'week_{col}'] = X[col].dt.dayofweek
+              X[f'month_{col}'] = X[col].dt.month
+              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
+
+          cat_dims = []
+          cat_idxs = []
+          for column in X.columns:
+              if X[column].dtype == object:
+                  le = LabelEncoder()
+                  X[column] = le.fit_transform(X[column])
+                  cat_dims.append(len(le.classes_))
+                  cat_idxs.append(X.columns.get_loc(column))
+
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          
+          x_train_tab = x_train.values
+          y_train_tab = y_train.values
+          x_test_tab = x_test.values
+          y_test_tab = y_test.values
+
+          class F1_Score(Metric):
+              def __init__(self):
+                  self._name = "F1_score"
+                  self._maximize = True
+
+              def __call__(self, y_true, y_score):
+                  y_pred = np.argmax(y_score, axis=1)
+                  score = f1_score(y_true, y_pred, average='macro')
+                  return score
+
+
+          tabnet_model = TabNetClassifier(
+            cat_idxs=cat_idxs,
+            cat_dims=cat_dims,
+            cat_emb_dim=CAT_EMB_DIM,
+            n_a=N_A,
+            n_d=N_D,
+            optimizer_fn=torch.optim.Adam,
+            optimizer_params=dict(lr=LEARNING_RATE),
+            scheduler_fn=torch.optim.lr_scheduler.CosineAnnealingLR,
+            scheduler_params={"T_max": EPOCH},
+          )
+
+          tabnet_model.fit(
+            X_train=x_train_tab, y_train=y_train_tab,
+            eval_set=[(x_train_tab, y_train_tab), (x_test_tab, y_test_tab)],
+            eval_name=['train', 'test'],
+            eval_metric=['logloss','F1_score'],
+            max_epochs=EPOCH , patience=PATIENCE,
+            batch_size=BATCH_SIZE,
+            virtual_batch_size=BATCH_SIZE,
+            num_workers=NUM_WORKERS,
+            drop_last=False,
+          )
+
+          y_train_pred_tab = tabnet_model.predict(x_train_tab)
+          f1 = f1_score(y_train_tab, y_train_pred_tab, average='macro')
+          print(f'F1 score: {f1:.3f}')
+          print(classification_report(y_train_tab, y_train_pred_tab))
+
+          y_test_pred_tab = tabnet_model.predict(x_test_tab)
+          f1 = f1_score(y_test_tab, y_test_pred_tab, average='macro')
+          print(f'F1 score: {f1:.3f}')
+          print(classification_report(y_test_tab, y_test_pred_tab))
           ```
     * 회귀
         * ```python
@@ -472,6 +684,7 @@
               print(f"Accuracy: {accuracy*100:.2f}%")
               ```
         * report
+            * 기본
             * ```python
               from sklearn.metrics import classification_report
 
@@ -481,6 +694,28 @@
 
               y_pred_test = model.predict(x_test)
               print(classification_report(y_test, y_pred_test))
+              ```
+            * LightGBM
+            * ```python
+              from sklearn.metrics import classification_report
+
+
+              y_pred_train = model.predict(x_train)
+              for i in range(0, len(y_pred_train)):
+                  if y_pred_train[i] >=THRESHOLD:
+                      y_pred_train[i] = 1
+                  else:
+                      y_pred_train[i] = 0
+              print(classification_report(y_train, y_pred_train, digits=3))
+
+
+              y_pred_test = model.predict(x_test)
+              for i in range(0,len(y_pred_test)):
+                  if y_pred_test[i] >=THRESHOLD:
+                     y_pred_test[i] = 1
+                  else:
+                      y_pred_test[i] = 0
+              print(classification_report(y_test, y_pred_test, digits=3))
               ```
     * 회귀
         * r^2, mse
