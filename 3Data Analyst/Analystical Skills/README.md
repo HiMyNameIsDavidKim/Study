@@ -109,20 +109,36 @@
 
 
 
-## `[모델링 실전 팁]`
-* 개념: [`ML 트리 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL) 참고
+## `[모델링]`
+* 이론은 [`ML 트리 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL) 참고
 <br><br>
 
 ### [LightGBM]
-* 
+* 대규모 데이터에 적합하다.
+* 속도가 빠르고, CPU만 사용한다.
+* leaf-wise로 트리가 성장한다.
+* 실전 팁
+    * 다른 파라미터 다 조정하고 마지막에 에포크 조절한다.
+    * 생각보다 판정 threshold 영향이 크다.
+    * 랜덤포레스트랑 메서드 이름이 달라서 에러 터지니 주의한다.
 <br><br>
 
 ### [XGBoost]
-* 
+* 소규모 데이터에 적합하다.
+* 속도가 느리고, GPU 가속을 지원한다.
+* depth-wise로 트리가 성장한다.
+* 실전 팁
+    * 
 <br><br>
 
 ### [TabNet]
-* 
+* 딥러닝 어탠션 매커니즘 기반이다.
+* 컬럼과 샘플이 엄청나게 많아야 효과가 좋다.
+* 내장된 분석 메서드가 있다.
+* 실전 팁
+    * batch 늘리면 속도 빨라진다.
+    * 파라미터가 매우 예민하다.
+    * 얼리스탑을 잘 제어해야 한다.
 <br><br>
 
 
@@ -563,8 +579,8 @@
           N_D = 8
           LEARNING_RATE = 3e-2
           BATCH_SIZE = 2048
-          PATIENCE = 30
           EPOCH = 60
+          PATIENCE = EPOCH
           NUM_WORKERS = 1
 
           df_temp = df.copy()
@@ -608,7 +624,7 @@
                   return score
 
 
-          tabnet_model = TabNetClassifier(
+          model = TabNetClassifier(
             cat_idxs=cat_idxs,
             cat_dims=cat_dims,
             cat_emb_dim=CAT_EMB_DIM,
@@ -620,7 +636,7 @@
             scheduler_params={"T_max": EPOCH},
           )
 
-          tabnet_model.fit(
+          model.fit(
             X_train=x_train_tab, y_train=y_train_tab,
             eval_set=[(x_train_tab, y_train_tab), (x_test_tab, y_test_tab)],
             eval_name=['train', 'test'],
@@ -631,16 +647,6 @@
             num_workers=NUM_WORKERS,
             drop_last=False,
           )
-
-          y_train_pred_tab = tabnet_model.predict(x_train_tab)
-          f1 = f1_score(y_train_tab, y_train_pred_tab, average='macro')
-          print(f'F1 score: {f1:.3f}')
-          print(classification_report(y_train_tab, y_train_pred_tab))
-
-          y_test_pred_tab = tabnet_model.predict(x_test_tab)
-          f1 = f1_score(y_test_tab, y_test_pred_tab, average='macro')
-          print(f'F1 score: {f1:.3f}')
-          print(classification_report(y_test_tab, y_test_pred_tab))
           ```
     * 회귀
         * ```python
@@ -717,6 +723,17 @@
                       y_pred_test[i] = 0
               print(classification_report(y_test, y_pred_test, digits=3))
               ```
+            * TabNet
+            * ```python
+              from sklearn.metrics import classification_report
+
+              
+              y_train_pred_tab = model.predict(x_train_tab)
+              print(classification_report(y_train_tab, y_train_pred_tab))
+
+              y_test_pred_tab = model.predict(x_test_tab)
+              print(classification_report(y_test_tab, y_test_pred_tab))
+              ```
     * 회귀
         * r^2, mse
             * ```python
@@ -741,7 +758,7 @@
         * ```python
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
-          ftr_importances_values = model.feature_importances_  # lgb: model.feature_importance()
+          ftr_importances_values = model.feature_importances_  # LightGBM: model.feature_importance()
           ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
           ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
@@ -779,7 +796,7 @@
           from sklearn.preprocessing import label_binarize
 
 
-          y_pred_proba = model.predict_proba(x_test)  # lgb: model.predict(X, output_margin=False)
+          y_pred_proba = model.predict_proba(x_test)  # LightGBM: model.predict(X, output_margin=False)
           if Y_predict.ndim == 1:
               Y_predict = Y_predict.reshape(-1, 1)
           classes = model.classes_
@@ -807,7 +824,7 @@
           from sklearn.metrics import roc_auc_score
 
 
-          y_pred_proba = model.predict_proba(x_test)  # lgb: model.predict(X, output_margin=False)
+          y_pred_proba = model.predict_proba(x_test)  # LightGBM: model.predict(X, output_margin=False)
           auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
           print(f"AUROC (ovo): {auroc_ovo:.4f}")
           ```
@@ -815,7 +832,7 @@
         * 가장 잘 예측한 샘플들에서 실제로 많은 중요한 결과를 찾았다.
         * ```python
           y_test = y_test.to_numpy()
-          y_pred_proba = model.predict_proba(x_test)  # lgb: model.predict(X, output_margin=False)
+          y_pred_proba = model.predict_proba(x_test)  # LightGBM: model.predict(X, output_margin=False)
           sorted_indices = np.argsort(y_pred_proba)[::-1]
           sorted_y_test = y_test[sorted_indices]
           cumulative_gains = np.cumsum(sorted_y_test) / np.sum(sorted_y_test)
