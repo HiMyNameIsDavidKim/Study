@@ -1,5 +1,170 @@
 # Python (분석)
 
+## `[유용한 사이트]`
+* [`다차원 플랏`](https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/)
+* [`클러스터링`](https://scikit-learn.org/stable/modules/clustering.html)
+<br><br>
+
+## `[시각화]`
+
+### [seaborn]
+* 히스토그램
+    * ttbill = sns.histplot(df.total_bill)
+    * ttbill.set(xlabel = 'Value', ylabel = 'Frequency', title = "Total Bill")
+* 조인트 플랏
+    * (히스토그램 + 스캐터 플랏) 한번에 표시
+    * sns.jointplot(x ="total_bill", y ="tip", data = df)
+* 디스트리뷰션 플랏
+    * (히스토그램 + KDE 플랏) 한번에 표시
+    * KDE는 밀도 추정치를 시각화
+    * 연속형 데이터 맨 처음 볼 때 자주 사용
+    * 기초 통계량 같이 보도록 describe와 함께 사용
+    * sns.displot(df['col'])
+* 페어 플랏
+    * 스캐터 플랏 한번에 모두 표시
+    * 연속형 변수만 가능
+    * sns.pairplot(df)
+* 히트맵
+    * 히트맵 표시
+    * sns.heatmap(df_yield[numeric_columns].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+* 스트립 플랏
+    * 이산형 변수를 x축에 두고 y축에 연속형 변수에 뿌려보는 그래프
+    * 여러 집단의 연속형 변수 비교
+    * sns.stripplot(x = "day", y = "total_bill", data = df)
+    * 카테고리 2개 활용 가능
+    * 색을 다르게 표시
+    * sns.stripplot(x = "tip", y = "day", hue = "sex", data = df)
+* 박스 플랏
+    * 스트립 플랏이랑 동일한 역할 그래프
+    * 중앙값, IQR 같은 기술통계량 박스로 표시
+    * 박스 밖에 찍힌 것들은 outlier
+    * sns.boxplot(x = "day", y = "total_bill", hue = "time", data = df);
+* 스캐터 플랏
+    * 산점도 분포 확인
+    * sns.scatterplot(x='Temp', y='Sales', data=df)
+    * plt.gcf().set_size_inches(7, 7)
+* 피벗 플랏
+    * 년도별 카테고리별 점유율 변화에 유용
+    * ax = df.plot(kind='barh', stacked=True, title="years amt", rot=0)
+    * for p in ax.patches:
+    *   left, bottom, width, height = p.get_bbox().bounds
+    *   ax.annotate("%.1f"%(width*100), xy=(left+width/2, bottom+height/2), ha='center', va='center', color='black')
+* 테이블 그라데이션 표시
+    * 플랏 말고 테이블 상태에서 overview 가능
+    * df.style.background_gradient(cmap='Blues', subset=['col1'])
+* GPS 데이터 시각화
+    * 스캐터 플랏 사용하기
+    * plt.scatter(df['Lon'], df['Lat'], s=1, alpha=0.5)
+* 두개 그래프 나란히 표시
+    * FacetGrid 클래스 사용
+    * 두개 집단 연속형 변수 비교
+    * col에 기준 컬럼 넣기
+    * 히스토그램
+        * g = sns.FacetGrid(df, col = "time")
+        * g.map(plt.hist, "tip")
+    * 스캐터 플랏
+        * g = sns.FacetGrid(df, col = "sex", hue = "smoker")
+        * g.map(plt.scatter, "total_bill", "tip", alpha =.7)
+* 두개 그래프 한 평면에 표시
+    * lmplot 함수 사용
+    * 스캐터 플랏
+        * 회귀선 끄려면 fit_reg=False
+        * lm = sns.lmplot(x = 'Age', y = 'Fare', data = df, hue = 'Sex', fit_reg=False)
+<br><br>
+
+### [plt]
+* 파이 차트
+    * males = (df['Sex'] == 'male').sum()
+    * females = (df['Sex'] == 'female').sum()
+    * proportions = [males, females]
+    * plt.pie(
+    * proportions,
+    * labels = ['Males', 'Females'],
+    * shadow = False,
+    * colors = ['blue','red'],
+    * explode = (0.15 , 0),
+    * startangle = 90,
+    * autopct = '%1.1f%%'
+    * )
+    * plt.show()
+<br><br>
+
+
+
+## `[모델링]`
+
+### [sklearn]
+* 사이킷런
+* X, Y 분할
+    * X=df_merge.drop(['y'], axis=1)
+    * Y=df_merge['y']
+* 데이터셋 분할
+    * x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+* 모델 난수 고정
+    * rfc = RandomForestClassifier(random_state=42)
+* 학습
+    * rfc.fit(x_train, y_train)
+* 예측
+    * y_pred_train = rfc.predict(x_train)
+    * y_pred_test = rfc.predict(x_test)
+* 성능 확인
+    * 이진분류 모델, light gbm 모델
+        * print(classification_report(y_train, y_pred_train))
+        * print(classification_report(y_test, y_pred_test))
+        * AUROC score 평가
+        * ROC 커브 분석
+    * 회귀 모델, 선형회귀 모델
+        * mse_train = mean_absolute_error(y_train, y_pred_train)
+        * print('mse_train(mse): ', mse_train)
+        * rmse_train = (np.sqrt(mse_train))
+        * print('rmse_train(rmse): ', rmse_train)
+        * r2_train = r2_score(y_train, y_pred_train)
+        * print('rmse_train(r2): ', r2_train)
+        * print('')
+        * mse_test = mean_absolute_error(y_test, y_pred_test)
+        * print('mse_test(mse): ', mse_test)
+        * rmse_test = (np.sqrt(mse_test))
+        * print('rmse_test(rmse): ', rmse_test)
+        * r2_test = r2_score(y_test, y_pred_test)
+        * print('rmse_test(r2): ', r2_test)
+* 하이퍼 파라미터 자동 튜닝
+    * grid_cv = GridSearchCV(rf_clf, param_grid = params, cv = 3, n_jobs = -1, scoring='recall')
+    * grid_cv.fit(x_train, y_train)
+    * print(f'The best params: {grid_cv.best_params_}')
+    * print(f'The best score: {grid_cv.best_score_:.4f}')
+* 중요 변수 파악
+    * ftr_importances_values = rfc.feature_importances_
+    * ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
+    * ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
+    * sns.barplot(x=ftr_top20, y=ftr_top20.index)
+    * plt.show()
+* 피클 모델 save read
+    * saved_model = pickle.dumps(model)
+    * model_from_pickle = pickle.loads(saved_model)
+* PCA 차원축소
+    * pca = PCA(n_components = 2)
+    * principalComponents = pca.fit_transform(x)
+    * principalDf = pd.DataFrame(data = principalComponents, columns = ['principal component 1', 'principal component 2'])
+* AUROC score 출력
+    * y_pred_train_proba = rfc.predict_proba(x_train)[:, 1]
+    * y_pred_test_proba = rfc.predict_proba(x_test)[:, 1]
+    * roc_score_train = roc_auc_score(y_train, y_pred_train_proba)
+    * roc_score_test = roc_auc_score(y_test, y_pred_test_proba)
+    * print("roc_score_train :", roc_score_train)
+    * print("roc_score_test :", roc_score_test)
+* ROC 커브 그리기
+    * roc_curve_plot(y_test, y_pred_test_proba)
+* 표준화 
+    * x = StandardScaler().fit_transform(x)
+* 정규화
+    * rfm['Recency'] = minmax_scale(rfm['Recency'], axis=0, copy=True)
+* 레이블 인코더 사용
+    * 카테고리컬 데이터에 주로 사용
+    * LabelEncoder 클래스 사용
+<br><br>
+
+
+
 ## `[판다스]`
 
 ### [기본 함수]
@@ -288,166 +453,3 @@
             'November' : '11.November',
             'December' : '12.December'})
 <br><br>
-
-
-
-## `[시각화]`
-
-### [seaborn]
-* 히스토그램
-    * ttbill = sns.histplot(df.total_bill)
-    * ttbill.set(xlabel = 'Value', ylabel = 'Frequency', title = "Total Bill")
-* 조인트 플랏
-    * (히스토그램 + 스캐터 플랏) 한번에 표시
-    * sns.jointplot(x ="total_bill", y ="tip", data = df)
-* 디스트리뷰션 플랏
-    * (히스토그램 + KDE 플랏) 한번에 표시
-    * KDE는 밀도 추정치를 시각화
-    * 연속형 데이터 맨 처음 볼 때 자주 사용
-    * 기초 통계량 같이 보도록 describe와 함께 사용
-    * sns.displot(df['col'])
-* 페어 플랏
-    * 스캐터 플랏 한번에 모두 표시
-    * 연속형 변수만 가능
-    * sns.pairplot(df)
-* 히트맵
-    * 히트맵 표시
-    * sns.heatmap(df_yield[numeric_columns].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
-* 스트립 플랏
-    * 이산형 변수를 x축에 두고 y축에 연속형 변수에 뿌려보는 그래프
-    * 여러 집단의 연속형 변수 비교
-    * sns.stripplot(x = "day", y = "total_bill", data = df)
-    * 카테고리 2개 활용 가능
-    * 색을 다르게 표시
-    * sns.stripplot(x = "tip", y = "day", hue = "sex", data = df)
-* 박스 플랏
-    * 스트립 플랏이랑 동일한 역할 그래프
-    * 중앙값, IQR 같은 기술통계량 박스로 표시
-    * 박스 밖에 찍힌 것들은 outlier
-    * sns.boxplot(x = "day", y = "total_bill", hue = "time", data = df);
-* 스캐터 플랏
-    * 산점도 분포 확인
-    * sns.scatterplot(x='Temp', y='Sales', data=df)
-    * plt.gcf().set_size_inches(7, 7)
-* 피벗 플랏
-    * 년도별 카테고리별 점유율 변화에 유용
-    * ax = df.plot(kind='barh', stacked=True, title="years amt", rot=0)
-    * for p in ax.patches:
-    *   left, bottom, width, height = p.get_bbox().bounds
-    *   ax.annotate("%.1f"%(width*100), xy=(left+width/2, bottom+height/2), ha='center', va='center', color='black')
-* 테이블 그라데이션 표시
-    * 플랏 말고 테이블 상태에서 overview 가능
-    * df.style.background_gradient(cmap='Blues', subset=['col1'])
-* GPS 데이터 시각화
-    * 스캐터 플랏 사용하기
-    * plt.scatter(df['Lon'], df['Lat'], s=1, alpha=0.5)
-* 두개 그래프 나란히 표시
-    * FacetGrid 클래스 사용
-    * 두개 집단 연속형 변수 비교
-    * col에 기준 컬럼 넣기
-    * 히스토그램
-        * g = sns.FacetGrid(df, col = "time")
-        * g.map(plt.hist, "tip")
-    * 스캐터 플랏
-        * g = sns.FacetGrid(df, col = "sex", hue = "smoker")
-        * g.map(plt.scatter, "total_bill", "tip", alpha =.7)
-* 두개 그래프 한 평면에 표시
-    * lmplot 함수 사용
-    * 스캐터 플랏
-        * 회귀선 끄려면 fit_reg=False
-        * lm = sns.lmplot(x = 'Age', y = 'Fare', data = df, hue = 'Sex', fit_reg=False)
-<br><br>
-
-### [plt]
-* 파이 차트
-    * males = (df['Sex'] == 'male').sum()
-    * females = (df['Sex'] == 'female').sum()
-    * proportions = [males, females]
-    * plt.pie(
-    * proportions,
-    * labels = ['Males', 'Females'],
-    * shadow = False,
-    * colors = ['blue','red'],
-    * explode = (0.15 , 0),
-    * startangle = 90,
-    * autopct = '%1.1f%%'
-    * )
-    * plt.show()
-<br><br>
-
-
-
-## `[모델링]`
-
-### [sklearn]
-* 사이킷런
-* X, Y 분할
-    * X=df_merge.drop(['y'], axis=1)
-    * Y=df_merge['y']
-* 데이터셋 분할
-    * x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
-* 모델 난수 고정
-    * rfc = RandomForestClassifier(random_state=42)
-* 학습
-    * rfc.fit(x_train, y_train)
-* 예측
-    * y_pred_train = rfc.predict(x_train)
-    * y_pred_test = rfc.predict(x_test)
-* 성능 확인
-    * 이진분류 모델, light gbm 모델
-        * print(classification_report(y_train, y_pred_train))
-        * print(classification_report(y_test, y_pred_test))
-        * AUROC score 평가
-        * ROC 커브 분석
-    * 회귀 모델, 선형회귀 모델
-        * mse_train = mean_absolute_error(y_train, y_pred_train)
-        * print('mse_train(mse): ', mse_train)
-        * rmse_train = (np.sqrt(mse_train))
-        * print('rmse_train(rmse): ', rmse_train)
-        * r2_train = r2_score(y_train, y_pred_train)
-        * print('rmse_train(r2): ', r2_train)
-        * print('')
-        * mse_test = mean_absolute_error(y_test, y_pred_test)
-        * print('mse_test(mse): ', mse_test)
-        * rmse_test = (np.sqrt(mse_test))
-        * print('rmse_test(rmse): ', rmse_test)
-        * r2_test = r2_score(y_test, y_pred_test)
-        * print('rmse_test(r2): ', r2_test)
-* 하이퍼 파라미터 자동 튜닝
-    * grid_cv = GridSearchCV(rf_clf, param_grid = params, cv = 3, n_jobs = -1, scoring='recall')
-    * grid_cv.fit(x_train, y_train)
-    * print(f'The best params: {grid_cv.best_params_}')
-    * print(f'The best score: {grid_cv.best_score_:.4f}')
-* 중요 변수 파악
-    * ftr_importances_values = rfc.feature_importances_
-    * ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
-    * ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
-    * sns.barplot(x=ftr_top20, y=ftr_top20.index)
-    * plt.show()
-* 피클 모델 save read
-    * saved_model = pickle.dumps(model)
-    * model_from_pickle = pickle.loads(saved_model)
-* PCA 차원축소
-    * pca = PCA(n_components = 2)
-    * principalComponents = pca.fit_transform(x)
-    * principalDf = pd.DataFrame(data = principalComponents, columns = ['principal component 1', 'principal component 2'])
-* AUROC score 출력
-    * y_pred_train_proba = rfc.predict_proba(x_train)[:, 1]
-    * y_pred_test_proba = rfc.predict_proba(x_test)[:, 1]
-    * roc_score_train = roc_auc_score(y_train, y_pred_train_proba)
-    * roc_score_test = roc_auc_score(y_test, y_pred_test_proba)
-    * print("roc_score_train :", roc_score_train)
-    * print("roc_score_test :", roc_score_test)
-* ROC 커브 그리기
-    * roc_curve_plot(y_test, y_pred_test_proba)
-* 표준화 
-    * x = StandardScaler().fit_transform(x)
-* 정규화
-    * rfm['Recency'] = minmax_scale(rfm['Recency'], axis=0, copy=True)
-* 레이블 인코더 사용
-    * 카테고리컬 데이터에 주로 사용
-    * LabelEncoder 클래스 사용
-<br><br>
-
-
-
