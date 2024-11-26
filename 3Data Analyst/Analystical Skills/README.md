@@ -163,6 +163,7 @@
 <br><br>
 
 ### [EDA baseline]
+* `categorical` -> `numerical` -> `total`
 * 데이터 유형 분리
     * ```python
       cols_categorical = df.select_dtypes(include=object).columns
@@ -433,6 +434,7 @@
 <br><br>
 
 ### [머신러닝 baseline]
+* `모델링` -> `평가` -> `해석`
 * 모델링
     * 분류
         * 랜덤 포레스트
