@@ -81,7 +81,7 @@
 * 
 <br><br>
 
-### [Coustomer Lifetime value 분석]
+### [Coustomer LifeTime Value 분석]
 * 
 <br><br>
 
@@ -177,6 +177,38 @@
           cols_categorical = cols_categorical.append(pd.Index([col]))
       ```
 * categorical
+    * 바 플랏
+        * y가 이산형
+            * ```python 
+              plt.style.use(['dark_background'])
+              for col in cols_categorical:
+                  print(f'-'*50)
+                  print(f'##### {col} Distribution #####')
+                  ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
+                  g = sns.catplot(x="y", col=col, col_wrap=4, data=df,
+                              kind="count", height=3.5, aspect=.8,  palette='deep')
+                  for ax in g.axes.flat:
+                      cat = ax.get_title().split(" = ")[-1]
+                      if cat in ratio_1:
+                          ax.text(0.5, 0.94,
+                                  f"y Rate: {ratio_1[cat]:.2f}%", 
+                                  ha="center", va="bottom", transform=ax.transAxes, fontsize=10, color="blue")
+                  plt.show()
+                  print(f'-'*50)
+              ```
+        * y가 연속형
+            * ```python 
+              plt.style.use(['dark_background'])
+              for col in cols_categorical:
+                  print(f'-'*50)
+                  print(f'##### {col} Distribution #####')
+                  sns.barplot(x=col, y="y", data=df, color="skyblue", edgecolor=".6", label="Sales")
+                  plt.gcf().set_size_inches(25, 3)
+                  plt.xticks(fontsize=16)
+                  plt.legend()
+                  plt.show()
+                  print(f'-'*50)
+              ```
     * 구성 비율(카운트)
         * ```python
           [print(f'{col}: {df[col].nunique()}') for col in cols_categorical]
@@ -215,7 +247,7 @@
 
               print(f'-'*50)
           ```
-    * 구성 비율 테이블(y 집계)
+    * 구성 비율 테이블(y집계)
         * ```python
           for col in cols_categorical:
               print(f'-'*50)
@@ -250,38 +282,6 @@
 
               print(f'-'*50)
           ```
-    * 바 플랏
-        * y가 연속형
-            * ```python 
-              plt.style.use(['dark_background'])
-              for col in cols_categorical:
-                  print(f'-'*50)
-                  print(f'##### {col} Distribution #####')
-                  sns.barplot(x=col, y="y", data=df, color="skyblue", edgecolor=".6", label="Sales")
-                  plt.gcf().set_size_inches(25, 3)
-                  plt.xticks(fontsize=16)
-                  plt.legend()
-                  plt.show()
-                  print(f'-'*50)
-              ```
-        * y가 이산형
-            * ```python 
-              plt.style.use(['dark_background'])
-              for col in cols_categorical:
-                  print(f'-'*50)
-                  print(f'##### {col} Distribution #####')
-                  ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
-                  g = sns.catplot(x="y", col=col, col_wrap=4, data=df,
-                              kind="count", height=3.5, aspect=.8,  palette='deep')
-                  for ax in g.axes.flat:
-                      cat = ax.get_title().split(" = ")[-1]
-                      if cat in ratio_1:
-                          ax.text(0.5, 0.94,
-                                  f"y Rate: {ratio_1[cat]:.2f}%", 
-                                  ha="center", va="bottom", transform=ax.transAxes, fontsize=10, color="blue")
-                  plt.show()
-                  print(f'-'*50)
-              ```
 * numerical
     * 상관계수 히트맵
         * ```python
@@ -905,16 +905,12 @@
           ```
 <br><br>
 
-### [이상탐지 baseline]
-* 
-<br><br>
-
-### [RFM baseline]
-* 
-<br><br>
-
 ### [collaborative 필터링 baseline]
 * 추천 알고리즘 모델
+* 
+<br><br>
+
+### [이상탐지 baseline]
 * 
 <br><br>
 
@@ -964,10 +960,11 @@
     * DAU: daily active users, 하루 기준 유니크 유저 수
     * click: 몇번 클릭 했는지
     * time spent: 시간을 얼마나 소요했는지
-* 마켓팅 지표
+* 마케팅 지표
     * CAC: customer aquisition cost, (특정 기간동안 총 마케팅 비용)/(동기간 동안 획득한 새 고객 수)
-    * NPS: net romoter score, (추천 응답자 비율) - (비추천 응답자 비율)
+    * CR: conversion rate, (구매 건수)/(방문자 수) * 100
     * CLTV: customer lifetime value, (고객 당 평균 수익) * (고객 관계 유지 평균 기간)
+    * NPS: net romoter score, (추천 응답자 비율) - (비추천 응답자 비율)
 * 금융 지표
     * ROI: return on investment, (투자로 얻은 수익 - 투자비)/(투자비) * 100
     * CAGR: compound annual growth rate, (말기 가치)/(초기 가치)^(1/기간) - 1
