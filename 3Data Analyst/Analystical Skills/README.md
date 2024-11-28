@@ -38,7 +38,7 @@
     * 학습, 예측
     * 성능 평가
     * (필요 시) 하이퍼 파라미터 자동 튜닝
-    * 중요 변수 파악
+    * 모델 해석
     * 모델 저장
 * 모델에 넣을때는 문자로된 데이터는 원핫 인코딩 or 레이블 인코딩
 * y 데이터와 상관성이 너무 높아 제외해야하는 데이터는 삭제
@@ -51,6 +51,23 @@
     * (예측값 vs 실제값) 스캐터 플랏 분석
     * (예측값 vs 실제값) 리니어 플랏 분석
 <br><br>
+
+### [모델 해석]
+* feature importance
+    * 간단하게 예측에 대한 기여도를 계산한다.
+    * 덜 중요한 변수를 제거해 모델 단순화할 수 있다.
+    * 장점: 빠르고 간단하다.
+    * 단점: 과도하게 단순화되어 있다.
+* shapley value
+    * feature를 조합해가며 기여도를 계산한다.
+    * 상호작용을 반영하고 개별 예측에 대한 기여도를 볼 수 있다.
+    * feature의 값이 양의 관계인지 음의 관계인지 알 수 있다.
+    * 장점: 비선형성을 반영한다.
+    * 단점: 느리다.
+* rule extraction
+    * (개념, 의도 작성)
+<br><br>
+
 
 ### [대표 프로젝트 유형]
 * 데이터 EDA 및 인사이트 (대부분)
@@ -757,6 +774,7 @@
               ```
 * 해석
     * feature importance
+        * 간단하게 예측에 대한 기여도를 계산한다.
         * ```python
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
@@ -764,31 +782,6 @@
           ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
           ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
-          plt.show()
-          ```
-    * PCA 차원 축소
-        * 높을수록 좋은 값
-        * 낮은 경우 표준화, 정규화, 이상치 제거, 상관계수 높은 특성 제거
-        * ```python
-          from sklearn.decomposition import PCA
-          from sklearn.preprocessing import StandardScaler
-
-          N = 2
-          scaler = StandardScaler()
-          X_scaled = scaler.fit_transform(X)
-          pca = PCA(n_components=N)
-
-          X_pca = pca.fit_transform(X_scaled)
-          for i in range(N):
-              component_str = [f'{value:.2f}' for value in pca.components_[i]]
-              ratio_str = f'{pca.explained_variance_ratio_[i]:.2f}'
-              print(f'Comp {i+1} config: {component_str}')
-              print(f'Comp {i+1} ratio: {ratio_str}')
-          
-          plt.style.use(['seaborn-v0_8'])
-          plt.scatter(X_pca[:, 0], X_pca[:, 1])
-          plt.xlabel('Principal Comp 1')
-          plt.ylabel('Principal Comp 2')
           plt.show()
           ```
     * ROC Curve (분류)
@@ -830,7 +823,7 @@
           auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
           print(f"AUROC (ovo): {auroc_ovo:.4f}")
           ```
-    * Cumulative Gains Curve
+    * Cumulative Gains Curve (분류)
         * 가장 잘 예측한 샘플들에서 실제로 많은 중요한 결과를 찾았다.
         * ```python
           y_test = y_test.to_numpy()
@@ -847,6 +840,11 @@
           plt.legend()
           plt.grid(True)
           plt.show()
+          ```
+    * SHAP
+        * 비선형을 고려한 기여도를 계산하고 상관성의 부호를 확인한다.
+        * ```python
+
           ```
     * 시각화 (회귀)
         * ```python
@@ -883,6 +881,31 @@
           plt.xlabel('Predicted Label')
           plt.ylabel('True Label')
           plt.title('Confusion Matrix')
+          plt.show()
+          ```
+    * PCA 차원 축소
+        * 높을수록 좋은 값
+        * 낮은 경우 표준화, 정규화, 이상치 제거, 상관계수 높은 특성 제거
+        * ```python
+          from sklearn.decomposition import PCA
+          from sklearn.preprocessing import StandardScaler
+
+          N = 2
+          scaler = StandardScaler()
+          X_scaled = scaler.fit_transform(X)
+          pca = PCA(n_components=N)
+
+          X_pca = pca.fit_transform(X_scaled)
+          for i in range(N):
+              component_str = [f'{value:.2f}' for value in pca.components_[i]]
+              ratio_str = f'{pca.explained_variance_ratio_[i]:.2f}'
+              print(f'Comp {i+1} config: {component_str}')
+              print(f'Comp {i+1} ratio: {ratio_str}')
+          
+          plt.style.use(['seaborn-v0_8'])
+          plt.scatter(X_pca[:, 0], X_pca[:, 1])
+          plt.xlabel('Principal Comp 1')
+          plt.ylabel('Principal Comp 2')
           plt.show()
           ```
 * 개선
