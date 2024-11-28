@@ -57,13 +57,17 @@
 
     - [`DBeaver`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/DBeaver)
 
+  - `Big Data`
+
+    - [`Spark`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Spark)
+
+    - [`Hadoop`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Hadoop)
+
   - `Certification`
 
     - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
 
     - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
-
-  - [`Hadoop`]
 <br>
 
 ## 💼 Project

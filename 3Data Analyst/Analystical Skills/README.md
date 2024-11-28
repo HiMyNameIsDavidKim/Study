@@ -158,6 +158,16 @@
     * 얼리스탑을 잘 제어해야 한다.
 <br><br>
 
+### [deepSVDD]
+* 비지도 학습 기반 이상 탐지 알고리즘이다.
+* 레이블이 필요 없고 데이터가 많아도 사용할 수 있다.
+* SVDD를 딥러닝 아키텍처와 결합했다.
+* SVDD (Support Vector Data Description)
+    * 대부분의 데이터를 포함하는 최소 크기의 구를 찾는 알고리즘.
+* 실전 팁
+    * 
+<br><br>
+
 
 
 ## `[분석 코드 baseline]`
@@ -841,10 +851,40 @@
           plt.grid(True)
           plt.show()
           ```
-    * SHAP
+    * shaply value
         * 비선형을 고려한 기여도를 계산하고 상관성의 부호를 확인한다.
         * ```python
+          import shap
 
+
+          explainer = shap.TreeExplainer(model)
+          shap_values = explainer.shap_values(x_test)
+          shap.summary_plot(shap_values, x_test, plot_type='bar')
+          shap.summary_plot(shap_values, x_test)
+          plt.show()
+          ```
+    * rule fit
+        * top5 feature 로 다시 학습한 후 레시피를 도출한다.
+        * ```python
+          from rulefit import RuleFit
+
+
+          features = ['input_top5_features']
+          threshold = 0.2  # adjust
+
+          x_train_rule = x_train[features]
+          rulefit = RuleFit(tree_size=8, sample_fract='default', max_rules=300, random_state=42)
+          rulefit.fit(x_train_rule.values, y_train.values.ravel(), x_train_rule.columns)
+          y_pred = rulefit.predict(x_train_rule.values)
+          y_pred_binary = (y_pred > threshold).astype(int)
+          print(classification_report(y_train, y_pred_binary, digits=3))
+
+          rules = rulefit.get_rules()
+          rules = rules[rules.coef != 0]
+          table_temp = rules.sort_values("importance", ascending=False).head(5)
+          display(table_temp)
+          print(f'########## Rule Extraction ##########')
+          [print(i) for i in table_temp['rule']]
           ```
     * 시각화 (회귀)
         * ```python
