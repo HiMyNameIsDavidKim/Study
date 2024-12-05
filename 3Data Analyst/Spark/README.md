@@ -57,6 +57,142 @@
     * MLlib 모델링 가능
 <br><br>
 
+### [빅데이터 확장자]
+* 빅데이터 전용 파일 확장자가 있다.
+* (ex. Avro, Parquet, ORC)
+* spark는 Parquet을 사용한다.
+* 컬럼 기반으로 데이터를 저장하기 때문에 속도가 빠르다.
+* 6기가 기준 read에 3분 걸리는 파일도 0.1초만에 가능하다. 
+<br><br>
+
 
 
 ## `[스파크 기본]`
+
+### [환경 설정]
+* 설치
+    * ```python
+      !apt-get install openjdk-8-jdk-headless
+      !wget -q https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
+      !tar -xf spark-3.0.0-bin-hadoop3.2.tgz
+      !pip install findspark
+      !pip install kaggle --upgrade
+
+      import os
+      import findspark
+
+
+      os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
+      os.environ["SPARK_HOME"] = "/content/spark-3.0.0-bin-hadoop3.2"
+      findspark.init()
+      ```
+* pyspark 시작
+    * ```python
+      from pyspark.sql import SparkSession
+
+      spark = (
+        SparkSession
+        .builder
+        .appName("pyspark_test")
+        .master("local[*]")
+        .getOrCreate()
+      )
+      ```
+* 캐글 api 연결
+    * ```python
+      from google.colab import files
+
+      files.upload()
+      ```
+    * 토큰 json 파일 업로드
+    * 캐글 데이터셋 -> 다운로드 옆 점3개 -> copy api link
+    * ```python
+      !mkdir -p ~/.kaggle/
+      !cp kaggle.json ~/.kaggle/
+      !chmod 600 ~/.kaggle/kaggle.json
+      !kaggle datasets download -d wethanielaw/iowa-liquor-sales-20230401  # link here
+      !unzip iowa-liquor-sales-20230401.zip
+      ```
+<br><br>
+
+### [spark dataframe]
+* 읽어오기
+    * 너무 커서 판다스로 못읽는 경우도 pyspark로 가능하다.
+    * ```python
+      df = spark.read.csv(
+        path="Iowa_Liquor_Sales.csv", header=True, inferSchema=True
+      )
+      ```
+* 데이터 체크
+    * ```python
+      df.show(10)
+      df.printSchema()
+      ```
+* 저장하기
+    * ```python
+      # parquet 파일의 컬럼 이름은 공백이랑 괄호 불가능, replace 필수.
+      df.write.format("parquet").save(
+        path = "data_parquet",
+        header=True
+      )
+      ```
+* parquet 파일 다운로드
+    * ```python
+      download_list = os.listdir("./data_parquet")
+      for file_name in download_list:
+          if file_name[-3:] != 'crc':
+              files.download("./data_parquet/" + _)
+      ```
+* parquet 파일 읽어오기
+    * ```python
+      parquet_df = spark.read.parquet("data_parquet")
+      ```
+* 데이터 처리
+    * ```python
+      from pyspark.sql import functions as F
+
+      parquet_df.filter(F.col("City")=="MAXWELL")
+      ```
+<br><br>
+
+### [spark SQL]
+* 일단 데이터프레임으로 불러오고난 뒤 뷰로 등록한다.
+* SQL like 코딩을 할 수 있지만 선호하는 편은 아니다.
+* 뷰 등록
+    * ```python
+      parquet_df.createOrReplaceTempView('parquet_sql')
+      ```
+* 쿼리 작성
+    * ```python
+      sqlWay = spark.sql('''
+        select *
+        from parquet_sql
+        where City = 'MAXWELL'
+        '''
+      )
+      ```
+<br><br>
+
+### [spark dataframe 함수]
+* 데이터 보기
+    * df.show(10)
+* 행 카운트
+    * df.count()
+* 컬럼 정보 보기
+    * df.printSchema()
+* 함수 import
+    * from pyspark.sql import functions as F
+* null
+    * null 확인
+        * df.select([F.count(F.when(F.isnull(c), c)).alias(c) for c in df.columns]).show()
+    * null 데이터 세부내용 보기
+        * df.filter(F.col("col1").isNull()).show()
+    * null 데이터 드랍
+        * df = df.drop("col1")
+<br><br>
+
+
+
+
+
+
