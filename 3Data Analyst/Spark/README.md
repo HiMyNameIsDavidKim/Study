@@ -176,22 +176,190 @@
 ### [spark dataframe 함수]
 * 데이터 보기
     * df.show(10)
+    * df.select("col1", "col2").show()
 * 행 카운트
     * df.count()
 * 컬럼 정보 보기
     * df.printSchema()
 * 함수 import
     * from pyspark.sql import functions as F
+* 컨디션 걸기
+    * df.filter(F.col("col1") == "value1").select("col1").show()
+* 조건문 걸기
+    * ```python
+      df
+      .select("col1",
+          F.when(F.col("col1") > 12, "A"
+          ).otherwise("B").alias("as_col")
+      ).show()
+      ```
 * null
     * null 확인
         * df.select([F.count(F.when(F.isnull(c), c)).alias(c) for c in df.columns]).show()
     * null 데이터 세부내용 보기
         * df.filter(F.col("col1").isNull()).show()
-    * null 데이터 드랍
+    * null 데이터 드랍 (컬럼)
         * df = df.drop("col1")
+    * 다른 값으로 채우기 (첫번째 값)
+        * ```python
+          df = (
+          df
+          .withColumn(
+              "CategoryName",
+              F.first(
+                  F.col("CategoryName"), ignorenulls=True
+              ).over(W.partitionBy(F.col("Category")).orderBy(F.col("Date").desc()))
+              )
+          )
+          ```
+    * null 데이터 제거 (행)
+        * df = df.filter(F.col("col1").isNotNull())
+* 전체 값 리스트로 출력
+    * df.select(F.collect_list('col1')).show()
+* 고유한 값만 출력
+    * df.select(F.collect_set('col1')).show()
+* 고유한 값의 갯수
+    * df.select(F.size(F.collect_set('col1'))).show()
+* 윈도우 정의하고 사용
+    * over로 윈도우를 정의한다.
+    * W가 윈도우로 서브쿼리 같은 것이다.
+    * partitionBy는 group by와 유사하다.
+    * ```python
+      df.withColumn("col3",
+                  F.collect_set("col2")
+                  .over(W.partitionBy  ("col1"))
+                  ).show()
+      ```
+* date 형태로 변환
+    * df.printSchema() 으로 확인한다.
+    * date 이름인데 string인 경우 변환이 필요하다.
+    * 현재 포멧이 어떤식으로 써있는지 같이 입력한다.
+    * df = df.withColumn("Date", F.to_date(F.col("Date"), 'MM/dd/yyyy'))
+    * to_date 처럼 to_timestamp 도 있다.
+* 판다스로 변환
+    * spark는 분산처리만 특화되어 시각화에는 불리하다.
+    * 보통 전체를 하면 터지므로 컬럼 한두개만 판다스로 변환하여 사용한다.
+    * df = df.filter(F.col("col1")=="value1").toPandas()
 <br><br>
 
+### [UDF 사용]
+* User Defined Functions
+* def로 함수 선언하고 udf로 만들어준 뒤 사용한다.
+* 실전
+    * ```python
+      from pyspark.sql.functions import udf
+  
+      def calculate_gross_profit(unit_sales, unit_cost, sales_amt):
+          gross_profit = sales_amt * (unit_sales - unit_cost)
+          return gross_profit
 
+      calculate_gross_profit_udf = udf(
+      calculate_gross_profit,  # udf
+      T.DoubleType()  # return type
+      )
+
+      df.withColumn(
+          "gross_profit",
+          calculate_gross_profit_udf(
+            df.['col1'],
+            df.['col2'],
+            df.['col3']
+          )
+      )
+      .select("col1", "col2", "col3", "gross_profit")
+      ).show()
+      ```
+<br><br>
+
+### [Plotly 시각화]
+* 대시보드처럼 인터랙티브한 시각화 기능
+* 설치 및 임포트
+    * !pip install plotly
+* 판다스에 내장시키기
+    * ```python
+      pd.options.plotting.backend = "plotly"
+      df["col1"].hist()
+      ```
+* 기본 그래프
+    * ```python
+      import plotly.graph_objects as go
+
+
+      fig = go.Figure(
+      data=[go.Line(x=df["col1"], y=df["col2"])],
+      layout=go.Layout(title=go.layout.Title(text="Titles"))
+      )
+      fig.show()
+      ```
+* express 그래프
+    * ```python
+      import plotly.express as px
+
+
+      fig = px.line(x=df["col1"], y=df["col2"], title="Titles")
+      fig.show()
+      ```
+* 라벨 호버링 기능
+    * ```python
+      fig.update_layout(
+          hoverlabel_bgcolor="white",
+          hoverlabel_font_size=10,
+          hoverlabel_font_color='black',
+          hoverlabel_font_family="Rockwell"
+      )
+      ```
+* 라벨 호버링 커스텀
+    * ```python
+      fig.update_traces(
+          hovertemplate='총 매출: %{text}달러 <br>'+
+          '날짜: %{x} <br>'+
+          '판매량 : %{y}개')
+      ```
+* 범위 설정 슬라이더
+    * ```python
+      fig.update_layout(xaxis=dict(rangeslider_visible=True))
+      ```
+* 드롭 다운 버튼, 그래프 토글
+    * ```python
+      fig = go.Figure()
+
+      fig.add_trace(go.Line(
+          name="BottlesSold",
+          x=WAUKEE_pd["Date"],
+          y=WAUKEE_pd["BottlesSold"]
+      ))
+
+      fig.add_trace(go.Line(
+          name="SaleDollars",
+          x=WAUKEE_pd["Date"],
+          y=WAUKEE_pd["SaleDollars"]
+      ))
+
+      fig.update_layout(
+          updatemenus=[
+              dict(
+                  type="dropdown",
+                  direction="down",
+                  buttons=list([
+                      dict(label="Both",
+                          method="update",
+                          args=[{"visible": [True, True]},
+                              {"title": "BottlesSold & SaleDollars"}]),
+                      dict(label="BottlesSold",
+                          method="update",
+                          args=[{"visible": [True, False]},
+                              {"title": "BottlesSold",}]),
+                      dict(label="SaleDollars",
+                          method="update",
+                          args=[{"visible": [False, True]},
+                              {"title": "SaleDollars",}]),
+                  ]),
+              ),
+          ]
+      )
+    fig.show()
+      ```
+<br><br>
 
 
 

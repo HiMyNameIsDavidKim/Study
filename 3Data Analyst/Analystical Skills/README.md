@@ -1013,7 +1013,6 @@
 * 콘텐츠에서 KPIs
     * MAU: monthly active users, 한달동안 앱에서 활동하는 순 유저 수
     * 월 트랜젝션 AMT: 트랜젝션으로 발생한 매출(amount) 양
-    * 월 conversion rate: 고객 전환율, (매출/고객수) 비율
 * 광고 지표
     * CTR: click through rate, (광고 클릭수)/(광고 노출수) * 100
     * ROAS: return on ad spend, (광고로 인한 수익)/ (광고 비용)
@@ -1050,7 +1049,7 @@
             * 평균 PV: 고객이 본 평균 페이지 수
             * 평균 체류시간: (전체 세션 시간) / (활성 유저)
             * 회원가입 고객 수: 신규 가입 수
-            * conversion rate⭐️: 전환률, 주요 기능을 한 고객의 비율
+            * conversion rate⭐️: 전환률, (기능사용수) / (방문자수)
             * bounce rate: 이탈률, 아무 행동 없이 이탈한 비율
         * Retention, 유지, 고객이 꾸준히 이용
             * 코호트(동질 집단)을 기준으로 확인한다.
@@ -1061,7 +1060,7 @@
             * 바이럴 계수: 기존 고객이 만든 신규 고객 수
         * Revenue, 수익, 고객들로부터 수익 창출
             * GMV: 총 거래액
-            * 구매전환율: (구매 횟수) / (상세 조회수)
+            * 구매전환율: (구매수) / (방문자수)
             * LTV: 고객 생애 가치, 한명의 고객에게 기대되는 수익
             * ARPU: avg revenue per user, (매출) / (사용자 수)
             * ARPPU: avg revenue per paid user, (매출) / (구매자 수)
