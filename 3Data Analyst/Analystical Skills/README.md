@@ -195,6 +195,10 @@
     * ```python
       cols_categorical = df.select_dtypes(include=object).columns
       cols_numerical = df.select_dtypes(exclude=object).columns
+      print(f'##### categorical #####')
+      [print(f'{col}: {df[col].nunique()}') for col in cols_categorical]
+      print(f'##### numerical #####')
+      [print(f'{col}: {df[col].nunique()}') for col in cols_numerical]
       ```
 * Boolian 처리
     * ```python
@@ -204,38 +208,35 @@
           cols_categorical = cols_categorical.append(pd.Index([col]))
       ```
 * categorical
-    * 다차원 바 플랏
-        * y가 이산형
-            * ```python 
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_categorical:
-                  print(f'-'*50)
-                  print(f'##### {col} Distribution #####')
-                  ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
-                  g = sns.catplot(x="y", hue="y", col=col, col_wrap=4, data=df,
-                              kind="count", height=3.5, aspect=.8,  palette='deep', legend=False)
-                  for ax in g.axes.flat:
-                      cat = ax.get_title().split(" = ")[-1]
-                      if cat in ratio_1:
-                          ax.text(0.5, 0.94,
-                                  f"y Rate: {ratio_1[cat]:.2f}%", 
-                                  ha="center", va="bottom", transform=ax.transAxes, fontsize=10, color="blue")
-                  plt.show()
-                  print(f'-'*50)
-              ```
-        * y가 연속형
-            * ```python 
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_categorical:
-                  print(f'-'*50)
-                  print(f'##### {col} Distribution #####')
-                  sns.barplot(x=col, y="y", data=df, color="skyblue", edgecolor=".6", label="Sales")
-                  plt.gcf().set_size_inches(25, 3)
-                  plt.xticks(fontsize=16)
-                  plt.legend()
-                  plt.show()
-                  print(f'-'*50)
-              ```
+    * y가 이산형
+        * ```python 
+          plt.style.use(['seaborn-v0_8'])
+          for col in cols_categorical:
+              print(f'-'*50)
+              print(f'##### {col} Distribution #####')
+              ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
+              g = sns.catplot(x="y", hue="y", col=col, col_wrap=4, data=df,
+                          kind="count", height=3.5, aspect=.8,  palette='deep', legend=False)
+              for ax in g.axes.flat:
+                  cat = ax.get_title().split(" = ")[-1]
+                  if cat in ratio_1:
+                      ax.text(0.5, 0.94, f"y Rate: {ratio_1[cat]:.2f}%", 
+                              ha="center", va="bottom", transform=ax.transAxes, fontsize=10, color="blue")
+          plt.show()
+          print(f'-'*50)
+          ```
+    * y가 연속형
+        * ```python 
+          plt.style.use(['seaborn-v0_8'])
+          for col in cols_categorical:
+              print(f'-'*50)
+              print(f'##### {col} Distribution #####')
+              plt.figure(figsize=(10,10), dpi= 80)
+              sns.violinplot(x=col, hue=col, y='price', data=df, scale='width', inner='quartile', legend=False)
+              plt.xticks(fontsize=12)
+              plt.show()
+              print(f'-'*50)
+          ```
 * numerical
     * 상관계수 히트맵
         * ```python
@@ -243,32 +244,32 @@
           sns.heatmap(df[cols_numerical].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
           plt.show()
           ```
-    * 바이올린 플랏
-        * ```python
-          n_cols = 4
-          n_rows = (len(cols_numerical) + n_cols - 1) // n_cols
-          fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
-          axs = axs.flatten()
-          plt.style.use(['seaborn-v0_8'])
-          for i, col in enumerate(cols_numerical):
-              sns.violinplot(x='y', y=col, data=df, hue='y', legend=False, 
-                density_norm='width', inner='quartile', ax=axs[i], palette='deep')
-              axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
-              axs[i].set_xlabel(col, fontsize=12)
-          for j in range(i + 1, len(axs)):
+    * y가 이산형
+        * 바이올린 플랏
+            * ```python
+              n_cols = 4
+              n_rows = (len(cols_numerical) + n_cols - 1) // n_cols
+              fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
+              axs = axs.flatten()
+              plt.style.use(['seaborn-v0_8'])
+              for i, col in enumerate(cols_numerical):
+                  sns.violinplot(x='y', y=col, data=df, hue='y', legend=False, 
+                      density_norm='width', inner='quartile', ax=axs[i], palette='deep')
+                  axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
+                  axs[i].set_xlabel(col, fontsize=12)
+              for j in range(i + 1, len(axs)):
                   axs[j].axis('off')
-          plt.tight_layout()
-          plt.show()
-          ```
-    * 산점도
-        * y가 이산형
+              plt.tight_layout()
+              plt.show()
+              ```
+        * 산점도
             * ```python
               plt.style.use(['seaborn-v0_8'])
               print(f'-'*50)
               print(f'##### Pair Plot #####')
               plt.style.use(['seaborn-v0_8'])
               df_temp = df.copy()
-              df_temp = df_temp[cols_numerical[-5:]]
+              df_temp = df_temp[cols_numerical]
 
               # df_1 = df_temp[df_temp['y'] == 1]
               # df_1 = df_temp[df_temp['y'] == 1].sample(n=len(df_1)//10, random_state=42)
@@ -280,15 +281,39 @@
               plt.show()
               print(f'-'*50)
               ```
-        * y가 연속형
+    * y가 연속형
+        * 산점도
             * ```python
               plt.style.use(['seaborn-v0_8'])
-              for col in cols_numerical:
-                  print(f'-'*50)
-                  print(f'##### {col} Scatter Plot #####')
-                  sns.scatterplot(x=col, y='y', data=df)
-                  plt.show()
-                  print(f'-'*50)
+              print(f'-'*50)
+              print(f'##### Pair Plot #####')
+              plt.style.use(['seaborn-v0_8'])
+              df_temp = df.copy()
+              df_temp = df_temp[cols_numerical]
+              # df_temp = df_temp.sample(n=len(df_temp)//100, random_state=42)
+
+              plt.figure(figsize=(10, 8), dpi=80)
+              sns.pairplot(df_temp, kind="scatter", plot_kws=dict(s=80, edgecolor="white", linewidth=2.5))
+              plt.show()
+              print(f'-'*50)
+              ```
+        * 바이올린 플랏 (4분위 클래스)
+            * ```python
+              df['y_q'] = pd.qcut(df['price'], q=4, labels=[1, 2, 3, 4])
+              n_cols = 4
+              n_rows = (len(cols_numerical) + n_cols - 1) // n_cols
+              fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
+              axs = axs.flatten()
+              plt.style.use(['seaborn-v0_8'])
+              for i, col in enumerate(cols_numerical):
+                  sns.violinplot(x='y_q', y=col, data=df, hue='y_q', legend=False, 
+                  density_norm='width', inner='quartile', ax=axs[i], palette='deep')
+                  axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
+                  axs[i].set_xlabel(col, fontsize=12)
+              for j in range(i + 1, len(axs)):
+                  axs[j].axis('off')
+              plt.tight_layout()
+              plt.show()
               ```
 * 시계열
     * categorical
