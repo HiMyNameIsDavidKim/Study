@@ -204,16 +204,16 @@
           cols_categorical = cols_categorical.append(pd.Index([col]))
       ```
 * categorical
-    * 바 플랏
+    * 다차원 바 플랏
         * y가 이산형
             * ```python 
-              plt.style.use(['dark_background'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_categorical:
                   print(f'-'*50)
                   print(f'##### {col} Distribution #####')
                   ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
-                  g = sns.catplot(x="y", col=col, col_wrap=4, data=df,
-                              kind="count", height=3.5, aspect=.8,  palette='deep')
+                  g = sns.catplot(x="y", hue="y", col=col, col_wrap=4, data=df,
+                              kind="count", height=3.5, aspect=.8,  palette='deep', legend=False)
                   for ax in g.axes.flat:
                       cat = ax.get_title().split(" = ")[-1]
                       if cat in ratio_1:
@@ -225,7 +225,7 @@
               ```
         * y가 연속형
             * ```python 
-              plt.style.use(['dark_background'])
+              plt.style.use(['seaborn-v0_8'])
               for col in cols_categorical:
                   print(f'-'*50)
                   print(f'##### {col} Distribution #####')
@@ -236,79 +236,6 @@
                   plt.show()
                   print(f'-'*50)
               ```
-    * 구성 비율(카운트)
-        * ```python
-          [print(f'{col}: {df[col].nunique()}') for col in cols_categorical]
-          for col in cols_categorical:
-              print(f'-'*50)
-              print(f'##### {col} Distribution #####')
-              labels = df[col].unique()
-              cnts = [(df[col] == label).sum() for label in labels]
-              table = pd.DataFrame({col: labels, 'Count': cnts})
-              table['Ratio'] = table['Count'] / table['Count'].sum() * 100
-              table = table.sort_values(by='Ratio', ascending=False).reset_index(drop=True)  # head(10)
-            
-              # Table
-              styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
-              display(styled_table)
-              
-              # Pie Plot
-              fig, ax = plt.subplots(figsize=(12, 7), subplot_kw=dict(aspect="equal"), dpi= 80)
-              data = table['Count']
-              categories = df[col]
-              explode = [0] * df[col].nunique()
-              explode[0] = 0.1
-              def func(pct, allvals):
-                  absolute = int(pct/100.*np.sum(allvals))
-                  return "{:.1f}% ({:d})".format(pct, absolute)
-              wedges, texts, autotexts = ax.pie(data, 
-                                              autopct=lambda pct: func(pct, data),
-                                              textprops=dict(color="w"), 
-                                              colors=plt.cm.Dark2.colors,
-                                              startangle=140,
-                                              explode=explode)
-              ax.legend(wedges, categories, title=f"{col} Class", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
-              plt.setp(autotexts, size=10, weight=700)
-              ax.set_title(f"Class of {col}: Pie Plot")
-              plt.show()
-
-              print(f'-'*50)
-          ```
-    * 구성 비율 테이블(y집계)
-        * ```python
-          for col in cols_categorical:
-              print(f'-'*50)
-              print(f'##### {col} Distribution #####')
-              df_temp = df.groupby(col).agg({'y': 'sum'})
-              df_temp['Ratio'] = df_temp['y'] / df_temp['y'].sum() * 100
-              table = df_temp.sort_values(by='Ratio', ascending=False)  # head(10)
-
-              # Table
-              styled_table = table.style.background_gradient(subset=['Ratio'], cmap='Blues').format({'Ratio': '{:.2f}%'})
-              display(styled_table)
-            
-              # Pie Plot
-              fig, ax = plt.subplots(figsize=(12, 7), subplot_kw=dict(aspect="equal"), dpi= 80)
-              data = table['y']
-              categories = df[col]
-              explode = [0] * df[col].nunique()
-              explode[0] = 0.1
-              def func(pct, allvals):
-                  absolute = int(pct/100.*np.sum(allvals))
-                  return "{:.1f}% ({:d})".format(pct, absolute)
-              wedges, texts, autotexts = ax.pie(data, 
-                                              autopct=lambda pct: func(pct, data),
-                                              textprops=dict(color="w"), 
-                                              colors=plt.cm.Dark2.colors,
-                                              startangle=140,
-                                              explode=explode)
-              ax.legend(wedges, categories, title=f"{col} Class", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
-              plt.setp(autotexts, size=10, weight=700)
-              ax.set_title(f"Class of {col}: Pie Plot")
-              plt.show()
-
-              print(f'-'*50)
-          ```
 * numerical
     * 상관계수 히트맵
         * ```python
@@ -319,12 +246,13 @@
     * 바이올린 플랏
         * ```python
           n_cols = 4
-          n_rows = (len(filtered_cols) + n_cols - 1) // n_cols
+          n_rows = (len(cols_numerical) + n_cols - 1) // n_cols
           fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
           axs = axs.flatten()
           plt.style.use(['seaborn-v0_8'])
-          for i, col in enumerate(filtered_cols):
-              sns.violinplot(x='y', y=col, data=df, scale='width', inner='quartile', ax=axs[i], palette='deep')
+          for i, col in enumerate(cols_numerical):
+              sns.violinplot(x='y', y=col, data=df, hue='y', legend=False, 
+                density_norm='width', inner='quartile', ax=axs[i], palette='deep')
               axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
               axs[i].set_xlabel(col, fontsize=12)
           for j in range(i + 1, len(axs)):
@@ -332,20 +260,26 @@
           plt.tight_layout()
           plt.show()
           ```
-    * 히스토그램
-        * ```python
-          plt.style.use(['seaborn-v0_8'])
-          for col in cols_numerical:
+    * 산점도
+        * y가 이산형
+            * ```python
+              plt.style.use(['seaborn-v0_8'])
               print(f'-'*50)
-              print(f'##### {col} Histogram #####')
-              sns.histplot(df[col], bins=20, alpha=0.5)
-              plt.xlabel(col)
-              plt.ylabel('Frequency')
-              plt.grid(axis='y', alpha=0.75)
+              print(f'##### Pair Plot #####')
+              plt.style.use(['seaborn-v0_8'])
+              df_temp = df.copy()
+              df_temp = df_temp[cols_numerical[-5:]]
+
+              # df_1 = df_temp[df_temp['y'] == 1]
+              # df_1 = df_temp[df_temp['y'] == 1].sample(n=len(df_1)//10, random_state=42)
+              # df_0 = df_temp[df_temp['y'] == 0].sample(n=len(df_1), random_state=42)
+              # df_temp = pd.concat([df_1, df_0])
+
+              plt.figure(figsize=(10, 8), dpi=80)
+              sns.pairplot(df_temp, kind="scatter", hue="y", plot_kws=dict(s=80, edgecolor="white", linewidth=2.5))
               plt.show()
               print(f'-'*50)
-          ```
-    * 산점도
+              ```
         * y가 연속형
             * ```python
               plt.style.use(['seaborn-v0_8'])
@@ -353,34 +287,6 @@
                   print(f'-'*50)
                   print(f'##### {col} Scatter Plot #####')
                   sns.scatterplot(x=col, y='y', data=df)
-                  plt.show()
-                  print(f'-'*50)
-              ```
-        * y가 이산형
-            * ```python
-              plt.style.use(['seaborn-v0_8'])
-              print(f'-'*50)
-              print(f'##### Pair Plot #####')
-              cols = ['y'] + cols_numerical
-              sns.pairplot(df_temp, kind="scatter", hue="y", plot_kws=dict(s=80, edgecolor="white", linewidth=2.5))
-              plt.show()
-              print(f'-'*50)
-              ```
-    * 라인 그래프
-        * y가 연속형
-            * (불가능, 선이 꼬인다.)
-        * y가 이산형
-            * ```python
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_numerical:
-                  print(f'-'*50)
-                  print(f'##### {col} Line Plot #####')
-                  df_temp = df.groupby(['y', col]).size().unstack()
-                  df_temp.T.plot()
-                  plt.ylabel(f"Cnt of {col}")
-                  plt.xlabel(col)
-                  plt.grid(True)
-                  plt.legend(title='y')
                   plt.show()
                   print(f'-'*50)
               ```
@@ -458,6 +364,10 @@
           sns.heatmap(df_pivot, cmap="Blues", cbar=True)
           plt.show()
           ```
+<br><br>
+
+### [군집추출 baseline]
+* 
 <br><br>
 
 ### [머신러닝 baseline]
