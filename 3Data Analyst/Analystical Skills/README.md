@@ -297,16 +297,16 @@
               plt.show()
               print(f'-'*50)
               ```
-        * 바이올린 플랏 (4분위 클래스)
+        * 바이올린 플랏 (4분위수 클래스)
             * ```python
-              df['y_q'] = pd.qcut(df['price'], q=4, labels=[1, 2, 3, 4])
+              df['y_qcut'] = pd.qcut(df['y'], q=4, labels=[1, 2, 3, 4])
               n_cols = 4
               n_rows = (len(cols_numerical) + n_cols - 1) // n_cols
               fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 4 * n_rows))
               axs = axs.flatten()
               plt.style.use(['seaborn-v0_8'])
               for i, col in enumerate(cols_numerical):
-                  sns.violinplot(x='y_q', y=col, data=df, hue='y_q', legend=False, 
+                  sns.violinplot(x='y_qcut', y=col, data=df, hue='y_qcut', legend=False, 
                   density_norm='width', inner='quartile', ax=axs[i], palette='deep')
                   axs[i].set_title(f'Violin Plot of {col}', fontsize=14)
                   axs[i].set_xlabel(col, fontsize=12)
@@ -316,94 +316,123 @@
               plt.show()
               ```
 * 시계열
-    * categorical
-        * 라인 그래프 (카운트, y 집계)
-            * ```python
-              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_categorical:
-                  print(f'-'*50)
-                  print(f'##### {col} Line #####')
-                  df_temp = pd.DataFrame(df.groupby([col, 'Date_1'], as_index=False)['UniqueID'].count())  # sum, mean
-                  sns.lineplot(x='Date_1', y='UniqueID', hue=col, data = df_temp)
-                  plt.xticks(rotation=90)
-                  plt.show()
-                  print(f'-'*50)
-              ```
-        * 히스토그램 (카운트, y 집계)
-            * ```python
-              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_categorical:
-                  print(f'-'*50)
-                  print(f'##### {col} Line #####')
-                  df_temp = pd.DataFrame(df.groupby([col, 'Date_1'], as_index=False)['UniqueID'].count())  # sum, mean
-                  sns.barplot(x='Date_1', y='UniqueID', hue=col, data = df_temp)
-                  plt.xticks(rotation=90)
-                  plt.show()
-                  print(f'-'*50)
-              ```
-    * numerical
-        * 라인 그래프 (값 그대로)
-            * ```python
-              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_numerical:
-                  print(f'-'*50)
-                  print(f'##### {col} Line #####')
-                  plt.plot(df['Date_1'], df[col])
-                  plt.xlabel('Date_1')
-                  plt.ylabel(col)
-                  plt.show()
-                  print(f'-'*50)
-              ```
-        * 라인 그래프 (y랑 같이 보기)
-            * ```python
-              df['Date_1'] = df["Date"].dt.strftime("%Y-%m")
-              plt.style.use(['seaborn-v0_8'])
-              for col in cols_numerical:
-                  print(f'-'*50)
-                  print(f'##### {col} Line #####')
-                  fig, ax1 = plt.subplots()
-                  ax1.plot(df['Date'], df['y'], color='blue')
-                  ax2 = ax1.twinx()
-                  ax2.plot(df['Date'], df[col], color='red')
-                  fig.legend()
-                  plt.show()
-                  print(f'-'*50)
-              ```
     * 연별 월별 히스토그램
         * ```python
           df['Date_year'] = df["Date"].dt.strftime("%Y")
           df['Date_month'] = df["Date"].dt.strftime("%m")
           plt.style.use(['seaborn-v0_8'])
-          df_temp = pd.DataFrame(df.groupby(['Date_year', 'Date_month'], as_index=False)['UniqueID'].count())
-          sns.barplot(x='Date_month', y='UniqueID', hue='Date_year', data = df_temp)
+          df_temp = pd.DataFrame(df.groupby(['Date_year', 'Date_month'], as_index=False)['y'].count())
+          sns.barplot(x='Date_month', y='y', hue='Date_year', data = df_temp)
           plt.show()
           ```
     * 히트맵
         * ```python
           df['Date_year'] = df["Date"].dt.strftime("%Y")
           df['Date_month'] = df["Date"].dt.strftime("%m")
-          df_pivot = df.pivot_table(index='Date_month', columns='Date_year', values='CPI')
+          df_pivot = df.pivot_table(index='Date_month', columns='Date_year', values='y', aggfunc='sum')
           sns.heatmap(df_pivot, cmap="Blues", cbar=True)
           plt.show()
           ```
+    * categorical
+        * y가 이산형, 연속형 공통
+            * ```python
+              df_temp = df.copy()
+              df_temp['Date_1'] = df_temp["Date"].dt.strftime("%Y-%m")
+              # df_temp = df_temp[df_temp['device_isMobile'] == True]  # 이산형 분리
+
+              plt.style.use(['seaborn-v0_8'])
+              for col in cols_categorical:
+                  cats = df_temp[col].unique()
+                  cat_sums = df_temp.groupby(col)['y'].sum().sort_values(ascending=False)  # 이산형 count
+                  cats = cat_sums.index
+                  colors = sns.color_palette("Set2", len(cats))
+                  df_pivot = df_temp.pivot_table(index='Date_1', columns=col, values='y', aggfunc='sum', fill_value=0)  # 이산형 count
+                  x = df_pivot.index
+                  y = [df_pivot[cat].values for cat in cats]
+
+                  plt.figure(figsize=(12, 6))
+                  plt.stackplot(x, y, labels=cats, colors=colors, alpha=0.8, edgecolor='white', linewidth=0.5)
+                  plt.title("Stack Area Plot")
+                  plt.legend(fontsize=10, ncol=4, loc='upper right')
+                  plt.xticks(rotation=90)
+                  plt.gca().set_facecolor('white')
+                  plt.tight_layout()
+                  plt.show()
+              ```
+    * numerical
+        * y가 이산형, 연속형 공통
+            * ```python
+              df_temp = df.copy()
+              df_temp['Date_1'] = df_temp["Date"].dt.strftime("%Y-%m")
+
+              plt.style.use(['seaborn-v0_8'])
+              for col in cols_numerical:
+                  df_y = df_temp.groupby('Date_1')['y'].sum().reset_index()
+                  # df_y = df_temp[df_temp['y'] == True].groupby('Date_1')['y'].count().reset_index()  # 이산형 count
+                  df_col = df_temp.groupby('Date_1')[col].mean().reset_index()
+                  df_merge = pd.merge(df_y, df_col, on='Date_1')
+
+                  fig, ax1 = plt.subplots(figsize=(12, 8), dpi=80)
+                  ax1.bar(x=df_merge['Date_1'], height=df_merge['y'], color='gray', alpha=0.2)
+                  ax1.set_ylabel('Y', fontdict={'size': 12})
+                  ax1.set_ylim(0, max(df_merge['y']) * 1.1)
+                  ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90)
+
+                  ax2 = ax1.twinx()
+                  ax2.plot(df_merge['Date_1'], df_merge[col], color='red', label=col)
+                  ax2.set_ylabel(f'{col}', fontdict={'size': 12})
+                  plt.title(f"Bar and Line Plot", fontsize=16)
+                  fig.tight_layout()
+                  ax1.grid(False)
+                  ax2.grid(False)
+                  ax1.set_facecolor('white')
+                  ax2.set_facecolor('white')
+                  plt.show()
+              ```
 <br><br>
 
 ### [군집추출 baseline]
-* 
+* y가 이산형, 연속형 공통
+    * ```python
+      col_A = 'col1'
+      col_B = 'col2'
+      col_C = 'col3'
+
+      grouped_mean = df.groupby([col_A, col_B, col_C])['y'].mean().reset_index()
+      pivot_df_mean = grouped_mean.pivot_table(values='y', index=[col_A, col_B], columns=col_C)
+      # df_temp = df[df['y'] == 1]  # 이산형 target
+
+      grouped_count = df_temp.groupby([col_A, col_B, col_C])['y'].count().reset_index(name='count')
+      pivot_df_count = grouped_count.pivot_table(values='count', index=[col_A, col_B], columns=col_C, fill_value=0)
+      pivot_df_count = np.round(pivot_df_count).astype(int)
+
+      fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 20))
+      
+      sns.heatmap(pivot_df_mean, annot=True, cmap="Blues", fmt=".2f", cbar_kws={'label': 'Portion of Y'}, annot_kws={'size': 14}, ax=ax1)
+      ax1.set_title(f"Portion {col_A} vs {col_B} vs {col_C}")
+      ax1.set_ylabel(f"{col_A} & {col_B}")
+      ax1.set_xlabel(f"{col_C}")
+      ax1.tick_params(axis='x', rotation=45)
+
+      sns.heatmap(pivot_df_count, annot=True, cmap="Blues", fmt="d", cbar_kws={'label': 'Count of Y'}, annot_kws={'size': 14}, ax=ax2)
+      ax2.set_title(f"Count {col_A} vs {col_B} vs {col_C}")
+      ax2.set_ylabel(f"{col_A} & {col_B}")
+      ax2.set_xlabel(f"{col_C}")
+      ax2.tick_params(axis='x', rotation=45)
+
+      plt.tight_layout()
+      plt.show()
+      ```
 <br><br>
 
 ### [머신러닝 baseline]
 * `모델링` -> `평가` -> `해석`
 * 모델링
-    * 분류
-        * 랜덤 포레스트
+    * 랜덤 포레스트
         * ```python
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
-          from sklearn.ensemble import RandomForestClassifier
+          from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 
 
           df_temp = df.copy()
@@ -427,13 +456,15 @@
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
           model = RandomForestClassifier(random_state=42)
+          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
+          # model = RandomForestRegressor(random_state=42)  # reg
           model.fit(x_train, y_train)
           ```
-        * LightGBM
+    * LightGBM
         * ```python
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
-          from sklearn.ensemble import RandomForestClassifier
+          import lightgbm as lgb
 
 
           LEARNING_RATE = 3e-2
@@ -481,6 +512,7 @@
                   X[column] = le.fit_transform(X[column])
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
           ds_train = lgb.Dataset (x_train, label = y_train)
           ds_test = lgb.Dataset (x_test, label = y_test)
 
@@ -492,11 +524,11 @@
               # valid_names=['test'],
           )
           ```
-        * XGBoost
+    * XGBoost
         * ```python
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
-          from sklearn.ensemble import RandomForestClassifier
+          import xgboost as xgb
 
 
           df_temp = df.copy()
@@ -519,17 +551,20 @@
                   X[column] = le.fit_transform(X[column])
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
-          model = xgb.XGBClassifier(objective='multi:softmax', num_class=len(Y.unique()), random_state=42)
+          model = XGBClassifier(objective='binary:logistic', random_state=42)
+          # model = xgb.XGBClassifier(objective='multi:softmax', num_class=len(Y.unique()), random_state=42)  # multi
+          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
+          # model = xgb.XGBRegressor(objective='reg:squarederror', random_state=42)  # reg
           model.fit(x_train, y_train)
           ```
-        * TabNet
+    * TabNet
         * ```python
-          !pip install -q pytorch-tabnet==3.1.1
+          !pip install pytorch-tabnet
           ```
         * ```python
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
-          from pytorch_tabnet.tab_model  import TabNetClassifier
+          from pytorch_tabnet.tab_model  import TabNetClassifier, TabNetRegressor
           from pytorch_tabnet.metrics import Metric
           from sklearn.metrics import f1_score
           import torch
@@ -571,11 +606,14 @@
                   cat_idxs.append(X.columns.get_loc(column))
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
           
-          x_train_tab = x_train.values
-          y_train_tab = y_train.values
-          x_test_tab = x_test.values
-          y_test_tab = y_test.values
+          x_train = x_train.values
+          y_train = y_train.values
+          x_test = x_test.values
+          y_test = y_test.values
+          # y_train = y_train.reshape(-1, 1)  # reg
+          # y_test = y_test.reshape(-1, 1)  # reg
 
           class F1_Score(Metric):
               def __init__(self):
@@ -589,6 +627,7 @@
 
 
           model = TabNetClassifier(
+          # model = TabNetRegressor(  # reg
             cat_idxs=cat_idxs,
             cat_dims=cat_dims,
             cat_emb_dim=CAT_EMB_DIM,
@@ -601,46 +640,17 @@
           )
 
           model.fit(
-            X_train=x_train_tab, y_train=y_train_tab,
-            eval_set=[(x_train_tab, y_train_tab), (x_test_tab, y_test_tab)],
+            X_train=x_train, y_train=y_train,
+            eval_set=[(x_train, y_train), (x_test, y_test)],
             eval_name=['train', 'test'],
             eval_metric=['logloss','F1_score'],
+            # eval_metric=['mse','mae'],  # reg
             max_epochs=EPOCH , patience=PATIENCE,
             batch_size=BATCH_SIZE,
             virtual_batch_size=BATCH_SIZE,
             num_workers=NUM_WORKERS,
             drop_last=False,
           )
-          ```
-    * 회귀
-        * ```python
-          from sklearn.model_selection import train_test_split
-          from sklearn.preprocessing import LabelEncoder
-          from sklearn.ensemble import RandomForestClassifier
-
-
-          df_temp = df.copy()
-          X = df_temp.drop('y', axis=1)
-          Y = df_temp['y']
-
-          cols_drop = ['id']
-          for col in cols_drop:
-              X.drop(col, axis=1, inplace=True)
-
-          cols_date = ['date_1', 'date_2']
-          for col in cols_date:
-              X[f'week_{col}'] = X[col].dt.dayofweek
-              X[f'month_{col}'] = X[col].dt.month
-              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
-
-          for column in X.columns:
-              if X[column].dtype == object:
-                  le = LabelEncoder()
-                  X[column] = le.fit_transform(X[column])
-
-          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
-          model = RandomForestRegressor(n_estimators=500, max_depth=4, random_state=42)
-          model.fit(x_train, y_train)
           ```
 * 평가
     * 분류
@@ -665,7 +675,7 @@
               y_pred_test = model.predict(x_test)
               print(classification_report(y_test, y_pred_test))
               ```
-            * LightGBM
+            * 쓰레숄드 조절
             * ```python
               from sklearn.metrics import classification_report
 
@@ -687,35 +697,29 @@
                       y_pred_test[i] = 0
               print(classification_report(y_test, y_pred_test, digits=3))
               ```
-            * TabNet
-            * ```python
-              from sklearn.metrics import classification_report
-
-              
-              y_train_pred_tab = model.predict(x_train_tab)
-              print(classification_report(y_train_tab, y_train_pred_tab))
-
-              y_test_pred_tab = model.predict(x_test_tab)
-              print(classification_report(y_test_tab, y_test_pred_tab))
-              ```
     * 회귀
-        * r^2, mse
+        * r^2, rmse, mae, mse
             * ```python
-              from sklearn.metrics import r2_score, mean_squared_error
+              from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 
               y_pred_train = model.predict(x_train)
               y_pred_test = model.predict(x_test)
 
-              r2_train = r2_score(y_train, y_pred_train)
-              r2_test = r2_score(y_test, y_pred_test)
-              print('r^2_score(train): ', r2_train)
-              print('r^2_score(test): ', r2_test)
-              print('')
-              mae_train = mean_squared_error(y_train, y_pred_train)
-              mae_test = mean_squared_error(y_test, y_pred_test)
-              print('mae_train(train): ', mae_train)
-              print('mae_test(test): ', mae_test)
+              print("[Train]")
+              print('------------------------------------------')
+              print('r^2_score: ', r2_score(y_train, y_pred_train))
+              print('Root Mean Squared Error:', np.sqrt(mean_squared_error(y_train, y_pred_train)))
+              print('Mean Absolute Error:', mean_absolute_error(y_train, y_pred_train))
+              print('Mean Squared Error:', mean_squared_error(y_train, y_pred_train))
+              print('------------------------------------------')
+              print("[Test]")
+              print('------------------------------------------')
+              print('r^2_score: ', r2_score(y_test, y_pred_test))
+              print('Root Mean Squared Error:', np.sqrt(mean_squared_error(y_test, y_pred_test)))
+              print('Mean Absolute Error:', mean_absolute_error(y_test, y_pred_test))
+              print('Mean Squared Error:', mean_squared_error(y_test, y_pred_test))
+              print('------------------------------------------')
               ```
 * 해석
     * feature importance
@@ -724,10 +728,45 @@
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
           ftr_importances_values = model.feature_importances_  # LightGBM: model.feature_importance()
-          ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)
+          ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)  # TabNet: index=X.columns
           ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
           plt.show()
+          ```
+    * shaply value
+        * 비선형을 고려한 기여도를 계산하고 상관성의 부호를 확인한다.
+        * ```python
+          import shap
+
+
+          explainer = shap.TreeExplainer(model)  # TabNet: not supported
+          shap_values = explainer.shap_values(x_test)
+          shap.summary_plot(shap_values, x_test, plot_type='bar')
+          shap.summary_plot(shap_values, x_test)
+          plt.show()
+          ```
+    * rule fit
+        * top5 feature 로 다시 학습한 후 레시피를 도출한다.
+        * ```python
+          from rulefit import RuleFit
+
+
+          features = ['input_top5_features']
+          threshold = 0.2  # adjust
+
+          x_train_rule = x_train[features]
+          rulefit = RuleFit(tree_size=8, sample_fract='default', max_rules=300, random_state=42)
+          rulefit.fit(x_train_rule.values, y_train.values.ravel(), x_train_rule.columns)
+          y_pred = rulefit.predict(x_train_rule.values)
+          y_pred_binary = (y_pred > threshold).astype(int)
+          print(classification_report(y_train, y_pred_binary, digits=3))
+
+          rules = rulefit.get_rules()
+          rules = rules[rules.coef != 0]
+          table_temp = rules.sort_values("importance", ascending=False).head(5)
+          display(table_temp)
+          print(f'########## Rule Extraction ##########')
+          [print(i) for i in table_temp['rule']]
           ```
     * ROC Curve (분류)
         * 모델의 전반적인 분류 성능이 좋다.
@@ -786,45 +825,24 @@
           plt.grid(True)
           plt.show()
           ```
-    * shaply value
-        * 비선형을 고려한 기여도를 계산하고 상관성의 부호를 확인한다.
+    * confusion matrix (다중분류)
         * ```python
-          import shap
+          from sklearn.metrics import confusion_matrix
 
 
-          explainer = shap.TreeExplainer(model)
-          shap_values = explainer.shap_values(x_test)
-          shap.summary_plot(shap_values, x_test, plot_type='bar')
-          shap.summary_plot(shap_values, x_test)
+          plt.style.use(['seaborn-v0_8'])
+          cm = confusion_matrix(y_test, y_pred_test)
+          plt.figure()
+          sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+          plt.xlabel('Predicted Label')
+          plt.ylabel('True Label')
+          plt.title('Confusion Matrix')
           plt.show()
-          ```
-    * rule fit
-        * top5 feature 로 다시 학습한 후 레시피를 도출한다.
-        * ```python
-          from rulefit import RuleFit
-
-
-          features = ['input_top5_features']
-          threshold = 0.2  # adjust
-
-          x_train_rule = x_train[features]
-          rulefit = RuleFit(tree_size=8, sample_fract='default', max_rules=300, random_state=42)
-          rulefit.fit(x_train_rule.values, y_train.values.ravel(), x_train_rule.columns)
-          y_pred = rulefit.predict(x_train_rule.values)
-          y_pred_binary = (y_pred > threshold).astype(int)
-          print(classification_report(y_train, y_pred_binary, digits=3))
-
-          rules = rulefit.get_rules()
-          rules = rules[rules.coef != 0]
-          table_temp = rules.sort_values("importance", ascending=False).head(5)
-          display(table_temp)
-          print(f'########## Rule Extraction ##########')
-          [print(i) for i in table_temp['rule']]
           ```
     * 시각화 (회귀)
         * ```python
           pd.options.display.float_format = '{:.2f}'.format
-          result = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred_test})
+          result = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred_test})  # TabNet: y_test.reshape(-1), y_pred_test.reshape(-1)
           result['diff'] = result['Real Values'] - result['Predicted Values']
 
           sns.set(style="darkgrid")
@@ -842,20 +860,6 @@
           plt.plot(result.index, result['Real Values'], label='Real')
           plt.plot(result.index, result['Predicted Values'], label='Pred')
           plt.legend()
-          plt.show()
-          ```
-    * confusion matrix (다중분류)
-        * ```python
-          from sklearn.metrics import confusion_matrix
-
-
-          plt.style.use(['seaborn-v0_8'])
-          cm = confusion_matrix(y_test, y_pred_test)
-          plt.figure()
-          sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-          plt.xlabel('Predicted Label')
-          plt.ylabel('True Label')
-          plt.title('Confusion Matrix')
           plt.show()
           ```
     * PCA 차원 축소
@@ -884,19 +888,53 @@
           plt.show()
           ```
 * 개선
-    * 자동 튜닝
+    * BayesianOptimization
+        * ```python
+          !pip install bayesian-optimization
+          ```
+        * ```python
+          from bayes_opt import BayesianOptimization
+          from sklearn.model_selection import cross_val_score
+
+
+          param_bounds = {
+          'n_estimators': (100, 300),
+          'max_depth': (2, 8),
+          }
+
+          def model_evaluate(n_estimators, max_depth):
+              model = RandomForestClassifier(  # reg: RandomForestRegressor
+              # model = lgb.LGBMClassifier(  # reg: LGBMRegressor
+              # model = xgb.XGBClassifier(  # reg: XGBRegressor
+              n_estimators= int(n_estimators),
+              max_depth= int(max_depth),
+              )
+              scores = cross_val_score(model, x_train, y_train, cv=5, scoring='f1')  # reg: scoring='r2'
+              return np.mean(scores)
+
+          def bayesOpt(x_train, y_train):
+              model_opt = BayesianOptimization(
+                  f=model_evaluate,
+                  pbounds=param_bounds
+              )
+              model_opt.maximize(init_points=5, n_iter=10)
+              print(model_opt.res)
+
+          bayesOpt(x_train, y_train)
+          ```
+    * GridSearchCV
         * ```python
           from sklearn.model_selection import GridSearchCV
 
 
           param_grid = {
-            'n_estimators': [100, 200, 300],  # 트리 개수
-            'max_depth': [None, 10, 20],  # 트리의 최대 깊이
-            'min_samples_split': [2, 5, 10],  # 노드를 분할하기 위한 최소 샘플 수
-            'min_samples_leaf': [1, 2, 4],  # 리프 노드의 최소 샘플 수
+            'n_estimators': [100, 200, 300],
+            'max_depth': [None, 10, 20],
+            'min_samples_split': [2, 5, 10],
+            'min_samples_leaf': [1, 2, 4],
           }
 
-          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='f1')
+          grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='f1')  # reg: scoring='r2'
           grid_cv.fit(x_train, y_train)
           print(f'The best params: {grid_cv.best_params_}')
           print(f'The best score: {grid_cv.best_score_:.4f}')
