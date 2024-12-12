@@ -230,22 +230,40 @@
 ### [마스터 알고리즘]
 * 각 tribe별로 주로 사용하는 마스터 알고리즘이 있다.
 * symbolists, connectionists, bayesions, analogizsers 4개의 tribe.
-* symbolists
-    * 기원 : 로직과 철학
-    * inverse deduction : 역연역법, 연역적 논리로 부족한 부분을  역추정하는 방법.
-    * Decision Tree 알고리즘
+* 현대의 딥러닝은 주로 연결주의자에 가장 밀접하다.
+    * 신경망 구조 설계, feature 추출, 역전파 알고리즘 사용
+* 하지만 다른 tribe의 이론을 충분히 수용하고 있다.
+    * XAI, ML (symbolists)
+    * dropout (bayesions)
+    * projection space mapping (analogizers)
 * connectionists
-    * 기원 : 뉴로사이언스
-    * back propagation : 역전파, 입력층 은닉층 출력층으로 순차적 전파, 오차를 계산하여 은닉층으로 다시 전달(역전파), 오차가 줄어드는 방향으로 가중치를 변경
-    * ANN 알고리즘
+    * 기원: 뉴로사이언스
+    * 생물학적 뇌의 매커니즘을 모델링한다.
+    * 알고리즘: back propagation, 역전파
+    * 오차를 역방향으로 전파하며 가중치를 조정한다.
+    * 블랙박스이고 은닉층의 함수를 찾아낸다.
+    * 대표: ANN
+* symbolists
+    * 기원: 로직과 철학
+    * 인간의 논리적 사고 과정을 모방한다.
+    * 알고리즘: inverse deduction, 역연역법
+    * 연역적 논리로 부족한 부분을 역추정하는 방법이다.
+    * 기존 지식과 관찰된 데이터로 새로운 규칙과 지식을 추론한다.
+    * 대표: Decision Tree
 * bayesions
-    * 기원 : 통계학
-    * probabilistic inference : 확률적 추론, 불확실한 사실(확률로 된 결과)를 사용해서 문제의 결론을 얻는 추론 방법.
-    * Markov Chain Monte Carlo 알고리즘
+    * 기원: 통계학
+    * 불확실성을 다룬다.
+    * 알고리즘: probabilistic inference, 확률적 추론
+    * 불확실한 사실으로 가장 가능성 높은 결론을 얻는 추론 방법이다.
+    * 사전 확률과 새로운 데이터를 결합해 사후 확률을 계산한다.
+    * 대표: Markov Chain Monte Carlo
 * analogizers
-    * 기원 : 심리학
-    * kernel machines : 문제 해결을 위해 신규 속성을 추가 시키거나, n차 방정식을 적용하는 방법.
-    * SVM 알고리즘
+    * 기원: 심리학
+    * 유사한 패턴이나 특성을 찾는다.
+    * 알고리즘: kernel machines
+    * 저차원을 고차원으로 매핑하여 문제를 해결하는 방법이다.
+    * 비선형 문제를 n차 방정식을 적용해 선형 문제로 변환한다.
+    * 대표: SVM
 <br><br>
 
 
