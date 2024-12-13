@@ -71,9 +71,23 @@
 <br>
 
 ## 💼 Project
-  - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
+  - [`Resume`]()
+
+  - `Portfolio`
+
+    - [`[연구 논문/DL] FCViT`]()
+
+    - [`[은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석`]()
+
+    - [`[이커머스/ EDA] 고객획득비용(CAC) 분석을 통한 광고 전략 최적화`]()
+
+  - `Research`
   
-  - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
+    - [`FCViT`]()
+
+    - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
+
+    - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
 <br>
 
 ## 📓 Paper List

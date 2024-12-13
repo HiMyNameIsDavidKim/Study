@@ -292,7 +292,7 @@
 * 차원 : 차원축소에서 차원은 1차원 배열에서 각 feature들을 말한다.
     * (ex. (1,5) 배열 = 1차원 배열 = 5차원 벡터)
 * 차원축소 : 데이터를 잘 나타내는 feature를 선택하여 모델 성능 향상.
-* 종류 : 군집(K-means, K-medians, Mean-Shift, DBSCAN), 차원축소(PCA)
+* 종류 : 군집(K-means, K-medians, Mean-Shift, DBSCAN), 차원축소(PCA), 이상 탐지
 <br><br>
 
 ### [비지도 학습의 종류]
@@ -314,6 +314,24 @@
     * 차원이 기존성분 x개에서 주성분 n개로 줄어든다.
     * 주성분의 개수를 지정할 수 있으며, 각 주성분이 내포하는 '설명된 분산'을 출력해볼 수 있다.
     * 주로 다른 머신러닝 알고리즘과 섞어서 사용한다. (feature 개수만 줄이고 타 알고리즘으로 fit())
+* SVM
+    * Support Vector Machine
+    * 두 클래스 간의 경계를 찾는 알고리즘.
+    * hyperplane: 두 클래스를 나누는 초평면
+    * margin: 두 클래스 사이의 여유공간
+    * 마진을 최대화하는 초평면을 찾는 것이 objective 이다.
+    * 비선형일 경우
+        * soft magin SVM: 오차를 허용하는 슬랙 변수를 추가
+        * kernel trick: 고차원 공간으로 매핑 후 SVM
+* OCSVM
+    * One Class SVM
+    * 정상 데이터만 사용해 비지도학습을 하는 이상탐지 알고리즘.
+    * 모두 포함하는 최소 부피 초평면을 찾는 것이 objective 이다.
+* SVDD
+    * Support Vector Data Description
+    * 대부분의 데이터를 포함하는 최소 크기의 구를 찾는 알고리즘.
+    * 구의 경계 밖은 모두 이상치로 판단한다.
+    * 구의 중심과 구의 반경을 찾는 것이 objective 이다.
 <br><br>
 
 
