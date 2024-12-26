@@ -81,7 +81,7 @@
 
     - [`[은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석`]()
 
-    - [`[이커머스/KPIs] CAC 분석을 통한 성과지표 별 광고 최적화`]()
+    - [`[이커머스/KPIs] CAC 분석을 통한 성과지표 별 광고 최적화`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/final_project)
 
   - `Research`
   
