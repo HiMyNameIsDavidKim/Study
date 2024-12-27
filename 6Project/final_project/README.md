@@ -51,7 +51,7 @@
 
 
 ## 💡 EDA 및 시각화
-* [`소스 코드 (Process 1: 데이터 EDA)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/%EA%B9%80%EA%B0%80%EB%9E%8C_241223.ipynb)
+* [`소스 코드 (Process 1: 데이터 EDA)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/project_cac.ipynb)
 <br>
 
 ### 1. 제품 분류별 분석
@@ -80,8 +80,8 @@
 
 
 ## 📈 CAC 분석, KPIs 분석
-* [`소스 코드 (Process 2: CAC 분석)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/%EA%B9%80%EA%B0%80%EB%9E%8C_241223.ipynb)
-* [`소스 코드 (Process 3: KPIs 분석)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/%EA%B9%80%EA%B0%80%EB%9E%8C_241223.ipynb)
+* [`소스 코드 (Process 2: CAC 분석)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/project_cac.ipynb)
+* [`소스 코드 (Process 3: KPIs 분석)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/project_cac.ipynb)
 <br>
 
 ### 1. 고객획득비용 (CAC) 분석
@@ -118,7 +118,7 @@
 
 
 ## 🤖 군집 모델링
-* [`소스 코드 (Process 4: 클러스터링)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/%EA%B9%80%EA%B0%80%EB%9E%8C_241223.ipynb)
+* [`소스 코드 (Process 4: 클러스터링)`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/final_project/project_cac.ipynb)
 <br>
 
 ### 1. 드릴 다운
@@ -148,6 +148,7 @@
 ## 📊 결론
 
 ### 1. 성과지표 별 광고 전략
+* ![](https://github.com/user-attachments/assets/0f17a2a6-2331-4f66-a425-4c6898c8a2ec)
 * 매출: 군집 A, (라디오, 콘텐츠 마케팅)광고, 1M 달러 투자 시 9.5M 달러 상승.
 * 제품단가: 군집 B, (라디오, 콘텐츠 마케팅, TV)광고, 1M 달러 투자 시 6.9k 달러 상승.
 * 재구매율: 군집 C, (라디오, 콘텐츠 마케팅)광고, 1M 달러 투자 시 20.6%인 고객 7.6k 유치.
