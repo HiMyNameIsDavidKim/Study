@@ -1,4 +1,15 @@
 # 📚Study📚
+### 💪 Basic
+### 🐍 Python
+### 🎯 AI
+### 📊 Data Analyst
+### 💼 Project
+### 📓 Paper List
+### 📘 Book List
+### 🦋 Flutter
+### ☕️ Java
+### ☁️ Cloud(AWS, GCP)
+<br>
 
 ## 💪 Basic
   - [`Algorithm⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
