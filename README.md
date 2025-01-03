@@ -1,4 +1,6 @@
 # 📚Study📚
+
+## Contents
 ### 💪 Basic
 ### 🐍 Python
 ### 🎯 AI
@@ -62,7 +64,7 @@
 
   - `Query`
 
-    - [`SQL (zerobase)`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
+    - [`SQL`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
     - [`Big Query`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Big_Query)
 
@@ -86,11 +88,11 @@
 
   - `Portfolio`
 
-    - [`[연구 논문/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성`]()
+    - [`[연구 논문/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
 
     - [`[제조/ML] 애플워치 검사 자동화 알고리즘 설계 및 운영`]()
 
-    - [`[은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석`]()
+    - [`[은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/team_project)
 
     - [`[이커머스/KPIs] CAC 분석을 통한 성과지표 별 광고 최적화`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/final_project)
 
