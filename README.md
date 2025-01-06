@@ -1,6 +1,6 @@
 # 📚Study📚
 
-## Contents
+## 📋 Contents
 ### 💪 Basic
 ### 🐍 Python
 ### 🎯 AI
