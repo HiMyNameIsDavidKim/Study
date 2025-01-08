@@ -84,13 +84,13 @@
 <br>
 
 ## 💼 Project
-  - [`Resume`]()
+  - [`Resume`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/resume)
 
   - `Portfolio`
 
     - [`[연구 논문/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
 
-    - [`[제조/ML] 애플워치 검사 자동화 알고리즘 설계 및 운영`]()
+    - [`[제조/ML] 애플워치 검사 자동화 알고리즘 설계 및 운영`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/lgd_project)
 
     - [`[은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/team_project)
 
@@ -98,7 +98,7 @@
 
   - `Research`
   
-    - [`FCViT`]()
+    - [`FCViT`](https://github.com/HiMyNameIsDavidKim/fcvit/tree/main)
 
     - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 
