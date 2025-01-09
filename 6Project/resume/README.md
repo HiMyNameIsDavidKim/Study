@@ -43,7 +43,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 
 ### 3. AI 모델 관련 트렌드 파악 및 리서치 역량
-* AI 논문 리뷰 관련 블로그 운영을 통해 최신 ML/DL 알고리즘 리뷰, 구현
+* [`AI 논문 리뷰 관련 블로그`](https://davidlds.tistory.com/) 운영을 통해 최신 ML/DL 알고리즘 리뷰, 구현
 <br>
 
 ### 4. 복잡한 문제를 이해하기 쉽게 설명하는 역량
