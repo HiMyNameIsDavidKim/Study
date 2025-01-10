@@ -88,7 +88,7 @@
 
   - `Portfolio`
 
-    - [`[연구 논문/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
+    - [`[연구 논문/DL] 딥러닝 모델 (Vision) 설계 최고 성능 달성`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
 
     - [`[제조/ML] 애플워치 검사 자동화 알고리즘 설계 및 운영`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/lgd_project)
 
