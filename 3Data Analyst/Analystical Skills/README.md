@@ -567,7 +567,7 @@
             * ```python
               df_temp = df.copy()
               df_temp['Date_1'] = df_temp["Date"].dt.strftime("%Y-%m")
-              # df_temp = df_temp[df_temp['device_isMobile'] == True]  # 이산형 분리
+              # df_temp = df_temp[df_temp['y'] == True]  # 이산형 분리
 
               plt.style.use(['seaborn-v0_8'])
               for col in cols_categorical:
@@ -909,21 +909,13 @@
               from sklearn.metrics import classification_report
 
 
-              y_pred_train = model.predict(x_train)
-              for i in range(0, len(y_pred_train)):
-                  if y_pred_train[i] >=THRESHOLD:
-                      y_pred_train[i] = 1
-                  else:
-                      y_pred_train[i] = 0
+              y_proba_train = model.predict(x_train)
+              y_pred_train = (y_proba_train > THRESHOLD).astype(int)
               print(classification_report(y_train, y_pred_train, digits=3))
 
 
-              y_pred_test = model.predict(x_test)
-              for i in range(0,len(y_pred_test)):
-                  if y_pred_test[i] >=THRESHOLD:
-                     y_pred_test[i] = 1
-                  else:
-                      y_pred_test[i] = 0
+              y_proba_test = model.predict(x_test)
+              y_pred_test = (y_proba_test > THRESHOLD).astype(int)
               print(classification_report(y_test, y_pred_test, digits=3))
               ```
     * 회귀
