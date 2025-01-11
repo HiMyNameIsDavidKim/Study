@@ -697,26 +697,18 @@
 
 
           LEARNING_RATE = 3e-2
-          NUM_BOOST_ROUND = 500
+          N_ESTIMATORS = 500
           THRESHOLD = 0.3
 
           params = {
               "learning_rate": LEARNING_RATE,
+              "n_estimators": N_ESTIMATORS,
               "num_leaves": 16,
               "max_depth": 6,
               "drop_rate": 0.3,
-              "max_drop": 50,
               "feature_fraction": 0.5,
               "min_child_samples": 10,
-              "min_child_weight": 0.01,
               "subsample": 0.9,
-              "is_unbalance": False,
-              "max_bin": 256,
-              "verbosity": -1,
-              "min_split_gain": 0,
-              "boosting_type": 'gbdt',
-              "objective": "binary",
-              'metric': 'binary_logloss',
               "seed": 42,
               # "early_stopping_rounds": 200,
           }
@@ -741,17 +733,11 @@
                   X[column] = le.fit_transform(X[column])
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
-          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
-          ds_train = lgb.Dataset (x_train, label = y_train)
-          ds_test = lgb.Dataset (x_test, label = y_test)
-
-          model = lgb.train(
-              params,
-              ds_train,
-              NUM_BOOST_ROUND,
-              # valid_sets=[ds_test],
-              # valid_names=['test'],
-          )
+          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
+          model = lgb.LGBMClassifier(**params, objective='binary', metric='binary_logloss')
+          # model = lgb.LGBMClassifier(**params, objective='multiclass', metric='multi_logloss')  # multi
+          # model = lgb.LGBMRegressor(**params, objective='regression', metric='mse')  # reg
+          model.fit(x_train, y_train)
           ```
     * XGBoost
         * ```python
@@ -780,9 +766,9 @@
                   X[column] = le.fit_transform(X[column])
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
           model = XGBClassifier(objective='binary:logistic', random_state=42)
           # model = xgb.XGBClassifier(objective='multi:softmax', num_class=len(Y.unique()), random_state=42)  # multi
-          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
           # model = xgb.XGBRegressor(objective='reg:squarederror', random_state=42)  # reg
           model.fit(x_train, y_train)
           ```
@@ -913,7 +899,6 @@
               y_pred_train = (y_proba_train > THRESHOLD).astype(int)
               print(classification_report(y_train, y_pred_train, digits=3))
 
-
               y_proba_test = model.predict(x_test)
               y_pred_test = (y_proba_test > THRESHOLD).astype(int)
               print(classification_report(y_test, y_pred_test, digits=3))
@@ -948,7 +933,7 @@
         * ```python
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
-          ftr_importances_values = model.feature_importances_  # LightGBM: model.feature_importance()
+          ftr_importances_values = model.feature_importances_
           ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)  # TabNet: index=X.columns
           ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
           sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
@@ -996,7 +981,7 @@
           from sklearn.preprocessing import label_binarize
 
 
-          y_pred_proba = model.predict_proba(x_test)  # LightGBM: model.predict(X, output_margin=False)
+          y_pred_proba = model.predict_proba(x_test)
           if Y_predict.ndim == 1:
               Y_predict = Y_predict.reshape(-1, 1)
           classes = model.classes_
@@ -1024,7 +1009,7 @@
           from sklearn.metrics import roc_auc_score
 
 
-          y_pred_proba = model.predict_proba(x_test)  # LightGBM: model.predict(X, output_margin=False)
+          y_pred_proba = model.predict_proba(x_test)
           auroc_ovo = roc_auc_score(y_test, y_pred_proba, multi_class='ovo')
           print(f"AUROC (ovo): {auroc_ovo:.4f}")
           ```
@@ -1032,7 +1017,7 @@
         * 가장 잘 예측한 샘플들에서 실제로 많은 중요한 결과를 찾았다.
         * ```python
           y_test = y_test.to_numpy()
-          y_pred_proba = model.predict_proba(x_test)  # LightGBM: model.predict(X, output_margin=False)
+          y_pred_proba = model.predict_proba(x_test)
           sorted_indices = np.argsort(y_pred_proba)[::-1]
           sorted_y_test = y_test[sorted_indices]
           cumulative_gains = np.cumsum(sorted_y_test) / np.sum(sorted_y_test)

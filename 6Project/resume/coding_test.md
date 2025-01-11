@@ -133,9 +133,89 @@
 
 
 ### [모델링]
-* 이진분류
-* 분류
-* 회귀
+* 학습
+    * ```python
+      from sklearn.model_selection import train_test_split
+      from sklearn.preprocessing import LabelEncoder
+      import lightgbm as lgb
+
+
+      LEARNING_RATE = 3e-2
+      N_ESTIMATORS = 500
+      THRESHOLD = 0.3
+
+      params = {
+          "learning_rate": LEARNING_RATE,
+          "n_estimators": N_ESTIMATORS,
+          "num_leaves": 16,
+          "max_depth": 6,
+          "drop_rate": 0.3,
+          "seed": 42,
+      }
+
+      df_temp = df.copy()
+      X = df_temp.drop('y', axis=1)
+      Y = df_temp['y']
+
+      cols_drop = ['id']
+      for col in cols_drop:
+          X.drop(col, axis=1, inplace=True)
+
+      for column in X.columns:
+          if X[column].dtype == object:
+              le = LabelEncoder()
+              X[column] = le.fit_transform(X[column])
+
+      x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+      # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
+      model = lgb.LGBMClassifier(**params, objective='binary', metric='binary_logloss')
+      # model = lgb.LGBMClassifier(**params, objective='multiclass', metric='multi_logloss')  # multi
+      # model = lgb.LGBMRegressor(**params, objective='regression', metric='mse')  # reg
+      model.fit(x_train, y_train)
+      ```
+* 평가
+    * 분류
+        * ```python
+          from sklearn.metrics import classification_report
+
+
+          y_proba_train = model.predict(x_train)
+          y_pred_train = (y_proba_train > THRESHOLD).astype(int)
+          print(classification_report(y_train, y_pred_train, digits=3))
+
+          y_proba_test = model.predict(x_test)
+          y_pred_test = (y_proba_test > THRESHOLD).astype(int)
+          print(classification_report(y_test, y_pred_test, digits=3))
+          ```
+    * 회귀
+        * ```python
+          from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+
+
+          y_pred_train = model.predict(x_train)
+          y_pred_test = model.predict(x_test)
+
+          print("[Train]")
+          print('------------------------------------------')
+          print('r^2_score: ', r2_score(y_train, y_pred_train))
+          print('RMSE:', np.sqrt(mean_squared_error(y_train, y_pred_train)))
+          print('MAE:', mean_absolute_error(y_train, y_pred_train))
+          print('MSE:', mean_squared_error(y_train, y_pred_train))
+          print('------------------------------------------')
+          print("[Test]")
+          print('------------------------------------------')
+          print('r^2_score: ', r2_score(y_test, y_pred_test))
+          print('RMSE:', np.sqrt(mean_squared_error(y_test, y_pred_test)))
+          print('MAE:', mean_absolute_error(y_test, y_pred_test))
+          print('MSE:', mean_squared_error(y_test, y_pred_test))
+          print('------------------------------------------')
+          ```
+* 해석
+    * feature importance
+    * shaply value
+    * ROC Curve (bin)
+    * confusion matrix (multi)
+    * 시각화 (reg)
 <br><br>
 
 
