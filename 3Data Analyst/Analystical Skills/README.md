@@ -933,10 +933,9 @@
         * ```python
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
-          ftr_importances_values = model.feature_importances_
-          ftr_importances = pd.Series(ftr_importances_values, index = x_train.columns)  # TabNet: index=X.columns
-          ftr_top20 = ftr_importances.sort_values(ascending=False)[:20]
-          sns.barplot(x=ftr_top20, y=ftr_top20.index, palette=palette)
+          f_imp = pd.Series(model.feature_importances_, index = x_train.columns)  # TabNet: index=X.columns
+          f_top20 = ftr_importances.sort_values(ascending=False)[:20]
+          sns.barplot(x=f_top20, y=f_top20.index, palette=palette)
           plt.show()
           ```
     * shaply value
@@ -982,8 +981,8 @@
 
 
           y_pred_proba = model.predict_proba(x_test)
-          if Y_predict.ndim == 1:
-              Y_predict = Y_predict.reshape(-1, 1)
+          if y_pred_proba.ndim == 1:
+              y_pred_proba = y_pred_proba.reshape(-1, 1)
           classes = model.classes_
           y_test_bin = label_binarize(y_test, classes=classes)
           n_classes = y_test_bin.shape[1]
@@ -1047,9 +1046,7 @@
           ```
     * 시각화 (회귀)
         * ```python
-          pd.options.display.float_format = '{:.2f}'.format
           result = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred_test})  # TabNet: y_test.reshape(-1), y_pred_test.reshape(-1)
-          result['diff'] = result['Real Values'] - result['Predicted Values']
 
           sns.set(style="darkgrid")
           sns.scatterplot(x=result['Real Values'], y=result['Predicted Values'])

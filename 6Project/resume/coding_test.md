@@ -6,7 +6,19 @@
 ### 📊 SQL query
 <br><br>
 
+
+
 ## `[🎯 ML baseline]`
+* 불러오기
+* 데이터 전처리
+* EDA
+    * 유형 분리, 유형 수정
+    * categorical, numerical, 시계열
+* 모델링
+    * 학습
+    * 평가 (report or matric)
+    * 해석 (fi, shap, ROC or 시각화)
+<br><br>
 
 ### [불러오기]
 * import pandas as pd
@@ -14,6 +26,7 @@
 * import matplotlib.pyplot as plt
 * import seaborn as sns
 * plt.style.use(['seaborn-v0_8'])
+* sns.set(style="darkgrid")
 * df = pd.read_csv('train.csv')
 * df.head(10)
 <br><br>
@@ -196,27 +209,86 @@
           y_pred_test = model.predict(x_test)
 
           print("[Train]")
-          print('------------------------------------------')
+          print(f'-' * 50)
           print('r^2_score: ', r2_score(y_train, y_pred_train))
           print('RMSE:', np.sqrt(mean_squared_error(y_train, y_pred_train)))
           print('MAE:', mean_absolute_error(y_train, y_pred_train))
           print('MSE:', mean_squared_error(y_train, y_pred_train))
-          print('------------------------------------------')
+          print(f'-' * 50)
           print("[Test]")
-          print('------------------------------------------')
+          print(f'-' * 50)
           print('r^2_score: ', r2_score(y_test, y_pred_test))
           print('RMSE:', np.sqrt(mean_squared_error(y_test, y_pred_test)))
           print('MAE:', mean_absolute_error(y_test, y_pred_test))
           print('MSE:', mean_squared_error(y_test, y_pred_test))
-          print('------------------------------------------')
+          print(f'-' * 50)
           ```
 * 해석
     * feature importance
+        * ```python
+          palette = sns.color_palette("turbo", 20)[::-1]
+          f_imp = pd.Series(model.feature_importances_, index = x_train.columns)
+          f_top20 = ftr_importances.sort_values(ascending=False)[:20]
+          sns.barplot(x=f_top20, y=f_top20.index, palette=palette)
+          plt.show()
+          ```
     * shaply value
-    * ROC Curve (bin)
-    * confusion matrix (multi)
+        * ```python
+          import shap
+
+
+          explainer = shap.TreeExplainer(model)
+          shap_values = explainer.shap_values(x_test)
+          shap.summary_plot(shap_values, x_test, plot_type='bar')
+          shap.summary_plot(shap_values, x_test)
+          plt.show()
+          ```
+    * ROC Curve (bin, multi)
+        * ```python
+          from sklearn.metrics import roc_curve, auc
+          from sklearn.preprocessing import label_binarize
+
+
+          y_pred_proba = model.predict_proba(x_test)
+          if y_pred_proba.ndim == 1:
+              y_pred_proba = y_pred_proba.reshape(-1, 1)
+          classes = model.classes_
+          y_test_bin = label_binarize(y_test, classes=classes)
+          n_classes = y_test_bin.shape[1]
+          
+          for i in range(n_classes):
+              fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_pred_proba[:, i])
+              roc_auc = auc(fpr, tpr)
+              plt.plot(fpr, tpr, label=f'Class {classes[i]} (AUC = {roc_auc:.2f})')
+
+          plt.plot([0, 1], [0, 1], 'k--', lw=1)
+          plt.xlabel('False Positive Rate')
+          plt.ylabel('True Positive Rate')
+          plt.title('ROC Curve')
+          plt.legend()
+          plt.show()
+          ```
     * 시각화 (reg)
+        * ```python
+          result = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred_test})
+
+          sns.scatterplot(x=result['Real Values'], y=result['Predicted Values'])
+          lim_min = min(result['Real Values'].min(), result['Predicted Values'].min())
+          lim_max = max(result['Real Values'].max(), result['Predicted Values'].max())
+          plt.xlim(lim_min, lim_max)
+          plt.ylim(lim_min, lim_max)
+          x = [lim_min, lim_max]
+          y = [lim_min, lim_max]
+          plt.plot(x, y, color='red')
+          plt.show()
+          ```
 <br><br>
+
+
+
+## `[🐍 Python algorithm]`
+
+### [ㅎㅁㅎ]
 
 
 
