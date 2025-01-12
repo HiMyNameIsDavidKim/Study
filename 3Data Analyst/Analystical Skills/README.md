@@ -736,7 +736,7 @@
           # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
           model = lgb.LGBMClassifier(**params, objective='binary', metric='binary_logloss')
           # model = lgb.LGBMClassifier(**params, objective='multiclass', metric='multi_logloss')  # multi
-          # model = lgb.LGBMRegressor(**params, objective='regression', metric='mse')  # reg
+          # model = lgb.LGBMRegressor(**params, objective='regression', metric='rmse')  # reg
           model.fit(x_train, y_train)
           ```
     * XGBoost
@@ -744,6 +744,22 @@
           from sklearn.model_selection import train_test_split
           from sklearn.preprocessing import LabelEncoder
           import xgboost as xgb
+
+
+          LEARNING_RATE = 3e-2
+          N_ESTIMATORS = 500
+          THRESHOLD = 0.3
+
+          params = {
+              'learning_rate': LEARNING_RATE,
+              'n_estimators': N_ESTIMATORS,
+              'max_depth': 4,
+              'min_child_weight': 1,
+              'subsample': 0.8,
+              'gamma': 0,
+              'colsample_bytree': 0.8,
+              'random_state': 42,
+          }
 
 
           df_temp = df.copy()
@@ -767,9 +783,9 @@
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
           # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
-          model = XGBClassifier(objective='binary:logistic', random_state=42)
-          # model = xgb.XGBClassifier(objective='multi:softmax', num_class=len(Y.unique()), random_state=42)  # multi
-          # model = xgb.XGBRegressor(objective='reg:squarederror', random_state=42)  # reg
+          model = xgb.XGBClassifier(**params, objective='binary:logistic', eval_metric=['logloss', 'error', 'auc'])
+          # model = xgb.XGBClassifier(objective='multi:softmax', eval_metric=['mlogloss', 'merror'], num_class=len(Y.unique()))  # multi
+          # model = xgb.XGBRegressor(objective='reg:squarederror', eval_metric=['rmse', 'mae'])  # reg
           model.fit(x_train, y_train)
           ```
     * TabNet
@@ -1091,6 +1107,69 @@
           plt.show()
           ```
 * 개선
+    * Optuna
+        * ```python
+          !pip install optuna
+          ```
+        * ```python
+          import optuna
+          from sklearn.metrics import log_loss, mean_squared_error
+          from sklearn.model_selection import train_test_split
+
+
+          N_TRIALS = 50
+
+          def objective(trial):
+              params = {
+                  "learning_rate": trial.suggest_float("learning_rate", 1e-3, 0.1),
+                  "n_estimators": trial.suggest_int("n_estimators", 100, 300),
+                  "random_state": 42,
+              }
+            
+              x_train_, x_val, y_train_, y_val = train_test_split(x_train, y_train, test_size=0.2, stratify=y_train)
+              # x_train_, x_val, y_train_, y_val = train_test_split(x_train, y_train, test_size=0.2)  # reg
+              model = lgb.LGBMClassifier(**params, objective='binary', metric='binary_logloss')  # model change
+              model.fit(x_train_, y_train_, eval_set=[(x_val, y_val)])
+            
+              pred_val = model.predict(x_val)
+              matric = log_loss(y_val, pred_val)  # bin, multi
+              # matric = mean_squared_error(y_val, pred_val)**0.5  # reg
+
+              return matric
+
+          df_temp = df.copy()
+          X = df_temp.drop('y', axis=1)
+          Y = df_temp['y']
+
+          cols_drop = ['id']
+          for col in cols_drop:
+              X.drop(col, axis=1, inplace=True)
+
+          cols_date = ['date_1', 'date_2']
+          for col in cols_date:
+              X[f'week_{col}'] = X[col].dt.dayofweek
+              X[f'month_{col}'] = X[col].dt.month
+              X[col] = pd.to_datetime(X[col]).astype(int) / 10**9
+
+          for column in X.columns:
+              if X[column].dtype == object:
+                  le = LabelEncoder()
+                  X[column] = le.fit_transform(X[column])
+
+          x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
+          # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
+          study = optuna.create_study(direction="minimize")
+          study.optimize(objective, n_trials=N_TRIALS)
+
+          print("Best parameters:", study.best_params)
+          print("Best metric:", study.best_value)
+
+          best_params = study.best_params
+
+          final_model = lgb.LGBMClassifier(**best_params, objective='binary', metric='binary_logloss')  # model change
+          final_model.fit(x_train, y_train)
+          model = final_model
+          ```
     * BayesianOptimization
         * ```python
           !pip install bayesian-optimization
@@ -1133,8 +1212,6 @@
           param_grid = {
             'n_estimators': [100, 200, 300],
             'max_depth': [None, 10, 20],
-            'min_samples_split': [2, 5, 10],
-            'min_samples_leaf': [1, 2, 4],
           }
 
           grid_cv = GridSearchCV(model, param_grid, cv=3, n_jobs=-1, scoring='f1')  # reg: scoring='r2'
