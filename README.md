@@ -103,6 +103,10 @@
     - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 
     - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
+
+  - [`코딩 테스트`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/resume/coding_test.md)
+
+  - [`면접`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/resume/interview.md)
 <br>
 
 ## 📓 Paper List
@@ -204,6 +208,9 @@
     * ✅ [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
+* ML
+  * [`LightGBM`]()
+  * [`XGBoost`]()
 * Analyze data
   * [`TabNet, 2021`](https://arxiv.org/pdf/1908.07442.pdf)
   * [`SAINT, 2021`](https://arxiv.org/pdf/2106.01342.pdf)
