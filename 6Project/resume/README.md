@@ -6,6 +6,8 @@ Email: rkfka1401@gmail.com
 <br>
 GitHub: [HiMyNameIsDavidKim](https://github.com/HiMyNameIsDavidKim)
 <br>
+Paper: [FCViT](https://github.com/HiMyNameIsDavidKim/fcvit)
+<br>
 Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 
