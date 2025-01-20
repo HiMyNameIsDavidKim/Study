@@ -38,14 +38,15 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ### 2. 새로운 것을 학습하고 성장하는 역량
 * AI 모델링 능력 개발 필요성으로 대학원 진학
+* [`AI 논문 리뷰 관련 블로그`](https://davidlds.tistory.com/) 운영을 통해 최신 AI 모델 트렌드 파악 및 리서치
 * ADsP 자격증 취득을 통해 ML/DL에 대한 수학적 이해와 통계적 지식 습득
 * 추가 필요 역량을 직접 탐구 후 교육 수강
     * 이커머스 프로젝트를 통해 Spark, Hadoop과 SQL 사용 역량 개발
     * 은행 프로젝트를 통해 Tableau, Power BI 데이터 시각화 역량 개발
 <br>
 
-### 3. AI 모델 관련 트렌드 파악 및 리서치 역량
-* [`AI 논문 리뷰 관련 블로그`](https://davidlds.tistory.com/) 운영을 통해 최신 ML/DL 알고리즘 리뷰, 구현
+### 3. 도메인 지식 활용 역량
+* 애플워치 검사 자동화에서 도메인 지식을 활용한 데이터 사이언스 수행
 <br>
 
 ### 4. 복잡한 문제를 이해하기 쉽게 설명하는 역량
