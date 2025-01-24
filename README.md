@@ -86,7 +86,7 @@
 ## 💼 Project
   - [`Resume`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/resume)
 
-  - `Portfolio`
+  - [`Portfolio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/portfolio)
 
     - [`[연구 논문/DL] 딥러닝 모델 (Vision) 설계 최고 성능 달성`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
 

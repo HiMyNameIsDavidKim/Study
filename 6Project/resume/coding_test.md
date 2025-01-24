@@ -64,7 +64,7 @@
         * ```python
           for i, col in enumerate(cols_categorical):
               plt.subplot(len(cols_categorical)//3, 3, i+1)
-              sns.countplot(data=df, x=col, hue='y')
+              sns.countplot(data=df, x=col, hue='y', legend=False)
               plt.title(f'{col} Count Plot')
           plt.tight_layout()
           plt.show()
