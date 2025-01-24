@@ -1,5 +1,5 @@
 # 데이터 사이언티스트 김가람 이력서 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
-![Latest update](https://img.shields.io/badge/2025.01.08_updated-brightgreen.svg)
+![Latest update](https://img.shields.io/badge/2025.01.20_updated-brightgreen.svg)
 ![status](https://img.shields.io/badge/offer_welcome-brightgreen.svg)
 <br>
 Email: rkfka1401@gmail.com
