@@ -56,8 +56,8 @@
 <br><br>
 
 ### [inductive bias]
-* 귀납적 편향. 모델이 학습하는 방식에 영향을 주는 요소.
-* 딥러닝에서 inductive bias는 아키텍처, 활성화 함수, 손실 함수 등에 내재된다.
+* 귀납적 편향. 학습하는 과정에서 생긴 사전 가정으로 선입견과 유사하다.
+* 딥러닝에서 inductive bias는 아키텍처, 활성화 함수, 손실 함수 등에 의하여 내재된다.
 * 선형 회귀 모델 : 입력 특성과 출력 사이의 선형 관계를 가정하는 inductive bias.
 * CNN : CV inductive bias가 높다.
 * RNN : NLP inductive bias가 높다.
