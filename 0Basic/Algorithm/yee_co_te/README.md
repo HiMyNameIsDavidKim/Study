@@ -1,6 +1,6 @@
 # 알고리즘 코딩 테스트 예제
 * 이것이 취업을 위한 코딩 테스트다 with Python (나동빈)
-* [링크](https://github.com/ndb796/python-for-coding-test)
+* [깃허브 링크](https://github.com/ndb796/python-for-coding-test)
 <br><br>
 
 
@@ -65,6 +65,17 @@
     * 정당성: 큰 단위가 항상 작은 단위의 배수이기 때문이다.
 * 시간 복잡도: x
 * 변수: n, result
+* ```python
+  n = 1260
+  result = 0
+  coin_types = [500, 100, 50, 10]
+
+  for coin in coin_types:
+      result += n // coin
+      n %= coin
+
+  print(result)
+  ```
 <br><br>
 
 ### [1이 될 때까지]
@@ -73,7 +84,25 @@
     * 정당성: 나누는게 줄어드는 속도가 더 빠르다.
     * 트릭1: k가 큰 것을 대비하여 한번에 빼준다.
 * 시간 복잡도: x
-* 변수: n, k, result
+* 변수: n, k, result, target
+* ```python
+  n, k = map(int, input().split())
+  result = 0
+
+  while True:
+      target = (n // k) * k
+      result += (n - target)
+      n = target
+
+      if n < k:
+          break
+
+      result += 1
+      n //= k
+
+  result += (n - 1)
+  print(result)
+  ```
 <br><br>
 
 ### [곱하기 혹은 더하기]
@@ -82,6 +111,18 @@
     * 정당성: 곱하는게 커지는 속도가 더 빠르다.
 * 시간 복잡도: x
 * 변수: ls, result
+* ```python
+  ls = input()
+  result = 0
+
+  for num in ls:
+      if num <= 1 or result <= 1:
+          result += num
+      else:
+          result *= num
+  
+  print(result)
+  ```
 <br><br>
 
 ### [모험가 길드]
@@ -90,5 +131,21 @@
     * 정당성: 오름차순일 경우 항상 최소한의 모험가 수로 결성된다.
 * 시간 복잡도: 
 * 변수: n, ls, cnt, result
+* ```python
+  n = int(input())
+  ls = list(map(int, input().split()))
+  ls.sort()
+
+  result = 0
+  cnt = 0
+
+  for i in ls:
+      cnt += 1
+      if cnt >= i:
+        result += 1
+        cnt = 0
+  
+  print(result)
+  ```
 <br><br>
 
