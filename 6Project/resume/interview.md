@@ -159,7 +159,7 @@
 #### ResNet의 핵심 개념을 설명하라
 * residual connection을 통해 더 깊은 층으로 구성된 모델도 학습이 가능합니다. 이전 블럭의 결과를 이번 블럭의 결과에 더해주는 구조로 gradiant vanishing 문제를 해결하고 깊은 층의 레이어도 학습할 수 있습니다.
 #### MobileNet의 핵심 개념을 설명하라
-* 기존 컨볼루션을 depth-wise, point-wise conv로 대체했습니다. 연산을 두단계로 나눠서 하면 연산량이 크게 줄어드는데 이 트릭을 사용한 것입니다.
+* 기존 컨볼루션을 depth-wise, point-wise conv로 대체했습니다. 연산을 두단계로 나눠서 하면 연산량이 크게 줄어드는데 이 트릭을 사용한 것입니다. depth-wise conv는 채널 간의 정보는 혼합되지 않고 공간적 특징만 추출하며 3x3 커널을 사용합니다. point-wise conv는 공간적 정보는 건드리지 않고 채널의 정보만 혼합해 특징을 추출하며 1x1 커널을 사용합니다.
 #### EfficientNet의 핵심 개념을 설명하라
 * 네트워크의 depth, width, resolution을 균형있게 키우는 것입니다. compound scaling이라고 해서 작은 베이스 모델을 만들고 세가지 요소를 동시에 키워나갑니다.
 #### CNN과 ViT의 차이를 설명하라
