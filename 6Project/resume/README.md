@@ -106,7 +106,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 주요 역할: 
     * 군집 추출 (데이터 EDA)
     * 머신러닝 모델링 (LightGBM, TabNet)
-    * 모델 해석 (shaply value)
+    * 모델 해석 (shapley value)
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/team_project)
 <br>
 

@@ -28,7 +28,7 @@
 * __주요 역할__:
     * 군집 추출 (데이터 EDA)
     * 머신러닝 모델링 (LightGBM, TabNet)
-    * 모델 해석 (shaply value)
+    * 모델 해석 (shapley value)
 <br>
 
 
@@ -147,7 +147,7 @@
 
 ### 5. 모델 해석
 * ![](https://github.com/user-attachments/assets/85f7899a-7eeb-4848-bb47-e86613ee1048)
-* 모델의 feature importance와 shaply value 분석을 진행한다.
+* 모델의 feature importance와 shapley value 분석을 진행한다.
 * `허위정보, 자동화, 소득이 중요하게 작용`하는 점을 볼 수 있다.
 <br>
 
@@ -188,7 +188,7 @@
         * 데이터의 불균형이 있을 경우에는 언더 샘플링, 오버 샘플링을 활용하여 해결
 * __전문적인 모델 해석을 했는가?__
     * 처음에 feature importance만 했으나 부족하다고 생각하여 자료조사를 했습니다.
-    * `Shaply value 분석과 Rule extraction에 대하여 공부하고 프로젝트에 적용`했습니다.
+    * `Shapley value 분석과 Rule extraction에 대하여 공부하고 프로젝트에 적용`했습니다.
 <br>
 
 

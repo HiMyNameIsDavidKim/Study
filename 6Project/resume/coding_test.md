@@ -196,7 +196,7 @@
           sns.barplot(x=f_top20, y=f_top20.index, palette=palette)
           plt.show()
           ```
-    * shaply value
+    * shapley value
         * ```python
           import shap
 

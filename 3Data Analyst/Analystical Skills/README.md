@@ -954,7 +954,7 @@
           sns.barplot(x=f_top20, y=f_top20.index, palette=palette)
           plt.show()
           ```
-    * shaply value
+    * shapley value
         * 비선형을 고려한 기여도를 계산하고 상관성의 부호를 확인한다.
         * ```python
           import shap
