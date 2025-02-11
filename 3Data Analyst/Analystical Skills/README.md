@@ -444,6 +444,7 @@
               print(f'-'*50)
               print(f'##### {col} Distribution #####')
               ratio_1 = df[df["y"] == 1].groupby(col).size() / df.groupby(col).size() * 100
+              ratio_1.index = ratio_1.index.astype(str)
               g = sns.catplot(x="y", hue="y", col=col, col_wrap=4, data=df,
                           kind="count", height=3.5, aspect=.8,  palette='deep', legend=False)
               for ax in g.axes.flat:
@@ -451,8 +452,8 @@
                   if cat in ratio_1:
                       ax.text(0.5, 0.94, f"y Rate: {ratio_1[cat]:.2f}%", 
                               ha="center", va="bottom", transform=ax.transAxes, fontsize=10, color="blue")
-          plt.show()
-          print(f'-'*50)
+              plt.show()
+              print(f'-'*50)
           ```
     * y가 연속형
         * ```python 
@@ -734,9 +735,9 @@
 
           x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, stratify=Y)
           # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)  # reg
-          model = lgb.LGBMClassifier(**params, objective='binary', metric='binary_logloss')
-          # model = lgb.LGBMClassifier(**params, objective='multiclass', metric='multi_logloss')  # multi
-          # model = lgb.LGBMRegressor(**params, objective='regression', metric='rmse')  # reg
+          model = lgb.LGBMClassifier(**params, objective='binary', metric='binary_logloss', verbose=-1)
+          # model = lgb.LGBMClassifier(**params, objective='multiclass', metric='multi_logloss', verbose=-1)  # multi
+          # model = lgb.LGBMRegressor(**params, objective='regression', metric='rmse', verbose=-1)  # reg
           model.fit(x_train, y_train)
           ```
     * XGBoost
@@ -950,7 +951,7 @@
           sns.set(style="darkgrid")
           palette = sns.color_palette("turbo", 20)[::-1]
           f_imp = pd.Series(model.feature_importances_, index = x_train.columns)  # TabNet: index=X.columns
-          f_top20 = ftr_importances.sort_values(ascending=False)[:20]
+          f_top20 = f_imp.sort_values(ascending=False)[:20]
           sns.barplot(x=f_top20, y=f_top20.index, palette=palette)
           plt.show()
           ```
@@ -1188,8 +1189,8 @@
               model = RandomForestClassifier(  # reg: RandomForestRegressor
               # model = lgb.LGBMClassifier(  # reg: LGBMRegressor
               # model = xgb.XGBClassifier(  # reg: XGBRegressor
-              n_estimators= int(n_estimators),
-              max_depth= int(max_depth),
+              n_estimators=int(n_estimators),
+              max_depth=int(max_depth),
               )
               scores = cross_val_score(model, x_train, y_train, cv=5, scoring='f1')  # reg: scoring='r2'
               return np.mean(scores)
