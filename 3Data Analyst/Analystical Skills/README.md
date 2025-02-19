@@ -1200,10 +1200,18 @@
                   f=model_evaluate,
                   pbounds=param_bounds
               )
-              model_opt.maximize(init_points=5, n_iter=10)
+              model_opt.maximize(init_points=2, n_iter=3)  # 5, 50
               print(model_opt.res)
 
-          bayesOpt(x_train, y_train)
+              best_params = model_opt.max['params']
+              best_params = {
+                  'n_estimators': int(best_params['n_estimators']),
+                  'max_depth': int(best_params['max_depth']),
+              }            
+              print("Best hyperparameters:", best_params)
+              return best_params
+
+          best_params = bayesOpt(x_train, y_train)
           ```
     * GridSearchCV
         * ```python
