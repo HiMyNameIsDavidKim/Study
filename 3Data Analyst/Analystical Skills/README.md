@@ -1228,6 +1228,65 @@
           print(f'The best params: {grid_cv.best_params_}')
           print(f'The best score: {grid_cv.best_score_:.4f}')
           ```
+    * 코사인 어닐링
+        * ```python
+          from typing import List, Dict, Any
+          
+
+          ds_train = lgb.Dataset(x_train, label = y_train)
+          ds_test = lgb.Dataset(x_test, label = y_test)
+
+          class CosineAnnealingLRCallback:
+              def __init__(
+                  self,
+                  base_lr: float,
+                  final_lr: float,
+                  total_iterations: int,
+                  warmup_iterations: int = 0
+              ):
+                  self.base_lr = base_lr
+                  self.final_lr = final_lr
+                  self.total_iterations = total_iterations
+                  self.warmup_iterations = warmup_iterations
+                  self.current_iter = 0
+
+              def __call__(self, env: Dict[str, Any]) -> None:
+                  self.current_iter += 1
+
+                  if self.current_iter <= self.warmup_iterations:
+                      lr = self.base_lr * (self.current_iter / self.warmup_iterations)
+                      env.model.reset_parameter({"learning_rate": lr})
+                      return
+
+                  progress = (self.current_iter - self.warmup_iterations) / (self.total_iterations - self.warmup_iterations)
+                  cosine_decay = 0.5 * (1 + np.cos(np.pi * progress))
+                  lr = self.final_lr + (self.base_lr - self.final_lr) * cosine_decay
+
+                  env.model.reset_parameter({"learning_rate": lr})
+
+          cosine_scheduler = CosineAnnealingLRCallback(
+              base_lr=LEARNING_RATE,
+              final_lr=MIN_LEARNING_RATE,
+              total_iterations=N_ESTIMATORS,
+              warmup_iterations=0
+          )
+
+
+          model = lgb.train(
+              best_params,
+              ds_train,
+              num_boost_round=N_ESTIMATORS,
+              callbacks=[cosine_scheduler],
+          )
+
+          y_proba_train = model.predict(x_train)
+          y_pred_train = (y_proba_train > THRESHOLD).astype(int)
+          print(classification_report(y_train, y_pred_train, digits=2))
+
+          y_proba_test = model.predict(x_test)
+          y_pred_test = (y_proba_test > THRESHOLD).astype(int)
+          print(classification_report(y_test, y_pred_test, digits=2))
+          ```
 <br><br>
 
 
