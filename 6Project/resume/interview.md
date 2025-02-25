@@ -194,25 +194,29 @@
 #### 딥러닝 이전에 detection에 사용했던 방법을 설명하라
 * 이미지의 경계와 방향을 분석하는 HOG와 이미지의 밝기 차이를 특정하여 눈코입의 패턴을 감지하는 Haar와 같은 방법이 있습니다.
 #### ^Faster R-CNN의 모델에 대하여 설명하라
-* 
-* 장점으로 RPN (Region Proposal Network)을 사용한 ROI (Region of Interest) 자동 생성으로 속도가 빠르고 ROI 풀링과 ResNet 백본의 영향으로 정확도가 높습니다.
+* Faster R-CNN은 2 stage 디텍션 모델입니다. Fast R-CNN에 select search 대신 RPN을 사용해 속도를 개선한 모델입니다. RPN이 객체가 있을 만한 영역을 먼저 찾은 후 Fast R-CNN이 객체를 분류하고 박스를 정교하게 조정합니다.
+* RPN: Region Proposal Network, ROI (Region of Interest)를 자동 생성
+* 장점으로 속도가 빠르고 ROI 풀링과 ResNet 백본의 영향으로 정확도가 높습니다.
 * 단점으로 네트워크가 2단계로 진행되어 실시간 처리가 어렵고 모듈수가 많아 구조가 복잡합니다.
 #### ^YOLO의 모델에 대하여 설명하라
-* 
+* YOLO는 1 stage 디텍션 모델입니다. 이미지를 그리드로 나누고 한번에 객체 검출을 수행하는 방식을 사용합니다. 각 그리드 셀이 객체의 클래스와 바운딩 박스를 한번에 예측합니다.
 * 장점으로 실시간 처리가 가능할 정도로 빠르고 end-to-end CNN 형태로 구조가 간단합니다.
 * 단점으로 격자 기반 예측 방식으로 인해 작은 크기의 객체 인식 성능이 낮고 속도에 중점을 뒀기 때문에 상대적으로 정확도가 낮습니다.
+#### 가장 선호하는 객체인식 알고리즘을 설명하고 장단점을 설명하라
+* YOLO 입니다. 실시간 처리가 가능하며 end-to-end 모델이라는 점이 제가 추구하는 방향이랑 동일하기 때문입니다.
 #### ^DETR 모델에 대하여 설명하라
 * DEtection TRansformer는 메타 연구진이 발표한 객체 인식 모델입니다. 기존 모델의 복잡한 후처리 과정 NMS를 없애고 트랜스포머를 사용해 end-to-end로 학습이 가능합니다. 그리고 고정된 숫자의 object query를 사용해서 이미지 내 객체를 직접 예측하는 방식으로 동작합니다.
 * NMS: Non-Maximum Suppression, 중복 검출 결과를 제거하는 후처리 기법입니다. 하나의 객체에 대하여 여러개의 바운딩 박스가 예측되면, 박스 중에 컨피던스 스코어가 가장 높은 박스만 선택합니다. 이 박스와 많이 겹치는 (IoU가 높은) 박스는 제거합니다.
 #### ^CLIP 모델에 대하여 설명하라
 * Contrastive Language-Image Pre-training은 오픈AI가 발표한 멀티모달 모델입니다. 이미지와 텍스트를 같은 스페이스에 매핑해서 둘 사이의 관계를 학습하는 모델로 contrastive learning을 사용합니다.
-* contrastive learning: 같은 이미지-텍스트 쌍은 가깝게, 관계없는 이미지-텍스트 쌍은 멀게 학습히는 방법입니다. cosine similarity로 유사도를 계산하는 InfoNCS Loss를 사용합니다.
+* contrastive learning: 같은 이미지-텍스트 쌍은 가깝게, 관계없는 이미지-텍스트 쌍은 멀게 학습히는 방법입니다. cosine similarity로 유사도를 계산하는 InfoNCE Loss를 사용합니다.
 #### ^LLaVA 모델에 대하여 설명하라
-* LLM 모델인 LLaMA에 CLIP의 비전 인코더를 연결한 메타의 멀티모달 모델입니다. instruction tuning으로 시각-언어 데이터의 기본 능력을 학습하고 GPT-4의 데이터로 미세조정을 했습니다.
+* LLM 모델인 LLaMA에 CLIP의 비전 인코더를 연결한 멀티모달 모델입니다. instruction tuning으로 시각-언어 데이터의 기본 능력을 학습하고 GPT-4의 데이터로 미세조정을 했습니다.
 * instruction tuning: CLIP의 이미지 임베딩을 LLM의 토큰 임베딩과 정렬하는 것을 목적으로 하며, CLIP의 이미지 임베딩을 LLM의 토큰 임베딩으로 변환하는 프로젝션 레이어를 학습합니다.
-#### ^최신 VLM 모델에 대하여 설명하라
-#### 가장 선호하는 객체인식 알고리즘을 설명하고 장단점을 설명하라
-* YOLO 입니다. 실시간 처리가 가능하며 end-to-end 모델이라는 점이 제가 추구하는 방향이랑 동일하기 때문입니다.
+#### ^최신 VLM 모델에 대하여 설명하라 (2025.02)
+* DALL-E-3, GPT-4V, Claude 3, MoE-LLaVA, LLaVA-CoT 등이 있습니다. 이미지 인코더와 기존 LLM을 합치는 방향으로 연구가 진행되고 있고 MoE 나 CoT 같은 메서드가 활용되고 있습니다.
+* MoE: Mixture of Experts, 여러 전문가 네트워크를 조합해 효율적인 추론을 하는 방식입니다.
+* CoT: Chain of Thought, 복잡한 추론을 단계적으로 수행하는 방식입니다.
 #### avg pooling과 max pooling의 차이를 설명하라
 * 풀링 레이어는 입력 데이터의 크기를 줄이면서 중요한 특징을 추출합니다.
 * avg pooling은 영역 내 모든 값의 평균을 취해 전반적인 특징을 보존하고 max pooling은 영역 내 최댓값만 선택해 가장 두드러진 특징만 유지합니다. 일반적으로 max pooling을 더 많이 사용합니다.
