@@ -176,7 +176,7 @@
     * [`GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
     * [`LLaMA, 2023`](https://arxiv.org/pdf/2302.13971)
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
-  * LMM
+  * VLM
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/LLaVA_UHD.md)
   * Jigsaw Puzzle
     * ✅ [`Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
