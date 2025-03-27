@@ -136,14 +136,20 @@
     * push pull할때 저절로 발생
 * 머지 예시
     * dev와 main 브랜치가 있을때 둘을 main 브랜치로 병합하고 싶을 때
+    * git checkout main
     * main 브랜치로 이동
     * git merge dev 하기
     * main 브랜치에 새로운 버전 하나가 생기고 머지된 버전이 저장
+    * git push origin main
+    * 서버로 전송까지 완료
 * 머지 예시 2
     * dev에서 main 브랜치를 가져와 병합하고 싶을 때
+    * git checkout dev
     * dev 브랜치로 이동
     * git merge main 하기
     * dev 브랜치에 새로운 버전 하나가 생기고 머지된 버전이 저장
+    * git push origin dev
+    * 서버로 전송까지 완료
 * 컨플릭트 개념
     * 오토 머지가 불가능한 상황에서 발생
     * 두 브랜치에서 같은 버전의 같은 부분을 수정한 상황
