@@ -140,6 +140,11 @@
     * main 브랜치로 이동
     * git merge dev 하기
     * main 브랜치에 새로운 버전 하나가 생기고 머지된 버전이 저장
+    * (컨플릭트 발생)
+        * IDE에서 수락 or 직접 수정
+        * git add .
+        * git commit -m (메시지)
+        * 커밋까지 해야만 컨플릭트 해결
     * git push origin main
     * 서버로 전송까지 완료
 * 머지 예시 2
@@ -148,6 +153,11 @@
     * dev 브랜치로 이동
     * git merge main 하기
     * dev 브랜치에 새로운 버전 하나가 생기고 머지된 버전이 저장
+    * (컨플릭트 발생)
+        * IDE에서 수락 or 직접 수정
+        * git add .
+        * git commit -m (메시지)
+        * 커밋까지 해야만 컨플릭트 해결
     * git push origin dev
     * 서버로 전송까지 완료
 * 컨플릭트 개념
