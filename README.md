@@ -44,6 +44,8 @@
 
     - [`💬 NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
 
+    - [`🤝 RecSys`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/RecSys)
+
   - [`🌌 Neuroscience`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Neuroscience)
 
   - [`🧪 Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
@@ -166,18 +168,30 @@
   * [`Loss Scaling Rule, 2018`](https://arxiv.org/pdf/1706.02677.pdf)
   * [`Loss Predictor, 2019`](https://arxiv.org/pdf/1905.03677.pdf)
   * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-* Apps
-  * Segmentation
-    * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
+* Vision Apps
   * LLM
     * [`BERT, 2019`](https://arxiv.org/pdf/1810.04805)
     * [`GPT-1, 2018`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
     * [`GPT-2, 2019`](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
     * [`GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-    * [`LLaMA, 2023`](https://arxiv.org/pdf/2302.13971)
+    * ✅ [`LLaMA, 2023`](https://arxiv.org/pdf/2302.13971) / [`Blog Posting`](https://davidlds.tistory.com/89) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/LLM/LLaMA.md)
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
   * VLM
+    * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
+    * [`LLaVA, 2023`](https://arxiv.org/pdf/2304.08485)
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/LLaVA_UHD.md)
+  * Segmentation
+    * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
+  * Object Detection
+    * [`R-CNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
+    * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
+    * [`Faster R-CNN, 2015`](https://arxiv.org/pdf/1506.01497.pdf)
+    * [`Mask R-CNN, 2017`](https://arxiv.org/abs/1703.06870)
+    * [`YOLO v1, 2016`](https://arxiv.org/pdf/1506.02640.pdf)
+    * [`YOLO v2, 2016`](https://arxiv.org/pdf/1612.08242.pdf)
+    * [`YOLO v3, 2018`](https://arxiv.org/pdf/1804.02767.pdf)
+    * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
+    * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Jigsaw Puzzle
     * ✅ [`Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
     * ✅ [`CFN, 2016`](https://arxiv.org/pdf/1603.09246.pdf)
@@ -192,23 +206,14 @@
     * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
     * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
   * Image-Text
-    * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
     * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432.pdf)
     * [`Coca, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
-  * Object Detection
-    * [`R-CNN, 2014`](https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf)
-    * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
-    * [`Faster R-CNN, 2015`](https://arxiv.org/pdf/1506.01497.pdf)
-    * [`Mask R-CNN, 2017`](https://arxiv.org/abs/1703.06870)
-    * [`YOLO v1, 2016`](https://arxiv.org/pdf/1506.02640.pdf)
-    * [`YOLO v2, 2016`](https://arxiv.org/pdf/1612.08242.pdf)
-    * [`YOLO v3, 2018`](https://arxiv.org/pdf/1804.02767.pdf)
-    * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
-    * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Gen
     * ✅ [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
+* RecSys
+  * 
 * ML
   * [`LightGBM`]()
   * [`XGBoost`]()
