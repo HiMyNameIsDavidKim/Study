@@ -4,6 +4,15 @@
 
 
 
+## `[레퍼런스]`
+
+### [캐글]
+* [`T아카데미 기초 모델 구현`](https://www.kaggle.com/datasets/chocozzz/t-academy-recommendation2/code)
+* [`CF 아키텍처 베이스라인`](https://www.kaggle.com/code/jamesloy/deep-learning-based-recommender-systems)
+<br><br>
+
+
+
 ## `[Metric]`
 * 여기서 관심은 클릭으로 하는 것이 좋다.
 * 순서 미포함
@@ -38,8 +47,6 @@
 * 평점 예측
     * MAE, RMSE 사용
 <br><br>
-
-
 
 
 
