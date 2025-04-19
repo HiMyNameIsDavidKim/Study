@@ -263,6 +263,21 @@
 * git push origin main
 <br><br>
 
+### [임시 저장]
+* git stash
+    * 임시 저장하고 다른 작업 가능 (ex. 브랜치 이동)
+    * 앞에 했던 커밋 상태로 복구하고 작업 내용은 임시 저장 된다.
+* git stash pop
+    * 가장 최근 임시 저장본을 현재 branch에 적용
+    * 적용과 함께 사라진다.
+* git stash list
+    * stash에 저장된 항목 출력
+* git stash apply
+    * git stash pop처럼 적용하지만 삭제는 하지 않는다.
+* git stash clear
+    * stash list 모두 삭제
+<br><br>
+
 ### [브랜치 생성]
 * 폴더 생성
 * git clone (리포지토리의 https 키)
@@ -284,8 +299,8 @@
 * pull : 레포지토리 변경사항 다운로드.
 * github action : pull, push와 같은 이벤트 발생 시 자동화된 작업을 진행.
 * CI/CD : push 이후 자동으로 빌드 및 배포 스크립트를 실행시켜주는 기능.
-* **github action을 활용하는 대표적인 기능.
-* **레포지토리의 규모가 클 때 시간낭비를 방지해준다.
+    * github action을 활용하는 대표적인 기능.
+    * 레포지토리의 규모가 클 때 시간낭비를 방지해준다.
 * workflow : 레포지토리에 추가할 수 있는 자동화된 커맨드의 집합.
 * branch : 독립적으로 작업을 진행하는 작업공간.
 * **main : 메인 브렌치
