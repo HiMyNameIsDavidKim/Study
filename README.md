@@ -85,6 +85,18 @@
     - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 <br>
 
+## ☁️ Cloud(AWS, GCP)
+  - [`🐳Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
+
+  - `AIaaS`
+
+    - [`🥫DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
+
+    - [`🌵Django Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Django(REST))
+
+    - [`⚛️React Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/React)
+<br>
+
 ## 💼 Project
   - [`Resume`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/resume)
 
@@ -254,14 +266,4 @@
 
 ## ☕️ Java
   - [`Basic and AI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/2Java)
-<br>
-
-## ☁️ Cloud(AWS, GCP)
-  - [`🥫DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
-
-  - [`🌵Django Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Django(REST))
-
-  - [`⚛️React Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/React)
-
-  - [`🐳Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
 <br>
