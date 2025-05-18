@@ -5,36 +5,36 @@
 ### 🐍 Python
 ### 🎯 AI
 ### 📊 Data Analyst
+### ☁️ Cloud
 ### 💼 Project
 ### 📓 Paper List
 ### 📘 Book List
 ### 🦋 Flutter
 ### ☕️ Java
-### ☁️ Cloud(AWS, GCP)
 <br>
 
 ## 💪 Basic
-  - [`Algorithm⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
+  - [`⚙️ Algorithm⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm)
 
-  - [`Data Structure`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
+  - [`🗂️ Data Structure`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Data%20Structure)
 
-  - [`Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
+  - [`💻 Computer Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Computer%20Science)
 
-  - [`Algebra`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
+  - [`🧮 Algebra`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algebra)
 
-  - [`Statistics`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
+  - [`🔢 Statistics`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Statistics)
   
-  - [`Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
+  - [`🧩 Design Pattern`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Design%20Pattern)
 <br>
 
 ## 🐍 Python
-  - [`Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
+  - [`🐍 Basic`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/0%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
 
-  - [`Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS_NaverCloud)
+  - [`🐉 Advanced⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/1AIaaS_NaverCloud)
 
-  - [`Data Analysis`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase)
+  - [`📊 Data Analysis`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/2Analysis_zerobase)
 
-  - [`Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example)
+  - [`📝 Example`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example)
 <br>
 
 ## 🎯 AI
@@ -54,9 +54,9 @@
 <br>
 
 ## 📊 Data Analyst
-  - [`Analystical Skills`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Analystical%20Skills)
+  - [`🔍 Analystical Skills`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Analystical%20Skills)
 
-  - `Visualization`
+  - `📈 Visualization`
 
     - [`Tableau`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Tableau)
 
@@ -64,7 +64,7 @@
 
     - [`Power BI`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Power_BI)
 
-  - `Query`
+  - `🧾 Query`
 
     - [`SQL`](https://github.com/HiMyNameIsDavidKim/sql_zerobase)
 
@@ -72,29 +72,31 @@
 
     - [`DBeaver`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/DBeaver)
 
-  - `Big Data`
+  - `🗃️ Big Data`
 
     - [`Spark`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Spark)
 
     - [`Hadoop`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/Hadoop)
 
-  - `Certification`
+  - `📜 Certification`
 
     - [`SQL (SQLD)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/SQL/SQLD)
 
     - [`R (ADsP)`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/3Data%20Analyst/R)
 <br>
 
-## ☁️ Cloud(AWS, GCP)
-  - [`🐳Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
+## ☁️ Cloud
+  - [`🐳 Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
 
-  - `AIaaS`
+  - [`🌴 AWS`]()
 
-    - [`🥫DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
+  - `🛎️ AIaaS`
 
-    - [`🌵Django Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Django(REST))
+    - [`🥫 DB Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/DB%20Server)
 
-    - [`⚛️React Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/React)
+    - [`🌵 Django Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Django(REST))
+
+    - [`⚛️ React Server`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/React)
 <br>
 
 ## 💼 Project

@@ -1,8 +1,4 @@
 # Recommendation System
-* 추천시스템
-<br><br>
-
-
 
 ## `[레퍼런스]`
 

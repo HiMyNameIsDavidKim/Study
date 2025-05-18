@@ -1,6 +1,6 @@
 # 데이터 사이언티스트 김가람 이력서 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
-![Latest update](https://img.shields.io/badge/2025.01.20_updated-brightgreen.svg)
-![status](https://img.shields.io/badge/offer_welcome-brightgreen.svg)
+![Latest update](https://img.shields.io/badge/2025.05.17_updated-brightgreen.svg)
+![status](https://img.shields.io/badge/focus_on_now-red.svg)
 <br>
 Email: rkfka1401@gmail.com
 <br>
@@ -57,6 +57,10 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 ## 프로젝트
+
+### [연구/DL] 추천 시스템 연구, 개발, 운영
+* 진행중
+<br>
 
 ### [연구 논문/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성
 * 대학원 석사 논문
@@ -127,13 +131,16 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 ## 경력
+* __Hecto__, AI테크팀, 선임, (2025.03 ~ now)
+    > 추천 시스템 모델 연구, 개발, 운영.
 * __IDEA Lab.__, 대학원 연구실, 석사과정, (2023.02 ~ 2025.02)
     > 딥러닝 모델 (Vision) 아키텍처 연구.
 * __LG디스플레이__, 검사팀, AI빅데이터 직무, 사원, (2020.11 ~ 2022.09)
     > 애플워치 패널에 대한 검사 알고리즘 설계 및 엔지니어링.
 * __트라이큐빅스코리아__, AI팀, AI연구 직무, 인턴, (2018.12 ~ 2019.01)
     > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글)의 알고리즘 연구.
-* [![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
+* [![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
+[![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
 [![LGD](https://img.shields.io/badge/LG_Display-A50034?style=plastic&logo=lg&logoColor=white)](https://www.lgdisplay.com/)
 [![Tricubics](https://img.shields.io/badge/Tricubics-009688?style=plastic&logo=apachenetbeanside&logoColor=white)](https://www.tricubics.com/)
 <br>
