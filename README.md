@@ -201,10 +201,13 @@
     * [`Fast R-CNN, 2015`](https://www.semanticscholar.org/paper/Fast-R-CNN-Girshick/7ffdbc358b63378f07311e883dddacc9faeeaf4b?p2df)
     * [`Faster R-CNN, 2015`](https://arxiv.org/pdf/1506.01497.pdf)
     * [`Mask R-CNN, 2017`](https://arxiv.org/abs/1703.06870)
+    * [`DETR`]()
     * [`YOLO v1, 2016`](https://arxiv.org/pdf/1506.02640.pdf)
     * [`YOLO v2, 2016`](https://arxiv.org/pdf/1612.08242.pdf)
     * [`YOLO v3, 2018`](https://arxiv.org/pdf/1804.02767.pdf)
     * [`YOLO v4, 2020`](https://arxiv.org/pdf/2004.10934.pdf)
+    * [`YOLOS`]()
+    * [`EfficientDet`]()
     * [`ViTDet, 2022`](https://arxiv.org/pdf/2203.16527.pdf)
   * Jigsaw Puzzle
     * ✅ [`Context Prediction, 2015`](https://arxiv.org/pdf/1505.05192)
@@ -227,6 +230,7 @@
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
 * RecSys
+  * [`YoutubeDNN, 2016`]()
   * 
 * ML
   * [`LightGBM`]()
