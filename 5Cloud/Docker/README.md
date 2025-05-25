@@ -48,7 +48,7 @@
 * 도커 같은 컨테이너 엔진이 반드시 설치되어 있어야 된다.
 <br><br>
 
-### [배포 실습]
+### [배포 코드]
 * Dockerfile 파일 하나 만들기
     * 내용
         * ```Dockerfile
@@ -92,6 +92,8 @@
         * 실행중인 도커를 중지한다.
     * docker kill [컨테이너 ID]
         * 실행중인 도커를 강제 종료한다.
+    * docker container restart [컨테이너 ID]
+        * 중단시킨 도커를 다시 실행한다.
 * 배포하기
     * 도커 허브에 리포지토리 하나 만들기
     * 도커 커맨드에서 리포지토리 이름 확인하기
@@ -109,6 +111,8 @@
   * docker rmi $(docker images -q)
 * 이미지 캐시 완전 삭제
   * docker system prune --all --force
+* 도커 컴포즈 다운
+  * docker-compose down
 <br><br>
 
 
