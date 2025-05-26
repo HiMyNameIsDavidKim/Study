@@ -1,6 +1,6 @@
 # AWS
 
-## `[AWS]`
+## [AWS]
 * [`Ref, JSCODE`](https://www.youtube.com/watch?v=Jd7xdvwY_VQ&list=PLtUgHNmvcs6qr33RT-UiguSsCr_2Gq0S3&index=2)
 <br><br>
 
@@ -30,8 +30,29 @@
     * 퍼블릭 IP(IPv4) 주소로 접속할 수 있다.
     * SSH 키 등록해서도 접속할 수 있다.
 * 탄력적 IP
-    * 고정 IP를 할당할 수 있는 것
+    * 고정 IP를 할당할 수 있는 것.
     * 기본적으로 임시 IP를 쓰므로 인스턴스 껐다 키면 IP가 변경된다.
+* 배포하기
+    * 백엔드 서버 git clone 으로 프로젝트 가져오기
+    * 관련 라이브러리 다 설치
+    * 민감한 파일들은 EC2 CLI에서 vi로 설치
+    * 백엔드 서버 실행
+<br><br>
+
+### [RDS]
+* Relational Database Service
+* RDB(MySQL, MariaDB 등)을 AWS에서 빌려서 사용하는 서비스.
+* 자동 백업, 모니터링 등 다양한 편리한 기능을 제공한다.
+* EC2에 직접 MySQL 설치
+    * RDS를 사용하지 않는 방법이다.
+    * 비용 절감은 되지만, 백엔드 서버와 MySQL이 같이 죽는다.
+    * RDS에서 제공하는 부가 기능을 사용할 수 없다.
+* 보안 그룹
+    * EC2로 이동해서 RDS 보안 그룹을 생성해 설정한다.
+    * 접근하는 IP를 제한할 수 있다.
+* 파라미터 그룹
+    * MySQL의 설정값을 관리하는 것과 같다.
+    * 
 <br><br>
 
 ### []
