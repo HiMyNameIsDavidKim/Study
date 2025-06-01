@@ -86,9 +86,11 @@
 <br>
 
 ## ☁️ Cloud
+  - [`🌿 Git`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Git)
+
   - [`🐳 Docker`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/Docker)
 
-  - [`🌴 AWS`]()
+  - [`🌴 AWS`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/5Cloud/AWS)
 
   - `🛎️ AIaaS`
 
