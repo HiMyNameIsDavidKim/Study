@@ -237,9 +237,7 @@
 * ML
   * [`LightGBM`]()
   * [`XGBoost`]()
-* Analyze data
   * [`TabNet, 2021`](https://arxiv.org/pdf/1908.07442.pdf)
-  * [`SAINT, 2021`](https://arxiv.org/pdf/2106.01342.pdf)
 <br>
 
 ## 📘 Book List
