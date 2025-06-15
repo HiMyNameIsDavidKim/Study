@@ -84,7 +84,7 @@
 * GCP Vertex AI
 <br><br>
 
-### [우리의 구축 목적]
+### [일반적인 구축 목적]
 * feature의 변환을 한 곳에서 일관되게 한다.
 * 다양한 저장소의 데이터를 일관된 스키마와 파이프 라인으로 통합한다.
 * 피처와 변환 로직의 일관성, 최신성, 정합성을 유지한다.
@@ -121,7 +121,7 @@
 
 
 
-## [Feast]
+## `[Feast]`
 
 ### [레퍼런스]
 * [`공식 문서`](https://docs.feast.dev/getting-started/quickstart)
@@ -410,4 +410,135 @@
 
 
 
+## `[ONNX]`
+* [`공식 문서`](https://onnx.ai/onnx/intro/concepts.html)
+* [`공식 문서 번역`](https://velog.io/@openjr/1.-ONNX-Concepts)
+* [`에너자이 테크 블로그`](https://medium.com/@enerzai/onnx-너-누구야-who-are-you-5c1435b997e2)
+<br><br>
 
+### [개념]
+* Open Neural Network Exchange, AI 모델의 상호 운용성을 위한 오픈 소스 표준. (by MS, Meta)
+* AI 프레임워크 간에 자유롭게 변환하고 배포할 수 있도록 중간 표현 형식을 제공한다.
+* 신경망을 연산 그래프 형태로 표현하기 때문에 프레임워크에 독립적이다.
+* JSON 포맷처럼 ONNX 라는 합의된 AI 모델 포맷이 존재한다고 이해할 수 있다.
+* 파이토치, 텐서플로우, 사이킷런, 케라스 등을 모두 ONNX로 변환할 수 있다.
+* 기본적으로 DL 모델 변환을 위해 만든 것이지만 ML 모델도 지원한다.
+<br><br>
+
+### [연산 그래프]
+* computational graph
+* 수학적 연산들을 노드와 엣지로 이루어진 그래프.
+* 노드 = 덧셈, 곱셈, 함수 등 / 엣지 = 데이터 흐름
+<br><br>
+
+### [ONNX Runtime]
+* ONNX가 지원하는 다양한 플랫폼에서 효율적으로 실행할 수 있게 해주는 추론 엔진.
+* OS, 하드웨어, 개발 언어 등 대부분의 환경에서 모두 구동 가능하다.
+* 추론 성능 최적화 기술 (연산자 제거, 융합, 양자화 등)을 지원한다.
+* 심지어 브라우저와 모바일에서도 구동할 수 있다.
+<br><br>
+
+### [일반적인 구축 목적]
+* 배포: 운영 환경에 배포할 때 하드웨어, 운영 체제에 제약이 없고 안정적이다.
+* 경량화: 메모리 사용량이 적고 프레임워크 자체가 더 가볍다.
+* 속도 개선: ONNX 형식이 추론 속도가 더 빠르다.
+<br><br>
+
+### [구조]
+* 프로토콜 버퍼
+    * ONNX가 모델 구조를 정의하는 방법이다.
+    * .onnx 파일이 프로토콜 버퍼로 작성된다.
+    * 프로토콜 버퍼: 구글에서 만든 데이터 저장 방식
+* 핵심 구성 요소
+    * 노드: 개별 연산자를 표현
+    * 엣지: 데이터 흐름을 표현
+    * 이니셜라이저: 모델 가중치와 상수값
+    * 입출력: 모델의 입력과 출력 명세
+* 연산자 집합
+    * 신경망 레이어와 함수를 표준화된 연산자 집합으로 정의한다.
+    * (ex. Convolution, MatMul, Relu, Softmax, BatchNormalization)
+* 타입 시스템
+    * 스트롱 타입 시스템을 채택해 타입 안정성을 보장한다.
+    * 텐서의 shape와 type을 명시적으로 정의한다.
+* 메타데이터
+    * 모델에 대한 (버전, 저자, 라이선스) 등을 포함할 수 있다.
+* 예시
+    ```protobuf
+    Input: float[M,K] x, float[K,N] a, float[N] c
+    Output: float[M, N] y
+    
+    r = onnx.MatMul(x, a)
+    y = onnx.Add(r, c)
+    ```
+    * 노드: onnx.MatMul(x, a), onnx.Add(r, c)
+    * 엣지: x, a, r, c, y
+    * 이니셜라이저: a, c 의 가중치
+    * 입출력: x, y
+    * 연산자: MatMul, Add
+    * 타입: float[M, K]
+<br><br>
+
+### [장단점]
+* 장점
+    * __배포__: 운영 환경에 배포할 때 하드웨어, 운영 체제에 제약이 없고 안정적이다.
+    * __경량화__: 메모리 사용량이 적고 프레임워크 자체가 더 가볍다.
+    * __속도 개선__: ONNX 형식이 추론 속도가 더 빠르다.
+    * __상호 운용성__: 프레임워크 간 모델을 교차 사용할 수 있다. (ex. PyTorch → TensorFlow)
+* 단점
+    * __성능 리스크__: 경량화의 영향으로 모델이 ONNX에서는 동작하지 않거나 낮은 성능을 보일 수 있다.
+    * __제한된 연산자__: 최신 연구에서 사용되는 커스텀 연산자나 특수 레이어를 지원하지 않는다.
+    * __학습 지원 부족__: ONNX는 추론에 최적화되어 학습 과정의 표현에는 제약이 많다.
+<br><br>
+
+### [사용 예시]
+* 파이토치 학습 후 오닉스로 변환하는 코드.
+    ```python
+    torch.onnx.export(
+        onnx_model,
+        (dummy_input, ),
+        onnx_model_path,
+        verbose=False,
+        export_params=True,
+        do_constant_folding=True,
+        input_names=["inputs"],
+        output_names=["outputs"],
+        dynamic_axes={'inputs': {0: 'batch_size'}, 'outputs': {0: 'batch_size'}},
+        opset_version=14  # ONNX opset version (adjust as needed)
+    )
+    ```
+* 오닉스로 저장된 모델을 실행하는 코드.
+    ```bash
+    pip install onnxruntime
+    pip install onnxruntime-gpu
+    ```
+    ```python
+    import onnxruntime as ort
+    import numpy as np
+    
+    # ONNX 모델 로드
+    model_path = "model.onnx"
+    session = ort.InferenceSession(model_path, providers=['CUDAExecutionProvider'])
+    
+    # 입력/출력 정보 확인
+    input_name = session.get_inputs()[0].name
+    output_name = session.get_outputs()[0].name
+    input_shape = session.get_inputs()[0].shape
+    output_shape = session.get_outputs()[0].shape
+    
+    print(f"입력 이름: {input_name}, 형태 {input_shape}")
+    print(f"출력 이름: {output_name}, 형태 {output_shape}")
+    
+    # 더미 입력 데이터 생성
+    input_data = np.random.randn(1, 768).astype(np.float32)
+    
+    # 추론 실행
+    result = session.run([output_name], {input_name: input_data})
+    output = result[0]
+    
+    print(f"출력 결과: {output}")
+    ```
+<br><br>
+
+### [주의 사항]
+* 파이토치 forward에 for문이나 if문이 있으면 onnx가 매우 느려진다.
+<br><br>

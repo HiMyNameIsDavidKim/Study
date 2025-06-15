@@ -327,7 +327,7 @@
 * ML : 경험을 통해 자동으로 개선하는 컴퓨터 알고리즘.
 * DL : 머신러닝(ML)의 한 종류로, 신경망(NN, Neural Network)을 수많은 계층 형태로 연결한 기법.
 * 퍼셉트론 : 최초의 인공 뉴런. 가장 기본적인 뉴런 모방 알고리즘.
-* [`링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+* [`링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/ML&DL)
 <br><br>
 
 ### [마스터 알고리즘]

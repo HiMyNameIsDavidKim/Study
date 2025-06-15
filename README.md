@@ -38,19 +38,19 @@
 <br>
 
 ## 🎯 AI
-  - [`🤖 ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL)
+  - [`🤖 ML & DL⭐️`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/ML&DL)
 
-    - [`📷 CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Vision)
+    - [`📷 CV`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/Vision)
 
-    - [`💬 NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/NLP)
+    - [`💬 NLP`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/NLP)
 
-    - [`🤝 RecSys`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/RecSys)
+    - [`🤝 RecSys`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/RecSys)
 
-  - [`🌌 Neuroscience`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Neuroscience)
+  - [`🌌 Neuroscience`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/Neuroscience)
 
-  - [`🧪 Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Data%20Science)
+  - [`🧪 Data Science`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/Data%20Science)
 
-  - [`🔮 Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/Prediction)
+  - [`🔮 Prediction`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/Prediction)
 <br>
 
 ## 📊 Data Analyst

@@ -173,7 +173,7 @@
 
 
 ## `[모델링]`
-* 이론은 [`ML 트리 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4ML/ML&DL) 참고
+* 이론은 [`ML 트리 부분`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/4AI/ML&DL) 참고
 <br><br>
 
 ### [LightGBM]
