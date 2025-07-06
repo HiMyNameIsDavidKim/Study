@@ -542,3 +542,402 @@
 ### [주의 사항]
 * 파이토치 forward에 for문이나 if문이 있으면 onnx가 매우 느려진다.
 <br><br>
+
+
+
+## `[Airflow]`
+* [`Ref`](https://airflow.apache.org/docs/apache-airflow/stable/index.html)
+* [`코드잇 유튜브`](https://youtu.be/LmQhHcueJs0?si=JK0OuaOTnIIYPEZI)
+<br><br>
+
+### [기본 개념]
+* Airflow
+    * 파이썬 기반 오픈소스 워크플로우 관리 플랫폼.
+    * 프로그래밍으로 워크플로우를 작성, 예약 및 모니터링할 수 있다.
+    * DAG (Directed Acyclic Graph) 구조를 기반으로 작업 간 의존성을 관리한다.
+* DAG
+    * 방향성 비순환 그래프를 말한다.
+    * (DAG 예시)
+        * ![DAG](https://github-production-user-asset-6210df.s3.amazonaws.com/112922638/462890436-7718faf3-b9b7-4576-9c7f-d585c9604596.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250706T082127Z&X-Amz-Expires=300&X-Amz-Signature=b6e9dc5f929173dcde8e266acc919fd8aa85a7dc63706cef15de1873276b7672&X-Amz-SignedHeaders=host)
+    * 순환 그래프가 되면 DAG가 아니게 된다.
+    * (순환 그래프 예시)
+        * ![Cyclic](https://github-production-user-asset-6210df.s3.amazonaws.com/112922638/462890739-3c37104e-054b-4602-9c53-494e856d89f8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250706T082224Z&X-Amz-Expires=300&X-Amz-Signature=7269708536d696599c8c15a337e49fe9965d531da55af2508f5b9ebc3170e542&X-Amz-SignedHeaders=host)
+* 워크플로우
+    * 워크플로우는 DAG로 표현된다.
+    * DAG는 Task라고 부르는 개별 작업을 포함한다.
+        * (ex. 데이터 가져오기, 분석 실행, 다른 시스템 트리거 등)
+    * Task는 종속성과 데이터 흐름을 고려해 정렬된다.
+<br><br>
+
+### [구성 요소]
+* 필수
+    * scheduler: DAG를 주기적으로 실행
+    * DAG processor: DAG 파일을 파싱
+    * webserver: 사용자 인터페이스 제공
+    * DAG files folder: DAG 정의 파일 저장
+    * metadata DB: DAG 상태와 실행 기록 저장
+* 선택
+    * worker: scheduler가 할당한 작업을 실행
+    * triggerer: 지연된 작업을 실행 (비동기)
+    * plugins folder: 사용자 정의 플러그인 저장
+<br><br>
+
+### [Scheduler]
+* DAG와 task의 실행 일정을 관리하는 핵심 구성요소.
+* DAG 파일을 주기적으로 파싱해 새로운 DAG나 변경사항을 감지한다.
+* task의 의존성과 스케줄을 확인하여 실행 가능한 task를 식별한다.
+* 실행이 준비된 task 인스턴스를 executor에 할당한다.
+* task, worker, executor의 상태를 모니터링하고 메타데이터 DB에 기록한다.
+* airflow 전체로 봤을 때 두뇌 역할을 하는 핵심 요소이다.
+* `airflow scheduler` 명령어로 간단하게 실행할 수 있다.
+* airflow.cfg 파일에 지정된 설정에 따라 동작한다.
+* scheduler 장애 시 전체 실행이 중단되기 때문에 고가용성 구성이 매우 중요하다.
+<br><br>
+
+### [DAG]
+* 워크플로우를 실행하는데 필요한 모든 것을 캡슐화하는 모델.
+* 주요 속성
+    * `schedule`: DAG 실행 주기
+    * `tasks`: worker에서 실행되는 개별 작업들
+    * `task dependencies`: 작업이 실행되는 순서와 조건
+    * `callbacks`: 작업 완료 후 실행할 작업
+* DAG는 태스크 내부 일에 관심이 없고 오직 태스크를 어떻게 실행할지만 관여한다.
+* 여기서 어떻게는 실행 순서, 재시도 횟수, 타임아웃 여부 등을 말한다.
+* 종속성
+    * task 나 operator는 단독으로 존재하지 않고 의존성을 가진다.
+    * 이런 종속성을 선언하는 것이 DAG 구조를 구성한다.
+    * `>> 및 << 연산자` 를 사용해 task 간의 의존성을 정의한다.
+    * (ex1. first_task >> [second_task, third_task])
+    * (ex2. third_task << fourth_task)
+    * set_downstream()을 사용할 수도 있다.
+    * cross_downstream()을 사용하면 task 리스트 간에 설정할 수 있다.
+    * chain()을 사용하면 여러 task를 한번에 설정할 수 있다.
+    * chain()과 리스트 컴프리헨션을 사용하면 다이나믹하게 설정할 수 있다.
+<br><br>
+
+### [DAG Run]
+* 특정 시점 DAG의 인스턴스.
+* DAG가 실행될 때마다 DAG Run이 생성되고, DAG Run 내 모든 Task가 실행된다.
+* 각 DAG Run은 서로 독립적이고 동시에 여러 DAG Run이 실행될 수 있다.
+* DAG Run status
+    * DAG Run의 현재 상태를 나타내는 속성이다.
+    * 상태는 `running`, `success`, `failed`, `skipped` 등으로 표시된다.
+* Data interval
+    * DAG Run은 작동하는 시간 범위인 data interval이 할당된다.
+    * (ex. @Daily 스케줄의 경우, Data interval은 매일 00:00부터 다음날 24:00)
+* 외부 트리거
+    * DAG Run은 CLI 또는 웹UI를 통해 수동으로 생성할 수도 있다.
+    * CLI를 사용해 `airflow dags trigger <dag_id>` 명령을 사용하면 된다.
+<br><br>
+
+### [Task]
+* 에어플로우에서 실행의 기본 단위.
+* Task들은 DAG 내에 배열되고, 실행 순서를 위해 종속성이 설정된다.
+* 종류
+    * Operator: 사전에 정의된 task의 템플릿
+    * Sensor: 외부 이벤트 감지에 특화된 operator의 하위 클래스
+    * TaskFlow-decorator @task: 커스텀 파이썬 함수를 task로 변환
+    * 내부적으로 모두 BaseOperator의 하위 클래스이다.
+    * task와 operator의 개념은 어느정도 겹치는 부분이 있다.
+* Relationships
+    * task 사용의 핵심은 서로 어떻게 관련되는지 `종속성`을 정의하는 것이다.
+    * airflow에서는 이것을 upstream과 downstream으로 표현한다.
+    * upstream: 다른 task에 선행하는 task (부모 task)
+    * downstream: 다른 task에 후행하는 task (자식 task)
+    * task는 모든 upstream task가 성공적으로 완료된 후에만 실행된다.
+    * 예외적으로 branching, 일부만 기다리기 등을 사용할 수 있다.
+* task는 서로 정보를 전달하지 않으며, 필요할 경우 XCom을 사용해야한다.
+* task 인스턴스
+    * task의 실행 인스턴스.
+    * 상태를 가지는 task의 representaion이다.
+    * 상태 종류
+        * `none`: 아직 실행 대기열에 추가되지 않음.
+        * `scheduled`: scheduler에 의해 실행 대기열에 추가됨.
+        * `queued`: Executor에 할당되고 worker를 기다리고 있음.
+        * `running`: worker에서 실행 중.
+        * `success`: 오류 없이 성공적으로 완료됨.
+        * `restarting`: 실행 중에 외부에서 재시작 요청됨.
+        * `failed`: 오류 발생으로 실패함.
+        * `skipped`: branching 등의 이유로 건너뛰어짐.
+        * `upstream_failed`: upstream task가 실패하여 실행되지 않음.
+        * `up_for_retry`: 실패했지만 재시도 횟수가 남아 재스케줄링될 예정임.
+        * `up_for_reschedule`: reschedule 모드의 센서임.
+        * `deferred`: 트리거에 의해 지연됨.
+        * `removed`: 실행 이후 DAG에서 제거되어 사라짐.
+    * 이상적인 순서: none -> scheduled -> queued -> running -> success
+* timeout을 설정해 task에 최대 실행 시간을 설정할 수 있다.
+<br><br>
+
+### [Worker]
+* task 인스턴스를 받아와 실제로 실행하는 프로세스 또는 스레드.
+* executor 타입에 따라 worker의 형태가 달라진다.
+* 동시에 실행 가능한 worker의 수는 parallelism 설정으로 제어할 수 있다.
+* worker는 task 실행 중 로그를 생성하고 상태를 scheduler에 보고한다.
+<br><br>
+
+### [Executor]
+* task 인스턴스가 실행되는 매커니즘.
+* worker가 task를 실행하는 방법을 정의한다.
+* 다양한 executor가 있어서 유연하게 교체할 수 있다.
+* airflow.cfg 파일의 [core] 섹션에서 executor를 설정할 수 있다.
+* 종류1: 로컬
+    * task를 로컬 머신에서 실행한다.
+    * 장점: 쉽고 빠르다. 지연 시간이 짧다. 설치 요구 사항이 적다.
+    * 단점: 기능에 제약이 있다. scheduler와 리소스를 공유하므로 서로 영향을 준다.
+    * LocalExecutor: 소규모 환경에서 가장 간단한 실행 옵션이다.
+* 종류2: 원격, 큐/배치
+    * task를 원격으로 실행하며, worker 풀을 통해 실행된다.
+    * 내부 큐의 task를 redis 큐로 전송하고 worker가 큐에서 task를 가져와 실행한다.
+    * 장점: scheduler와 분리로 견고하다. 비용 효율적이다. 지연 시간이 짧다.
+    * 단점: task들이 리소스를 두고 경쟁한다. 워크로드 관리가 필요하다.
+    * CeleryExecutor: Celery를 사용해 분산 실행한다.
+    * BatchExecutor: 대규모 데이터 처리에 적합하다.
+* 종류3: 원격, 컨테이너
+    * task를 원격으로 실행하며, worker 풀을 통해 실행된다.
+    * task가 컨테이너 내에서 즉시 실행된다. (task가 컨테이너로 격리)
+    * 장점: task 격리로 안정적이다. 각 task에 맞춤 설정을 할 수 있다.
+    * 단점: 컨테이너를 시작할 때 지연 시간이 있다. 쿠버네티스 설정이 필요하다.
+    * KubernetesExecutor: 쿠버네티스 클러스터에서 task를 실행한다.
+    * EcsExecutor: AWS ECS에서 task를 실행한다.
+* 다중 Executor를 사용할 수 있다.
+<br><br>
+
+### [구성 요소 요약]
+* Scheduler: DAG와 task 의존성 확인, DAG 동기화, 큐에 task 적재, ~~Airflow의 본체~~
+* Executor: scheduler가 큐에 적재한 task를 worker에 할당
+* Worker: task를 실제로 실행하는 프로세스, 스레드
+* Web Server: UI 제공, DAG와 task 모니터링 관리, Flask 기반, HTTP
+* Metadata DB: 모든 상태 정보와 메타데이터 저장
+* DAG Files Folder: DAG 정의 파일 저장
+* Airflow.cfg: Airflow 설정 파일
+<br><br>
+
+### [단계1: DAG 폴더 스캔]
+* airflow.cfg 파일에 지정된 DAG 폴더 경로가 어딘지 확인한다.
+* DAG 폴더를 주기적으로 스캔해 새로운 DAG와 변경점을 확인한다.
+* 스캔 과정에서 DAG 파일을 파싱하고 DAG 객체를 생성해 메모리에 저장한다.
+* DAG 객체는 DAG의 구조, task 간의 의존성 등을 포함한다.
+* 메모리에 저장된 DAG 객체는 이후에 scheduler가 사용한다.
+<br><br>
+
+#### [단계2: 새로운 DAG와 task 인스턴스 생성]
+* 새로운 DAG를 발견하면 DAG에 정의된 task의 실행 일정을 확인한다.
+* scheduler가 DAG와 task의 다음 실행 시점을 결정한다.
+* 실행 시점이 되면 scheduler는 task 인스턴스를 생성한다.
+* 이때 task 인스턴스의 상태는 `none`에서 `scheduled`로 변경된다.
+<br><br>
+
+### [단계3: task queue에 task 인스턴스 등록]
+* scheduler는 생성된 task 인스턴스를 task queue에 등록한다.
+* 이때 task 인스턴스의 상태는 `queued` 상태로 변경된다.
+* queue에 있는 task를 executor의 worker가 가져가 실행한다.
+* 이때 task 인스턴스의 상태는 `running`으로 변경된다.
+* 작업이 완료되면 task 인스턴스의 상태가 `success`로 변경된다.
+<br><br>
+
+### [단계4: 메타데이터 DB와 상호작용]
+* scheduler는 모든 스케줄링 정보를 메타데이터 DB에 기록한다.
+* 예를 들어, DAG와 task 인스턴스의 상태, 실행 기록 등을 저장한다.
+* DB에 저장된 정보를 통해 Web Server는 DAG의 상태를 유저에게 보여준다.
+* 유저는 웹 UI를 통해 DAG의 실행 상태와 로그를 확인할 수 있다.
+<br><br>
+
+### [전체 단계 요약]
+* scheduler가 task 인스턴스를 큐에 넣는다.
+* executor가 worker에 task 인스턴스를 할당한다.
+* worker가 task 인스턴스를 실행한다.
+* 실행 결과가 scheduler에 보고된다.
+* scheduler가 상태를 메타데이터 DB에 기록한다.
+* Web Server의 UI에서 DAG와 task 인스턴스의 상태를 모니터링한다.
+<br><br>
+
+
+### [장단점]
+* 장점
+    * 코드 기반 워크플로우로 유연성, 재사용성, 버전 관리 (Git)가 가능하다.
+    * 내장 오퍼레이터가 많고 AWS, GCP 등 클라우드와 연동할 수 있다.
+    * 웹 UI, 상세한 로그, 이메일과 슬랙 알림 기능이 있다.
+* 단점
+    * Airflow의 개념 이해, DAG 작성과 디버깅에 진입장벽이 있다.
+    * 대규모 파이프라인은 메모리와 CPU 사용량이 높다.
+    * 실시간 스트리밍에는 제약이 있다. (데이터 전달 이슈, 작업 간 오버헤드)
+<br><br>
+
+### [도커를 이용한 설치]
+* 도커 설치, 도커 컴포즈 설치
+* Airflow 설치
+    * ```bash
+      # 프로젝트 위치에서 터미널 켜기
+      pwd
+
+      # 윈도우의 경우 우분투로 실행
+      wsl -d Ubuntu-22.04
+
+      # 2.11.0 버전 설치 (3 버전 설치 안됨)
+      curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.11.0/docker-compose.yaml'
+
+      # docker-compose.yaml 파일, AIRFLOW__CORE__LOAD_EXAMPLES: 'false'로 변경
+
+      # airflow 유저 설정
+      mkdir -p ./dags ./logs ./plugins ./config
+      echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+      # airflow metadata DB 시작
+      docker compose up airflow-init
+
+      # airflow 시작
+      docker compose up
+      ```
+* http://localhost:8080 접속해서 로그인
+    * (ID: airflow, PW: airflow)
+<br><br>
+
+### [프로젝트 구성]
+* ```
+  airflow-project/
+  ├── docker-compose.yml
+  ├── dags/
+  │   └── simple_tutorial.py  # here
+  ├── logs/
+  ├── plugins/
+  └── .env
+  ```
+* dags 디렉토리에 파이썬 파일을 넣는다.
+* docker compose 컨테이너를 멈춘다.
+* docker compose up
+* 즉시 실행하기
+    * http://localhost:8080, DAG의 우측, 재생 버튼 (Trigger DAG) 클릭
+<br><br>
+
+### [간단 예제]
+* simple_tutorial.py
+* ```python
+  from datetime import datetime, timedelta
+  from airflow import DAG
+  from airflow.operators.python import PythonOperator
+  from airflow.operators.bash import BashOperator
+
+  # DAG 기본 설정
+  default_args = {
+      'owner': 'airflow',
+      'start_date': datetime(2024, 1, 1),
+      'retries': 1,
+      'retry_delay': timedelta(minutes=5),
+  }
+
+  # DAG 정의
+  dag = DAG(
+      'simple_tutorial',
+      default_args=default_args,
+      description='간단한 Airflow 튜토리얼',
+      schedule_interval=timedelta(days=1),
+      catchup=False,
+  )
+
+  # Task 1: 시작 메시지
+  def start_task():
+      print("🚀 워크플로우 시작!")
+      data = {'users': ['김철수', '이영희', '박민수']}
+      print(f"처리할 사용자: {data['users']}")
+      return data['users']
+
+  # Task 2: 데이터 처리
+  def process_data(**context):
+      # 이전 task에서 데이터 가져오기
+      ti = context['ti']
+      users = ti.xcom_pull(task_ids='start')
+    
+      print("⚙️ 데이터 처리 중...")
+      processed_users = [f"{user}_처리완료" for user in users]
+      print(f"처리 결과: {processed_users}")
+      return len(processed_users)
+
+  # Task 3: 결과 확인
+  def check_result(**context):
+      ti = context['ti']
+      count = ti.xcom_pull(task_ids='process')
+    
+      print(f"✅ 총 {count}명의 사용자 처리 완료!")
+      return "성공"
+
+  # Task 정의
+  start = PythonOperator(
+      task_id='start',
+      python_callable=start_task,
+      dag=dag,
+  )
+
+  process = PythonOperator(
+      task_id='process',
+      python_callable=process_data,
+      dag=dag,
+  )
+
+  check = PythonOperator(
+      task_id='check',
+      python_callable=check_result,
+      dag=dag,
+  )
+  
+  # Bash 명령어로 완료 메시지
+  finish = BashOperator(
+      task_id='finish',
+      bash_command='echo "🎉 모든 작업 완료!"',
+      dag=dag,
+  )
+
+  # 실행 순서 설정
+  start >> process >> check >> finish
+  ```
+<br><br>
+
+### [DAG 선언 종류]
+* 표준 생성자 (추천)
+    * ```python
+      import datetime
+
+      from airflow.sdk import DAG
+      from airflow.providers.standard.operators.empty import EmptyOperator
+
+      my_dag = DAG(
+          dag_id="my_dag_name",
+          start_date=datetime.datetime(2021, 1, 1),
+          schedule="@daily",
+      )
+      EmptyOperator(task_id="task", dag=my_dag)
+      ```
+* with 문
+    * ```python
+      import datetime
+
+      from airflow.sdk import DAG
+      from airflow.providers.standard.operators.empty import EmptyOperator
+
+      with DAG(
+          dag_id="my_dag_name",
+          start_date=datetime.datetime(2021, 1, 1),
+          schedule="@daily",
+      ):
+          EmptyOperator(task_id="task")
+      ```
+* @dag 데코레이터
+    * ```python
+      import datetime
+
+      from airflow.sdk import dag
+      from airflow.providers.standard.operators.empty import EmptyOperator
+
+      @dag(start_date=datetime.datetime(2021, 1, 1), schedule="@daily")
+      def generate_dag():
+          EmptyOperator(task_id="task")
+
+      generate_dag()
+      ```
+<br><br>
+
+
+### [주의 사항]
+* __pycache__ 때문에 에러가 자주나므로, venv 사용 권장.
+* SQLAlchemy 2.0 버전 사용 불가. 1.3.23 버전 권장.
+<br><br>
+
