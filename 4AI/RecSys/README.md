@@ -720,7 +720,7 @@
 * 메모리에 저장된 DAG 객체는 이후에 scheduler가 사용한다.
 <br><br>
 
-#### [단계2: 새로운 DAG와 task 인스턴스 생성]
+### [단계2: 새로운 DAG와 task 인스턴스 생성]
 * 새로운 DAG를 발견하면 DAG에 정의된 task의 실행 일정을 확인한다.
 * scheduler가 DAG와 task의 다음 실행 시점을 결정한다.
 * 실행 시점이 되면 scheduler는 task 인스턴스를 생성한다.
