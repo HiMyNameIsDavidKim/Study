@@ -67,14 +67,35 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 
-## 프로젝트
+## 경력 요약
+* __Hecto__, AI테크팀, 선임, (2025.03 ~ now)
+    > 추천 시스템 모델 연구, 개발, 운영.
+* __IDEA Lab.__, 대학원 연구실, 석사과정, (2023.02 ~ 2025.02)
+    > 딥러닝 모델 (Vision) 아키텍처 연구.
+* __LG디스플레이__, 검사팀, AI빅데이터 직무, 사원, (2020.11 ~ 2022.09)
+    > 애플워치 패널에 대한 검사 알고리즘 설계 및 엔지니어링.
+* __트라이큐빅스코리아__, AI팀, AI연구 직무, 인턴, (2018.12 ~ 2019.01)
+    > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글)의 알고리즘 연구.
+* [![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
+[![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
+[![LGD](https://img.shields.io/badge/LG_Display-A50034?style=plastic&logo=lg&logoColor=white)](https://www.lgdisplay.com/)
+[![Tricubics](https://img.shields.io/badge/Tricubics-009688?style=plastic&logo=apachenetbeanside&logoColor=white)](https://www.tricubics.com/)
+<br>
+
+
+
+## 경력
 
 ### [연구/DL] 추천 시스템 모델 연구, 인프라 구축, 운영
-* 진행중
+* 헥토
+* 기간/인원: 2025.03.17 ~ now / 6명
+* ㅎㅁㅎ
+    * 추천 모델 설계 NDGC xxxx 달성
+    * Airflow, AWS, Docker, 쿠버네티스
 <br>
 
 ### [연구/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성
-* 대학원 석사 논문
+* 석사 과정
 * 기간/인원: 2023.02.01 ~ 2024.12.31 (2년) / 3명
 * 개요:
     * 딥러닝 모델 (Vision) 설계 최고 성능 달성.
@@ -109,6 +130,10 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/lgd_project)
 <br>
 
+
+
+## 개인 프로젝트
+
 ### [은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석
 * Kaggle 팀 프로젝트
 * 기간/인원: 2024. 10. 24 - 11. 18 (1개월) / 4명
@@ -137,23 +162,6 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 다중 차원 그래프 시각화 (Matplotlib, Seaborn)
     * 광고 집행 시 성과지표 변화 추정 (통계학)
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/final_project)
-<br>
-
-
-
-## 경력
-* __Hecto__, AI테크팀, 선임, (2025.03 ~ now)
-    > 추천 시스템 모델 연구, 개발, 운영.
-* __IDEA Lab.__, 대학원 연구실, 석사과정, (2023.02 ~ 2025.02)
-    > 딥러닝 모델 (Vision) 아키텍처 연구.
-* __LG디스플레이__, 검사팀, AI빅데이터 직무, 사원, (2020.11 ~ 2022.09)
-    > 애플워치 패널에 대한 검사 알고리즘 설계 및 엔지니어링.
-* __트라이큐빅스코리아__, AI팀, AI연구 직무, 인턴, (2018.12 ~ 2019.01)
-    > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글)의 알고리즘 연구.
-* [![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
-[![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
-[![LGD](https://img.shields.io/badge/LG_Display-A50034?style=plastic&logo=lg&logoColor=white)](https://www.lgdisplay.com/)
-[![Tricubics](https://img.shields.io/badge/Tricubics-009688?style=plastic&logo=apachenetbeanside&logoColor=white)](https://www.tricubics.com/)
 <br>
 
 
