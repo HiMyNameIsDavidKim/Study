@@ -22,6 +22,8 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 대학원에서는 `딥러닝 모델 (Vision)을 설계했고 SOTA를 달성`했습니다.
 <br>
+현재 헥토에서 `추천 시스템 모델을 설계`하는 업무를 맡고 있습니다.
+<br>
 앞으로도 꾸준히 성장해서 `전설적인 데이터 사이언티스트`가 되고자 합니다.
 <br>
 
@@ -29,24 +31,33 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 핵심 역량
 
-### 1. Python(PyTorch/Tensorflow) 활용 EDA, ML, DL 모델링 역량
-* 석사 논문의 딥러닝 설계를 통해 데이터 정제, 모델 개발, 모델 배포 경험 보유
-* 딥러닝 모델 설계 과정에서 ViT, CNN 등 DL 모델 숙련도 향상
-* 애플워치 검사 자동화 ML 알고리즘을 직접 개발하고 운영해본 경험 보유
-* 은행 프로젝트를 통해 XGBoost, LightGBM 등 ML 모델 숙련도 향상
+### 1. Python(PyTorch/Tensorflow) 활용 연구, 개발, 운영 역량
+* 데이터 정제, 모델 개발, 모델 배포 경험 보유 (석사과정, 딥러닝 모델 연구)
+* LightGCN, DeepFM 등 DL 모델 숙련도 향상 (헥토, 딥러닝 모델 연구)
+* Transformer, ViT, CNN 등 DL 모델 숙련도 향상 (석사과정, 딥러닝 모델 연구)
+* ML 알고리즘을 직접 개발하고 운영해본 경험 보유 (LGD, 애플워치 검사 자동화)
+* 추천 시스템 인프라 구축, 운영 경험 보유 (헥토, 추천 시스템 운영)
+* EDA와 LightGBM 등 ML 모델 숙련도 향상 (Kaggle 팀 프로젝트)
 <br>
 
 ### 2. 새로운 것을 학습하고 성장하는 역량
+* 연구 외에 필요한 종합적인 AI 기술 역량 개발
+    * Airflow, Kafka, Redis 사용 역량 개발 (헥토, 추천 시스템 운영)
+    * AWS, GCP 등 클라우드 활용 역량 개발 (헥토, 추천 시스템 인프라 구축)
+    * Linux, Docker, 쿠버네티스 사용 역량 개발 (헥토, 추천 시스템 인프라 구축)
 * AI 모델링 능력 개발 필요성으로 대학원 진학
-* [`AI 논문 리뷰 관련 블로그`](https://davidlds.tistory.com/) 운영을 통해 최신 AI 모델 트렌드 파악 및 리서치
-* ADsP 자격증 취득을 통해 ML/DL에 대한 수학적 이해와 통계적 지식 습득
-* 추가 필요 역량을 직접 탐구 후 교육 수강
-    * 이커머스 프로젝트를 통해 Spark, Hadoop과 SQL 사용 역량 개발
-    * 은행 프로젝트를 통해 Tableau, Power BI 데이터 시각화 역량 개발
+* 최신 AI 모델 트렌드 파악 및 리서치 ([`AI 논문 리뷰 블로그`](https://davidlds.tistory.com/))
+* ML/DL에 대한 수학적 이해와 통계적 지식 습득 (ADsP 자격증 취득)
+* 추가 필요 역량을 직접 탐색 후 역량 개발
+    * 새로운 분야인 추천 알고리즘 연구 역량 개발 (헥토, 딥러닝 모델 연구)
+    * VLM 연구 대비 LLM 연구 역량 개발 (헥토, 딥러닝 모델 연구)
+    * 바이브 코딩, 프롬프트 등 AI 활용 역량 개발 (헥토, 딥러닝 모델 연구)
+    * Spark, Hadoop과 SQL 사용 역량 개발 (Kaggle 팀 프로젝트)
+    * Tableau, Power BI 데이터 시각화 역량 개발 (Kaggle 팀 프로젝트)
 <br>
 
 ### 3. 도메인 지식 활용 역량
-* 애플워치 검사 자동화에서 도메인 지식 활용 경험
+* 도메인 지식 습득 및 활용 경험 (추천 시스템, 애플워치 검사 자동화)
 * 신규 도메인 지식 습득과 유관부서와 원활한 협업에 강점
 <br>
 
@@ -58,19 +69,19 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 프로젝트
 
-### [연구/DL] 추천 시스템 연구, 개발, 운영
+### [연구/DL] 추천 시스템 모델 연구, 인프라 구축, 운영
 * 진행중
 <br>
 
-### [연구 논문/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성
+### [연구/DL] CV ViT 활용 직소퍼즐 모델 SOTA 달성
 * 대학원 석사 논문
 * 기간/인원: 2023.02.01 ~ 2024.12.31 (2년) / 3명
 * 개요:
     * 딥러닝 모델 (Vision) 설계 최고 성능 달성.
     * 객체 인식 등에 활용하는 사전학습인 직소퍼즐 문제.
     * 3x3 퍼즐 정확도 83.3%에서 90.6%로 개선 최고 성능.
-* 스킬:
-    * PyTorch, ViT, Python
+* 핵심 스킬:
+    * PyTorch, Vision Transformer, Python
 * 주요 역할:
     * 분류 알고리즘에서 발생하는 문제점을 회귀 알고리즘으로 해결
     * 딥러닝 모델 ViT (Vision Transformer) 아키텍처 수정
@@ -88,7 +99,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * AI 빅데이터 직무 엔지니어, 자동검사 Feature engineering.
     * Capa 상승으로 xx억 절감, F1 score xx% 개선. (대외비 생략)
     * 22년 우수사원 선정 및 특별성과급 지급 다수
-* 스킬: 
+* 핵심 스킬: 
     * 머신러닝 rule extraction, 통계학, C++
 * 주요 역할: 
     * 애플워치 검사 완전 자동화 달성.
@@ -99,12 +110,12 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 
 ### [은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석
-* 데이터분석 교육 팀 프로젝트
+* Kaggle 팀 프로젝트
 * 기간/인원: 2024. 10. 24 - 11. 18 (1개월) / 4명
 * 개요: 
     * 은행 계좌 개설 사기로 인한 재산 피해를 방지.
     * 사기 중 78.4%를 검출, 모델의 실효성을 입증.
-* 스킬: 
+* 핵심 스킬: 
     * Scikit-learn, SHAP, Python
 * 주요 역할: 
     * 군집 추출 (데이터 EDA)
@@ -114,12 +125,12 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 
 ### [이커머스/KPIs] CAC 분석을 통한 성과지표 별 광고 최적화
-* 데이터분석 교육 팀 프로젝트
+* Kaggle 팀 프로젝트
 * 기간/인원: 2024. 11. 19 - 12. 27 (1개월) / 4명
 * 개요: 
     * 성과지표 별로 최대의 효과로 효율적인 광고를 진행.
     * 매출 등 4개 지표에 대한 구체적인 광고 방법 제시.
-* 스킬: 
+* 핵심 스킬: 
     * 군집화, CAC 분석, Python
 * 주요 역할: 
     * 군집 모델링 (가우시안 모델, DBSCAN)
@@ -157,6 +168,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 교육
 * __제로베이스학원 데이터분석 교육__, 수료, (2024.09 ~ 2024.12)
+* __네이버클라우드 AIaaS 개발자 교육__, 수료, (2022.09 ~ 2023.01)
 <br>
 
 
@@ -174,12 +186,24 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 | -- | -- | -- |
 | 프로그래밍 | Python | `상🔥` |
 | 딥러닝 | PyTorch | `상🔥` |
+| 딥러닝 | HuggingFace | `상🔥` |
+| 딥러닝 | ONNX | `상🔥` |
 | 딥러닝 | TensorFlow | `상🔥` |
 | 머신러닝 | Scikit-learn | `상🔥` |
+| 딥러닝 | MLflow | `상🔥` |
+| 시각화 | Jupyter | `상🔥` |
+| 운영 | Airflow | `중` |
+| 배포 | AWS | `중` |
+| 배포 | Docker | `중` |
+| 배포 | Kubernetes | `중` |
 | 시각화 | Tableau | `상🔥` |
 | 시각화 | Power BI | `상🔥` |
 | 빅데이터 | Spark | `중` |
 | 빅데이터 | Hadoop | `중` |
+| 빅데이터 | Redis | `중` |
+| 빅데이터 | Kafka | `중` |
+| 빅데이터 | Feast | `중` |
+| 빅데이터 | Snowflake | `중` |
 | 프로그래밍 | SQL | `중` |
 | 프로그래밍 | R | `하` |
 <br>
