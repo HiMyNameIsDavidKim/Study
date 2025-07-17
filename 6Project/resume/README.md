@@ -74,7 +74,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * __LG디스플레이__, 검사팀, AI빅데이터 직무, 사원, (2020.11 ~ 2022.09)
     > 애플워치 패널에 대한 검사 알고리즘 설계 및 엔지니어링.
 * __트라이큐빅스코리아__, AI팀, AI연구 직무, 인턴, (2018.12 ~ 2019.01)
-    > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글)의 알고리즘 연구.
+    > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구.
 * [![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
 [![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
 [![LGD](https://img.shields.io/badge/LG_Display-A50034?style=plastic&logo=lg&logoColor=white)](https://www.lgdisplay.com/)
@@ -93,9 +93,9 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 개요: 
     * BERT 및 LLM 기반 텍스트 임베딩 모델 7종 도메인 평가
     * Kanana 모델 기반 텍스트 임베딩 추출 후 모델에 적용
-    * DeepFM 기반 추천 모델 설계 NDGC 0.xxxx 달성
+    * DeepFM 기반 추천 모델 설계 NDGC 0.xxxx 달성 (대외비 생략)
 * 사용 기술: 
-    * BERT, LLM, Kanana, DeepFM
+    * BERT, LLM, Kanana, DeepFM, PyTorch, Hugging Face, ONNX
 <br>
 
 #### 범용 추천 시스템 인프라 구축, 운영
@@ -104,10 +104,12 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 추천 모델의 학습 파이프라인 설계 및 구축
     * AI 서비스 워크플로우 자동화 인프라 구축 및 운영
 * 사용 기술: 
-    * Airflow, Kafka, Redis, AWS, GCP, Linux, Docker, 쿠버네티스
+    * Airflow, Kafka, Redis, AWS, GCP, Linux, Docker, 쿠버네티스, FastAPI
 ---
 
-### 경희대학교 석사 과정
+
+
+### 석사 과정 딥러닝 연구
 2023.02 ~ 2024.12 (2년)
 
 #### CV ViT 활용 직소퍼즐 모델 SOTA 달성
@@ -123,9 +125,11 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 관련 논문의 모델들을 PyTorch로 다시 구현
     * 학습 내용과 학습 과정 시각화
 * 사용 기술: 
-    * PyTorch, Vision Transformer, Python
+    * Vision Transformer, MAE, timm, CNN, PyTorch, Python, Linux
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
 ---
+
+
 
 ### LG디스플레이
 2020.11 - 2022.09 (1년 10개월)
@@ -143,8 +147,24 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 분석을 통한 이상 데이터 제거, 카메라의 일관된 데이터 추출을 위한 방법 도출.
     * 자동화 검사기 협력업체 (7개), 유관부서 (3개), 베트남팀 (2개) 소통 유도.
 * 사용 기술:
-    * 머신러닝 rule extraction, 통계학, C++
+    * 머신러닝 rule extraction, 통계학, 6 sigma, C++, Ruby
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/lgd_project)
+---
+
+
+
+### 트라이큐빅스코리아
+2018.12 ~ 2019.01 (2개월)
+
+#### 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구.
+* 기간/인원: 2018.12 - 2019.01 / 7명
+* 개요: 
+    * 편의점의 AI 자동판매 장비 하드웨어 및 알고리즘 개선.
+* 주요 역할: 
+    * Tensorflow와 Keras 기반 AI 음료 판매기의 인식률 및 오류 해결.
+    * 구글 ML 모델 (Tesseract) 기반 OCR 알고리즘 개발 AI 도시락 판매기에 적용.
+* 사용 기술:
+    * OpenCV, Tesseract, Tensorflow, Keras, Python
 ---
 
 
@@ -163,7 +183,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 머신러닝 모델링 (LightGBM, TabNet)
     * 모델 해석 (shapley value)
 * 핵심 스킬: 
-    * Scikit-learn, SHAP, Python
+    * XGBoost, LightGBM, TabNet, Scikit-learn, SHAP, XAI, Python
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/team_project)
 ---
 
@@ -179,7 +199,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 다중 차원 그래프 시각화 (Matplotlib, Seaborn)
     * 광고 집행 시 성과지표 변화 추정 (통계학)
 * 핵심 스킬: 
-    * 군집화, CAC 분석, Python
+    * 클러스터링 알고리즘 (DBSCAN, GMM), CAC 분석, 다중 차원 그래프 시각화, Python
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/final_project)
 ---
 
