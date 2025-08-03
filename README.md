@@ -232,8 +232,8 @@
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
 * RecSys
-  * [`YoutubeDNN, 2016`]()
-  * 
+  * ✅ [`YoutubeDNN, 2016`](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
+  * ✅ [`GCN, 2016`](https://arxiv.org/pdf/1609.02907) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/GCN.md)
 * ML
   * [`LightGBM`]()
   * [`XGBoost`]()
