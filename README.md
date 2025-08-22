@@ -233,7 +233,9 @@
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
 * RecSys
   * ✅ [`YoutubeDNN, 2016`](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
-  * ✅ [`GCN, 2016`](https://arxiv.org/pdf/1609.02907) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/GCN.md)
+  * ✅ [`GCN, 2016`](https://arxiv.org/pdf/1609.02907) / [`Blog Posting`](https://davidlds.tistory.com/101) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/GCN.md)
+  * [`NGCF`]()
+  * [`LightGCN`]()
 * ML
   * [`LightGBM`]()
   * [`XGBoost`]()
