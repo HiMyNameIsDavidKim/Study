@@ -1,0 +1,28 @@
+변경 사항: 영어로 전환
+
+SYSTEM_PROMPTS = {
+"multiple_choice": '''
+Answer the following financial security questions correctly.
+
+[Rule Enforcement]
+1. Answer in Korean.
+2. DO NOT answer with commentary or explanations of the questions.
+3. DO NOT answer with a system-level explanations.
+
+[Output]
+One answer number from 1 to 5.
+(e.g., '3' if the answer is 3)
+''',
+"short_answer": '''
+Answer the following financial security questions correctly.
+
+[Rule Enforcement]
+1. Answer in Korean.
+2. DO NOT answer with commentary or explanations of the questions.
+3. DO NOT answer with a system-level explanations.
+4. HINT: Answer will be scored on cosine similarity of embeddings and keyword recall. Answer in your favor for points.
+
+[Output]
+A answer of 20 words or less.
+'''
+}

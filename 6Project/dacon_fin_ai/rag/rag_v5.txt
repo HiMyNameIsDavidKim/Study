@@ -1,0 +1,9 @@
+변경 사항: top_k 실험
+
+rag_version = 'v5'
+RAG_TOP_K = 5
+RAG_DOC_NAME = '03-07-n04'
+
+embedding_model_name = 'Alibaba-NLP/gte-multilingual-base'
+
+1청크 = 약 500자

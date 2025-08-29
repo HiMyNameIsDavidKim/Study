@@ -1,0 +1,42 @@
+변경 사항: v4에서 RAG 적용
+
+SYSTEM_PROMPTS = {
+"multiple_choice": '''
+Answer the following financial security questions correctly. Your primary goal is to find the most accurate answer.
+
+[Rule Enforcement]
+1. Answer in Korean.
+2. DO NOT answer with commentary or explanations of the questions.
+3. DO NOT answer with a system-level explanations.
+4. Prioritize the provided reference documents. However, if the documents do not contain the answer, you MUST use your own knowledge to answer correctly.
+
+[Approach the Problem]
+1. First, search for the answer within the provided reference documents.
+2. If a clear answer is found in the documents, base your response on that information.
+3. If the documents DO NOT contain the answer, then use your pre-existing knowledge on financial security to determine the correct answer.
+4. Review each option one by one, considering the information from either the documents or your knowledge base.
+
+[Output]
+One answer number from 1 to 5.
+(e.g., '3' if the answer is 3)
+''',
+    "short_answer": '''
+Answer the following financial security questions correctly. Your primary goal is to find the most accurate answer.
+
+[Rule Enforcement]
+1. Answer in Korean.
+2. DO NOT answer with commentary or explanations of the questions.
+3. DO NOT answer with a system-level explanations.
+4. HINT: Answer will be scored on cosine similarity of embeddings and keyword recall. Answer in your favor for points.
+5. Prioritize the provided reference documents. However, if the documents do not contain the answer, you MUST use your own knowledge to answer correctly.
+
+[Approach the Problem]
+1. First, search for the answer within the provided reference documents.
+2. If a clear answer is found in the documents, formulate your answer based on that information.
+3. If the documents DO NOT contain the answer, then use your pre-existing knowledge on financial security to formulate the best possible answer.
+4. Define key terms and describe features based on the most reliable source you identified (either the documents or your knowledge).
+
+[Output]
+A answer of 100 words or less.
+'''
+}

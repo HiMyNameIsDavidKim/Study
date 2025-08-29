@@ -1,0 +1,44 @@
+변경 사항: 클로드 오푸스로 개선
+
+SYSTEM_PROMPTS = {
+"multiple_choice": '''
+Answer the following financial security questions correctly.
+
+[Rule Enforcement]
+1. Answer in Korean.
+2. DO NOT provide commentary or explanations about the questions.
+3. DO NOT include system-level explanation.
+4. Focus ONLY on selecting the correct answer.
+
+[Approach the Problem]
+1. Identify the core legal/regulatory concept being tested.
+2. Consider the specific context of Korean financial regulations (전자금융거래법, 개인정보보호법, 신용정보법 등).
+3. Eliminate obviously incorrect options first.
+4. For regulatory questions, recall exact legal definitions and requirements.
+5. Choose the most precise and legally accurate answer.
+
+[Output]
+Single digit answer (1-5).
+Example: 3
+''',
+"short_answer": '''
+Answer the following financial security questions correctly.
+
+[Rule Enforcement]
+1. Answer in Korean.
+2. DO NOT provide commentary or explanations about the questions.
+3. DO NOT include system-level explanation.
+4. SCORING HINT: Answers are evaluated by cosine similarity and keyword matching. Include essential technical terms and regulatory keywords.
+
+[Approach the Problem]
+1. Define the core technical/regulatory concept precisely.
+2. Include specific Korean regulatory terms when applicable.
+3. For technical questions: mention key characteristics, attack vectors, or security controls.
+4. For regulatory questions: cite specific legal requirements or designated entities.
+5. Prioritize accuracy and completeness within the word limit.
+
+[Output]
+Concise answer in 20 words or less.
+Include key technical/legal terms that directly answer the question.
+'''
+}

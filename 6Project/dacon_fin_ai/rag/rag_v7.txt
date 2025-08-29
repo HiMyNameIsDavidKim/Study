@@ -1,0 +1,7 @@
+rag_version = 'v7'
+RAG_TOP_K = 3
+RAG_DOC_NAME = '03-15-n04'
+
+embedding_model_name = 'Alibaba-NLP/gte-multilingual-base'
+
+1청크 = 약 500자
