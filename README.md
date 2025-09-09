@@ -196,6 +196,8 @@
     * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
     * [`LLaVA, 2023`](https://arxiv.org/pdf/2304.08485)
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/LLaVA_UHD.md)
+  * Video
+    * [`Perception Encoder, 2025`]()
   * Segmentation
     * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
   * Object Detection
@@ -224,10 +226,7 @@
     * [`Jigsaw & Inpainting, 2018`](https://arxiv.org/pdf/1802.01880.pdf)
     * ✅ [`Jigsaw-ViT, 2023`](https://arxiv.org/pdf/2207.11971.pdf)
     * ✅ [`Masked Jigsaw Puzzle, 2023`](https://arxiv.org/pdf/2205.12551.pdf)
-  * Image-Text
-    * [`Florence, 2021`](https://arxiv.org/pdf/2111.11432.pdf)
-    * [`Coca, 2022`](https://arxiv.org/pdf/2205.01917v2.pdf)
-  * Gen
+  * Vision Gen
     * ✅ [`VAE, 2013`](https://arxiv.org/pdf/1312.6114.pdf)
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
