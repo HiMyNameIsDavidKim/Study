@@ -197,7 +197,9 @@
     * [`LLaVA, 2023`](https://arxiv.org/pdf/2304.08485)
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/LLaVA_UHD.md)
   * Video
-    * [`Perception Encoder, 2025`]()
+    * [`Video Prism`]()
+    * [`Perception Encoder`]()
+    * [`SigLIP`]()
   * Segmentation
     * ✅ [`Segment anything, 2023`](https://arxiv.org/pdf/2304.02643.pdf) / [`Blog Posting`](https://davidlds.tistory.com/29) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Apps/SAM.md)
   * Object Detection
