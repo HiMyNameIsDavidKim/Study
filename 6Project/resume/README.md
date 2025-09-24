@@ -1,4 +1,4 @@
-# 데이터 사이언티스트 김가람 이력서 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
+# AI 리서치 엔지니어 김가람 이력서 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
 ![Latest update](https://img.shields.io/badge/2025.05.17_updated-brightgreen.svg)
 ![status](https://img.shields.io/badge/focus_on_now-red.svg)
 <br>
@@ -14,7 +14,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 ## 간략 소개
-안녕하세요. `트랜스포머 연구 경험`이 있는 데이터 사이언티스트 김가람 입니다.
+안녕하세요. `트랜스포머 연구 경험`이 있는 AI 리서치 엔지니어 김가람 입니다.
 <br>
 제조업 엔지니어로 LG디스플레이에 입사하여 AI빅데이터 직무로 일했습니다.
 <br>
@@ -22,45 +22,44 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 대학원에서는 `딥러닝 모델 (Vision)을 설계했고 SOTA를 달성`했습니다.
 <br>
-현재 헥토에서 `추천 시스템 모델을 설계`하는 업무를 맡고 있습니다.
+현재 헥토에서 `멀티모달 추천 시스템 모델 연구` 업무를 맡고 있습니다.
 <br>
-앞으로도 꾸준히 성장해서 `전설적인 데이터 사이언티스트`가 되고자 합니다.
+앞으로도 꾸준히 성장해서 `전설적인 AI 리서치 엔지니어`가 되고자 합니다.
 <br>
 
 
 
 ## 핵심 역량
 
-### 1. Python(PyTorch/Tensorflow) 활용 연구, 개발, 운영 역량
-* 데이터 정제, 모델 개발, 모델 배포 경험 보유 (석사과정, 딥러닝 모델 연구)
-* LightGCN, DeepFM 등 DL 모델 숙련도 향상 (헥토, 딥러닝 모델 연구)
-* Transformer, ViT, CNN 등 DL 모델 숙련도 향상 (석사과정, 딥러닝 모델 연구)
-* ML 알고리즘을 직접 개발하고 운영해본 경험 보유 (LGD, 애플워치 검사 자동화)
-* 추천 시스템 인프라 구축, 운영 경험 보유 (헥토, 추천 시스템 운영)
-* EDA와 LightGBM 등 ML 모델 숙련도 향상 (Kaggle 팀 프로젝트)
+### 1. Python(PyTorch) 활용 AI 연구 역량
+* Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
+* 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
+* 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
+* VLM 연구 대비 LLM 연구 및 파인튜닝 경험 (LoRA, PEFT, LLM) / 경연 참가
+* 머신러닝과 딥러닝에 대한 수학적 이해와 통계적 지식 / ADsP 자격증
 <br>
 
-### 2. 새로운 것을 학습하고 성장하는 역량
+### 2. AI 모델 활용 서비스 관련 종합 개발 역량
+* 데이터 정제, 레이블 설계, 모델 개발, 깃허브 배포 경험 보유 / 석사과정
+* 머신러닝 알고리즘을 직접 개발하고 운영해본 경험 보유 / LGD
+* 추천 시스템 인프라 구축, 활용 경험 보유 (Airflow, Kafka, Redis) / 헥토
+* 배포 관련 기술 활용 경험 보유 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
+* 경량화 관련 기술 활용 경험 보유 (ONNX, Quantization, Distillation) / 경연 참가
+* 분석 관련 기술 활용 경험 보유 (EDA, Spark, Hadoop, Tableau) / Kaggle
+<br>
+
+### 3. 주도적으로 새로운 것을 학습하고 성장하는 역량
 * AI 모델링 능력 개발 필요성으로 대학원 진학
 * 최신 AI 모델 트렌드 파악 및 리서치 ([`AI 논문 리뷰 블로그`](https://davidlds.tistory.com/))
-* 연구 외에 필요한 종합적인 AI 기술 역량 개발
-    * Airflow, Kafka, Redis 활용 역량 개발 (헥토, 추천 시스템 운영)
-    * AWS, GCP 등 클라우드 활용 역량 개발 (헥토, 추천 시스템 인프라 구축)
-    * Linux, Docker, 쿠버네티스 활용 역량 개발 (헥토, 추천 시스템 인프라 구축)
-* 추가 필요 역량을 직접 탐색 후 역량 개발
-    * 새로운 분야인 추천 알고리즘 연구 역량 개발 (헥토, 딥러닝 모델 연구)
-    * VLM 연구 대비 LLM 연구 역량 개발 (헥토, 딥러닝 모델 연구)
-    * 바이브 코딩, 프롬프트 등 AI 활용 역량 개발 (헥토, 딥러닝 모델 연구)
-    * Spark, Hadoop, Tableau, Power BI 역량 개발 (Kaggle 팀 프로젝트)
-    * ML/DL에 대한 수학적 이해와 통계적 지식 습득 (ADsP 자격증 취득)
+* 바이브 코딩, 프롬프트 등 AI를 활용한 개발 역량
 <br>
 
-### 3. 도메인 지식 활용 역량
+### 4. 도메인 지식 활용 역량
 * 도메인 지식 습득 및 활용 경험 (추천 시스템, 애플워치 검사 자동화)
 * 신규 도메인 지식 습득과 유관부서와 원활한 협업에 강점
 <br>
 
-### 4. 복잡한 문제를 이해하기 쉽게 설명하는 역량
+### 5. 복잡한 문제를 이해하기 쉽게 설명하는 역량
 * 7개 이상의 협력업체와 소통하며 협업과 커뮤니케이션 방법 습득
 <br>
 
@@ -68,7 +67,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 경력 요약
 * __Hecto__, AI테크팀, AI개발자 직무, 선임, (2025.03 ~ now)
-    > 추천 시스템 모델 연구, 인프라 구축, 운영.
+    > 멀티모달 추천 시스템 모델 연구.
 * __IDEA Lab.__, 대학원, 딥러닝 모델 연구, 석사 과정, (2023.02 ~ 2025.02)
     > 딥러닝 모델 (Vision) 아키텍처 연구.
 * __LG디스플레이__, 검사팀, AI빅데이터 직무, 사원, (2020.11 ~ 2022.09)
@@ -88,6 +87,16 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### (주)헥토
 2025.03 ~ 재직 중
 
+#### 비디오 임베딩 모델 연구
+* 기간/인원: 2025.08 ~ now / 6명
+* 개요: 
+    * 비디오 임베딩 및 비디오 CLIP 기반 모델 5종 도메인 평가
+    * 비디오 임베딩 추출 후 상품 임베딩과 유사도 계산을 통한 추천 모델 설계
+    * (진행중)
+* 사용 기술: 
+    * CLIP, VLM, Embedding, Machine Translate, PyTorch, Hugging Face
+<br>
+
 #### 쇼핑 추천 시스템 모델 연구
 * 기간/인원: 2025.03 ~ 2025.05 / 6명
 * 개요: 
@@ -99,12 +108,12 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 
 #### 범용 추천 시스템 인프라 구축, 운영
-* 기간/인원: 2025.05 ~ now / 6명
+* 기간/인원: 2025.05 ~ 2025.08 / 6명
 * 개요:
     * 추천 모델의 학습 파이프라인 설계 및 구축
     * AI 서비스 워크플로우 자동화 인프라 구축 및 운영
 * 사용 기술: 
-    * Airflow, Kafka, Redis, AWS, GCP, Linux, Docker, 쿠버네티스, FastAPI
+    * Airflow, Kafka, Redis, AWS, Linux, Docker, FastAPI
 ---
 
 
@@ -169,7 +178,22 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 
-## 개인 프로젝트
+## 개별 프로젝트
+
+### SK그룹 AI경연
+
+#### On-device AI 구현을 위한 언어모델 경량화
+* 기간/인원: 2025.08 - 2025.09 / 3명
+* 개요:
+    * 공기청정기 on-device AI로 비즈니스 가치 창출.
+    * function call 정확도 75% 달성.
+* 주요 역할:
+    * LoRA, QLoRA, PEFT 활용 LLM fine-tuning
+    * ONNX, Quantization, Distillation 활용 모델 경량화
+    * vLLM, FastAPI 활용 실시간 추론 환경 구축
+* 핵심 스킬:
+    * LoRA, PEFT, ONNX, Quantization, Distillation, vLLM, FastAPI, STT
+---
 
 ### Kaggle 팀 프로젝트
 
