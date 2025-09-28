@@ -35,7 +35,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
-* VLM 연구 대비 LLM 연구 및 파인튜닝 경험 (LoRA, PEFT, LLM) / 경연 참가
+* VLM 연구 대비 LLM 연구 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 경연 참가
 * 머신러닝과 딥러닝에 대한 수학적 이해와 통계적 지식 / ADsP 자격증
 <br>
 
@@ -44,13 +44,14 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 머신러닝 알고리즘을 직접 개발하고 운영해본 경험 보유 / LGD
 * 추천 시스템 인프라 구축, 활용 경험 보유 (Airflow, Kafka, Redis) / 헥토
 * 배포 관련 기술 활용 경험 보유 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
+* 프로토타입 개발 및 기술 발표 경험 보유 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
 * 경량화 관련 기술 활용 경험 보유 (ONNX, Quantization, Distillation) / 경연 참가
 * 분석 관련 기술 활용 경험 보유 (EDA, Spark, Hadoop, Tableau) / Kaggle
 <br>
 
 ### 3. 주도적으로 새로운 것을 학습하고 성장하는 역량
 * AI 모델링 능력 개발 필요성으로 대학원 진학
-* 최신 AI 모델 트렌드 파악 및 리서치 ([`AI 논문 리뷰 블로그`](https://davidlds.tistory.com/))
+* 최신 AI 모델 트렌드 파악 및 리서치 ([`AI 논문 리뷰 블로그`](https://davidlds.tistory.com/), 일 평균 조회수 200회)
 * 바이브 코딩, 프롬프트 등 AI를 활용한 개발 역량
 <br>
 
@@ -180,13 +181,13 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 개별 프로젝트
 
-### SK그룹 AI경연
+### SK그룹 내부 AI경연
 
 #### On-device AI 구현을 위한 언어모델 경량화
 * 기간/인원: 2025.08 - 2025.09 / 3명
 * 개요:
     * 공기청정기 on-device AI로 비즈니스 가치 창출.
-    * function call 정확도 75% 달성.
+    * function call 정확도 75% 달성. (7위, 80팀 참가)
 * 주요 역할:
     * LoRA, QLoRA, PEFT 활용 LLM fine-tuning
     * ONNX, Quantization, Distillation 활용 모델 경량화
