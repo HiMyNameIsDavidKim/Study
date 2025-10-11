@@ -31,7 +31,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 핵심 역량
 
-### 1. Python(PyTorch) 활용 AI 연구 역량
+### 1. AI 모델 연구 및 개발 역량
 * Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
@@ -39,14 +39,14 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 머신러닝과 딥러닝에 대한 수학적 이해와 통계적 지식 / ADsP 자격증
 <br>
 
-### 2. AI 모델 활용 서비스 관련 종합 개발 역량
-* 데이터 정제, 레이블 설계, 모델 개발, 깃허브 배포 경험 보유 / 석사과정
-* 머신러닝 알고리즘을 직접 개발하고 운영해본 경험 보유 / LGD
-* 추천 시스템 인프라 구축, 활용 경험 보유 (Airflow, Kafka, Redis) / 헥토
-* 배포 관련 기술 활용 경험 보유 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
-* 프로토타입 개발 및 기술 발표 경험 보유 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
-* 경량화 관련 기술 활용 경험 보유 (ONNX, Quantization, Distillation) / 경연 참가
-* 분석 관련 기술 활용 경험 보유 (EDA, Spark, Hadoop, Tableau) / Kaggle
+### 2. End-to-End AI 서비스 구축 및 운영 역량
+* 데이터 정제, 레이블 설계, 모델 개발, 깃허브 배포 경험 / 석사과정
+* 머신러닝 알고리즘 개발 및 운영으로 비즈니스 가치 창출 경험 / LGD
+* 추천 시스템 인프라 구축, 활용 경험 (Airflow, Kafka, Redis) / 헥토
+* 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
+* 프로토타입 개발 및 기술 발표 경험 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
+* 경량화 관련 기술 활용 경험 (ONNX, Quantization, Distillation) / 경연 참가
+* 분석 관련 기술 활용 경험 (EDA, Spark, Hadoop, Tableau) / Kaggle
 <br>
 
 ### 3. 주도적으로 새로운 것을 학습하고 성장하는 역량
