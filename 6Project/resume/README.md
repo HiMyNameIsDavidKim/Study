@@ -39,9 +39,9 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 머신러닝과 딥러닝에 대한 수학적 이해와 통계적 지식 / ADsP 자격증
 <br>
 
-### 2. End-to-End AI 서비스 구축 및 운영 역량
+### 2. End-to-End AI 서비스 구축, 운영, 비즈니스 성과 창출
 * 데이터 정제, 레이블 설계, 모델 개발, 깃허브 배포 경험 / 석사과정
-* 머신러닝 알고리즘 개발 및 운영으로 비즈니스 가치 창출 경험 / LGD
+* 머신러닝 설계 및 전사 적용으로 비즈니스 성과 (XX억 원) 창출 / LGD
 * 추천 시스템 인프라 구축, 활용 경험 (Airflow, Kafka, Redis) / 헥토
 * 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
 * 프로토타입 개발 및 기술 발표 경험 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
