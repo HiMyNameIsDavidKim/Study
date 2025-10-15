@@ -36,11 +36,11 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
 * VLM 연구 대비 LLM 연구 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 경연 참가
+* 데이터 정제, 레이블 설계, 모델 설계 및 개발, 오픈소스 배포 경험 / 석사과정
 * 머신러닝과 딥러닝에 대한 수학적 이해와 통계적 지식 / ADsP 자격증
 <br>
 
-### 2. End-to-End AI 서비스 구축, 운영, 비즈니스 성과 창출
-* 데이터 정제, 레이블 설계, 모델 개발, 깃허브 배포 경험 / 석사과정
+### 2. End-to-End AI 서비스 전 과정 경험 및 비즈니스 성과 창출
 * 머신러닝 설계 및 전사 적용으로 비즈니스 성과 (XX억 원) 창출 / LGD
 * 추천 시스템 인프라 구축, 활용 경험 (Airflow, Kafka, Redis) / 헥토
 * 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
@@ -166,7 +166,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### 트라이큐빅스코리아
 2018.12 ~ 2019.01 (2개월)
 
-#### 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구.
+#### 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구
 * 기간/인원: 2018.12 - 2019.01 / 7명
 * 개요: 
     * 편의점의 AI 자동판매 장비 하드웨어 및 알고리즘 개선.
