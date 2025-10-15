@@ -42,7 +42,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ### 2. End-to-End AI 서비스 전 과정 경험 및 비즈니스 성과 창출
 * 머신러닝 설계 및 전사 적용으로 비즈니스 성과 (XX억 원) 창출 / LGD
-* 추천 시스템 인프라 구축, 활용 경험 (Airflow, Kafka, Redis) / 헥토
+* 추천 시스템 인프라, 파이프라인 구축 및 개발 경험 (Airflow, Kafka, Redis) / 헥토
 * 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
 * 프로토타입 개발 및 기술 발표 경험 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
 * 경량화 관련 기술 활용 경험 (ONNX, Quantization, Distillation) / 경연 참가
