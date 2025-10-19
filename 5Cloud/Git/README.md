@@ -76,13 +76,14 @@
 
 ### [브랜치 생성]
 * 폴더 생성
-* git clone (리포지토리의 https 키)
-* cd 폴더
+* git clone {리포지토리의 https 키}
+* cd {폴더}
 * git branch -r
-* git checkout -t origin/브렌치명
+* git checkout -b {브랜치명}
 <br><br>
 
 ### [풀 리퀘스트]
+* 풀 리퀘스트 = 깃허브 / 머지 리퀘스트 = 깃랩
 * git add .
 * git commit -m “10/5 17:50 study update”
 * git push origin 브렌치명
@@ -144,20 +145,7 @@
     * 헤드의 위치가 어딘지가 제일 중요
     * 브랜치를 병합할 때 사용
     * push pull할때 저절로 발생
-* 머지 예시
-    * dev와 main 브랜치가 있을때 둘을 main 브랜치로 병합하고 싶을 때
-    * git checkout main
-    * main 브랜치로 이동
-    * git merge dev 하기
-    * main 브랜치에 새로운 버전 하나가 생기고 머지된 버전이 저장
-    * (컨플릭트 발생)
-        * IDE에서 수락 or 직접 수정
-        * git add .
-        * git commit -m (메시지)
-        * 커밋까지 해야만 컨플릭트 해결
-    * git push origin main
-    * 서버로 전송까지 완료
-* 머지 예시 2
+* 머지 예시 1
     * dev에서 main 브랜치를 가져와 병합하고 싶을 때
     * git checkout dev
     * dev 브랜치로 이동
@@ -170,6 +158,10 @@
         * 커밋까지 해야만 컨플릭트 해결
     * git push origin dev
     * 서버로 전송까지 완료
+* 머지 예시 2
+    * dev와 main 브랜치가 있을때 둘을 main 브랜치로 병합하고 싶을 때
+    * main으로 합치는 것은 불문율상 금지
+    * dev로 합친 뒤 풀 리퀘스트 or 머지 리퀘스트 사용
 * 컨플릭트 개념
     * 오토 머지가 불가능한 상황에서 발생
     * 두 브랜치에서 같은 버전의 같은 부분을 수정한 상황
