@@ -258,6 +258,17 @@
 
 ## `[Web Framework]`
 
+### [Framework]
+* 알고리즘(=솔루션)에 사용되는 구조. 일반인들이 말하는 시스템.
+* 파이썬 웹 프레임워크 (Django, Flask, FastAPI)
+    * Flask : 마이크로 웹 프레임워크. 단순하고 가볍다. 서버 유지비가 싸다.
+    * Django : 빅데이터 전용 웹 프레임워크.
+    * FastAPI : 고속 전용 웹 프레임워크.
+* Directory : 리소스, 자원들(DB)이 들어있음. 풀었을때 기능이 상실되지 않는다.
+* Package : 소스(소스코드), 코드들이 들어있음. 풀었을때 기능이 상실된다.
+    * 디렉토리와 패키지 모두 파일을 래핑하는 용도.
+<br><br>
+
 ### [Path parameter]
 * path, string, int, float, uuid 5가지가 있다.
 * path : ‘/< >’가 없는 디폴트값

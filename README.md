@@ -193,7 +193,7 @@
     * ✅ [`LLaMA, 2023`](https://arxiv.org/pdf/2302.13971) / [`Blog Posting`](https://davidlds.tistory.com/89) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/LLM/LLaMA.md)
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
   * VLM
-    * [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf)
+    * ✅ [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/CLIP.md)
     * [`LLaVA, 2023`](https://arxiv.org/pdf/2304.08485)
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/LLaVA_UHD.md)
   * Video
@@ -235,7 +235,7 @@
 * RecSys
   * ✅ [`YoutubeDNN, 2016`](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
   * ✅ [`GCN, 2016`](https://arxiv.org/pdf/1609.02907) / [`Blog Posting`](https://davidlds.tistory.com/101) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/GCN.md)
-  * [`NGCF`]()
+  * ✅ [`NGCF`]() / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/NGCF.md)
   * [`LightGCN`]()
 * ML
   * [`LightGBM`]()
