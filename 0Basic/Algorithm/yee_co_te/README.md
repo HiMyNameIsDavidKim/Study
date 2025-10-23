@@ -39,6 +39,12 @@
     * list(map(int, input().split()))
 * 입력 데이터가 많은 경우
     * data = sys.stdin.readline().rstrip()
+* ord(): 문자의 값을 아스키 코드 형태로 변환한다.
+    * ord('A')  # 65
+    * ord('B')  # 66
+    * ord('C')  # 67
+    * ord('a')  # 97
+    * ord('0')  # 48
 <br><br>
 
 ### [유용한 함수]
@@ -153,3 +159,87 @@
 
 ## `[유형2: 구현]`
 
+### [상하좌우]
+* 아이디어
+    * NxN 크기 공간에서 (1,1) 위치부터 출발 최종 위치는 어디인가.
+    * 계획서를 받아서 문자대로 이동 (상 하 좌 우 = U D L R)
+    * 공간을 벗어나는 움직임은 무시된다.
+* 시간 복잡도: 
+* 변수: n, x, y, plans, dx, dy, move_types
+* ```python
+  n = int(input())
+  x, y = 1, 1
+  plans = input().split()
+  
+  # L, R, U, D에 따른 이동 방향
+  dx = [0, 0, -1, 1]
+  dy = [-1, 1, 0, 0]
+  move_types = ['L', 'R', 'U', 'D']
+
+  # 이동 계획 하나씩 확인
+  for plan in plans:
+      # 이동 후 좌표 구하기
+      for i in range(len(move_types[i])):
+          if plan == move_types[i]:
+              nx = x + dx[i]
+              ny = y + dy[i]
+      # 공간 벗어나는 경우 무시
+      if nx < 1 or ny < 1 or nx > n or ny > n:
+          continue
+      # 이동 수행
+      x, y = nx, ny
+
+  print(x, y)
+  ```
+<br><br>
+
+### [시각]
+* 아이디어
+    * 정수 N이 입력되면 00시 00분 00초부터 N시 59분 59초까지 확인
+    * 모든 시각 중에서 3이 하나라도 포함되는 모든 경우의 수를 구하기
+* 시간 복잡도: 
+* 변수: h, count
+* ```python
+  h = int(input())
+  
+  count = 0
+  for i in range(h+1):
+      for j in range(60):
+          for k in range(60):
+              if '3' in str(i) + str(j) + str(k):
+                 count += 1
+  print(count)
+  ```
+<br><br>
+
+### [왕실의 나이트]
+* 아이디어
+    * 왕실 정원은 체스판과 같은 8x8 좌표 평면이다. (컬럼abc, 행123)
+    * 나이트는 L자 형태로만 이동할 수 있다. (수평2+수직1, 수직2+수평1)
+    * 정원 밖으로 나갈 수 없다.
+    * 나이트가 이동할 수 있는 모든 경우의 수는 몇개인가.
+* 시간 복잡도: 
+* 변수: 
+* ```python
+  input_data = input()
+  row = int(input_data[1])
+  col = int(ord(input_data[0])) - int(ord('a')) + 1
+  
+  # 나이트 이동 가능 8방향
+  steps = [(-2,-1), (-1,-2), (-2,1), (-1,2),
+      (2,-1), (1,-2), (2,1), (1,2)]
+  
+  # 8방 이동 가능 여부 확인
+  result = 0
+  for step in steps:
+      # 이동 원하는 위치 확인
+      next_row = row + step[0]
+      next_col = col + step[1]
+      # 이동 가능할 경우 카운트
+      if next_row >= 1 and next_row <= 8 
+        and next_col >= 1 and next_col <= 8:
+          result += 1
+          
+  print(result)
+  ```
+<br><br>
