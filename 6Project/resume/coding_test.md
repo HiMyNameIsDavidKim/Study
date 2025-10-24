@@ -266,11 +266,14 @@
 <br><br>
 
 ### [준비 방법]
-* 11개 알고리즘 공부
-    * DFS, BFS, 이진탐색
-    * 그리디, 백트래킹
-    * MST, 다익스트라, 플로이드
-    * 시뮬레이션, 투포인터, DP
+* 알고리즘 공부
+    * 그리디, 구현(=시뮬레이션)
+    * DFS, BFS
+    * 정렬, 이진탐색, DP
+    * 최단경로 (다익스트라, 플로이드)
+    * 기타 그래프 (MST)
+    * 백트래킹 (?)
+    * 투포인터 (?)
 * 대표 유형 풀이
 * 코드 암기
 * 변형 문제 풀이
@@ -290,6 +293,13 @@
     * N=100K, O(NlogN)
     * N=10M, O(N)
 * 파이썬 1초에 20M 번 계산 가능
+<br><br>
+
+### [유형별 대표 용도]
+* 그리디: 모든 경우 확인 (ex. 거스름돈, 1이 될 때까지)
+* 구현: 생각을 코드로 (ex. 게임 구현, 문자열 처리)
+* DFS: 모든 경로 탐색 (ex. 연결 요소 찾기)
+* BFS: 최단 거리 찾기 (ex. 미로, 최소 간선 수로)
 <br><br>
 
 ### [유형1: 그리디]
@@ -323,9 +333,10 @@
       ny = x + dy[0]
       print(nx, ny)
       ```
+* [예제](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
-### [유형3: DFS & BFS]
+### [유형3 & 4: DFS & BFS]
 * 대표적인 그래프 탐색 알고리즘으로 DFS와 BFS가 있다.
 * 탐색은 많은 양의 데이터 중에서 원하는 데이터를 찾는 과정이다.
 * 스택
@@ -373,9 +384,121 @@
       print(queue.reverse())  # 역순 출력 [4, 1, 7, 3]
       ```
 * 재귀 함수
-    * 
+    * 자기 자신을 다시 호출하는 함수
+    * DFS나 BFS를 구현할 때 주로 사용한다.
+    * 재귀 함수의 종료 조건을 반드시 명시한다.
+    * ```Python
+      def recursive_func(i):
+          # 100번째 호출을 했을때 종료
+          if i == 100:
+              return
+          print(i, '번째 재귀함수에서', i+1, '번째 재귀함수를 호출.')
+          recursive_func(i+1)
+          print(i, '번째 재귀함수를 종료합니다.')
+      recursive_func(1)
+      ```
+    * 팩토리얼도 재귀함수로 구할 수 있으나 주의해야한다.
+    * 팩토리얼과 유사하게 `점화식`을 공식 그대로 구현할 수 있다.
+    * ```Python
+      # 유클리드 호제법, 최대공약수 구하기
+      def gcd(a, b):
+          if a % b == 0:
+              return b
+          else:
+              return gcd(b, a % b)
+      print(gcd(192, 162))
+      ```
+* DFS
+    * Depth-First Search, 깊은 부분을 우선적으로 탐색한다.
+    * 스택 or 재귀함수를 이용하여 구현한다.
+    * 수도 코드
+        * 탐색 시작 노드를 스택에 삽입하고 방문처리를 한다.
+        * 스택의 최상단 노드에 방문하지 않은 노드가 하나라도 있다면 그 노드를 스택에 넣고 방문 처리한다. 방문하지 않은 인접 노드가 없으면 스택에서 최상단 노드를 꺼낸다.
+        * 더 이상 2번의 과정을 수행할 수 없을 때까지 반복한다.
+    * ```Python
+      # 노드의 연결 정보를 표현
+      graph = [
+        [],
+        [2, 3, 8],
+        [1, 7],
+        [1, 4, 5],
+        [3, 5],
+        [3, 4],
+        [7],
+        [2, 6, 8],
+        [1, 7]
+      ]
+
+      # 노드의 방문 정보를 표현
+      visited = [False] * 9
+
+      # DFS 호출
+      dfs(graph, 1, visited)
+
+      # 메서드 정의
+      def dfs(graph, v, visited):
+          # 현재 노드를 방문 처리
+          visited[v] = True
+          print(f'{v} ')
+          # 현재 노드와 연결된 다른 노드 재귀 방문
+          for i in graph[v]:
+              if not visited[i]:
+                  dfs(graph, i, visited)  # 재귀가 핵심
+      
+      # 1 2 7 6 8 3 4 5
+      ```
+* BFS
+    * Breadth-First Search, 너비 부분을 우선적으로 탐색한다.
+    * 큐를 이용하여 구현한다.
+    * 수도 코드
+        * 탐색 시작 노드를 스택에 삽입하고 방문처리를 한다.
+        * 큐에서 노드를 꺼낸 뒤에 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문처리 한다.
+        * 더 이상 2번의 과정을 수행할 수 없을 때까지 반복한다.
+    * ```Python
+      # 노드의 연결 정보를 표현
+      graph = [
+        [],
+        [2, 3, 8],
+        [1, 7],
+        [1, 4, 5],
+        [3, 5],
+        [3, 4],
+        [7],
+        [2, 6, 8],
+        [1, 7]
+      ]
+
+      # 노드의 방문 정보를 표현
+      visited = [False] * 9
+
+      # BFS 호출
+      bfs(graph, 1, visited)
+
+      # 메서드 정의
+      from collections import deque
+
+      def bfs(graph, v, visited):
+          # 큐를 사용하기 위해 덱 라이브러리 사용
+          queue = deque([v])
+          # 현재 노드를 방문 처리
+          visited[v] = True
+          # 큐가 없을 때까지 반복 (핵심)
+          while queue:
+              # 큐에서 한 원소 뽑아 출력
+              v = queue.popleft()  # 안에서 리셋 (핵심)
+              print(f'{v} ')
+              # 아직 방문하지 않은 인접 원소 큐에 삽입, 방문처리
+              for i in graph[v]:
+                  if not visited[v]:
+                      queue.append(i)
+                      visited[i] = True
+      
+      # 1 2 3 8 7 4 5 6
+      ```
+* [예제](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 
 
-
+### [유형5: 정렬]
+* 

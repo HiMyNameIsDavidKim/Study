@@ -37,6 +37,9 @@
 * 공백을 기준으로 입력
     * a, b, c = map(int, input().split())
     * list(map(int, input().split()))
+* 그래프 입력
+    * graph = []
+    * [graph.append(list(map(int, input()))) for i in range(n)]
 * 입력 데이터가 많은 경우
     * data = sys.stdin.readline().rstrip()
 * ord(): 문자의 값을 아스키 코드 형태로 변환한다.
@@ -66,6 +69,8 @@
 ## `[유형1: 그리디]`
 
 ### [거스름돈 문제]
+* 설명
+    * 
 * 아이디어
     * 가장 큰 화폐 단위부터 거슬러 준다.
     * 정당성: 큰 단위가 항상 작은 단위의 배수이기 때문이다.
@@ -85,6 +90,8 @@
 <br><br>
 
 ### [1이 될 때까지]
+* 설명
+    * 
 * 아이디어
     * 무조건 나눠보고 나머지가 나오면 1을 뺀다.
     * 정당성: 나누는게 줄어드는 속도가 더 빠르다.
@@ -112,6 +119,8 @@
 <br><br>
 
 ### [곱하기 혹은 더하기]
+* 설명
+    * 
 * 아이디어
     * 0 혹은 1일 때에만 더하기를 하고 나머지는 곱한다.
     * 정당성: 곱하는게 커지는 속도가 더 빠르다.
@@ -132,6 +141,8 @@
 <br><br>
 
 ### [모험가 길드]
+* 설명
+    * 
 * 아이디어
     * 오름차순 정렬 후 공포도가 낮은 모험가부터 길드를 만들어 출발한다.
     * 정당성: 오름차순일 경우 항상 최소한의 모험가 수로 결성된다.
@@ -160,10 +171,12 @@
 ## `[유형2: 구현]`
 
 ### [상하좌우]
-* 아이디어
+* 설명
     * NxN 크기 공간에서 (1,1) 위치부터 출발 최종 위치는 어디인가.
     * 계획서를 받아서 문자대로 이동 (상 하 좌 우 = U D L R)
     * 공간을 벗어나는 움직임은 무시된다.
+* 아이디어
+    * 
 * 시간 복잡도: 
 * 변수: n, x, y, plans, dx, dy, move_types
 * ```python
@@ -194,9 +207,11 @@
 <br><br>
 
 ### [시각]
-* 아이디어
+* 설명
     * 정수 N이 입력되면 00시 00분 00초부터 N시 59분 59초까지 확인
     * 모든 시각 중에서 3이 하나라도 포함되는 모든 경우의 수를 구하기
+* 아이디어
+    * 
 * 시간 복잡도: 
 * 변수: h, count
 * ```python
@@ -213,13 +228,15 @@
 <br><br>
 
 ### [왕실의 나이트]
-* 아이디어
+* 설명
     * 왕실 정원은 체스판과 같은 8x8 좌표 평면이다. (컬럼abc, 행123)
     * 나이트는 L자 형태로만 이동할 수 있다. (수평2+수직1, 수직2+수평1)
     * 정원 밖으로 나갈 수 없다.
     * 나이트가 이동할 수 있는 모든 경우의 수는 몇개인가.
+* 아이디어
+    * 
 * 시간 복잡도: 
-* 변수: 
+* 변수: row, col, steps, result
 * ```python
   input_data = input()
   row = int(input_data[1])
@@ -243,3 +260,115 @@
   print(result)
   ```
 <br><br>
+
+
+
+## `[유형3 & 4: DFS & BFS]`
+
+### [음료수 얼려 먹기]
+* 설명
+    * NxM 크기의 얼음틀. 구멍=0, 칸막이=1
+    * 구멍이 붙어 있는 경우 서로 연결된 것으로 간주한다.
+    * 생성되는 아이스크림의 총 개수 (덩어리)를 구하라.
+* 아이디어
+    * 자리를 다 돌면서 1로 채우는 것과 같다.
+    * 구멍인 노드를 던져주며 DFS를 사용한다.
+* 시간 복잡도: 
+* 변수: 
+* ```python
+  n, m = map(int, input().split())
+
+  graph = []
+  for i in range(n):
+      graph.append(list(map(int, input())))
+
+  # 모든 노드에 대하여 음료수 채우기
+  result = 0
+  for i in range(n):
+      for j in range(m):
+          # 현재 위치에서 DFS 수행
+          if dfs(i, j) == True:
+              result += 1
+
+  print(result)
+
+  
+  # DFS로 특정 노드와 연결된 모든 노드 방문
+  def dfs(x, y):
+      # 범위 벗어나면 즉시 종료
+      if x <= -1 or x >= n or y <= -1 or y >= m:
+          return False
+      # 현재 노드를 아직 방문하지 않았다면
+      if graph[x][y] == 0:
+          # 방문처리
+          graph[x][y] = 1
+          # 상하좌우 위치 모두 재귀 호출
+          dfs(x-1, y)
+          dfs(x, y-1)
+          dfs(x+1, y)
+          dfs(x, y+1)
+          return True
+      return False
+  ```
+<br><br>
+
+### [미로 탈출]
+* 설명
+    * NxM 크기의 직사각형 형태의 미로에 갇혔다.
+    * 미로에는 괴물이 있고 피해가야 하며, 한번에 한칸만 이동한다.
+    * 입구와 출구는 (1,1) -> (N, M) 이다.
+    * 괴물이 있는 부분은 0으로, 괴물이 없는 부분은 1로 표시되어 있다.
+    * 탈출을 위해 움직여야하는 최소 칸의 개수를 구하라.
+* 아이디어
+    * 최단거리 즉 BFS 이다.
+    * 모든 노드의 최단 거리 값을 기록한다.
+* 시간 복잡도: 
+* 변수: 
+* ```python
+  from collections import deque
+
+  n, m = map(int, input().split())
+
+  graph = []
+  for i in range(n):
+      graph.append(list(map(int, input())))
+  
+  # 방향 정의 (상하좌우)
+  dx = [-1, 1, 0, 0]
+  dy = [0, 0, -1, 1]
+
+  print(bfs(0, 0))
+
+  # BFS 구현
+  def bfs(x, y):
+      # 큐 구현
+      queue = deque()
+      queue.append((x, y))
+      # 큐가 없을 때까지 반복
+      while queue:
+          x, y = queue.popleft()
+          # 현 위치에서 4방향 확인
+          for i in range(4):
+              nx = x + dx[i]
+              ny = y + dy[i]
+              # 미로 밖은 무시
+              if nx < 0 or nx >= n or ny < 0 or ny >= m:
+                  continue
+              # 괴물인 경우 무시
+              if graph[nx][ny] == 0:
+                  continue
+              # 처음 방문하는 경우 최단 거리 기록
+              if graph[nx][ny] == 1:
+                  graph[nx][ny] = graph[x][y] + 1
+                  queue.append((nx, ny))
+              # 목적지까지 최단 거리 반환
+              if nx == n-1 and ny == m-1:
+                  return graph[n-1][m-1]
+  ```
+<br><br>
+
+
+
+## `[유형5: 정렬]`
+
+
