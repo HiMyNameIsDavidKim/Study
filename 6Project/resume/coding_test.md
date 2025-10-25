@@ -269,7 +269,8 @@
 * 알고리즘 공부
     * 그리디, 구현(=시뮬레이션)
     * DFS, BFS
-    * 정렬, 이진탐색, DP
+    * 정렬 (선택, 삽입, 퀵, 계수)
+    * 이진탐색, DP
     * 최단경로 (다익스트라, 플로이드)
     * 기타 그래프 (MST)
     * 백트래킹 (?)
@@ -293,6 +294,8 @@
     * N=100K, O(NlogN)
     * N=10M, O(N)
 * 파이썬 1초에 20M 번 계산 가능
+* 알고리즘 별 시간 복잡도 일람
+    * 
 <br><br>
 
 ### [유형별 대표 용도]
@@ -321,6 +324,11 @@
     * (=시뮬레이션, 완전탐색)
 * 행렬 문제 팁
     * ```Python
+      # 행렬 형태 (가상)
+      # (0, 0), (0, 1), (0, 2)
+      # (1, 0), (1, 1), (1, 2)
+      # (2, 0), (2, 1), (2, 2)
+      
       # 동, 북, 서, 남
       dx = [0, -1, 0, 1]
       dy = [1, 0, -1, 0]
@@ -328,10 +336,33 @@
       # 현재 위치
       x, y = 2, 2
       
-      # 동쪽 이동
+      # 현재 위치를 동쪽 이동
       nx = x + dx[0]
-      ny = x + dy[0]
-      print(nx, ny)
+      ny = y + dy[0]
+      print(nx, ny)  # 현재 위치 출력
+      ```
+* 보드 문제 팁
+    * ```Python
+      # 보드 형태
+      board = [
+        [1, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+      ]
+      
+      # 동, 북, 서, 남
+      dx = [0, -1, 0, 1]
+      dy = [1, 0, -1, 0]
+
+      # 현재 위치
+      x, y = 0, 0
+
+      # 말을 동쪽으로 이동
+      nx = x + dx[0]
+      ny = y + dy[0]
+      board[x][y] = 0  # 현재 위치를 0으로
+      board[nx][ny] = 1  # 새 위치를 1로
+      print(board)  # 말의 위치 출력
       ```
 * [예제](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
@@ -381,7 +412,8 @@
       queue.popleft()
 
       print(queue)  # 먼저 들어온 순서대로 출력 [3, 7, 1, 4]
-      print(queue.reverse())  # 역순 출력 [4, 1, 7, 3]
+      queue.reverse()
+      print(queue)  # 역순 출력 [4, 1, 7, 3]
       ```
 * 재귀 함수
     * 자기 자신을 다시 호출하는 함수
@@ -432,9 +464,6 @@
       # 노드의 방문 정보를 표현
       visited = [False] * 9
 
-      # DFS 호출
-      dfs(graph, 1, visited)
-
       # 메서드 정의
       def dfs(graph, v, visited):
           # 현재 노드를 방문 처리
@@ -445,7 +474,9 @@
               if not visited[i]:
                   dfs(graph, i, visited)  # 재귀가 핵심
       
-      # 1 2 7 6 8 3 4 5
+
+      # DFS 호출
+      dfs(graph, 1, visited)  # 1 2 7 6 8 3 4 5
       ```
 * BFS
     * Breadth-First Search, 너비 부분을 우선적으로 탐색한다.
@@ -471,15 +502,14 @@
       # 노드의 방문 정보를 표현
       visited = [False] * 9
 
-      # BFS 호출
-      bfs(graph, 1, visited)
-
       # 메서드 정의
       from collections import deque
 
       def bfs(graph, v, visited):
           # 큐를 사용하기 위해 덱 라이브러리 사용
-          queue = deque([v])
+          queue = deque()
+          # 큐에 초기값 넣기
+          queue.append(v)
           # 현재 노드를 방문 처리
           visited[v] = True
           # 큐가 없을 때까지 반복 (핵심)
@@ -489,11 +519,13 @@
               print(f'{v} ')
               # 아직 방문하지 않은 인접 원소 큐에 삽입, 방문처리
               for i in graph[v]:
-                  if not visited[v]:
+                  if not visited[i]:
                       queue.append(i)
                       visited[i] = True
       
-      # 1 2 3 8 7 4 5 6
+
+      # BFS 호출
+      bfs(graph, 1, visited)  # 1 2 3 8 7 4 5 6
       ```
 * [예제](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
@@ -501,4 +533,139 @@
 
 
 ### [유형5: 정렬]
-* 
+* 데이터를 특정 기준에 따라 순서대로 나열
+* (ex. 크기가 작은 순서로 정렬 (=오름차순))
+* 선택 정렬
+    * 처리되지 않은 데이터 중 가장 작은 데이터를 `선택`한다.
+    * 맨 앞에 있는 데이터와 선택 데이터를 바꾼다.
+    * 시간 복잡도: O(N^2)
+    * ```Python
+      array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+
+      for i in range(len(array)):
+          min_idx = i # 가장 작은 원소의 인덱스
+          for j in range(i+1, len(array)):
+              if array[min_idx] > array[j]:
+                  min_idx = j
+          # 스왑 연산
+          array[i], array[min_idx] = array[min_idx], array[i]
+      
+      print(array) # 0 1 2 3 4 5 6 7 8 9
+      ```
+* 삽입 정렬
+    * 처리되지 않은 데이터를 하나씩 골리 적절한 위치에 `삽입`한다.
+    * 첫번째 데이터는 정렬된 것으로 판단하고 삽입할 위치를 고른다.
+    * 시간 복잡도: O(N^2)
+    * ```Python
+      array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+      
+      for i in range(1, len(array)):
+          for j in range(i, 0, -1):  # i부터 0까지 마이너스 이동
+              if array[j] < array[j-1]:  # 지금이 앞보다 작으면
+                  # 스왑 연산
+                  array[j], array[j-1] = array[j-1], array[j]
+              else:  # 지금이 앞보다 크면 브레이크
+                  break
+
+      print(array) # 0 1 2 3 4 5 6 7 8 9
+      ```
+* 퀵 정렬
+    * 기준 데이터를 정하고 기준보다 큰 데이터와 작은 데이터의 위치를 바꾼다.
+    * 퀵 정렬의 기본 값은 첫번째 데이터를 `기준(pivot)`으로 설정한다.
+    * 왼쪽에서 출발하여 기준보다 큰 데이터를 선택한다.
+    * 오른쪽에서 출발하여 기준보다 작은 데이터를 선택한다.
+    * 두 데이터의 위치가 꼬이지 않은 경우 위치를 서로 변경한다.
+    * 두 데이터의 위치가 엇갈리는 경우 `기준`과 작은 데이터를 서로 변경한다.
+    * 이제 `기준`을 중심으로 좌우로 데이터 묶음이 분할 되었다.
+    * 좌우의 데이터 묶음에 대하여 각각 퀵 정렬을 재귀적으로 실행한다.
+    * 퀵 정렬은 표준으로 사용하는 정렬 알고리즘 이다.
+    * 시간 복잡도: O(NlogN)
+    * ```Python
+      array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+      
+      # 더 나은 구현
+      def quick_sort(array):
+          # 리스트가 하나 이하의 원소만 담고 있으면 종료
+          if len(array) <= 1:
+              return array
+          pivot = array[0]  # 피벗 설정
+          tail = array[1:]  # 피벗 제외 리스트
+
+          left_side = [x for x in tail if x <= pivot]
+          right_side = [x for x in tail if x > pivot]
+
+          return quick_sort(left_side) + [pivot] + quick_sort(right_side)
+
+      print(quick_sort(array))  # 0 1 2 3 4 5 6 7 8 9
+
+
+      # 정석 구현
+      def quick_sort(array, start, end):
+          # 원소가 1개인 경우 종료
+          if start >= end:
+              return
+          # 피벗은 첫 번째 원소
+          pivot = start 
+          left = start + 1
+          right = end
+
+          while(left <= right):
+            
+              # 피벗보다 큰 데이터를 찾을 때까지 반복
+              while(left <= end and array[left] <= array[pivot]):
+                  left += 1
+            
+              # 피벗보다 작은 데이터를 찾을 때까지 반복
+              while(right > start and array[right] >= array[pivot]):
+                  right -= 1
+            
+              # 엇갈렸다면 작은 데이터와 피벗을 교체
+              if(left > right): 
+                  array[right], array[pivot] = array[pivot], array[right]
+            
+              # 엇갈리지 않았다면 작은 데이터와 큰 데이터를 교체
+              else: 
+                  array [left], array[right] = array[right], array[left]
+        
+          # 분할 이후 왼쪽 부분과 오른쪽 부분에서 각각 정렬 수행
+          quick_sort(array, start, right - 1)
+          quick_sort(array, right + 1, end)
+
+      quick_sort(array, 0, len(array) - 1)
+      print(array)  # 0 1 2 3 4 5 6 7 8 9
+      ```
+* 계수 정렬
+    * 데이터의 개수가 N, 데이터 중 최대 값이 K일 때 사용한다.
+    * 특정한 조건이 만족해야 하지만 매우 빠르게 동작한다.
+    * (조건: 동일한 값을 가지는 데이터가 여러 개 등장할 때)
+    * 가장 작은 데이터 ~ 가장 큰 데이터 범위를 모두 담는 리스트를 생성한다.
+    * 인덱스가 곧 값에 해당한다고 생각하고 몇번 등장하는지 `개수`를 센다.
+    * 인덱스 별로 몇번 등장했는지에 대한 리스트가 생긴다.
+    * 출력에서 리스트의 순서대로 인덱스를 값만큼 반복하여 출력한다.
+    * ```Python
+      # 든 원소의 값이 0보다 크거나 같다고 가정
+      array = [7, 5, 9, 0, 3, 1, 6, 2, 9, 1, 4, 8, 0, 5, 2]
+      count = [0] * (max(array) + 1)
+
+      # 각 데이터에 해당하는 인덱스의 값 카운팅
+      for i in range(len(array)):
+          count[array[i]] += 1
+
+      # 등장한 횟수 만큼 인덱스 출력
+      for i in range(len(count)):
+         for j in range(count[i]):
+              print(f'{i} ')
+      ```
+    * 시간 복잡도: O(N+K)
+* [예제](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
+<br><br>
+
+
+
+
+
+
+
+
+
+
