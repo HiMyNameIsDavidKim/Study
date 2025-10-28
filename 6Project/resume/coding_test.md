@@ -302,7 +302,7 @@
           visited[v] = True
           # 큐가 없을 때까지 반복 (핵심)
           while queue:
-              # 큐에서 한 원소 뽑아 출력
+              # 큐에서 한 원소 뽑기
               v = queue.popleft()  # 안에서 리셋 (핵심)
               result.append(v)
               # 아직 방문하지 않은 인접 원소 큐에 삽입, 방문처리

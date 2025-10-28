@@ -23,17 +23,15 @@ n개의 음이 아닌 정수를 순서를 바꾸지 않고 적절히 더하거�
 한 숫자씩 더하고 길이가 끝났을 때 타겟 넘버와 같은지 확인해야 함.
 '''
 
-def dfs(v, current_sum, numbers, target):
-    if v == len(numbers):
-        if current_sum == target:
-            return 1
-        return 0
-    
-    pp = dfs(v+1, current_sum+numbers[v], numbers, target)
-    mm = dfs(v+1, current_sum-numbers[v], numbers, target)
-    
-    return pp+mm
-
-
 def solution(numbers, target):
-    return dfs(0, 0, numbers, target)
+    def dfs(v, current_sum):
+        if v == len(numbers):
+            if current_sum == target:
+                return 1
+            return 0
+        
+        pp = dfs(v+1, current_sum+numbers[v])
+        mm = dfs(v+1, current_sum-numbers[v])
+        
+        return pp+mm
+    return dfs(0, 0)
