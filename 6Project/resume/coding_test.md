@@ -47,7 +47,7 @@
 * 하루에 4개 알고리즘 씩 반복 연습
     * 루틴:
         * 구현 (Lv1 2개, Lv2 1개, Lv3 가끔)
-        * DFS & BFS (Lv2 1개씩) (?)
+        * DFS & BFS (Lv2 1개씩)
 * 난이도 (프로그래머스 기준)
     * Lv2가 주로 나오며, Lv3는 가끔 출제
     * Lv2을 중점적으로 훈련
@@ -68,7 +68,7 @@
 * 유형별 대표 용도
     * 그리디: 모든 경우 확인 (ex. 거스름돈, 1이 될 때까지)
     * 구현: 생각을 코드로 (ex. 게임 구현, 문자열 처리)
-    * DFS: 모든 경로 탐색 (ex. 연결 요소 찾기)
+    * DFS: 모든 경로 탐색 (ex. 연결 요소 찾기, 섬 개수)
     * BFS: 최단 거리 찾기 (ex. 미로, 최소 간선 수로)
     * 정렬: 순서 기반 문제 (ex. 회의실 배정, 두 배열의 원소 교체)
     * 이진 탐색: 빠른 값 찾기 (ex. 범위 매우 큰 탐색, 파라메트릭 서치)
@@ -245,12 +245,13 @@
 
       # 노드의 방문 정보를 표현
       visited = [False] * 9
+      result = []
 
       # 메서드 정의
       def dfs(graph, v, visited):
           # 현재 노드를 방문 처리
           visited[v] = True
-          print(f'{v} ')
+          result.append(v)
           # 현재 노드와 연결된 다른 노드 재귀 방문
           for i in graph[v]:
               if not visited[i]:
@@ -258,15 +259,19 @@
       
 
       # DFS 호출
-      dfs(graph, 1, visited)  # 1 2 7 6 8 3 4 5
+      dfs(graph, 1, visited)
+      print(result) # 1 2 7 6 8 3 4 5
       ```
 * BFS
     * Breadth-First Search, 너비 부분을 우선적으로 탐색한다.
     * 큐를 이용하여 구현한다.
     * 수도 코드
-        * 1: 탐색 시작 노드를 스택에 삽입하고 방문처리를 한다.
+        * 1: 탐색 시작 노드를 큐에 삽입하고 방문처리를 한다.
         * 2: 큐에서 노드를 꺼낸 뒤에 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문처리 한다.
         * 3: 더 이상 2번의 과정을 수행할 수 없을 때까지 반복한다.
+    * 외우기 팁:
+        * 최다니엘 BTS 보려면 줄서기 (Queue)
+        * 모든경로 DFS 스택
     * ```Python
       # 노드의 연결 정보를 표현
       graph = [
@@ -283,6 +288,7 @@
 
       # 노드의 방문 정보를 표현
       visited = [False] * 9
+      result = []
 
       # 메서드 정의
       from collections import deque
@@ -298,7 +304,7 @@
           while queue:
               # 큐에서 한 원소 뽑아 출력
               v = queue.popleft()  # 안에서 리셋 (핵심)
-              print(f'{v} ')
+              result.append(v)
               # 아직 방문하지 않은 인접 원소 큐에 삽입, 방문처리
               for i in graph[v]:
                   if not visited[i]:
@@ -307,7 +313,8 @@
       
 
       # BFS 호출
-      bfs(graph, 1, visited)  # 1 2 3 8 7 4 5 6
+      bfs(graph, 1, visited)
+      print(result)  # 1 2 3 8 7 4 5 6
       ```
 * [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
