@@ -31,14 +31,14 @@ def solution(maps):
     
     def bfs():
         queue = deque()
-        queue.append((0, 0, 1))
+        queue.append((0, 0))
         visited[0][0] = True
         
         while queue:
-            i, j, distance = queue.popleft()
+            i, j = queue.popleft()
             
             if i == n-1 and j == m-1:
-                return distance
+                return maps[i][j]
             
             for k in range(4):
                 ni = i + di[k]
@@ -46,11 +46,10 @@ def solution(maps):
                 
                 if 0 <= ni < n and 0 <= nj < m:
                     if not visited[ni][nj] and maps[ni][nj] == 1:
-                        queue.append((ni, nj, distance+1))
+                        maps[ni][nj] = maps[i][j] + 1
+                        queue.append((ni, nj))
                         visited[ni][nj] = True
         return -1
     
     return bfs()
-
-
 
