@@ -18,23 +18,23 @@
 '''
 
 # 내가 푼 풀이, 직관성 떨어짐
-def solution(n, computers):
+def s(n, computers):
     visited = [False] * n
-    answer = 0
+    network = 0
     
-    def dfs(node):
-        visited[node] = True
+    def d(i):
+        visited[i] = True
         
-        for i in range(n):
-            if computers[node][i] == 1 and not visited[i]:
-                dfs(i)
-    
+        for j in range(n):
+            if computers[i][j] == 1 and not visited[j]:
+                d(j)                
+
     for i in range(n):
         if not visited[i]:
-            dfs(i)  # 연결된건 다 방문 처리 해버리기
-            answer += 1  # 덩어리 +1개
-    
-    return answer
+            d(i)  # 연결된건 다 방문 처리 해버리기
+            network += 1  # 덩어리 +1개
+
+    return network
 
 
 # 가장 많이 푼 풀이, 큐 BFS 처럼 스택 DFS를 돌림, 훨씬 직관적임

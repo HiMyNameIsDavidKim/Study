@@ -285,39 +285,33 @@
 * 시간 복잡도: 
 * 변수: 
 * ```python
-  n, m = map(int, input().split())
-
-  graph = []
-  for i in range(n):
-      graph.append(list(map(int, input())))
-
-  # 모든 노드에 대하여 음료수 채우기
-  result = 0
-  for i in range(n):
-      for j in range(m):
-          # 현재 위치에서 DFS 수행
-          if dfs(i, j) == True:
-              result += 1
-
-  print(result)
-
-  
-  # DFS로 특정 노드와 연결된 모든 노드 방문
-  def dfs(x, y):
-      # 범위 벗어나면 즉시 종료
-      if x <= -1 or x >= n or y <= -1 or y >= m:
+  def solution(n, m, graph):
+      # DFS로 특정 노드와 연결된 모든 노드 방문
+      def dfs(x, y):
+          # 범위 벗어나면 즉시 종료
+          if x <= -1 or x >= n or y <= -1 or y >= m:
+              return False
+          # 현재 노드를 아직 방문하지 않았다면
+          if graph[x][y] == 0:
+              # 방문처리
+              graph[x][y] = 1
+              # 상하좌우 위치 모두 재귀 호출
+              dfs(x-1, y)
+              dfs(x, y-1)
+              dfs(x+1, y)
+              dfs(x, y+1)
+              return True
           return False
-      # 현재 노드를 아직 방문하지 않았다면
-      if graph[x][y] == 0:
-          # 방문처리
-          graph[x][y] = 1
-          # 상하좌우 위치 모두 재귀 호출
-          dfs(x-1, y)
-          dfs(x, y-1)
-          dfs(x+1, y)
-          dfs(x, y+1)
-          return True
-      return False
+    
+      # 모든 노드에 대하여 음료수 채우기
+      result = 0
+      for i in range(n):
+          for j in range(m):
+              # 현재 위치에서 DFS 수행
+              if dfs(i, j) == True:
+                  result += 1
+    
+      return result
   ```
 <br><br>
 
@@ -336,44 +330,38 @@
 * ```python
   from collections import deque
 
-  n, m = map(int, input().split())
+  def solution(n, m, graph):
+      # 방향 정의 (상하좌우)
+      di = [-1, 1, 0, 0]
+      dj = [0, 0, -1, 1]
 
-  graph = []
-  for i in range(n):
-      graph.append(list(map(int, input())))
-  
-  # 방향 정의 (상하좌우)
-  dx = [-1, 1, 0, 0]
-  dy = [0, 0, -1, 1]
-
-  print(bfs(0, 0))
-
-  # BFS 구현
-  def bfs(x, y):
-      # 큐 구현
-      queue = deque()
-      # 큐에 초기값 넣기
-      queue.append((x, y))
-      # 큐가 없을 때까지 반복
-      while queue:
-          x, y = queue.popleft()
-          # 현 위치에서 4방향 확인
-          for i in range(4):
-              nx = x + dx[i]
-              ny = y + dy[i]
-              # 미로 밖은 무시
-              if nx < 0 or nx >= n or ny < 0 or ny >= m:
-                  continue
-              # 괴물인 경우 무시
-              if graph[nx][ny] == 0:
-                  continue
-              # 처음 방문하는 경우 최단 거리 기록
-              if graph[nx][ny] == 1:
-                  graph[nx][ny] = graph[x][y] + 1
-                  queue.append((nx, ny))
-              # 목적지까지 최단 거리 반환
-              if nx == n-1 and ny == m-1:
-      return graph[n-1][m-1]
+      # BFS 구현
+      def bfs(i, j):
+          # 큐 구현
+          queue = deque()
+          # 큐에 초기값 넣기
+        queue.append((i, j))
+          # 큐가 없을 때까지 반복
+          while queue:
+              i, j = queue.popleft()
+              # 현 위치에서 4방향 확인
+              for k in range(4):
+                  ni = i + di[k]
+                  nj = j + dj[k]
+                  # 미로 밖은 무시
+                  if ni < 0 or ni >= n or nj < 0 or nj >= m:
+                      continue
+                  # 괴물인 경우 무시
+                  if graph[ni][nj] == 0:
+                      continue
+                  # 처음 방문하는 경우 최단 거리 기록
+                  if graph[ni][nj] == 1:
+                      graph[ni][nj] = graph[i][j] + 1
+                      queue.append((ni, nj))
+                      # 목적지까지 도달했는지 확인
+                      if ni == n-1 and nj == m-1:
+                          return graph[n-1][m-1]  # BFS이기 때문에 반드시 최소가 보장됨.
+      return bfs(0, 0)
   ```
 <br><br>
 

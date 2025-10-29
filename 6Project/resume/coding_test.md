@@ -10,6 +10,8 @@
 
 ## `[🐍 Python algorithm]`
 * ref: 개발자 장고, 이코테 2021
+* [`이코테 예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example/yee_co_te)
+* [`프로그래머스 실전`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example/Programmers)
 <br><br>
 
 ### [알고리즘 코딩 테스트]
@@ -87,7 +89,6 @@
 * 그리디를 쓰면 되는지에 대한 정당성 분석이 중요하다.
     * 진짜 최적의 해가 나오는가?
     * 최소한의 아이디어 도출 -> 정당한지 검토
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 ### [유형2: 구현]
@@ -146,7 +147,6 @@
       # [0, 0, 0]
       # [0, 0, 0]
       ```
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 ### [유형3 & 4: DFS & BFS]
@@ -298,25 +298,23 @@
           queue = deque()
           # 큐에 초기값 넣기
           queue.append(v)
-          # 현재 노드를 방문 처리
-          visited[v] = True
+          visited[v] = True  # 큐에 넣고 방문 처리
           # 큐가 없을 때까지 반복 (핵심)
           while queue:
               # 큐에서 한 원소 뽑기
               v = queue.popleft()  # 안에서 리셋 (핵심)
               result.append(v)
-              # 아직 방문하지 않은 인접 원소 큐에 삽입, 방문처리
+              # 아직 방문하지 않은 인접 원소
               for i in graph[v]:
                   if not visited[i]:
+                      # 큐에 넣기
                       queue.append(i)
-                      visited[i] = True
-      
+                      visited[i] = True  # 큐에 넣고 방문 처리
 
       # BFS 호출
       bfs(graph, 1, visited)
       print(result)  # 1 2 3 8 7 4 5 6
       ```
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 
@@ -449,7 +447,6 @@
               print(f'{i} ')
       ```
     * 시간 복잡도: O(N+K)
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 ### [유형6: 이진 탐색]
@@ -512,7 +509,6 @@
     * 최적화 문제를 결정 문제(bool)로 바꾸어 해결하는 기법.
     * 최적화: 값을 최대한 작게하거나 크게 만드는 작업
     * 파라메트릭 서치 문제가 출제되는 경우 이진 탐색으로 해결 가능
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 ### [유형7: DP]
@@ -574,7 +570,6 @@
       for i in range(3, n+1):
           d[i] = d[i-1] + d[i-2]
       ```
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 ### [유형8: 최단 경로]
@@ -790,12 +785,10 @@
               else:
                   print(graph[a][b])
       ```
-* [`예제`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/0Basic/Algorithm/yee_co_te)
 <br><br>
 
 ### [실전: 프로그래머스]
 * 유형 별로 레벨 별로 LLM 추천 받기
-* [`풀이`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/1Python/example/Programmers)
 <br><br>
 
 
