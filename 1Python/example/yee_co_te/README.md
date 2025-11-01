@@ -484,19 +484,20 @@
     * a_i = max(a_i-1, a_i-2 + k)
     * 바텀업 DP 사용
 * 시간 복잡도: 
-* 변수: 
+* 변수
+    * 식량 창고 수, n
+    * 식량 창고 식량 배열, array
 * ```python
-  n = int(input())
-  array = list(map(int, input().split()))
+  def solution(n, array):
+      d = [0] * n
 
-  d = [0] * 100
+      d[0] = array[0]
+      d[1] = max(array[0], array[1])
 
-  d[0] = array[0]
-  d[1] = max(array[0], array[1])
-  for i in range(2, n):
-    d[i] = max(d[i-1], d[i-2] + array[i])
+      for i in range(2, n):
+          d[i] = max(d[i-1], d[i-2] + array[i])
 
-  print(d[n-1])
+      return d[n-1]
   ```
 <br><br>
 
@@ -509,33 +510,33 @@
     * 4: 1을 뺀다.
     * 연산 4개를 적절히 사용해 값을 1로 만들 때 연산의 최솟값은?
 * 아이디어
-    * 다른 연산을 섞는게 5로 나누는 것보다 나을 수 있다.
     * 단순 그리디가 아니라 DP임.
     * 이미 수행한 연산은 다 저장해두고 추후에 꺼내서 사용.
     * 예를들어 10이면 5가 했던 연산에 2만 나누면 됨. (+1) 
     * a_i = min(a_i-1, a_i/2, a_i/3, a_i/5) + 1
 * 시간 복잡도: 
-* 변수: 
+* 변수
+    * 입력, x
 * ```python
-  x = int(input())
+  def solution(x):
+      d = [0] * 30001
 
-  d = [0] * 30001
-  
-  # 바텀업 DP
-  for i in range(2, x+1):
-      # 1 빼는 경우
-      d[i] = d[i-1] + 1
-      # 2로 나누는 경우
-      if i % 2 == 0:
-          d[i] = min(d[i], d[i//2] + 1)
-      # 3로 나누는 경우
-      if i % 3 == 0:
-          d[i] = min(d[i], d[i//3] + 1)
-      # 5로 나누는 경우
-      if i % 5 == 0:
-          d[i] = min(d[i], d[i//5] + 1)
+      # 바텀업 DP
+      for i in range(x):
+          # 1 빼는 경우
+          d[i] = d[i] + 1
 
-  print(d[x])
+          # 2로 나누는 경우
+          if i%2 == 0:
+              d[i] = min(d[i], d[i//2]+1)
+          # 3로 나누는 경우
+          elif i%3 == 0:
+              d[i] = min(d[i], d[i//3]+1)
+          # 5로 나누는 경우
+          elif i%5 == 0:
+              d[i] = min(d[i], d[i//5]+1)
+
+    return d[x]
   ```
 <br><br>
 
@@ -551,28 +552,27 @@
     * a_i-k 가 존재하지 않는 경우, a_i = INF
     * 화폐 종류 별로 반복 수행하면 더 작은 값으로 갱신 가능함
 * 시간 복잡도: 
-* 변수: 
+* 변수
+    * 화폐 종류 개수, n
+    * 목표 금액, m
+    * 화폐 종류 배열, array
 * ```python
-  n, m = map(int, input().split())
-  array = []
-  for i in range(n):
-      array.append(int(input()))
-  
-  d = [10001] * (m+1)
+  def solution(n, m, array):
+      d = [10001] * (m+1)
+      d[0] = 0
+    
+      # 화폐 종류 별로 반복
+      for i in range(n):
+          # 화폐 종류와 동일한 값부터 m까지 반복
+          for j in range(array[i], m+1):
+              # (i-k)원을 만드는 방법이 존재하는 경우
+              if d[j-array[i]] != 10001:
+                  d[j] = min(d[j], d[j-array[i]]+1)
 
-  d[0] = 0
-  # 화폐 종류 별로 반복
-  for i in range(n):
-      # 화폐 종류와 동일한 값부터 m까지 반복
-      for j in range(array[i], m+1):
-          # (i-k)원을 만드는 방법이 존재하는 경우
-          if d[j-array[i]] != 10001:
-              d[j] = min(d[j], d[j-array[i]]+1)
-  
-  if d[m] == 10001:
-      print(-1)
-  else:
-      print(d[m])
+      if d[m] == 10001:
+          return -1
+      else:
+          return d[m]
   ```
 <br><br>
 
@@ -589,18 +589,19 @@
         dp[i-1][j-1], dp[i][j-1], dp[i+1][j-1]
     )
 * 시간 복잡도: 
-* 변수: array[i][j] i행j열의 금의 양, dp[i][j] i행j열까지 최댓값
+* 변수
+    * 금광의 크기, n m
+    * 모든 칸의 금의 양 배열, array
 * ```python
-  for tc in range(int(input())):
-      n, m = map(int, input().split())
-      array = list(map(int, input().split()))
-
+  def solution(n, m, array):
       dp = []
       index = 0
+
+      # 행 단위로 2차원 배열 = dp 생성
       for i in range(n):
           dp.append(array[index:index+m])
           index += m
-    
+
       # 바텀업 DP
       for j in range(1, m):  # 열
           for i in range(n):  # 행
@@ -612,13 +613,13 @@
               else: left_down = dp[i+1][j-1]
               # 왼
               left = dp[i][j-1]
-              dp[i][j] = dp[i][j] \
-                + max(left_up, left_down, left)
-      
+
+              dp[i][j] = dp[i][j] + max(left_up, left_down, left)
+
       result = 0
       for i in range(n):
           result = max(result, dp[i][m-1])
-      print(result)
+      return result
   ```
 <br><br>
 
@@ -632,26 +633,28 @@
 * 아이디어
     * DP 대표 유형, LIS(Longest Increasing Subsequence)
     * 가장 긴 증가하는 부분 수열 유형을 변형시킨 것
-    * 모든 원소를 확인하며 array[j] < array[i]에서 점화식 실행
-    * d[i] = max(d[i], d[j] + 1)
-    * dp 테이블을 모두 갱신한 뒤에 마지막 값을 출력
+    * 해당 위치가 마지막 원소라고 가정
+    *  -> 그 앞에 남길 수 있는 원소 중 최댓값 원소 찾기
+    * (해당 위치의 수 보다 작으면서 값이 가장 큰 원소)
+    * 메모이제이션을 모두 갱신한 뒤에 마지막 값을 출력
 * 시간 복잡도: 
-* 변수: 병사 수 n, 각 전투력 리스트
+* 변수
+    * 병사 수, n
+    * 병사 전투력 배열, array
 * ```python
-  n = int(input())
-  array = list(map(int, input().split()))
+  def solution(n, array):
+      array.reverse()
+      dp = [1] * n
 
-  array.reverse()
+      # LIS 알고리즘 수행
+      for i in range(1, n):
+          for j in range(0, i):
+              # 해당 위치가 마지막일 때, 그 수 보다 작으면서
+              if array[j] < array[i]:
+                  # 값이 가장 큰 원소로 업데이트
+                  dp[i] = max(dp[i], dp[j] + 1)
 
-  dp = [1] * n
-  
-  # LIS 알고리즘 수행
-  for i in range(1, n):
-      for j in range(0, i):
-          if array[j] < array[i]:
-              dp[i] = max(dp[i], dp[j] + 1)
-
-  print(n - max(dp))
+      return n - max(dp) # 열외시켜야하는 병사 수
   ```
 <br><br>
 

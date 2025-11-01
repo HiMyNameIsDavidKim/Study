@@ -9,18 +9,16 @@
 
 아이디어: 최단거리 = BFS
 방문 여부 체크 필수
-큐에 지금 위치 넣으면서 방문 안했고 1이면 앞에 값을 더해주기
+큐에 지금 위치 넣으면서 반복
+4방향 다 가보기 -> 방문x & 흰색 부분이라면 바로 직전 값 +1
 
 변수: 
 게임 맵의 상태, maps (n*m)
 '''
 
-
 from collections import deque
 
 def solution(maps):
-    answer = 0
-    
     n = len(maps)
     m = len(maps[0])
     visited = [[False for _ in range(m)] for _ in range(n)]
@@ -29,27 +27,28 @@ def solution(maps):
     di = [-1, 1, 0, 0]
     dj = [0, 0, -1, 1]
     
-    def bfs():
-        queue = deque()
-        queue.append((0, 0))
-        visited[0][0] = True
-        
-        while queue:
-            i, j = queue.popleft()
-            
-            if i == n-1 and j == m-1:
-                return maps[i][j]
-            
-            for k in range(4):
-                ni = i + di[k]
-                nj = j + dj[k]
-                
-                if 0 <= ni < n and 0 <= nj < m:
-                    if not visited[ni][nj] and maps[ni][nj] == 1:
-                        maps[ni][nj] = maps[i][j] + 1
-                        queue.append((ni, nj))
-                        visited[ni][nj] = True
-        return -1
+    queue = deque()
+    queue.append((0, 0))    
+    visited[0][0] = True
     
-    return bfs()
-
+    while queue:
+        i, j = queue.popleft()
+        
+        for k in range(4):
+            ni = i + di[k]
+            nj = j + dj[k]
+            
+            # 탈출 조건
+            if ni < 0 or nj < 0 or ni >= n or nj >= m:
+                continue
+            
+            if not visited[ni][nj] and maps[ni][nj] == 1:
+                queue.append((ni, nj))
+                visited[ni][nj] = True
+                maps[ni][nj] = maps[i][j] + 1
+    
+    return maps[n-1][m-1] if maps[n-1][m-1] != 1 else -1
+    
+    
+    
+    

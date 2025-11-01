@@ -3,8 +3,13 @@
 n개의 음이 아닌 정수를 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버
 타겟 넘버를 만들 수 있는 모든 경우의 수는?
 
-아이디어: 모든 경로 탐색하기 -> DFS
-변수: 
+[아이디어]
+모든 경로 탐색하기 -> DFS
+숫자 하나씩 꺼내면서 하나는 덧셈 재귀호출, 하나는 뺄셈 재귀호출
+각 재귀호출에서 타겟에 도달하면 answer에 1 더하기
+덧셈 뺄셈 재귀 각각 호출되기 때문에 모든 perms 커버 가능
+
+[변수] 
 사용할 숫자 배열, numbers
 타겟 넘버, target
 '''
@@ -24,14 +29,21 @@ n개의 음이 아닌 정수를 순서를 바꾸지 않고 적절히 더하거�
 '''
 
 def solution(numbers, target):
-    def dfs(v, current_sum):
-        if v == len(numbers):
+    answer = 0
+    
+    def dfs(i, current_sum):
+        nonlocal answer
+        
+        # 탈출 조건
+        if i == len(numbers):
+            # 반드시 끝날때 비교
             if current_sum == target:
-                return 1
-            return 0
+                answer += 1
+                return
+            return
         
-        pp = dfs(v+1, current_sum+numbers[v])
-        mm = dfs(v+1, current_sum-numbers[v])
-        
-        return pp+mm
-    return dfs(0, 0)
+        dfs(i+1, current_sum+numbers[i])
+        dfs(i+1, current_sum-numbers[i])
+    
+    dfs(0, 0)
+    return answer
