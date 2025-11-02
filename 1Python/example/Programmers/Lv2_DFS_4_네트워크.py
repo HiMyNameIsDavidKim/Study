@@ -2,11 +2,19 @@
 [설명]
 네트워크는 컴퓨터 간 연결된 형태
 연결되어 있으면 1개의 덩어리
+연결된 노드는 1로 표시
+
 네트워크의 개수는?
 
+[아이디어]
+연결 정보 = DFS
+방문정보 필수 visited 사용
+n 인덱스 돌면서 DFS 실행
+2차원 배열에서 배열 꺼내서 재귀 호출
+1인 곳을 방문 -> 방문 처리
+DFS가 끝나면 network+1
 
-아이디어: 연결 정보 = DFS, 네트워크 덩어리 크기 측정, 리스트 담기
-변수:
+[변수]
 컴퓨터 개수, n
 연결 정보 배열, computers
 '''
@@ -18,22 +26,28 @@
 '''
 
 # 내가 푼 풀이, 직관성 떨어짐
-def s(n, computers):
-    visited = [False] * n
+def solution(n, computers):
     network = 0
+    visited = [False] * n
     
-    def d(i):
-        visited[i] = True
+    def dfs(i):
+        visited[i]= True
+
+        # 탈출 조건
+        if i >= n:
+            return
         
         for j in range(n):
-            if computers[i][j] == 1 and not visited[j]:
-                d(j)                
-
+            if not visited[j] and computers[i][j] == 1:
+                visited[j]= True
+                dfs(j)
+        return
+    
     for i in range(n):
         if not visited[i]:
-            d(i)  # 연결된건 다 방문 처리 해버리기
-            network += 1  # 덩어리 +1개
-
+            dfs(i)
+            network += 1
+    
     return network
 
 

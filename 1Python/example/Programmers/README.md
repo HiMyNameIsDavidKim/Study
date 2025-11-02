@@ -16,15 +16,17 @@
     * 원소 추가: seen.add(item)
 * 숫자인지 확인하기: isdigit(), (Lv2_2)
 * 카운터 라이브러리, (Lv2_3)
-    * 등장 횟수 세는 라이브러리
-    * from collections import Counter
-    * a = ['a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd']
-    * c = Counter(a)
-    * print(c) # Counter({'a': 1, 'b': 3, 'c': 4, 'd': 1})
-    * c['a'] -= 1
-    * print(c) # Counter({'a': 0, 'b': 3, 'c': 4, 'd': 1})
-    * if c['a'] == 0: del c['a']
-    * print(c) # Counter({'b': 3, 'c': 4, 'd': 1})
+    * 등장 횟수 세는 용도
+        * from collections import Counter
+        * a = ['a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd']
+        * c = Counter(a)
+        * print(c) # Counter({'a': 1, 'b': 3, 'c': 4, 'd': 1})
+        * c['a'] -= 1
+        * print(c) # Counter({'a': 0, 'b': 3, 'c': 4, 'd': 1})
+        * if c['a'] == 0: del c['a']
+        * print(c) # Counter({'b': 3, 'c': 4, 'd': 1})
+    * 리스트 빼기는 힘들지만 카운터 빼기는 가능
+        * c = Counter(a) - Counter(b)
 * 띄어 쓰기 기준 자르기: split(), (Lv1_4)
 * 2진수로 바꾸는 라이브러리: bin(n)[2:], (Lv1_5)
 * n자리로 맞추기: zfill(n), (Lv1_5)
@@ -53,8 +55,11 @@
 <br><br>
 
 ### [유용한 라이브러리]
+* 큐: from collections import deque
 * 재귀 깊이 해제: sys.setrecursionlimit(10000)
 * 바로 바깥 변수 접근: nonlocal var_name
+* 순열: from itertools import permutations
+    * 순열 함수(리스트, 순열 길이): permutations(numbers, num)
 <br><br>
 
 ### [유형 분석]

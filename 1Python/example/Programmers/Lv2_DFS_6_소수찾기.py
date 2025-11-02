@@ -41,7 +41,6 @@ def is_prime(n):
 
 def solution(numbers):
     answer = 0
-    visited = [False] * len(numbers)
     ls = []
     ls_num = set([])
     
