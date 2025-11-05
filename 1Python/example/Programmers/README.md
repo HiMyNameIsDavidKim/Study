@@ -32,6 +32,7 @@
 * n자리로 맞추기: zfill(n), (Lv1_5)
 * 리스트에서 인덱스 호출: list.index(value), (Lv1_6)
 * 둘째자리 수 비교하기: limit % 100 >= 60, (Lv1_8)
+* 딕셔너리에서 벨류 기준으로 최대값 구하기: max(counter.values()), (Lv2_6)
 <br><br>
 
 ### [오타 주의]
