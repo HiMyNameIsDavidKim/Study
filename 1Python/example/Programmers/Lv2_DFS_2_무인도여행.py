@@ -36,27 +36,31 @@ import sys
 
 sys.setrecursionlimit(10000)
 
-# 상하좌우
-di = [-1, 1, 0, 0]
-dj = [0, 0, -1, 1]
-
 def solution(maps):
-    def dfs(i, j):
-        yummy = 0
-        if i < 0 or j < 0 or i > len_i-1 or j > len_j-1:
-            return yummy  # 범위 밖 0 리턴
-        if not visited[i][j] and maps[i][j] != 'X':
-            visited[i][j] = True
-            for k in range(4):
-                yummy += dfs(i+di[k], j+dj[k])
-            return int(maps[i][j]) + yummy  # 현재 칸의 음식 + 주변 칸의 음식
-        return yummy  # 방문한 땅 or 'X' 땅은 0 리턴
-    
     answer = []
     len_i = len(maps)
     len_j = len(maps[0])
-    
     visited = [[False for _ in range(len_j)] for _ in range(len_i)]
+
+    # 상하좌우
+    di = [-1, 1, 0, 0]
+    dj = [0, 0, -1, 1]
+
+    def dfs(i, j):
+        yummy = 0
+
+        if i < 0 or j < 0 or i > len_i-1 or j > len_j-1:
+            return yummy  # 범위 밖 0 리턴
+        
+        if not visited[i][j] and maps[i][j] != 'X':
+            visited[i][j] = True
+            for k in range(4):
+                ni = i + di[k]
+                nj = j + dj[k]
+                yummy += dfs(ni, nj)
+            return int(maps[i][j]) + yummy  # 현재 칸의 음식 + 주변 칸의 음식
+        
+        return yummy  # 방문한 땅 or 'X' 땅은 0 리턴
     
     for i in range(len_i):
         for j in range(len_j):
@@ -65,7 +69,6 @@ def solution(maps):
     
     if len(answer) == 0:
         return [-1]
-    
-    answer.sort()
-
-    return answer
+    else:
+        answer.sort()
+        return answer
