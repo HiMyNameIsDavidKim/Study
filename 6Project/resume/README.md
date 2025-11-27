@@ -67,13 +67,13 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 ## 경력 요약
-* __Hecto__, AI테크팀, AI개발자 직무, 선임, (2025.03 ~ now)
+* __Hecto__, AI테크팀, AI엔지니어, 선임, (2025.03 ~ now)
     > 멀티모달 추천 시스템 모델 연구.
-* __IDEA Lab.__, 대학원, 딥러닝 모델 연구, 석사 과정, (2023.02 ~ 2025.02)
+* __IDEA Lab.__, 대학원, 딥러닝 모델 연구원, 석사 과정, (2023.02 ~ 2025.02)
     > 딥러닝 모델 (Vision) 아키텍처 연구.
-* __LG디스플레이__, 검사팀, AI빅데이터 직무, 사원, (2020.11 ~ 2022.09)
+* __LG디스플레이__, 검사팀, AI빅데이터 엔지니어, 사원, (2020.11 ~ 2022.09)
     > 애플워치 패널에 대한 검사 알고리즘 설계 및 엔지니어링.
-* __트라이큐빅스코리아__, AI팀, AI연구 직무, 인턴, (2018.12 ~ 2019.01)
+* __트라이큐빅스코리아__, AI팀, AI연구원, 인턴, (2018.12 ~ 2019.01)
     > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구.
 * [![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
 [![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
@@ -91,9 +91,14 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### 비디오 임베딩 모델 연구
 * 기간/인원: 2025.08 ~ now / 6명
 * 개요: 
-    * 비디오 임베딩 및 비디오 CLIP 기반 모델 5종 도메인 평가
-    * 비디오 임베딩 추출 후 상품 임베딩과 유사도 계산을 통한 추천 모델 설계
-    * (진행중)
+    * 멀티모달(Video-Text) 상품 추천 모델 구현 및 성능 개선
+    * 숏폼 기반 추천 모델 NDGC xx% 개선 (대외비 생략)
+    * 비디오 캡셔닝 모델 학습, CIDEr 0.xx 달성 (대외비 생략)
+* 주요 역할: 
+    * 도메인 적합성 검증을 위한 비디오 CLIP 기반 모델 5종 비교 및 평가
+    * 비디오 임베딩 추출 및 상품 임베딩과의 코사인 유사도 기반 추천 로직 설계
+    * 숏폼 비디오 내 상품 매칭 추천 모델 서빙 및 모델 고도화
+    * CLIP, sLLM, MLP 구조의 비디오 캡셔닝 모델 설계 및 파인 튜닝 학습
 * 사용 기술: 
     * CLIP, VLM, Embedding, Machine Translate, PyTorch, Hugging Face
 <br>
@@ -101,18 +106,24 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### 쇼핑 추천 시스템 모델 연구
 * 기간/인원: 2025.03 ~ 2025.05 / 6명
 * 개요: 
-    * BERT 및 LLM 기반 텍스트 임베딩 모델 7종 도메인 평가
-    * Kanana 모델 기반 텍스트 임베딩 추출 후 모델에 적용
-    * DeepFM 기반 추천 모델 설계 NDGC 0.xxxx 달성 (대외비 생략)
+    * 쇼핑 데이터에 특화된 텍스트 임베딩 모델 발굴 및 적용
+    * DeepFM 기반 추천 모델 NDGC 0.xxxx 달성 (대외비 생략)
+* 주요 역할: 
+    * BERT 및 LLM 기반 텍스트 임베딩 모델 7종 쇼핑 도메인 평가
+    * Kanana 모델 기반 텍스트 임베딩 추출 파이프라인 구축 및 적용
+    * DeepFM 기반 추천 모델 설계 및 하이퍼파라미터 튜닝
 * 사용 기술: 
     * BERT, LLM, Kanana, DeepFM, PyTorch, Hugging Face, ONNX
 <br>
 
 #### 범용 추천 시스템 인프라 구축, 운영
 * 기간/인원: 2025.05 ~ 2025.08 / 6명
-* 개요:
+* 개요: 
+    * 추천 모델의 지속적 학습 및 배포를 위한 자동화 인프라 구축 및 운영
+    * 데이터 파이프라인 최적화로 서비스 운영 안정성 확보
+* 주요 역할: 
     * 추천 모델의 학습 파이프라인 설계 및 구축
-    * AI 서비스 워크플로우 자동화 인프라 구축 및 운영
+    * Airflow를 활용한 워크플로우 스케줄링 및 데이터 처리 자동화 구현
 * 사용 기술: 
     * Airflow, Kafka, Redis, AWS, Linux, Docker, FastAPI
 ---
@@ -125,9 +136,9 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### CV ViT 활용 직소퍼즐 모델 SOTA 달성
 * 기간/인원: 2023.02 ~ 2024.12 / 3명
 * 개요: 
-    * 딥러닝 모델 (Vision) 설계 최고 성능 달성.
-    * 객체 인식 등에 활용하는 사전학습인 직소퍼즐 문제.
-    * 3x3 퍼즐 정확도 83.3%에서 90.6%로 개선 최고 성능.
+    * 딥러닝 모델 (Vision) 설계 최고 성능 달성
+    * 객체 인식 등에 활용하는 사전학습인 직소퍼즐 문제
+    * 3x3 퍼즐 정확도 83.3%에서 90.6%로 개선 최고 성능
 * 주요 역할: 
     * 분류 알고리즘에서 발생하는 문제점을 회귀 알고리즘으로 해결
     * 딥러닝 모델 ViT (Vision Transformer) 아키텍처 수정
@@ -147,15 +158,15 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### 애플워치 검사 자동화 알고리즘 설계 및 운영
 * 기간/인원: 2020.11 - 2022.09 / 약 70명
 * 개요: 
-    * 애플워치 검사 자동화 알고리즘 설계 및 운영.
-    * AI 빅데이터 직무 엔지니어, 자동검사 Feature engineering.
-    * Capa 상승으로 xx억 절감, F1 score xx% 개선. (대외비 생략)
+    * 애플워치 검사 자동화 알고리즘 설계 및 운영
+    * AI 빅데이터 직무 엔지니어, 자동검사 Feature engineering
+    * Capa 상승으로 xx억 절감, F1 score xx% 개선 (대외비 생략)
     * 22년 우수사원 선정 및 특별성과급 지급 다수
 * 주요 역할: 
-    * 애플워치 검사 완전 자동화 달성.
-    * 카메라로 추출한 100개 feature를 머신러닝을 통해 13종 불량 검출 레시피 도출.
-    * 분석을 통한 이상 데이터 제거, 카메라의 일관된 데이터 추출을 위한 방법 도출.
-    * 자동화 검사기 협력업체 (7개), 유관부서 (3개), 베트남팀 (2개) 소통 유도.
+    * 애플워치 검사 완전 자동화 달성
+    * 카메라로 추출한 100개 feature를 머신러닝을 통해 13종 불량 검출 레시피 도출
+    * 분석을 통한 이상 데이터 제거, 카메라의 일관된 데이터 추출을 위한 방법 도출
+    * 자동화 검사기 협력업체 (7개), 유관부서 (3개), 베트남팀 (2개) 소통 유도
 * 사용 기술:
     * 머신러닝 rule extraction, 통계학, 6 sigma, C++, Ruby
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/lgd_project)
@@ -169,10 +180,10 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구
 * 기간/인원: 2018.12 - 2019.01 / 7명
 * 개요: 
-    * 편의점의 AI 자동판매 장비 하드웨어 및 알고리즘 개선.
+    * 편의점의 AI 자동판매 장비 하드웨어 및 알고리즘 개선
 * 주요 역할: 
-    * Tensorflow와 Keras 기반 AI 음료 판매기의 인식률 및 오류 해결.
-    * 구글 ML 모델 (Tesseract) 기반 OCR 알고리즘 개발 AI 도시락 판매기에 적용.
+    * Tensorflow와 Keras 기반 AI 음료 판매기의 인식률 및 오류 해결
+    * 구글 ML 모델 (Tesseract) 기반 OCR 알고리즘 개발 AI 도시락 판매기에 적용
 * 사용 기술:
     * OpenCV, Tesseract, Tensorflow, Keras, Python
 ---
@@ -186,8 +197,8 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### On-device AI 구현을 위한 언어모델 경량화
 * 기간/인원: 2025.08 - 2025.09 / 3명
 * 개요:
-    * 공기청정기 on-device AI로 비즈니스 가치 창출.
-    * function call 정확도 75% 달성. (7위, 80팀 참가)
+    * 공기청정기 on-device AI로 비즈니스 가치 창출
+    * function call 정확도 75% 달성 (7위, 80팀 참가)
 * 주요 역할:
     * LoRA, QLoRA, PEFT 활용 LLM fine-tuning
     * ONNX, Quantization, Distillation 활용 모델 경량화
@@ -201,8 +212,8 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### 계좌 개설 사기 탐지를 통한 사기 패턴 분석
 * 기간/인원: 2024.10 - 2024.11 / 4명
 * 개요: 
-    * 은행 계좌 개설 사기로 인한 재산 피해를 방지.
-    * 사기 중 78.4%를 검출, 모델의 실효성을 입증.
+    * 은행 계좌 개설 사기로 인한 재산 피해를 방지
+    * 사기 중 78.4%를 검출, 모델의 실효성을 입증
 * 주요 역할: 
     * 군집 추출 (데이터 EDA)
     * 머신러닝 모델링 (LightGBM, TabNet)
@@ -217,8 +228,8 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 #### CAC 분석을 통한 성과지표 별 광고 최적화
 * 기간/인원: 2024.11 - 2024.12 / 4명
 * 개요: 
-    * 성과지표 별로 최대의 효과로 효율적인 광고를 진행.
-    * 매출 등 4개 지표에 대한 구체적인 광고 방법 제시.
+    * 성과지표 별로 최대의 효과로 효율적인 광고를 진행
+    * 매출 등 4개 지표에 대한 구체적인 광고 방법 제시
 * 주요 역할: 
     * 군집 모델링 (가우시안 모델, DBSCAN)
     * 다중 차원 그래프 시각화 (Matplotlib, Seaborn)
