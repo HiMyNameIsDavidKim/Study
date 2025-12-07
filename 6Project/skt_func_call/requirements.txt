@@ -1,0 +1,29 @@
+torch>=2.0.0
+transformers>=4.35.0
+pandas>=1.5.0
+numpy<=1.26.4
+tqdm>=4.65.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+huggingface-hub>=0.17.0
+tokenizers>=0.14.0
+# vLLM 관련 의존성
+vllm>=0.2.0
+funasr>=1.1.3
+modelscope
+soundfile
+python-multipart
+fastapi>=0.104.0
+uvicorn>=0.24.0
+aiohttp>=3.9.0
+python-dotenv>=1.0.0
+# 모니터링 관련 의존성
+psutil>=5.9.0
+GPUtil>=1.4.0
+# 파인튜닝 관련 의존성 (선택사항)
+datasets>=2.14.0
+peft>=0.6.0
+bitsandbytes>=0.41.0
+accelerate>=0.24.0
+scipy>=1.11.0
+scikit-learn>=1.3.0

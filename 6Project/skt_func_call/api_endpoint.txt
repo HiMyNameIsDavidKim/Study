@@ -1,0 +1,1 @@
+https://(생성된 16자리 영어 소문자).tunnel.elice.io/proxy/8000/predict_audio
