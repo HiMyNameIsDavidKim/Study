@@ -33,15 +33,15 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ### 1. AI 모델 연구 및 개발 역량
 * Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
+* VLM, LLM 딥러닝 모델 숙련도 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 경연 참가
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
-* VLM 연구 대비 LLM 연구 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 경연 참가
 * 데이터 정제, 레이블 설계, 모델 설계 및 개발, 오픈소스 배포 경험 / 석사과정
 * 머신러닝과 딥러닝에 대한 수학적 이해와 통계적 지식 / ADsP 자격증
 <br>
 
 ### 2. End-to-End AI 서비스 전 과정 경험 및 비즈니스 성과 창출
-* 머신러닝 설계 및 전사 적용으로 비즈니스 성과 (XX억 원) 창출 / LGD
+* 머신러닝 설계 및 전사 적용으로 비즈니스 성과 (52억 원) 창출 / LGD
 * 추천 시스템 인프라, 파이프라인 구축 및 개발 경험 (Airflow, Kafka, Redis) / 헥토
 * 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
 * 프로토타입 개발 및 기술 발표 경험 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
@@ -92,13 +92,13 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 기간/인원: 2025.08 ~ now / 6명
 * 개요: 
     * 멀티모달(Video-Text) 상품 추천 모델 구현 및 성능 개선
-    * 숏폼 기반 추천 모델 NDGC xx% 개선 (대외비 생략)
-    * 비디오 캡셔닝 모델 학습, CIDEr 0.xx 달성 (대외비 생략)
+    * 숏폼 기반 추천 모델 최초 적용 신규 비즈니스 기회 창출
+    * 비디오 캡셔닝 모델 학습 기존 모델 대비 효율성 80% 개선
 * 주요 역할: 
     * 도메인 적합성 검증을 위한 비디오 CLIP 기반 모델 5종 비교 및 평가
     * 비디오 임베딩 추출 및 상품 임베딩과의 코사인 유사도 기반 추천 로직 설계
     * 숏폼 비디오 내 상품 매칭 추천 모델 서빙 및 모델 고도화
-    * CLIP, sLLM, MLP 구조의 비디오 캡셔닝 모델 설계 및 파인 튜닝 학습
+    * CLIP-MLP-sLLM 구조의 비디오 캡셔닝 모델 설계 및 파인 튜닝 학습
 * 사용 기술: 
     * CLIP, VLM, Embedding, Machine Translate, PyTorch, Hugging Face
 <br>
@@ -107,7 +107,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 기간/인원: 2025.03 ~ 2025.05 / 6명
 * 개요: 
     * 쇼핑 데이터에 특화된 텍스트 임베딩 모델 발굴 및 적용
-    * DeepFM 기반 추천 모델 NDGC 0.xxxx 달성 (대외비 생략)
+    * 룰 베이스 추천 알고리즘을 DeepFM 기반 추천 모델로 전환
 * 주요 역할: 
     * BERT 및 LLM 기반 텍스트 임베딩 모델 7종 쇼핑 도메인 평가
     * Kanana 모델 기반 텍스트 임베딩 추출 파이프라인 구축 및 적용
@@ -160,7 +160,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 개요: 
     * 애플워치 검사 자동화 알고리즘 설계 및 운영
     * AI 빅데이터 직무 엔지니어, 자동검사 Feature engineering
-    * Capa 상승으로 xx억 절감, F1 score xx% 개선 (대외비 생략)
+    * Capa 상승으로 연간 52억 절감, F1 score 35% 개선
     * 22년 우수사원 선정 및 특별성과급 지급 다수
 * 주요 역할: 
     * 애플워치 검사 완전 자동화 달성
@@ -205,6 +205,21 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * vLLM, FastAPI 활용 실시간 추론 환경 구축
 * 핵심 스킬:
     * LoRA, PEFT, ONNX, Quantization, Distillation, vLLM, FastAPI, STT
+---
+
+### Dacon 팀 프로젝트
+
+#### RAG 기반 금융 보안 도메인 특화 sLLM 구축
+* 기간/인원: 2025.07 - 2025.08 / 3명
+* 개요:
+    * 도메인 지식 특화 RAG 기반 sLLM 응답 시스템 설계 및 구현
+    * 질의 응답 정확도 64% 달성 (baseline 대비 34%p 향상)
+* 주요 역할:
+    * 시스템 프롬프트 엔지니어링, 질문 의도에 따른 CoT 유도로 성능 개선
+    * 임베딩 모델 실험, 청킹 사이즈, 오버랩 사이즈 최적화를 통한 성능 개선
+    * FAISS 인덱싱 및 임베딩 캐싱 구조를 통한 속도 향상 (8.5배)
+* 핵심 스킬:
+    * LLM, RAG, Prompt Engineering, FAISS, Quantization
 ---
 
 ### Kaggle 팀 프로젝트

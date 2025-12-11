@@ -134,6 +134,9 @@
   * ✅ [`MambaOut, 2024`](https://arxiv.org/pdf/2405.07992v3) / [`Blog Posting`](https://davidlds.tistory.com/45) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/New_Architecture/MambaOut.md)
 * Transformer
   * ✅ [`Attention is all you need, 2017`](https://arxiv.org/pdf/1706.03762.pdf) / [`Blog Posting`](https://davidlds.tistory.com/5) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/Transformer.md)
+  * [`LoRA`]()
+  * [`RAG`]()
+* ViT
   * ✅ [`ViT, 2021`](https://arxiv.org/pdf/2010.11929.pdf) / [`Blog Posting`](https://davidlds.tistory.com/13) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/Transformer/ViT.md)
   * ✅ [`Swin Transformer, 2021`](https://arxiv.org/pdf/2103.14030.pdf) / [`Blog Posting`](https://davidlds.tistory.com/37)
   * ✅ [`BEiT, 2021`](https://arxiv.org/pdf/2106.08254.pdf)
@@ -184,7 +187,7 @@
   * [`Loss Scaling Rule, 2018`](https://arxiv.org/pdf/1706.02677.pdf)
   * [`Loss Predictor, 2019`](https://arxiv.org/pdf/1905.03677.pdf)
   * [`Few-shot learning, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
-* Vision Apps
+* LLM Apps
   * LLM
     * [`BERT, 2019`](https://arxiv.org/pdf/1810.04805)
     * [`GPT-1, 2018`](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
@@ -192,6 +195,7 @@
     * [`GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
     * ✅ [`LLaMA, 2023`](https://arxiv.org/pdf/2302.13971) / [`Blog Posting`](https://davidlds.tistory.com/89) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/LLM/LLaMA.md)
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
+* Vision Apps
   * VLM
     * ✅ [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/CLIP.md)
     * [`LLaVA, 2023`](https://arxiv.org/pdf/2304.08485)
