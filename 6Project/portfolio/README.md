@@ -1,7 +1,7 @@
-# 데이터 사이언티스트 김가람 포트폴리오 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
+# AI 리서치 엔지니어 김가람 포트폴리오 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
 
 ## 간략 소개
-안녕하세요. `트랜스포머 연구 경험`이 있는 데이터 사이언티스트 김가람 입니다.
+안녕하세요. `SOTA 달성 경험`과 `연구부터 프로덕션 운영까지 전반의 경험`이 있는 AI 리서치 엔지니어 김가람 입니다.
 <br>
 제조업 엔지니어로 LG디스플레이에 입사하여 AI빅데이터 직무로 일했습니다.
 <br>
@@ -9,7 +9,9 @@
 <br>
 대학원에서는 `딥러닝 모델 (Vision)을 설계했고 SOTA를 달성`했습니다.
 <br>
-앞으로도 꾸준히 성장해서 `전설적인 데이터 사이언티스트`가 되고자 합니다.
+현재 헥토에서 `멀티모달 추천 시스템 모델 연구` 업무를 맡고 있습니다.
+<br>
+앞으로도 꾸준히 성장해서 `전설적인 AI 리서치 엔지니어`가 되고자 합니다.
 <br>
 
 ## 💼 목차
@@ -19,7 +21,7 @@
     * 기술스택: PyTorch, ViT, Python
 * [`[제조/ML] 애플워치 검사 자동화 알고리즘 설계 및 운영`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/lgd_project)
     * LG Display, 불량 자동검사 Feature engineering.
-    * Capa 상승으로 xx억 절감, F1 score xx% 개선. (대외비 생략)
+    * Capa 상승으로 52억 절감, F1 score 35% 개선. (대외비 생략)
     * 기술스택: Rule Extract, 통계학, C++
 * [`[은행/ML] 계좌 개설 사기 탐지를 통한 사기 패턴 분석`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/team_project)
     * 은행 계좌 개설 사기로 인한 재산 피해를 방지.

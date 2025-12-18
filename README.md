@@ -104,6 +104,14 @@
 ## 💼 Project
   - [`Resume`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/resume)
 
+  - [`Research`](https://scholar.google.co.kr/citations?hl=ko&user=N8xuM2AAAAAJ)
+  
+    - [`FCViT`](https://github.com/HiMyNameIsDavidKim/fcvit/tree/main)
+
+    - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
+
+    - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
+
   - [`Portfolio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/portfolio)
 
     - [`[연구 논문/DL] 딥러닝 모델 (Vision) 설계 최고 성능 달성`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
@@ -114,13 +122,11 @@
 
     - [`[이커머스/KPIs] CAC 분석을 통한 성과지표 별 광고 최적화`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/final_project)
 
-  - `Research`
-  
-    - [`FCViT`](https://github.com/HiMyNameIsDavidKim/fcvit/tree/main)
+  - `Side Project`
 
-    - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
+    - [`[VLM/DL] CLIP과 sLLM을 활용한 이미지 설명 생성 모델`](https://github.com/HiMyNameIsDavidKim/image_captioning)
 
-    - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
+    - [`[TTS/DL] XTTS와 Whisper를 활용한 한국어 TTS 파인튜닝`](https://github.com/HiMyNameIsDavidKim/xtts_training_ko)
 
   - [`코딩 테스트`](https://github.com/HiMyNameIsDavidKim/Study/blob/main/6Project/resume/coding_test.md)
 
@@ -197,7 +203,7 @@
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
 * Vision Apps
   * VLM
-    * ✅ [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/CLIP.md)
+    * ✅ [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf) / [`Blog Posting`](https://davidlds.tistory.com/102) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/CLIP.md)
     * [`LLaVA, 2023`](https://arxiv.org/pdf/2304.08485)
     * ✅ [`LLaVA-UHD, 2024`](https://arxiv.org/pdf/2403.11703v1) / [`Blog Posting`](https://davidlds.tistory.com/46) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/LLaVA_UHD.md)
   * Video
