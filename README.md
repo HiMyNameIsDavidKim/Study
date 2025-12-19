@@ -104,13 +104,13 @@
 ## 💼 Project
   - [`Resume`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/resume)
 
-  - [`Research`](https://scholar.google.co.kr/citations?hl=ko&user=N8xuM2AAAAAJ)
+  - `Research`
   
     - [`FCViT`](https://github.com/HiMyNameIsDavidKim/fcvit/tree/main)
 
     - [`SPRNN`](https://www.sciencedirect.com/science/article/pii/S0143816624000137)
 
-    - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ&hl=ko)
+    - [`Scholar`](https://scholar.google.co.kr/citations?user=N8xuM2AAAAAJ)
 
   - [`Portfolio`](https://github.com/HiMyNameIsDavidKim/Study/tree/main/6Project/portfolio)
 
@@ -243,10 +243,33 @@
     * ✅ [`Style Transfer, 2016`](https://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
     * [`DALL-E, 2022`](https://arxiv.org/pdf/2102.12092.pdf)
 * RecSys
-  * ✅ [`YoutubeDNN, 2016`](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
-  * ✅ [`GCN, 2016`](https://arxiv.org/pdf/1609.02907) / [`Blog Posting`](https://davidlds.tistory.com/101) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/GCN.md)
-  * ✅ [`NGCF`]() / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/NGCF.md)
-  * [`LightGCN`]()
+  * Insight
+    * [`2 stage RecSys`](https://github.com/UlionTse/mlgb/blob/3571a33c35857b8bb564797bba635b35175552fc/mlgb/torch/agg.py)
+    * [`MS Recommenders`](https://github.com/recommenders-team/recommenders)
+  * Retrieval (CF)
+    * ✅ [`YoutubeDNN, 2016`](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
+    * [`NCF`]()
+    * [`MIND`]()
+    * [`EBR`]()
+  * Retrieval (Graph)
+    * ✅ [`GCN, 2016`](https://arxiv.org/pdf/1609.02907) / [`Blog Posting`](https://davidlds.tistory.com/101) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/GCN.md)
+    * ✅ [`NGCF, 2019`](https://arxiv.org/pdf/1905.08108) / [`Blog Posting`](https://davidlds.tistory.com/106) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/NGCF.md)
+    * [`LightGCN, 2020`]()
+    * [`Turbo-CF`]()
+  * Retrieval (Gen)
+    * [`TIGER`]()
+    * [`BERT4Rec`]()
+    * [`Transformer4Rec`]()
+  * Re-Ranking (FM)
+    * ✅ [`DeepFM, 2017`](https://arxiv.org/pdf/1703.04247) / [`Blog Posting`](https://davidlds.tistory.com/105) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/RecSys/DeepFM.md)
+    * [`xDeepFM`]()
+    * [`DeepFFM`]()
+    * [`DCN`]()
+    * [`DCN v2`]()
+  * Re-Ranking (Multi-Task)
+    * [`ESMM`]()
+    * [`MMoE`]()
+    * [`PEPNet`]()
 * ML
   * [`LightGBM`]()
   * [`XGBoost`]()
