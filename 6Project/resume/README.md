@@ -33,7 +33,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ### 1. AI 모델 연구 및 개발 역량
 * Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
-* VLM, LLM 딥러닝 모델 숙련도 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 경연 참가
+* LLM VLM 딥러닝 모델 숙련도 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 스켈터랩스
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
 * 데이터 정제, 레이블 설계, 모델 설계 및 개발, 오픈소스 배포 경험 / 석사과정
@@ -67,7 +67,8 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 ## 경력 요약
-* __Hecto__, AI테크팀, AI엔지니어, 선임, (2025.03 ~ now)
+* __Skelter Labs__, NLP팀, MLE, L3, (2025.12 ~ now)
+* __Hecto__, AI테크팀, MLE, 선임, (2025.03 ~ 2025.12)
     > 멀티모달 추천 시스템 모델 연구.
 * __IDEA Lab.__, 대학원, 딥러닝 모델 연구원, 석사 과정, (2023.02 ~ 2025.02)
     > 딥러닝 모델 (Vision) 아키텍처 연구.
@@ -85,8 +86,14 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 경력
 
+### 스켈터랩스
+2025.12 ~ 재직 중
+
+#### (온보딩 진행중)
+* (온보딩 진행중)
+
 ### (주)헥토
-2025.03 ~ 재직 중
+2025.03 ~ 2025.12
 
 #### 비디오 임베딩 모델 연구
 * 기간/인원: 2025.08 ~ now / 6명
