@@ -68,6 +68,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 경력 요약
 * __Skelter Labs__, NLP팀, MLE, L3, (2025.12 ~ now)
+    > LLM RAG 시스템 및 LLM Agent 연구.
 * __Hecto__, AI테크팀, MLE, 선임, (2025.03 ~ 2025.12)
     > 멀티모달 추천 시스템 모델 연구.
 * __IDEA Lab.__, 대학원, 딥러닝 모델 연구원, 석사 과정, (2023.02 ~ 2025.02)
@@ -76,7 +77,8 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     > 애플워치 패널에 대한 검사 알고리즘 설계 및 엔지니어링.
 * __트라이큐빅스코리아__, AI팀, AI연구원, 인턴, (2018.12 ~ 2019.01)
     > 직사각형 검출기(OpenCV)를 이용한 테서랙트 OCR(구글) 알고리즘 연구.
-* [![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
+* [![Skelter Labs](https://img.shields.io/badge/Skelter_Labs-212E50?style=plastic&logo=Seagate&logoColor=white)](https://www.skelterlabs.com/)
+[![Hecto](https://img.shields.io/badge/Hecto-E36002?style=plastic&logo=Hugo&logoColor=white)](https://www.hecto.co.kr/)
 [![Lab](https://img.shields.io/badge/Idea_Lab-3776AB?style=plastic&logo=Electron&logoColor=white)](https://ideakhu.wixsite.com/home)
 [![LGD](https://img.shields.io/badge/LG_Display-A50034?style=plastic&logo=lg&logoColor=white)](https://www.lgdisplay.com/)
 [![Tricubics](https://img.shields.io/badge/Tricubics-009688?style=plastic&logo=apachenetbeanside&logoColor=white)](https://www.tricubics.com/)
