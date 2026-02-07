@@ -33,7 +33,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ### 1. AI 모델 연구 및 개발 역량
 * Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
-* LLM VLM 딥러닝 모델 숙련도 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 스켈터랩스
+* LLM, VLM 딥러닝 모델 숙련도 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 스켈터랩스
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
 * 데이터 정제, 레이블 설계, 모델 설계 및 개발, 오픈소스 배포 경험 / 석사과정
@@ -67,9 +67,9 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 
 ## 경력 요약
-* __Skelter Labs__, NLP팀, MLE, L3, (2025.12 ~ now)
+* __Skelter Labs__, NLP팀, AI엔지니어, L3, (2025.12 ~ now)
     > LLM RAG 시스템 및 LLM Agent 연구.
-* __Hecto__, AI테크팀, MLE, 선임, (2025.03 ~ 2025.12)
+* __Hecto__, AI테크팀, AI엔지니어, 선임, (2025.03 ~ 2025.12)
     > 멀티모달 추천 시스템 모델 연구.
 * __IDEA Lab.__, 대학원, 딥러닝 모델 연구원, 석사 과정, (2023.02 ~ 2025.02)
     > 딥러닝 모델 (Vision) 아키텍처 연구.
@@ -91,8 +91,19 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### 스켈터랩스
 2025.12 ~ 재직 중
 
-#### (온보딩 진행중)
-* (온보딩 진행중)
+#### [사내 문서 RAG 및 요약 에이전트 연구 개발]
+* 기간/인원: 2025.12 ~ now (15명)
+* 개요: 
+    * 증권사 보안망 환경 대화형 RAG 검색 서비스 연구 및 구현
+    * 그룹웨어, 메신저, 사내 규정 등 방대한 비정형 데이터 처리
+    * (진행중)
+* 주요 역할: 
+    * 검색한 문서 맥락 평가 알고리즘 context selection 개선 및 출력 일관성 확보
+    * 쿼리 최적화 알고리즘 clarification (명확화) 적용 도메인 지식 및 은어 적응력 개선
+    * 쿼리 최적화 알고리즘 standalone (독립화) 적용 멀티턴 성능 및 RAG 성능 개선
+* 사용 기술: 
+    * LLM, RAG, Prompt Engineering, VLM, Embedding, Document Parser
+<br>
 
 ### (주)헥토
 2025.03 ~ 2025.12
