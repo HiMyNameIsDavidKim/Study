@@ -1,5 +1,5 @@
 # AI 리서치 엔지니어 김가람 이력서 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
-![Latest update](https://img.shields.io/badge/2025.05.17_updated-brightgreen.svg)
+![Latest update](https://img.shields.io/badge/2026.05.07_updated-brightgreen.svg)
 ![status](https://img.shields.io/badge/focus_on_now-red.svg)
 <br>
 Email: rkfka1401@gmail.com
@@ -22,7 +22,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 대학원에서는 `딥러닝 모델 (Vision)을 설계했고 SOTA를 달성`했습니다.
 <br>
-현재 헥토에서 `멀티모달 추천 시스템 모델 연구` 업무를 맡고 있습니다.
+현재 스켈터랩스에서 `멀티 에이전트 및 RAG 연구` 업무를 맡고 있습니다.
 <br>
 앞으로도 꾸준히 성장해서 `전설적인 AI 리서치 엔지니어`가 되고자 합니다.
 <br>
@@ -44,10 +44,10 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ### 2. End-to-End AI 서비스 전 과정 경험 및 비즈니스 성과 창출
 * 머신러닝 설계 및 전사 적용으로 비즈니스 성과 (연간 52억 원) 창출 / LGD
-* 추천 시스템 인프라, 파이프라인 구축 및 개발 경험 (Airflow, Kafka, Redis) / 헥토
-* 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
 * 프로토타입 개발 및 기술 발표 경험 (Streamlit, MVP, 국제학회 영어 발표) / 석사과정
 * 경량화 관련 기술 활용 경험 (ONNX, Quantization, Distillation) / 경연 참가
+* 배포 관련 기술 활용 경험 (AWS, Linux, Docker, FastAPI, vLLM) / 헥토
+* 추천 시스템 인프라, 파이프라인 구축 및 개발 경험 (Airflow, Kafka, Redis) / 헥토
 * 분석 관련 기술 활용 경험 (EDA, Spark, Hadoop, Tableau) / Kaggle
 <br>
 
@@ -93,7 +93,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### 스켈터랩스
 2025.12 ~ 재직 중
 
-#### 반도체 기술영업 지원 멀티 에이전트 RAG 연구 개발
+#### 반도체 기술영업 지원 멀티 에이전트 RAG 연구
 * 기간/인원: 2026.02 ~ now (15명)
 * 개요: 
     * 70만 건의 메일, 오피스자료, 기술 시트 기반 대화형 RAG 시스템 설계 및 구현
@@ -107,7 +107,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * LLM, RAG, Multi-Agent, LangGraph, Prompt Engineering, Hybrid Search
 <br>
 
-#### 증권사 특화 사내 문서 RAG 및 요약 에이전트 연구 개발
+#### 증권사 특화 사내 문서 RAG 및 요약 에이전트 연구
 * 기간/인원: 2025.12 ~ 2026.02 (15명)
 * 개요: 
     * 증권사 보안망 환경 대화형 RAG 검색 서비스 연구 및 구현
@@ -120,6 +120,9 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 사용 기술: 
     * LLM, RAG, Prompt Engineering, VLM, Embedding, Document Parser
 <br>
+---
+
+
 
 ### (주)헥토
 2025.03 ~ 2025.12
