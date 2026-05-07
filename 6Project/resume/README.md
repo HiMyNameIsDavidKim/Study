@@ -93,17 +93,29 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### 스켈터랩스
 2025.12 ~ 재직 중
 
+#### 반도체 R&D 가속화를 위한 멀티 에이전트 RAG 연구
+* 기간/인원: 2026.04 ~ now (15명)
+* 개요: 
+    * 반도체 R&D 문서 기반 대화형 RAG 시스템 설계 및 구현
+    * (진행중)
+* 주요 역할: 
+    * Apache POI 커스터마이징을 통한 PPT 이미지 변환 최적화, VLM 인식률 개선
+    * (진행중)
+* 사용 기술: 
+    * LLM, RAG, Multi-Agent, LangGraph, Prompt Engineering, Hybrid Search
+<br>
+
 #### 반도체 기술영업 지원 멀티 에이전트 RAG 연구
-* 기간/인원: 2026.02 ~ now (15명)
+* 기간/인원: 2026.02 ~ 2026.04 (15명)
 * 개요: 
     * 70만 건의 메일, 오피스자료, 기술 시트 기반 대화형 RAG 시스템 설계 및 구현
     * 반도체 특화 채팅 에이전트, 기술영업 문서 생성 에이전트 구현 및 고도화
-    * (진행중)
+    * (평가 진행중)
 * 주요 역할: 
     * 대용량 내부 문서 처리 (중복 제거, 기간 처리) 고도화, RAG 품질 개선
     * C-레벨 및 고객사 보고자료 생성 에이전트 고도화, 최종 보고서 품질 개선
     * 외부 웹 검색 쿼리에 대한 도메인 주입 알고리즘 고도화, 검색 품질 향상
-* 사용 기술:
+* 사용 기술: 
     * LLM, RAG, Multi-Agent, LangGraph, Prompt Engineering, Hybrid Search
 <br>
 
@@ -119,7 +131,6 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * 쿼리 최적화 알고리즘 standalone (독립화) 적용, 멀티턴 성능 및 RAG 성능 개선
 * 사용 기술: 
     * LLM, RAG, Prompt Engineering, VLM, Embedding, Document Parser
-<br>
 ---
 
 
@@ -128,7 +139,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 2025.03 ~ 2025.12
 
 #### 비디오 임베딩 모델 연구
-* 기간/인원: 2025.08 ~ now / 6명
+* 기간/인원: 2025.08 ~ 2025.12 / 6명
 * 개요: 
     * 멀티모달(Video-Text) 상품 추천 모델 구현 및 성능 개선
     * 숏폼 기반 추천 모델 최초 적용 신규 비즈니스 기회 창출
@@ -189,6 +200,21 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 * 사용 기술: 
     * Vision Transformer, MAE, timm, CNN, PyTorch, Python, Linux
 * [`포트폴리오 깃허브 링크`](https://github.com/HiMyNameIsDavidKim/fcvit/blob/main/OVERVIEW_KOR.md)
+<br>
+
+#### LLM 기반 블로그 자동화 개발 및 운영
+* 기간/인원: 2023.09 ~ now / 3명
+* 개요: 
+    * 콘텐츠 수집, 내용 생성, 포스팅 게시 까지 완전 자동화 설계 및 개발
+    * 에이전트 개념 이전 (gpt-3.5 시절) 설계한 에이전틱 워크플로우, 지속 고도화
+    * 블로그 당 월 XX만원 수익 달성, (23년~, 운영중)
+* 주요 역할: 
+    * 수집, 생성, QC, 게시, 관리 등 에이전트 워크플로우 설계
+    * LLM / sLLM 역할 분리 설계로 비용-성능 최적화, 로컬 모델 적극 활용
+    * VLM 기반 로그인 보안 자동 해결 알고리즘 설계 (11가지 질문 유형 처리)
+    * N개 블로그 병렬 실행, 멀티스레드 스케줄링, 프로세스 Lock, 셀프 복구
+* 사용 기술: 
+    * LLM, VLM, Multi-Agent, Prompt Engineering, Multi-threading, Selenium
 ---
 
 
