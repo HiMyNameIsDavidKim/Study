@@ -201,6 +201,9 @@
     * [`GPT-3, 2020`](https://arxiv.org/pdf/2005.14165.pdf)
     * ✅ [`LLaMA, 2023`](https://arxiv.org/pdf/2302.13971) / [`Blog Posting`](https://davidlds.tistory.com/89) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/LLM/LLaMA.md)
     * [`GPT-4, 2024`](https://arxiv.org/pdf/2303.08774)
+    * ✅ [`RLM, 2025`](https://arxiv.org/pdf/2512.24601) / [`Blog Posting`](https://davidlds.tistory.com/109) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/LLM/RLM.md)
+  * dLLM
+    * ✅ [`LLaDA, 2025`](https://arxiv.org/pdf/2502.09992) / [`Blog Posting`]() / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/LLM/LLaDA.md)
 * Vision Apps
   * VLM
     * ✅ [`CLIP, 2021`](https://arxiv.org/pdf/2103.00020.pdf) / [`Blog Posting`](https://davidlds.tistory.com/102) / [`Raw Note`](https://github.com/HiMyNameIsDavidKim/Paper_List/blob/main/VLM/CLIP.md)
