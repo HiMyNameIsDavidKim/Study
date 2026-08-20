@@ -1,5 +1,5 @@
 # AI 리서치 엔지니어 김가람 이력서 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png" alt="Sunglasses" width="25" height="25" />
-![Latest update](https://img.shields.io/badge/2026.05.07_updated-brightgreen.svg)
+![Latest update](https://img.shields.io/badge/2026.08.20_updated-brightgreen.svg)
 ![status](https://img.shields.io/badge/focus_on_now-red.svg)
 <br>
 Email: rkfka1401@gmail.com
@@ -22,7 +22,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 <br>
 대학원에서는 `딥러닝 모델 (Vision)을 설계했고 SOTA를 달성`했습니다.
 <br>
-현재 스켈터랩스에서 `멀티 에이전트 및 RAG 연구` 업무를 맡고 있습니다.
+현재 스켈터랩스에서 `에이전트 및 RAG 시스템 연구` 업무를 맡고 있습니다.
 <br>
 앞으로도 꾸준히 성장해서 `전설적인 AI 리서치 엔지니어`가 되고자 합니다.
 <br>
@@ -34,7 +34,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### 1. AI 모델 연구 및 개발 역량
 * Vision 딥러닝 모델 숙련도 및 사전학습 경험 (Transformer, ViT, CNN) / 석사과정
 * LLM, VLM 딥러닝 모델 숙련도 및 파인튜닝 경험 (LoRA, PEFT, RAG, FAISS) / 스켈터랩스
-* 대규모 비정형 데이터 기반 멀티 에이전트 및 RAG 파이프라인 설계 / 스켈터랩스
+* 대규모 비정형 데이터 기반 에이전트 및 RAG 파이프라인 설계 / 스켈터랩스
 * 쿼리 최적화 및 검색 컨텍스트 고도화를 통한 RAG 성능 개선 / 스켈터랩스
 * 비디오 임베딩 딥러닝 모델 숙련도 (CLIP, VLM, Embedding) / 헥토
 * 추천 시스템 딥러닝 모델 숙련도 (LightGCN, DeepFM) / 헥토
@@ -70,9 +70,9 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 
 ## 경력 요약
 * __Skelter Labs__, NLP팀, AI엔지니어, L3, (2025.12 ~ now)
-    > LLM RAG 시스템 및 LLM Agent 연구.
+    > 에이전트 및 RAG 시스템 연구 개발.
 * __Hecto__, AI테크팀, AI엔지니어, 선임, (2025.03 ~ 2025.12)
-    > 멀티모달 추천 시스템 모델 연구.
+    > 멀티모달 추천 시스템 모델 연구 개발.
 * __IDEA Lab.__, 대학원, 딥러닝 모델 연구원, 석사 과정, (2023.02 ~ 2025.02)
     > 딥러닝 모델 (Vision) 아키텍처 연구.
 * __LG디스플레이__, 검사팀, AI빅데이터 엔지니어, 사원, (2020.11 ~ 2022.09)
@@ -93,42 +93,59 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### 스켈터랩스
 2025.12 ~ 재직 중
 
-#### 반도체 R&D 가속화를 위한 멀티 에이전트 RAG 연구
-* 기간/인원: 2026.04 ~ now (15명)
-* 개요: 
-    * 반도체 R&D 문서 기반 대화형 RAG 시스템 설계 및 구현
+#### 에너지업 특화 AI 이슈 분류 및 관리 시스템 연구 개발
+* 기간/인원: 2026.09 ~ now (15명)
+* 개요:
     * (진행중)
-* 주요 역할: 
-    * Apache POI 커스터마이징을 통한 PPT 이미지 변환 최적화, VLM 인식률 개선
-    * (진행중)
-* 사용 기술: 
-    * LLM, RAG, Multi-Agent, LangGraph, Prompt Engineering, Hybrid Search
 <br>
 
-#### 반도체 기술영업 지원 멀티 에이전트 RAG 연구
+#### 반도체 R&D 가속화를 위한 RAG 에이전트 연구 개발
+* 기간/인원: 2026.03 ~ 2026.08 (15명)
+* 개요: 
+    * 반도체 R&D 문서 기반 대화형 RAG 시스템 (대화, 보고서 생성)
+    * PPT 번역 에이전트 단독 구축, 임원 보고서 에이전트 7종 중 4종 신규 구축
+    * 기존 에이전트 고도화 및 공통 아키텍처 정비
+    * 보고서 작성 속도 향상 (7일 → 4시간)과 품질 개선으로 경영진 호평, 전사 필수 적용 지시
+* 주요 역할: 
+    * 실무자의 시장 예측 방법론을 복제하여 단계 별로 정의 후 RAG 파이프라인으로 구현
+    * 분석 대상이 섞이는 할루시네이션 문제 해결, 문서를 구간으로 분해 후 분류하는 LLM 모듈 개발
+    * 단계별 검색 설계로 도메인 지식 주입, 외부 검색 결과에서 키워드를 발굴해 사내 검색 개선
+    * 정량 수치 정합성을 위한 수학적인 보정 알고리즘과 트릭 설계
+    * 전체 에이전트가 사용할 공통 이벤트 규약, 유틸, 아키텍처 설계
+    * VLM OCR 인식률 개선, 글자 겹침과 표 생성 문제를 해결하는 렌더링 단계 커스터마이징
+    * LLM 프롬프트 작업 전담 스킬 PoC 후 전면 적용, 타 프로젝트 (AI 플랫폼)에도 이식
+* 사용 기술: 
+    * VLM, OCR, LLM, RAG, Agent, Prompt Engineering
+<br>
+
+#### 반도체 기술영업 지원 RAG 에이전트 연구 개발
 * 기간/인원: 2026.02 ~ 2026.04 (15명)
 * 개요: 
-    * 70만 건의 메일, 오피스자료, 기술 시트 기반 대화형 RAG 시스템 설계 및 구현
-    * 반도체 특화 채팅 에이전트, 기술영업 문서 생성 에이전트 구현 및 고도화
-    * (평가 진행중)
+    * 70만 건의 메일, 오피스자료, 기술 시트 기반 RAG 시스템 (대화, 보고서 생성)
+    * 보고서 생성 에이전트 10종 중 2종 신규 구축, 모든 에이전트가 공유하는 공통 모듈 개발
+    * 1인당 일평균 1건 이상 꾸준히 사용, 결과 만족도 85.7% 달성
 * 주요 역할: 
-    * 대용량 내부 문서 처리 (중복 제거, 기간 처리) 고도화, RAG 품질 개선
-    * C-레벨 및 고객사 보고자료 생성 에이전트 고도화, 최종 보고서 품질 개선
-    * 외부 웹 검색 쿼리에 대한 도메인 주입 알고리즘 고도화, 검색 품질 향상
+    * 주기 보고서 탐색 공통 모듈 개발, 팀-기간 매칭, 중복 제거, 기간 필터링
+    * 비정형 보고서 섹션 추출 공통 모듈 개발, 신형 구형 문서 포맷 모두 대응
+    * 경쟁사 제품 비교 에이전트, 자사 제품 식별 + 경쟁사 쿼리 생성을 단일 LLM으로 처리
+    * 사용자 입력 약어 확장 모듈 통합 개발, 서비스 7종 전체에 일괄 적용, 검색 누락 해소
+    * 자동 이슈 해결 스킬 PoC, 유저 피드백 → 버그 재현 → 수정 검증 → 패치 적용 자동화
+    * RLM 논문 방법론 PoC, REPL 기반 재귀 분석 서비스로 구현 후 적용 검증
 * 사용 기술: 
-    * LLM, RAG, Multi-Agent, LangGraph, Prompt Engineering, Hybrid Search
+    * LLM, RAG, Agent, LangGraph, Prompt Engineering, Hybrid Search
 <br>
 
-#### 증권사 특화 사내 문서 RAG 및 요약 에이전트 연구
+#### 증권사 특화 사내 문서 RAG 및 요약 에이전트 연구 개발
 * 기간/인원: 2025.12 ~ 2026.02 (15명)
 * 개요: 
-    * 증권사 보안망 환경 대화형 RAG 검색 서비스 연구 및 구현
-    * 그룹웨어, 메신저, 사내 규정 등 방대한 비정형 데이터 처리
+    * 보안망 환경 메신저, 사내 규정 문서 기반 RAG 시스템 (대화, 요약)
+    * 대화 파이프라인의 검색 품질 개선, 문서 검색 및 쿼리 재작성 고도화
     * 문서 참조 정확도 32.5% 개선, 은어 포함 쿼리 검색 성공률 42.8% 향상
 * 주요 역할: 
-    * 검색한 문서 맥락 평가 알고리즘 context selection 개선 및 출력 일관성 확보
-    * 쿼리 최적화 알고리즘 clarification (명확화) 적용, 도메인 지식 및 슬랭 적응력 개선
-    * 쿼리 최적화 알고리즘 standalone (독립화) 적용, 멀티턴 성능 및 RAG 성능 개선
+    * 유저 피드백 분석 및 문제 정의, 원인을 3단계로 세분화 후 맞춤형 개선 진행
+    * 임베딩 한계 극복, 검색된 문서 맥락 재평가 에이전트의 프롬프트 및 알고리즘 개선
+    * 도메인 지식 및 슬랭 적응, 증권사 용어 이해를 위한 clarification 방법론 적용
+    * 멀티턴 문맥 유지, 연속된 대화의 지시대명사 이해를 위한 standalone 방법론 적용
 * 사용 기술: 
     * LLM, RAG, Prompt Engineering, VLM, Embedding, Document Parser
 ---
@@ -138,7 +155,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
 ### (주)헥토
 2025.03 ~ 2025.12 (10개월)
 
-#### 비디오 임베딩 모델 연구
+#### 비디오 임베딩 모델 연구 개발
 * 기간/인원: 2025.08 ~ 2025.12 / 6명
 * 개요: 
     * 멀티모달(Video-Text) 상품 추천 모델 구현 및 성능 개선
@@ -153,7 +170,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * CLIP, VLM, Embedding, Machine Translate, PyTorch, Hugging Face
 <br>
 
-#### 쇼핑 추천 시스템 모델 연구
+#### 쇼핑 추천 시스템 모델 연구 개발
 * 기간/인원: 2025.03 ~ 2025.05 / 6명
 * 개요: 
     * 쇼핑 데이터에 특화된 텍스트 임베딩 모델 발굴 및 적용
@@ -167,7 +184,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * BERT, LLM, Kanana, DeepFM, PyTorch, Hugging Face, ONNX
 <br>
 
-#### 범용 추천 시스템 인프라 구축, 운영
+#### 범용 추천 시스템 인프라 구축 및 운영
 * 기간/인원: 2025.05 ~ 2025.08 / 6명
 * 개요: 
     * 추천 모델의 지속적 학습 및 배포를 위한 자동화 인프라 구축 및 운영
@@ -214,7 +231,7 @@ Blog (Tistory): [davidlds](https://davidlds.tistory.com/)
     * VLM 기반 로그인 보안 자동 해결 알고리즘 설계 (11가지 질문 유형 처리)
     * N개 블로그 병렬 실행, 멀티스레드 스케줄링, 프로세스 Lock, 셀프 복구
 * 사용 기술: 
-    * LLM, VLM, Multi-Agent, Prompt Engineering, Multi-threading, Selenium
+    * LLM, VLM, Agent, Prompt Engineering, Multi-threading, Selenium
 ---
 
 
